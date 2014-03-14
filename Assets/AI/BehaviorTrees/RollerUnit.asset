@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1227330239, guid: 0afa4843f495f6b4690c9bab57d33da6, type: 3}
+  m_Name: RollerUnit
+  m_EditorClassIdentifier: 
+  _dataSerializer:
+    _serializedData: <scriptableobject version="1.0" type="RAIN.BehaviorTrees.BTAsset"><fields><field
+      value="&lt;behaviortree version=&quot;1.1&quot; repeatuntil=&quot;&quot; name=&quot;RollerUnit&quot;&gt;&lt;sequencer
+      usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;root&quot;&gt;&lt;detect
+      sensor=&quot;&amp;quot;UnitEyes&amp;quot;&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+      name=&quot;Detect Hero&quot; entityobjectvariable=&quot;targetUnit&quot; aspectvariable=&quot;&quot;
+      aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;twinhero&amp;quot;&quot;
+      /&gt;&lt;random repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Play
+      battel roar&quot;&gt;&lt;audio weight=&quot;&quot; waituntildone=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;audio&quot; forcestoponexit=&quot;False&quot;
+      delay=&quot;0&quot; audiosource=&quot;WarCry&quot; /&gt;&lt;audio weight=&quot;&quot;
+      waituntildone=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;audio&quot;
+      forcestoponexit=&quot;False&quot; delay=&quot;0&quot; audiosource=&quot;GetHim&quot;
+      /&gt;&lt;audio weight=&quot;&quot; waituntildone=&quot;False&quot; repeatuntil=&quot;&quot;
+      name=&quot;audio&quot; forcestoponexit=&quot;False&quot; delay=&quot;0&quot;
+      audiosource=&quot;ThereHeIs&quot; /&gt;&lt;/random&gt;&lt;sequencer usepriorities=&quot;False&quot;
+      repeatuntil=&quot;failure&quot; priority=&quot;&quot; name=&quot;sequencer&quot;&gt;&lt;move
+      turnspeed=&quot;&quot; repeatuntil=&quot;success&quot; priority=&quot;&quot;
+      name=&quot;move&quot; movetarget=&quot;targetUnit&quot; movespeed=&quot;&quot;
+      facetarget=&quot;targetUnit&quot; closeenoughdistance=&quot;7&quot; closeenoughangle=&quot;10&quot;
+      /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;dGFyZ2V0VW5pdA==&quot;
+      parameters=&quot;dGFyZ2V0&quot; namespace=&quot;(global)&quot; name=&quot;action&quot;
+      classname=&quot;AISavePosition&quot; /&gt;&lt;animate repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;animate&quot; animationstate=&quot;Attack&quot;
+      /&gt;&lt;timer waitforsec=&quot;1&quot; returnvalue=&quot;success&quot; priority=&quot;&quot;
+      name=&quot;timer&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot;
+      priority=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;Attack_Roll&quot;
+      name=&quot;mecparam&quot; damptime=&quot;0&quot; /&gt;&lt;move turnspeed=&quot;&quot;
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move&quot; movetarget=&quot;targetPosition&quot;
+      movespeed=&quot;10&quot; facetarget=&quot;&quot; closeenoughdistance=&quot;&quot;
+      closeenoughangle=&quot;&quot; /&gt;&lt;mecparam valueexpression=&quot;false&quot;
+      repeatuntil=&quot;&quot; priority=&quot;&quot; parametertype=&quot;boolean&quot;
+      parametername=&quot;Attack_Roll&quot; name=&quot;mecparam&quot; damptime=&quot;0&quot;
+      /&gt;&lt;timer waitforsec=&quot;2&quot; returnvalue=&quot;success&quot; priority=&quot;&quot;
+      name=&quot;timer&quot; /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot;
+      parametervalues=&quot;dGFyZ2V0VW5pdA==&quot; parameters=&quot;dGFyZ2V0&quot;
+      namespace=&quot;(global)&quot; name=&quot;action&quot; classname=&quot;AICheckDeath&quot;
+      /&gt;&lt;/sequencer&gt;&lt;/sequencer&gt;&lt;/behaviortree&gt;" type="System.String"
+      id="treeData" /><field type="System.Array" id="treeBindings" elementtype="System.String"
+      /></fields><references /></scriptableobject>
+    _serializedGameObjects: []
+    _serializedCustomData: []
