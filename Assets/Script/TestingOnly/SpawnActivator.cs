@@ -23,6 +23,16 @@ public class SpawnActivator : MonoBehaviour {
 			deactivateLockdown ();
 	}
 
+	public void StartEverything() {
+		activateLockdown();
+		StartCoroutine(delayedSpawn());
+		StartCoroutine(startLockdownTimer());
+	}
+
+	public void GenerateMesh() {
+		GetComponentInChildren<CalcNavigation>().GenerateMesh();
+	}
+
 	private IEnumerator delayedSpawn() {
 		yield return new WaitForSeconds(SpawnDelayInSeconds);
 		foreach(var s in Spawners)
@@ -52,15 +62,13 @@ public class SpawnActivator : MonoBehaviour {
 		if(hasSpawned) return;
 
 		
-		GetComponentInChildren<CalcNavigation>().GenerateMesh();
+		GenerateMesh();
 		activePlayersWithin++;
 		if(activePlayersWithin != activePlayersThreshold) return;
 
 		hasSpawned = true;
 		Debug.Log("Starting island");
-		activateLockdown();
-		StartCoroutine(delayedSpawn());
-		StartCoroutine(startLockdownTimer());
+		StartEverything();
 	}
 
 	void OnTriggerExit() {

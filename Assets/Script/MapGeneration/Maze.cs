@@ -6,6 +6,7 @@ public class Maze
 {
 	public int width;
 	public int height;
+	public int MaxSteps {get; private set;}
 
 	private MazeCell[,] cells;
 
@@ -77,6 +78,8 @@ public class Maze
 				MazeCell neighborCell = (MazeCell) neighborCells[randomNeighbor];
 				neighborCell.stepsFromOrigin = currentCell.stepsFromOrigin + 1;
 				neighborCell.generationNumber = generationNumber;
+
+				MaxSteps = MaxSteps < neighborCell.stepsFromOrigin ? neighborCell.stepsFromOrigin : MaxSteps;
 
 				currentCell.CreateDoor(neighborCell);
 				cellStack.Push(currentCell);

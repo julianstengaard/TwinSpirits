@@ -62,7 +62,7 @@ public class Hero : BaseUnit {
 			}
 		}
 
-		ChangeSpiritAmount(10 * Time.deltaTime); // Debug code to generate Spirit
+		//ChangeSpiritAmount(10 * Time.deltaTime); // Debug code to generate Spirit
 
 		if(_input == null)
 			return;

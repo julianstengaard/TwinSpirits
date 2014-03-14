@@ -13,6 +13,8 @@ public class CreateLevel : MonoBehaviour {
 	public float cellSize;
 
 	public GameObject StartCell;
+	public GameObject BossCell;
+	private bool BossCellInstansiated;
 
 	public GameObject[] mazeCellPrefabs0000;
 	public GameObject[] mazeCellPrefabs0001;
@@ -185,8 +187,15 @@ public class CreateLevel : MonoBehaviour {
 	private GameObject InstantiateCell(GameObject[] mazeCellPrefab, int prefabNumber, Vector3 position, Maze maze, int x, int y)
 	{
 		var fab = mazeCellPrefab[prefabNumber];
-		GameObject cell = (GameObject) Instantiate(fab, position, fab.transform.rotation);
-		cell.name = "Distance" + maze.GetCell(x, y).stepsFromOrigin + "Generation" + maze.GetCell(x, y).generationNumber;
+		var mCell = maze.GetCell(x, y);
+		GameObject cell;
+		if(!BossCellInstansiated && mCell.stepsFromOrigin == maze.MaxSteps) {
+			cell = (GameObject) Instantiate(BossCell, position, BossCell.transform.rotation);
+			BossCellInstansiated = true;
+		} else
+			cell = (GameObject) Instantiate(fab, position, fab.transform.rotation);
+
+		cell.name = "Distance" + mCell.stepsFromOrigin + "Generation" + mCell.generationNumber;
 		return cell;
 	}
 
