@@ -62,13 +62,13 @@ public class SpiritMeterUI : MonoBehaviour {
 	void UpdateSpiritMeter(int playerNumber) {
 		if (playerNumber == 1) {
 			float spiritAmount = Player1.currentSpiritAmount/100f;
-			p1Meter.transform.localScale 	= new Vector3(spiritAmount*0.92f, 1, 1);
+			p1Meter.transform.localScale 	= new Vector3(spiritAmount*0.92f, 0.95f, 1);
 			p1Meter.transform.localPosition = Vector3.Lerp(p1MeterZero, zero, spiritAmount);
 			ColorizeSpiritMeter(p1Meter, Player1.currentSpiritPower, spiritAmount*100f);
 		}
 		else if (playerNumber == 2) {
 			float spiritAmount = Player2.currentSpiritAmount/100f;
-			p2Meter.transform.localScale = new Vector3(spiritAmount*0.92f, 1, 1);
+			p2Meter.transform.localScale = new Vector3(spiritAmount*0.92f, 0.95f, 1);
 			p2Meter.transform.localPosition = Vector3.Lerp(p2MeterZero, zero, spiritAmount); 
 			ColorizeSpiritMeter(p2Meter, Player2.currentSpiritPower, spiritAmount*100f);
 		}

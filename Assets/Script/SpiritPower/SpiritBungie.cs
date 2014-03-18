@@ -26,33 +26,33 @@ public class SpiritBungie : SpiritPower
 	/* BEGIN REGULAR POWER */
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
-		CreateBungieLink(sourceHero, otherHero, "SpiritLinkChain");
+		CreateBungieLink(otherHero, sourceHero, "SpiritLinkChain");
 
 		Debug.Log("Activating" + this.GetType());
 
-		heroCC = sourceHero.GetComponent<CharacterController>();
+		heroCC = otherHero.GetComponent<CharacterController>();
 
 		currentBungieTime = 0;
-		initialPosition = sourceHero.transform.position;
-		Vector3 directionToBungie = GetBungieMovement(currentBungieTime, initialPosition, otherHero.transform.position - initialPosition, durationToBungie);
-		heroCC.Move(directionToBungie - sourceHero.transform.position);
+		initialPosition = otherHero.transform.position;
+		Vector3 directionToBungie = GetBungieMovement(currentBungieTime, initialPosition, sourceHero.transform.position - initialPosition, durationToBungie);
+		heroCC.Move(directionToBungie - otherHero.transform.position);
 
 		return null;
 	}
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{
-		if ((sourceHero.transform.position - otherHero.transform.position).magnitude > closestDistance)
+		if ((otherHero.transform.position - sourceHero.transform.position).magnitude > closestDistance)
 		{
-			UpdateBungieLink(sourceHero, otherHero);
+			UpdateBungieLink(otherHero, sourceHero);
 			currentBungieTime = Mathf.Clamp(currentBungieTime + Time.deltaTime, 0, durationToBungie);
-			Vector3 directionToBungie = GetBungieMovement(currentBungieTime, initialPosition, otherHero.transform.position - initialPosition, durationToBungie);
-			heroCC.Move(directionToBungie - sourceHero.transform.position);
+			Vector3 directionToBungie = GetBungieMovement(currentBungieTime, initialPosition, sourceHero.transform.position - initialPosition, durationToBungie);
+			heroCC.Move(directionToBungie - otherHero.transform.position);
 		}
 		else
 		{
 			link.renderer.enabled = false;
 			currentBungieTime = 0;
-			initialPosition = sourceHero.transform.position;
+			initialPosition = otherHero.transform.position;
 		}
 
 		return null;
