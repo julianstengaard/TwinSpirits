@@ -51,7 +51,7 @@ public class SpiritSpeedBoost : SpiritPower
 	/* BEGIN SYNC POWER */
 	public override bool OnPotentialSync (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Potential" + this.GetType() + " sync power!");
+		//Debug.Log("Potential" + this.GetType() + " sync power!");
 		potentialSyncTime = Time.time;
 
 		//If other Hero has pressed already
@@ -67,16 +67,19 @@ public class SpiritSpeedBoost : SpiritPower
 		}
 
 	}
-	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = true)
 	{
-		Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
+		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
 
-		//Pay for activation
-		sourceHero.ChangeSpiritAmount(-costActivateSync);
-		otherHero.ChangeSpiritAmount(-costActivateSync);
+        if (!secondSync)
+        {
+            //Pay for activation
+            sourceHero.ChangeSpiritAmount(-costActivateSync);
+            otherHero.ChangeSpiritAmount(-costActivateSync);
 
-		//Stop other Heros effect
-		otherHero.SwitchToSyncPower();
+            //Stop other Heros effect
+            otherHero.SwitchToSyncPower();
+        }
 
 		//Find enemies to do effect on
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -101,7 +104,7 @@ public class SpiritSpeedBoost : SpiritPower
 	{
 		yield return new WaitForSeconds(spiritSyncDuration);
 
-		Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
+		//Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
 		foreach (var enemy in enemiesToSlow)
 		{
 			if (enemy != null)

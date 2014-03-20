@@ -39,7 +39,7 @@ public class SpiritLightning : SpiritPower
 			CreateLightningLink(otherHero, currentTarget, "SpiritLinkLightning");
 		}
 
-		Debug.Log("Activating" + this.GetType());
+		//Debug.Log("Activating" + this.GetType());
 
 		return null;
 	}
@@ -166,7 +166,7 @@ public class SpiritLightning : SpiritPower
 	}
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Deactivating" + this.GetType());
+		//Debug.Log("Deactivating" + this.GetType());
 		DestroyLightningLink (0f);
 		return null;
 	}
@@ -177,7 +177,7 @@ public class SpiritLightning : SpiritPower
 	/* BEGIN SYNC POWER */
 	public override bool OnPotentialSync (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Potential" + this.GetType() + " sync power!");
+		//Debug.Log("Potential" + this.GetType() + " sync power!");
 		potentialSyncTime = Time.time;
 		
 		//If other Hero has pressed already
@@ -193,17 +193,20 @@ public class SpiritLightning : SpiritPower
 		}
 		
 	}
-	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero)
+    public override IEnumerator OnActivateSync(Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
-		Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
+		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
 		//CreateLightningLink(sourceHero, otherHero, "SpiritLinkRay");
 
-		//Pay for activation
-		sourceHero.ChangeSpiritAmount(-costActivateSync);
-		otherHero.ChangeSpiritAmount(-costActivateSync);
-		
-		//Stop other Heros effect
-		otherHero.SwitchToSyncPower();
+        if (!secondSync)
+        {
+            //Pay for activation
+            sourceHero.ChangeSpiritAmount(-costActivateSync);
+            otherHero.ChangeSpiritAmount(-costActivateSync);
+
+            //Stop other Heros effect
+            otherHero.SwitchToSyncPower();
+        }
 
 		Vector3 midpoint = (sourceHero.transform.position + otherHero.transform.position) * 0.5f;
 

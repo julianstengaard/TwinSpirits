@@ -2059,7 +2059,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: -.00599748129, z: 0, w: -.999982059}
-  m_LocalPosition: {x: 266.466431, y: 35.0167847, z: -610.859009}
+  m_LocalPosition: {x: 295.850372, y: 13.9551611, z: -564.165161}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400252}
@@ -2358,7 +2358,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
   m_LocalRotation: {x: 0, y: -.0111738676, z: 0, w: -.999937594}
-  m_LocalPosition: {x: .0837297514, y: .114431389, z: -1.37408316}
+  m_LocalPosition: {x: .9607265, y: .114431389, z: -1.36356318}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
   m_Children:
   - {fileID: 400074}
@@ -2406,7 +2406,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100060}
-  m_LocalRotation: {x: -.333181769, y: .90969795, z: -.106434524, w: -.223855138}
+  m_LocalRotation: {x: -.333181798, y: .909698009, z: -.106434532, w: -.223855153}
   m_LocalPosition: {x: .101299509, y: .0375674255, z: -.0632802248}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -2475,7 +2475,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100072}
-  m_LocalRotation: {x: -.333181769, y: .90969795, z: -.106434524, w: -.223855138}
+  m_LocalRotation: {x: -.333181798, y: .909698009, z: -.106434532, w: -.223855153}
   m_LocalPosition: {x: .101299509, y: .0375674255, z: -.0632802248}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -2898,7 +2898,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100142}
   m_LocalRotation: {x: 0, y: .00599748129, z: -0, w: -.999982059}
-  m_LocalPosition: {x: .974490047, y: .0959494039, z: -1.39248013}
+  m_LocalPosition: {x: -.0113304639, y: .0959494039, z: -1.40430558}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
   m_Children:
   - {fileID: 400176}
@@ -4731,7 +4731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946f1ad5ec3cd45ddb2c8dc8b5daa5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 6
+  fullHealth: 12
   stunned: 0
   stunTimeout: 0
   MovementSpeed: 5
@@ -4740,6 +4741,7 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
+  damageLocked: 0
   currentSpiritAmount: 0
   currentSpiritPower: {fileID: 0}
   spiritActive: 0
@@ -4803,7 +4805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946f1ad5ec3cd45ddb2c8dc8b5daa5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 6
+  fullHealth: 12
   stunned: 0
   stunTimeout: 0
   MovementSpeed: 5
@@ -4812,6 +4815,7 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
+  damageLocked: 0
   currentSpiritAmount: 0
   currentSpiritPower: {fileID: 0}
   spiritActive: 0

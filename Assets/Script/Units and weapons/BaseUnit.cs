@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(CharacterController))]
 public abstract class BaseUnit : MonoBehaviour {
 	public float Health;
-	private float fullHealth;
+	public float fullHealth;
 	
 	[HideInInspector] 
 	public bool stunned = false;
@@ -27,6 +27,7 @@ public abstract class BaseUnit : MonoBehaviour {
 
 	public bool dead = false;
 	public bool immortal = false;
+    public bool damageLocked = false;
 
 	// METHODS
 
@@ -41,7 +42,8 @@ public abstract class BaseUnit : MonoBehaviour {
 		var s = new Vector3(HealthBarWidth, 1f, 0.01f);
 		HealthBar.transform.localScale = s;
 
-		fullHealth = Health;
+	    if (!(fullHealth > 0f))
+            fullHealth = Health;
 
 	}
 
@@ -62,7 +64,8 @@ public abstract class BaseUnit : MonoBehaviour {
 		_cc.Move(Vector3.down * 0.5f);
 	}
 
-	public void TakeDamage(float damage) {
+    public virtual void TakeDamage(float damage)
+    {
 		if (!immortal) {
 			Health = Mathf.Max(0, Health - damage);
 			_anim.SetTrigger("Damaged");
@@ -71,7 +74,8 @@ public abstract class BaseUnit : MonoBehaviour {
 		}
 	}
 
-	public void Heal(float healAmount) {
+    public virtual void Heal(float healAmount)
+    {
 		if (!dead) {
 			Health = Mathf.Min(fullHealth, Health + healAmount);
 		}
