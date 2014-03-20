@@ -28,6 +28,8 @@ public class Hero : BaseUnit {
 	
 	public float CollectRadius;
 
+	private float spiritRegen = 0f;
+
 	private RAINAspect aspect;
 
 	// METHODS -----
@@ -45,6 +47,12 @@ public class Hero : BaseUnit {
 		currentSpiritPower = gameObject.AddComponent<SpiritSpeedBoost>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
+
+		//Search for menu settings
+		GameObject levelInfo = GameObject.Find("LevelCreationInfo");
+		if (levelInfo != null) {
+			spiritRegen = levelInfo.GetComponent<LevelCreationInfo>().spiritRegen;
+		}
 	}
 
 	// Update is called once per frame
@@ -61,8 +69,6 @@ public class Hero : BaseUnit {
 				Health /= 2f;
 			}
 		}
-
-		//ChangeSpiritAmount(10 * Time.deltaTime); // Debug code to generate Spirit
 
 		if(_input == null)
 			return;
@@ -107,6 +113,11 @@ public class Hero : BaseUnit {
 
 		UpdateSpiritLink();
 		UpdateCollection();
+
+		//If auto spirit regen is on
+		if (spiritRegen > 0f) {
+			ChangeSpiritAmount(spiritRegen * Time.deltaTime);
+		}
 	}
 
 	protected override void Died () {
