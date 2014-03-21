@@ -51,6 +51,13 @@ public class CreateLevel : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		//Search for menu settings
+		GameObject levelInfo = GameObject.Find("LevelCreationInfo");
+
+		if (levelInfo != null) {
+			mazeLength = levelInfo.GetComponent<LevelCreationInfo>().levelLength;
+		}
+
 		ImportCellPrefabs();
 		mazeFromX = Mathf.FloorToInt(mazeWidth/2);
 		mazeFromY = mazeHeight-1;

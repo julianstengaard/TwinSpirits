@@ -253,7 +253,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100016}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalRotation: {x: .707106888, y: 0, z: 0, w: .707106769}
   m_LocalPosition: {x: 0, y: 3.76444483, z: 0}
   m_LocalScale: {x: .851437747, y: .949045122, z: .804745555}
   m_Children: []
@@ -542,6 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  fullHealth: 0
   stunned: 0
   stunTimeout: 0
   MovementSpeed: 2
@@ -550,7 +551,8 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
-  BaseDamage: 50
+  damageLocked: 0
+  BaseDamage: 2
   OverallDropChance: 100
   Drops:
   - Chance: 60

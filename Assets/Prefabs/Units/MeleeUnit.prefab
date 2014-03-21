@@ -457,6 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  fullHealth: 0
   stunned: 0
   stunTimeout: 0
   MovementSpeed: 2
@@ -465,7 +466,8 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
-  BaseDamage: 20
+  damageLocked: 0
+  BaseDamage: 1
   OverallDropChance: 100
   Drops:
   - Chance: 60

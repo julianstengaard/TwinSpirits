@@ -19,7 +19,7 @@ public class SpiritImmortal : SpiritPower
 	/* BEGIN REGULAR POWER */
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Activating" + this.GetType());
+		//Debug.Log("Activating" + this.GetType());
 
 		immortalitySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 		immortalitySphere.transform.position = otherHero.transform.position + Vector3.up;
@@ -39,7 +39,7 @@ public class SpiritImmortal : SpiritPower
 	}
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Deactivating" + this.GetType());
+		//Debug.Log("Deactivating" + this.GetType());
 		GameObject.Destroy(immortalitySphere);
 		otherHero.immortal = false;
 
@@ -52,7 +52,7 @@ public class SpiritImmortal : SpiritPower
 	/* BEGIN SYNC POWER */
 	public override bool OnPotentialSync (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Potential" + this.GetType() + " sync power!");
+		//Debug.Log("Potential" + this.GetType() + " sync power!");
 		potentialSyncTime = Time.time;
 		
 		//If other Hero has pressed already
@@ -68,18 +68,21 @@ public class SpiritImmortal : SpiritPower
 		}
 		
 	}
-	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
-		Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
-		
-		//Pay for activation
-		sourceHero.ChangeSpiritAmount(-costActivateSync);
-		otherHero.ChangeSpiritAmount(-costActivateSync);
-		
-		//Stop other Heros effect
-		otherHero.SwitchToSyncPower();
-		
-		//Find enemies to do effect on
+		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
+
+	    if (!secondSync)
+	    {
+	        //Pay for activation
+	        sourceHero.ChangeSpiritAmount(-costActivateSync);
+	        otherHero.ChangeSpiritAmount(-costActivateSync);
+
+	        //Stop other Heros effect
+	        otherHero.SwitchToSyncPower();
+	    }
+
+	    //Find enemies to do effect on
 		GameObject[] enemiesObjects = GameObject.FindGameObjectsWithTag("Enemy");
 
 		enemies = new CharacterController[enemiesObjects.Length];
@@ -121,7 +124,7 @@ public class SpiritImmortal : SpiritPower
 	
 	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
+		//Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
 		yield return null;
 	}
 	/* END SYNC POWER */

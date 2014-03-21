@@ -11,15 +11,20 @@ public class SpiritMeterUI : MonoBehaviour {
 	public Material SpiritHPRegenIcon;
 	public Material SpiritLightningIcon;
 
+    public Material SyncOnIcon;
+    public Material SyncOffIcon;
+
 	private GameObject p1Icon;
 	private GameObject p2Icon;
 
+    private GameObject syncIcon;
 	private GameObject p1Meter;
 	private GameObject p2Meter;
 
-	private Vector3 p1MeterZero = new Vector3(-0.48f, 0f, 0.001f);
-	private Vector3 p2MeterZero = new Vector3(0.48f, 0f, 0.001f);
-	private Vector3 zero 		= new Vector3(0f, 0f, 0.001f);
+	private Vector3 p1MeterZero = new Vector3(-0.37f, 0f, 0.001f);
+	private Vector3 p2MeterZero = new Vector3(0.37f, 0f, 0.001f);
+	private Vector3 p1Zero 		= new Vector3(0.05f, 0f, 0.001f);
+    private Vector3 p2Zero      = new Vector3(-0.05f, 0f, 0.001f);
 
 	private bool playersFound = false;
 
@@ -28,6 +33,7 @@ public class SpiritMeterUI : MonoBehaviour {
 	{
 		p1Icon = GameObject.Find(this.gameObject.name+"/LeftSpiritIcon");
 		p2Icon = GameObject.Find(this.gameObject.name+"/RightSpiritIcon");
+        syncIcon = GameObject.Find(this.gameObject.name + "/SyncIcon");
 
 		p1Meter = GameObject.Find(this.gameObject.name+"/LeftSpiritMeter/LeftSpiritMeterAmount");
 		p2Meter = GameObject.Find(this.gameObject.name+"/RightSpiritMeter/RightSpiritMeterAmount");
@@ -38,11 +44,12 @@ public class SpiritMeterUI : MonoBehaviour {
 	{
 		if (!playersFound) {
 			playersFound = FindPlayers();
-			UpdateSpiritPowerIcons();
 		}
 		else {
 			UpdateSpiritMeter(1);
 			UpdateSpiritMeter(2);
+		    UpdateSyncIcon();
+            UpdateSpiritPowerIcons();
 		}
 	}
 
@@ -50,8 +57,13 @@ public class SpiritMeterUI : MonoBehaviour {
 	{
 		var ps = GameObject.FindGameObjectsWithTag("Player");
 		if(ps.Length > 0) {
-			Player1 = ps[0].GetComponent<Hero>();
-			Player2 = ps[1].GetComponent<Hero>();
+		    foreach (var player in ps)
+		    {
+		       if (player.name == "Player1")
+                   Player1 = player.GetComponent<Hero>();
+               if (player.name == "Player2")
+                   Player2 = player.GetComponent<Hero>(); ;
+		    }
 			return true;
 		}
 		else {
@@ -62,14 +74,14 @@ public class SpiritMeterUI : MonoBehaviour {
 	void UpdateSpiritMeter(int playerNumber) {
 		if (playerNumber == 1) {
 			float spiritAmount = Player1.currentSpiritAmount/100f;
-			p1Meter.transform.localScale 	= new Vector3(spiritAmount*0.92f, 0.95f, 1);
-			p1Meter.transform.localPosition = Vector3.Lerp(p1MeterZero, zero, spiritAmount);
+			p1Meter.transform.localScale 	= new Vector3(spiritAmount*0.82f, 0.6f, 1);
+            p1Meter.transform.localPosition = Vector3.Lerp(p1MeterZero, p1Zero, spiritAmount);
 			ColorizeSpiritMeter(p1Meter, Player1.currentSpiritPower, spiritAmount*100f);
 		}
 		else if (playerNumber == 2) {
 			float spiritAmount = Player2.currentSpiritAmount/100f;
-			p2Meter.transform.localScale = new Vector3(spiritAmount*0.92f, 0.95f, 1);
-			p2Meter.transform.localPosition = Vector3.Lerp(p2MeterZero, zero, spiritAmount); 
+			p2Meter.transform.localScale = new Vector3(spiritAmount*0.82f, 0.6f, 1);
+            p2Meter.transform.localPosition = Vector3.Lerp(p2MeterZero, p2Zero, spiritAmount); 
 			ColorizeSpiritMeter(p2Meter, Player2.currentSpiritPower, spiritAmount*100f);
 		}
 	}
@@ -83,6 +95,17 @@ public class SpiritMeterUI : MonoBehaviour {
 			spiritMeter.renderer.material.SetColor("_Color", Color.yellow);
 	}
 
+    public void UpdateSyncIcon()
+    {
+        if (Player1.currentSpiritAmount >= 100f && Player2.currentSpiritAmount >= 100f)
+        {
+            syncIcon.renderer.material = SyncOnIcon;
+        }
+        else
+        {
+            syncIcon.renderer.material = SyncOffIcon;
+        }
+    }
 
 	public void UpdateSpiritPowerIcons() {
 		UpdateSpiritPowerIcon(Player1, p1Icon);
@@ -91,7 +114,11 @@ public class SpiritMeterUI : MonoBehaviour {
 
 	private void UpdateSpiritPowerIcon(Hero player, GameObject icon)
 	{
-		if (player.currentSpiritPower.GetType() == typeof(SpiritSpeedBoost)) {
+	    if (player.currentSpiritPower == null) {
+            return;
+	    }
+
+	    if (player.currentSpiritPower.GetType() == typeof(SpiritSpeedBoost)) {
 			icon.renderer.material = SpiritSpeedBoostIcon;
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritBungie)) {
 			icon.renderer.material = SpiritBungieIcon;
@@ -103,4 +130,12 @@ public class SpiritMeterUI : MonoBehaviour {
 			icon.renderer.material = SpiritLightningIcon;
 		}
 	}
+
+    public Hero GetPlayer(int i)
+    {
+        if (i == 1)
+            return Player1;
+        else
+            return Player2;
+    }
 }

@@ -25,7 +25,7 @@ public abstract class SpiritPower : MonoBehaviour
 
 	public abstract bool 		OnPotentialSync	(Hero sourceHero, Hero otherHero);
 
-	public abstract IEnumerator OnActivateSync	(Hero sourceHero, Hero otherHero);
+    public abstract IEnumerator OnActivateSync  (Hero sourceHero, Hero otherHero, bool secondSync = false);
 	public abstract IEnumerator OnUpdateSync	(Hero sourceHero, Hero otherHero);
 	public abstract IEnumerator OnDeactivateSync(Hero sourceHero, Hero otherHero);
 
