@@ -32,6 +32,8 @@ public class Hero : BaseUnit {
 
 	private RAINAspect aspect;
 
+	private RandomSoundPlayer SoundController;
+
 	// METHODS -----
 
 	new void Start() {
@@ -53,6 +55,8 @@ public class Hero : BaseUnit {
 		if (levelInfo != null) {
 			spiritRegen = levelInfo.GetComponent<LevelCreationInfo>().spiritRegen;
 		}
+
+		SoundController = GetComponent<RandomSoundPlayer>();
 	}
 
 	// Update is called once per frame
@@ -151,7 +155,7 @@ public class Hero : BaseUnit {
 
 	public void Revived (float health) {
 		dead = false;
-		Health = Mathf.Min(health, fullHealth);
+		Health = Mathf.Min(health, FullHealth);
 		GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_Color", new Color(156/255f, 156/255f, 156/255f));
 		aspect.IsActive = true;
 	}
@@ -293,5 +297,14 @@ public class Hero : BaseUnit {
 
 	public override void SetMovementSpeedBuff (float movementSpeedBuff)	{
 		throw new System.NotImplementedException ();
+	}
+
+	public void StepSound() {
+		SoundController.PlayRandomSound("Footstep");
+	}
+	public void SwordSound() {
+		Debug.Log("SWORD");
+		SoundController.PlayRandomSound("SwordSwing");
+
 	}
 }
