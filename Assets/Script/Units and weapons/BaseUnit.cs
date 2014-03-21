@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(CharacterController))]
 public abstract class BaseUnit : MonoBehaviour {
 	public float Health;
-	private float fullHealth;
+	public float FullHealth;
 	
 	[HideInInspector] 
 	public bool stunned = false;
@@ -41,7 +41,7 @@ public abstract class BaseUnit : MonoBehaviour {
 		var s = new Vector3(HealthBarWidth, 1f, 0.01f);
 		HealthBar.transform.localScale = s;
 
-		fullHealth = Health;
+		FullHealth = Health;
 
 	}
 
@@ -54,7 +54,7 @@ public abstract class BaseUnit : MonoBehaviour {
 		HealthBar.transform.LookAt(Camera.main.transform);
 		HealthBar.transform.Rotate(Vector3.left, -90f);
 		var s = HealthBar.transform.localScale;
-		s.x = HealthBarWidth * Health / fullHealth;
+		s.x = HealthBarWidth * Health / FullHealth;
 		HealthBar.transform.localScale = s;
 	}
 
@@ -73,7 +73,7 @@ public abstract class BaseUnit : MonoBehaviour {
 
 	public void Heal(float healAmount) {
 		if (!dead) {
-			Health = Mathf.Min(fullHealth, Health + healAmount);
+			Health = Mathf.Min(FullHealth, Health + healAmount);
 		}
 	}
 
