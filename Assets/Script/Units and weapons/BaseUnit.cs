@@ -132,5 +132,14 @@ public abstract class BaseUnit : MonoBehaviour {
 			w.AddEffect(effect);
 	}
 
+	public List<Effect> GetEffectsFromWeapons() {
+		return GetComponentInChildren<Weapon>().AttackEffects;
+	}
+
+	public void RemoveEffectFromWeapon(Effect effect) {
+		foreach(var weapon in GetComponentsInChildren<Weapon>())
+			weapon.AttackEffects.Remove(effect);
+	}
+
 	public abstract void SetMovementSpeedBuff(float movementSpeedBuff);
 }

@@ -20,17 +20,21 @@ public class SpiritImmortal : SpiritPower
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Activating" + this.GetType());
-
-		immortalitySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		immortalitySphere.transform.position = otherHero.transform.position + Vector3.up;
-		immortalitySphere.transform.localScale *= 2f;
-		immortalitySphere.collider.enabled = false;
-		immortalitySphere.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
-		immortalitySphere.renderer.material.SetColor("_Color", new Color(0f, 1f, 1f, 0.5f));
+		immortalitySphere = CreateShieldMesh(new Color(0f, 1f, 1f, 0.5f), otherHero.transform);
 
 		otherHero.immortal = true;
 		
 		return null;
+	}
+	public static GameObject CreateShieldMesh(Color color, Transform trans) {
+		var shieldMesh = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		shieldMesh.transform.position = trans.position + Vector3.up;
+		shieldMesh.transform.localScale *= 2f;
+		shieldMesh.collider.enabled = false;
+		shieldMesh.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
+		shieldMesh.renderer.material.SetColor("_Color", color);
+
+		return shieldMesh;
 	}
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{

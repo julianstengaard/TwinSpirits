@@ -261,21 +261,29 @@ public class Hero : BaseUnit {
 	
 	private void DropSpiritPower()
 	{
-		if (currentSpiritPower.GetType() == typeof(SpiritBungie)) {
-			GameObject.Instantiate(Resources.Load("CollectSpiritBungie"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+		var res = Resources.Load("Collect"+currentSpiritPower.GetType().ToString());
+		if(res == null) {
+			Debug.Log ("Unable to load " + currentSpiritPower.GetType());
+			return;
 		}
-		if (currentSpiritPower.GetType() == typeof(SpiritImmortal)) {
-			GameObject.Instantiate(Resources.Load("CollectSpiritImmortal"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
-		}
-		if (currentSpiritPower.GetType() == typeof(SpiritRegenHP)) {
-			GameObject.Instantiate(Resources.Load("CollectSpiritRegenHP"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
-		}
-		if (currentSpiritPower.GetType() == typeof(SpiritSpeedBoost)) {
-			GameObject.Instantiate(Resources.Load("CollectSpiritSpeedBoost"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
-		}
-		if (currentSpiritPower.GetType() == typeof(SpiritLightning)) {
-			GameObject.Instantiate(Resources.Load("CollectSpiritLightning"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
-		}
+
+		GameObject.Instantiate(res, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+
+//		if (currentSpiritPower.GetType() == typeof(SpiritBungie)) {
+//			GameObject.Instantiate(Resources.Load("CollectSpiritBungie"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+//		}
+//		if (currentSpiritPower.GetType() == typeof(SpiritImmortal)) {
+//			GameObject.Instantiate(Resources.Load("CollectSpiritImmortal"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+//		}
+//		if (currentSpiritPower.GetType() == typeof(SpiritRegenHP)) {
+//			GameObject.Instantiate(Resources.Load("CollectSpiritRegenHP"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+//		}
+//		if (currentSpiritPower.GetType() == typeof(SpiritSpeedBoost)) {
+//			GameObject.Instantiate(Resources.Load("CollectSpiritSpeedBoost"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+//		}
+//		if (currentSpiritPower.GetType() == typeof(SpiritLightning)) {
+//			GameObject.Instantiate(Resources.Load("CollectSpiritLightning"), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+//		}
 	}
 	
 	public void ChangeSpiritAmount(float spiritAmount)
@@ -303,7 +311,6 @@ public class Hero : BaseUnit {
 		SoundController.PlayRandomSound("Footstep");
 	}
 	public void SwordSound() {
-		Debug.Log("SWORD");
 		SoundController.PlayRandomSound("SwordSwing");
 
 	}

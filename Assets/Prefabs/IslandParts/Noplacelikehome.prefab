@@ -62,7 +62,7 @@ GameObject:
   - 33: {fileID: 3300006}
   - 23: {fileID: 2300006}
   - 64: {fileID: 6400000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Noplacelikehome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2063,7 +2063,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: -.00599748129, z: 0, w: -.999982059}
-  m_LocalPosition: {x: 295.850372, y: 13.9551611, z: -564.165161}
+  m_LocalPosition: {x: 362.157532, y: 26.6597424, z: -558.524048}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400252}
@@ -3365,9 +3365,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100220}
-  m_LocalRotation: {x: -1.80996255e-06, y: .00599748129, z: -1.08554117e-08, w: -.999982059}
-  m_LocalPosition: {x: -1.33432949, y: .0739006475, z: -3.66940641}
-  m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
+  m_LocalRotation: {x: -8.35765491e-07, y: .892484963, z: 1.6054845e-06, w: -.451077253}
+  m_LocalPosition: {x: 4.08522224, y: .0738907531, z: -.908388615}
+  m_LocalScale: {x: .379153818, y: .379153788, z: .379153818}
   m_Children: []
   m_Father: {fileID: 400006}
 --- !u!4 &400222
@@ -3376,9 +3376,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100222}
-  m_LocalRotation: {x: -1.80996255e-06, y: .00599748129, z: -1.08554117e-08, w: -.999982059}
+  m_LocalRotation: {x: -1.76763581e-06, y: .226775333, z: 3.89288033e-07, w: -.973947167}
   m_LocalPosition: {x: -3.2246449, y: .0620186925, z: -1.66470015}
-  m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
+  m_LocalScale: {x: .443538427, y: .443538398, z: .443538427}
   m_Children: []
   m_Father: {fileID: 400006}
 --- !u!4 &400224
@@ -3387,9 +3387,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100224}
-  m_LocalRotation: {x: -1.80996255e-06, y: .00599748129, z: -1.08554117e-08, w: -.999982059}
-  m_LocalPosition: {x: 1.69562626, y: .0419388898, z: -4.16692972}
-  m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
+  m_LocalRotation: {x: -6.52147037e-07, y: -.928446412, z: -1.6884278e-06, w: -.371466428}
+  m_LocalPosition: {x: 1.69562078, y: .0419388898, z: -4.16692972}
+  m_LocalScale: {x: .31686452, y: .316864491, z: .31686452}
   m_Children: []
   m_Father: {fileID: 400006}
 --- !u!4 &400226
@@ -3398,8 +3398,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100226}
-  m_LocalRotation: {x: -1.80996255e-06, y: .00599748129, z: -1.08554117e-08, w: -.999982059}
-  m_LocalPosition: {x: 3.75786805, y: .0813671276, z: -1.55402029}
+  m_LocalRotation: {x: -1.51546101e-06, y: -.536701918, z: -9.89677005e-07, w: -.843771935}
+  m_LocalPosition: {x: -1.71874011, y: .0813756511, z: -3.95913935}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
   m_Children: []
   m_Father: {fileID: 400006}
@@ -3409,7 +3409,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100228}
-  m_LocalRotation: {x: -1.80996255e-06, y: .00599748129, z: -1.08554117e-08, w: -.999982059}
+  m_LocalRotation: {x: -1.80971688e-06, y: .0295198243, z: 3.17259428e-08, w: -.99956423}
   m_LocalPosition: {x: -2.4135654, y: -.143353075, z: 4.44431305}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
   m_Children: []
@@ -4872,7 +4872,7 @@ MonoBehaviour:
   dead: 0
   immortal: 0
   damageLocked: 0
-  currentSpiritAmount: 0
+  currentSpiritAmount: 100
   currentSpiritPower: {fileID: 0}
   spiritActive: 0
   spiritSyncActive: 0
@@ -4946,7 +4946,7 @@ MonoBehaviour:
   dead: 0
   immortal: 0
   damageLocked: 0
-  currentSpiritAmount: 0
+  currentSpiritAmount: 100
   currentSpiritPower: {fileID: 0}
   spiritActive: 0
   spiritSyncActive: 0
@@ -5193,7 +5193,7 @@ Projector:
   m_Material: {fileID: 2100000, guid: a9cdb98423c19412bbac43b1fb623c48, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 4294966783
 --- !u!119 &11900002
 Projector:
   m_ObjectHideFlags: 1
@@ -5211,7 +5211,7 @@ Projector:
   m_Material: {fileID: 2100000, guid: c191a215abd2146c2b51f7908d972872, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 4294966783
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
