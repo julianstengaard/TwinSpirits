@@ -26,40 +26,40 @@ public class SpiritBungie : SpiritPower
 	/* BEGIN REGULAR POWER */
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
-		CreateBungieLink(sourceHero, otherHero, "SpiritLinkChain");
+		CreateBungieLink(otherHero, sourceHero, "SpiritLinkChain");
 
-		Debug.Log("Activating" + this.GetType());
+		//Debug.Log("Activating" + this.GetType());
 
-		heroCC = sourceHero.GetComponent<CharacterController>();
+		heroCC = otherHero.GetComponent<CharacterController>();
 
 		currentBungieTime = 0;
-		initialPosition = sourceHero.transform.position;
-		Vector3 directionToBungie = GetBungieMovement(currentBungieTime, initialPosition, otherHero.transform.position - initialPosition, durationToBungie);
-		heroCC.Move(directionToBungie - sourceHero.transform.position);
+		initialPosition = otherHero.transform.position;
+		Vector3 directionToBungie = GetBungieMovement(currentBungieTime, initialPosition, sourceHero.transform.position - initialPosition, durationToBungie);
+		heroCC.Move(directionToBungie - otherHero.transform.position);
 
 		return null;
 	}
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{
-		if ((sourceHero.transform.position - otherHero.transform.position).magnitude > closestDistance)
+		if ((otherHero.transform.position - sourceHero.transform.position).magnitude > closestDistance)
 		{
-			UpdateBungieLink(sourceHero, otherHero);
+			UpdateBungieLink(otherHero, sourceHero);
 			currentBungieTime = Mathf.Clamp(currentBungieTime + Time.deltaTime, 0, durationToBungie);
-			Vector3 directionToBungie = GetBungieMovement(currentBungieTime, initialPosition, otherHero.transform.position - initialPosition, durationToBungie);
-			heroCC.Move(directionToBungie - sourceHero.transform.position);
+			Vector3 directionToBungie = GetBungieMovement(currentBungieTime, initialPosition, sourceHero.transform.position - initialPosition, durationToBungie);
+			heroCC.Move(directionToBungie - otherHero.transform.position);
 		}
 		else
 		{
 			link.renderer.enabled = false;
 			currentBungieTime = 0;
-			initialPosition = sourceHero.transform.position;
+			initialPosition = otherHero.transform.position;
 		}
 
 		return null;
 	}
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Deactivating" + this.GetType());
+		//Debug.Log("Deactivating" + this.GetType());
 		DestroyBungieLink (0f);
 		return null;
 	}
@@ -70,7 +70,7 @@ public class SpiritBungie : SpiritPower
 	/* BEGIN SYNC POWER */
 	public override bool OnPotentialSync (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Potential" + this.GetType() + " sync power!");
+		//Debug.Log("Potential" + this.GetType() + " sync power!");
 		potentialSyncTime = Time.time;
 		
 		//If other Hero has pressed already
@@ -86,17 +86,20 @@ public class SpiritBungie : SpiritPower
 		}
 		
 	}
-	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
-		Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
+		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
 		CreateBungieLink(sourceHero, otherHero, "SpiritLinkRay");
 
-		//Pay for activation
-		sourceHero.ChangeSpiritAmount(-costActivateSync);
-		otherHero.ChangeSpiritAmount(-costActivateSync);
-		
-		//Stop other Heros effect
-		otherHero.SwitchToSyncPower();
+        if (!secondSync)
+        {
+            //Pay for activation
+            sourceHero.ChangeSpiritAmount(-costActivateSync);
+            otherHero.ChangeSpiritAmount(-costActivateSync);
+
+            //Stop other Heros effect
+            otherHero.SwitchToSyncPower();
+        }
 
 		StartCoroutine(DeathRay(sourceHero, otherHero));
 
@@ -142,18 +145,6 @@ public class SpiritBungie : SpiritPower
 	{
 		//float t = time / (duration/2f);
 		return -changeValue/2 * (Mathf.Cos(Mathf.PI*time/duration) - 1) + startValue;
-
-		/*
-		if (t < 1f) 
-		{
-			return changeValue * t + startValue;
-		}
-		t -= 2f;
-		return changeValue/2f * (t*t*t*t*t + 2f) + startValue;
-		*/
-		/*float t = time / (duration/2f);
-		t -= 1f;
-		return changeValue * (t*t*t*t*t + 1f) + startValue;*/
 	}
 
 	private void CreateBungieLink (Hero sourceHero, Hero otherHero, string prefab)

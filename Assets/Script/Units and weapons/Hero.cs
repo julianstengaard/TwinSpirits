@@ -28,7 +28,11 @@ public class Hero : BaseUnit {
 	
 	public float CollectRadius;
 
+	private float spiritRegen = 0f;
+
 	private RAINAspect aspect;
+
+	private RandomSoundPlayer SoundController;
 
 	// METHODS -----
 
@@ -45,6 +49,14 @@ public class Hero : BaseUnit {
 		currentSpiritPower = gameObject.AddComponent<SpiritSpeedBoost>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
+
+		//Search for menu settings
+		GameObject levelInfo = GameObject.Find("LevelCreationInfo");
+		if (levelInfo != null) {
+			spiritRegen = levelInfo.GetComponent<LevelCreationInfo>().spiritRegen;
+		}
+
+		SoundController = GetComponent<RandomSoundPlayer>();
 	}
 
 	// Update is called once per frame
@@ -55,14 +67,14 @@ public class Hero : BaseUnit {
 			return;
 
 		//Revive comrade if close!
-		if (otherPlayer.dead && Health > 2f) {
-			if ((transform.position - otherPlayer.transform.position).magnitude < 2f) {
-				otherPlayer.Revived(Health/2f);
-				Health /= 2f;
+		if (otherPlayer.dead && Health >= 2f) {
+			if ((transform.position - otherPlayer.transform.position).magnitude < 2f)
+			{
+			    float transferedHealth = Mathf.Floor(Health/2f);
+                otherPlayer.Revived(transferedHealth);
+                Health -= transferedHealth;
 			}
 		}
-
-		//ChangeSpiritAmount(10 * Time.deltaTime); // Debug code to generate Spirit
 
 		if(_input == null)
 			return;
@@ -107,7 +119,33 @@ public class Hero : BaseUnit {
 
 		UpdateSpiritLink();
 		UpdateCollection();
+
+		//If auto spirit regen is on
+		if (spiritRegen > 0f) {
+			ChangeSpiritAmount(spiritRegen * Time.deltaTime);
+		}
 	}
+
+    public override void TakeDamage(float damage)
+    {
+        if (!immortal && !damageLocked)
+        {
+            Health = Mathf.Max(0, Health - damage);
+            _anim.SetTrigger("Damaged");
+
+            damageLocked = true;
+            StartCoroutine(DamageLockTimeout(1f));
+
+            if (Health <= 0 && !dead)
+                Died();
+        }
+    }
+
+    private IEnumerator DamageLockTimeout(float t)
+    {
+        yield return new WaitForSeconds(t);
+        damageLocked = false;
+    }
 
 	protected override void Died () {
 		dead = true;
@@ -117,7 +155,7 @@ public class Hero : BaseUnit {
 
 	public void Revived (float health) {
 		dead = false;
-		Health = health;
+		Health = Mathf.Min(health, FullHealth);
 		GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_Color", new Color(156/255f, 156/255f, 156/255f));
 		aspect.IsActive = true;
 	}
@@ -171,7 +209,7 @@ public class Hero : BaseUnit {
 			return;
 		
 		//Sync spirit power
-		if (currentSpiritAmount >= currentSpiritPower.GetCostActivateSync() && currentSpiritPower.GetType() == otherPlayer.currentSpiritPower.GetType())
+		if (currentSpiritAmount >= currentSpiritPower.GetCostActivateSync())
 		{
 			spiritSyncActive = currentSpiritPower.OnPotentialSync(this, otherPlayer);
 		}
@@ -207,6 +245,8 @@ public class Hero : BaseUnit {
 	public void SwitchToSyncPower()
 	{
 		DeactivateSpiritPower();
+        currentSpiritPower.OnActivateSync(this, otherPlayer, true);
+        currentSpiritPower.syncActive = true;
 		spiritSyncActive = true;
 	}
 	
@@ -257,5 +297,14 @@ public class Hero : BaseUnit {
 
 	public override void SetMovementSpeedBuff (float movementSpeedBuff)	{
 		throw new System.NotImplementedException ();
+	}
+
+	public void StepSound() {
+		SoundController.PlayRandomSound("Footstep");
+	}
+	public void SwordSound() {
+		Debug.Log("SWORD");
+		SoundController.PlayRandomSound("SwordSwing");
+
 	}
 }

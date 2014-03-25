@@ -421,6 +421,8 @@ GameObject:
   - 114: {fileID: 11400022}
   - 95: {fileID: 9500000}
   - 143: {fileID: 14300000}
+  - 114: {fileID: 11400058}
+  - 82: {fileID: 8200000}
   m_Layer: 10
   m_Name: Player2
   m_TagString: Player
@@ -1103,6 +1105,8 @@ GameObject:
   - 114: {fileID: 11400028}
   - 95: {fileID: 9500002}
   - 143: {fileID: 14300002}
+  - 114: {fileID: 11400060}
+  - 82: {fileID: 8200002}
   m_Layer: 10
   m_Name: Player1
   m_TagString: Player
@@ -2059,7 +2063,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: -.00599748129, z: 0, w: -.999982059}
-  m_LocalPosition: {x: 266.466431, y: 35.0167847, z: -610.859009}
+  m_LocalPosition: {x: 295.850372, y: 13.9551611, z: -564.165161}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400252}
@@ -2358,7 +2362,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
   m_LocalRotation: {x: 0, y: -.0111738676, z: 0, w: -.999937594}
-  m_LocalPosition: {x: .0837297514, y: .114431389, z: -1.37408316}
+  m_LocalPosition: {x: .9607265, y: .114431389, z: -1.36356318}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
   m_Children:
   - {fileID: 400074}
@@ -2406,7 +2410,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100060}
-  m_LocalRotation: {x: -.333181769, y: .90969795, z: -.106434524, w: -.223855138}
+  m_LocalRotation: {x: -.333181798, y: .909698009, z: -.106434532, w: -.223855153}
   m_LocalPosition: {x: .101299509, y: .0375674255, z: -.0632802248}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -2475,7 +2479,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100072}
-  m_LocalRotation: {x: -.333181769, y: .90969795, z: -.106434524, w: -.223855138}
+  m_LocalRotation: {x: -.333181798, y: .909698009, z: -.106434532, w: -.223855153}
   m_LocalPosition: {x: .101299509, y: .0375674255, z: -.0632802248}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -2898,7 +2902,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100142}
   m_LocalRotation: {x: 0, y: .00599748129, z: -0, w: -.999982059}
-  m_LocalPosition: {x: .974490047, y: .0959494039, z: -1.39248013}
+  m_LocalPosition: {x: -.0113304639, y: .0959494039, z: -1.40430558}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
   m_Children:
   - {fileID: 400176}
@@ -4525,6 +4529,132 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100052}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: .181999996
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: -4.12606192
+      outSlope: -4.12606192
+      tangentMode: 0
+    - time: .072868526
+      value: .288501173
+      inSlope: -.40024519
+      outSlope: -.40024519
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -1.54478121
+      outSlope: -1.54478121
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8200002
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100142}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: .181999996
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: -4.12606192
+      outSlope: -4.12606192
+      tangentMode: 0
+    - time: .072868526
+      value: .288501173
+      inSlope: -.40024519
+      outSlope: -.40024519
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -1.54478121
+      outSlope: -1.54478121
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -4731,7 +4861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946f1ad5ec3cd45ddb2c8dc8b5daa5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 6
+  FullHealth: 0
   stunned: 0
   stunTimeout: 0
   MovementSpeed: 5
@@ -4740,6 +4871,7 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
+  damageLocked: 0
   currentSpiritAmount: 0
   currentSpiritPower: {fileID: 0}
   spiritActive: 0
@@ -4803,7 +4935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946f1ad5ec3cd45ddb2c8dc8b5daa5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 6
+  FullHealth: 0
   stunned: 0
   stunTimeout: 0
   MovementSpeed: 5
@@ -4812,6 +4945,7 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
+  damageLocked: 0
   currentSpiritAmount: 0
   currentSpiritPower: {fileID: 0}
   spiritActive: 0
@@ -5000,6 +5134,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d31b44d72fba14a8dee22b1c3b79d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8944ba0bdc1446f7800e24f1efb01a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Footstep
+    Sounds:
+    - {fileID: 8300000, guid: 869942c8c6a9b4a3ca1b12c01ff57e53, type: 3}
+    - {fileID: 8300000, guid: 8cb41e21af2c443e28141bf8541dc6ad, type: 3}
+  - Name: SwordSwing
+    Sounds:
+    - {fileID: 8300000, guid: 1d7b73153dcc2440c94fa0d4d5678bc5, type: 3}
+    - {fileID: 8300000, guid: d2b7a6989a337411eb30b99171e454f9, type: 3}
+    - {fileID: 8300000, guid: e03cfc4f381fb4343970302a50e43c92, type: 3}
+--- !u!114 &11400060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8944ba0bdc1446f7800e24f1efb01a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Footstep
+    Sounds:
+    - {fileID: 8300000, guid: 869942c8c6a9b4a3ca1b12c01ff57e53, type: 3}
+    - {fileID: 8300000, guid: 8cb41e21af2c443e28141bf8541dc6ad, type: 3}
+  - Name: SwordSwing
+    Sounds:
+    - {fileID: 8300000, guid: 1d7b73153dcc2440c94fa0d4d5678bc5, type: 3}
+    - {fileID: 8300000, guid: d2b7a6989a337411eb30b99171e454f9, type: 3}
+    - {fileID: 8300000, guid: e03cfc4f381fb4343970302a50e43c92, type: 3}
 --- !u!119 &11900000
 Projector:
   m_ObjectHideFlags: 1

@@ -5,9 +5,11 @@ public class SlowdownMovementSpeed : Effect
 {
 	private float slowAmount = 2f;
 	private float duration = 2f;
+	private float hitChance;
 
-	public SlowdownMovementSpeed(float slowAmount, float duration) {
+	public SlowdownMovementSpeed(float slowAmount, float duration, float hitChance = 1) {
 		this.slowAmount = slowAmount;
+		this.hitChance = hitChance;
 	}
 
 	public override void DoEffect (BaseUnit target, GameObject source, Vector3 attackPosition, ref float damage)
@@ -17,9 +19,11 @@ public class SlowdownMovementSpeed : Effect
 
 	public override IEnumerator DoEffectCoroutine (BaseUnit target, GameObject source, Vector3 attackPosition)
 	{
-		target.movementSpeedBuff -= slowAmount;
-		yield return new WaitForSeconds(duration);
-		target.movementSpeedBuff += slowAmount;
+		if(Random.Range(0f, 1f) < hitChance) {
+			target.SetMovementSpeedBuff(-slowAmount);
+			yield return new WaitForSeconds(duration);
+			target.SetMovementSpeedBuff(slowAmount);
+		}
 		
 		yield return null;
 	}

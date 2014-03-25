@@ -12,7 +12,7 @@ public class BaseEnemy : BaseUnit {
 	private bool isQuiting;
 
 	protected AIRig ai;
-
+	protected RandomSoundPlayer _randomSounds;
 
 	private new void Start() {
 		base.Start();
@@ -20,6 +20,22 @@ public class BaseEnemy : BaseUnit {
 
 		ai = GetComponentInChildren<AIRig>();
 		ai.AI.Motor.DefaultSpeed = MovementSpeed;
+
+		StartCoroutine(PlayWhenSoundReady());
+
+	}
+
+	private IEnumerator PlayWhenSoundReady() {
+		//Wait a bit becasue Unity is slow :P
+		for (int i = 0; i < 5; i++) {
+			yield return new WaitForFixedUpdate();
+			if (_randomSounds == null) {
+				_randomSounds = GetComponent<RandomSoundPlayer>();
+			} else {
+				break;
+			}
+		}
+		_randomSounds.PlayRandomSound("Warcry");
 	}
 
 	private void OnApplicationQuit() {
@@ -29,6 +45,12 @@ public class BaseEnemy : BaseUnit {
 	private void OnDestroy() {
 		if(!isQuiting)
 			OnDeath();
+	}
+
+	protected override void Died() {
+		var timeToDeath = _randomSounds.PlayRandomSound("Death") + 0.5f;
+		dead = true;
+		GameObject.Destroy(gameObject, timeToDeath);
 	}
 
 	private void OnDeath() {

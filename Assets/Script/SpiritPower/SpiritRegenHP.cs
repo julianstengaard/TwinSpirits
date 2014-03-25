@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class SpiritRegenHP : SpiritPower {
-	private float regenPerSecond = 10f;
+	private float regenPerSecond = 1f;
 	private float regenPerSync	 = 100f;
 
 	private Color healthBarDefaultColor;
@@ -46,7 +46,7 @@ public class SpiritRegenHP : SpiritPower {
 	/* BEGIN SYNC POWER */
 	public override bool OnPotentialSync (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Potential" + this.GetType() + " sync power!");
+		//Debug.Log("Potential" + this.GetType() + " sync power!");
 		potentialSyncTime = Time.time;
 		
 		//If other Hero has pressed already
@@ -62,17 +62,20 @@ public class SpiritRegenHP : SpiritPower {
 		}
 		
 	}
-	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero)
+    public override IEnumerator OnActivateSync(Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
-		Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
-		
-		//Pay for activation
-		sourceHero.ChangeSpiritAmount(-costActivateSync);
-		otherHero.ChangeSpiritAmount(-costActivateSync);
-		
-		//Stop other Heros effect
-		otherHero.SwitchToSyncPower();
-		
+		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
+
+        if (!secondSync)
+        {
+            //Pay for activation
+            sourceHero.ChangeSpiritAmount(-costActivateSync);
+            otherHero.ChangeSpiritAmount(-costActivateSync);
+
+            //Stop other Heros effect
+            otherHero.SwitchToSyncPower();
+        }
+
 		//Heal both players
 		otherHero.Heal(regenPerSync);
 		sourceHero.Heal(regenPerSync);
