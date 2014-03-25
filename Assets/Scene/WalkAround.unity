@@ -663,7 +663,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: b42d9ccd8deb74bc5a0ca4e45993bc89, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .202000007
+  m_Volume: .829999983
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1114,6 +1114,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: mazeLength
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
@@ -1700,7 +1704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeWidth: 10
   mazeHeight: 10
-  mazeLength: 2
+  mazeLength: 24
   maxPathIterationLenght: 2
   cellSpacing: 60
   cellSize: 40
