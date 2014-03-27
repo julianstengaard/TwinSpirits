@@ -31,6 +31,8 @@ public class SpiritMeterUI : MonoBehaviour {
     private Vector3 p2Zero      = new Vector3(-0.05f, 0f, 0.001f);
 
 	private bool playersFound = false;
+	private bool animatingSpiritPowerP1 = false;
+	private bool animatingSpiritPowerP2 = false;
 
 	// Use this for initialization
 	void Start () 
@@ -118,22 +120,37 @@ public class SpiritMeterUI : MonoBehaviour {
 
 	private void UpdateSpiritPowerIcon(Hero player, GameObject icon)
 	{
+		int playerNumber = player.name == "Player1" ? 1 : 2;
+
+		//Stop if player has no power
 	    if (player.currentSpiritPower == null) {
             return;
 	    }
-		var previous = player.name == "Player1" ? p1SpiritPrevious : p2SpiritPrevious;
+		//Stop if already animating this player
+		if (playerNumber == 1 ? animatingSpiritPowerP1 : animatingSpiritPowerP2) {
+			return;
+		}
 
+		//Which player should we check agianst
+		var previous = playerNumber == 1 ? p1SpiritPrevious : p2SpiritPrevious;
+
+		//Stop if no change to spirit power since last time
 		if (player.currentSpiritPower.GetType() == previous) {
 			return;
 		}
-		if (player.name == "Player1") 
-			p1SpiritPrevious = player.currentSpiritPower.GetType();
-		else
-			p2SpiritPrevious = player.currentSpiritPower.GetType();
 
+		//Update previous power to current one
+		if (playerNumber == 1) {
+			p1SpiritPrevious = player.currentSpiritPower.GetType();
+		} else if (playerNumber == 2) {
+			p2SpiritPrevious = player.currentSpiritPower.GetType();
+		}
+
+		//Clone the old icon, so we can throw it away
 		var oldIcon = (GameObject) Instantiate(icon, icon.transform.position, icon.transform.rotation);
 		oldIcon.transform.parent = icon.transform.parent;
 
+		//Update with the new icon
 	    if (player.currentSpiritPower.GetType() == typeof(SpiritSpeedBoost)) {
 			icon.renderer.material = SpiritSpeedBoostIcon;
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritBungie)) {
@@ -146,11 +163,18 @@ public class SpiritMeterUI : MonoBehaviour {
 			icon.renderer.material = SpiritLightningIcon;
 		}
 
-		StartCoroutine(AnimateIconTransition(oldIcon, icon));
+		//Animate it
+		StartCoroutine(AnimateIconTransition(oldIcon, icon, playerNumber));
 	}
 
-	private IEnumerator AnimateIconTransition(GameObject oldIcon, GameObject newIcon) {
+	private IEnumerator AnimateIconTransition(GameObject oldIcon, GameObject newIcon, int playerNumber) {
 		float time = 0.8f;
+
+		if (playerNumber == 1)
+			animatingSpiritPowerP1 = true;
+		else if (playerNumber == 2)
+			animatingSpiritPowerP2 = true;
+
 		TweenParms oldIconTween = new TweenParms().Prop(
 			"localPosition", oldIcon.transform.localPosition + Vector3.back * 2f).Ease(
 			EaseType.EaseInOutExpo).Delay(0f);
@@ -166,6 +190,11 @@ public class SpiritMeterUI : MonoBehaviour {
 
 		yield return new WaitForSeconds(time);
 		Destroy(oldIcon);
+
+		if (playerNumber == 1)
+			animatingSpiritPowerP1 = false;
+		else if (playerNumber == 2)
+			animatingSpiritPowerP2 = false;
 	}
 
     public Hero GetPlayer(int i)

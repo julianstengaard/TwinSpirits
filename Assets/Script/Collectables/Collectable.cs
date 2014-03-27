@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 public abstract class Collectable : MonoBehaviour {
-	void Start() {
+	public virtual void Start() {
 		var x = Random.Range (-0.5f, 0.5f);
 		var z = Random.Range (-0.5f, 0.5f);
 		var y = Random.Range (1, 2);

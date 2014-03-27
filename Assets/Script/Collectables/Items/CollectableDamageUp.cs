@@ -3,6 +3,8 @@ using System.Collections;
 using System.Linq;
 
 public class CollectableDamageUp : Collectable {
+	public override void Start() {}
+
 	public override void Collected (Hero collector)	{
 		var weapons = collector.GetComponentsInChildren<Weapon>();
 		foreach(var w in weapons)
