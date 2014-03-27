@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Reflection;
+using Holoville.HOTween;
 
 public class SpiritMeterUI : MonoBehaviour {
 	private Hero Player1;
@@ -15,7 +17,9 @@ public class SpiritMeterUI : MonoBehaviour {
     public Material SyncOffIcon;
 
 	private GameObject p1Icon;
+	private System.Type p1SpiritPrevious;
 	private GameObject p2Icon;
+	private System.Type p2SpiritPrevious;
 
     private GameObject syncIcon;
 	private GameObject p1Meter;
@@ -49,7 +53,6 @@ public class SpiritMeterUI : MonoBehaviour {
 			UpdateSpiritMeter(1);
 			UpdateSpiritMeter(2);
 		    UpdateSyncIcon();
-            UpdateSpiritPowerIcons();
 		}
 	}
 
@@ -64,6 +67,7 @@ public class SpiritMeterUI : MonoBehaviour {
                if (player.name == "Player2")
                    Player2 = player.GetComponent<Hero>(); ;
 		    }
+			UpdateSpiritPowerIcons();
 			return true;
 		}
 		else {
@@ -117,6 +121,18 @@ public class SpiritMeterUI : MonoBehaviour {
 	    if (player.currentSpiritPower == null) {
             return;
 	    }
+		var previous = player.name == "Player1" ? p1SpiritPrevious : p2SpiritPrevious;
+
+		if (player.currentSpiritPower.GetType() == previous) {
+			return;
+		}
+		if (player.name == "Player1") 
+			p1SpiritPrevious = player.currentSpiritPower.GetType();
+		else
+			p2SpiritPrevious = player.currentSpiritPower.GetType();
+
+		var oldIcon = (GameObject) Instantiate(icon, icon.transform.position, icon.transform.rotation);
+		oldIcon.transform.parent = icon.transform.parent;
 
 	    if (player.currentSpiritPower.GetType() == typeof(SpiritSpeedBoost)) {
 			icon.renderer.material = SpiritSpeedBoostIcon;
@@ -129,6 +145,27 @@ public class SpiritMeterUI : MonoBehaviour {
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritLightning)) {
 			icon.renderer.material = SpiritLightningIcon;
 		}
+
+		StartCoroutine(AnimateIconTransition(oldIcon, icon));
+	}
+
+	private IEnumerator AnimateIconTransition(GameObject oldIcon, GameObject newIcon) {
+		float time = 0.8f;
+		TweenParms oldIconTween = new TweenParms().Prop(
+			"localPosition", oldIcon.transform.localPosition + Vector3.back * 2f).Ease(
+			EaseType.EaseInOutExpo).Delay(0f);
+		HOTween.To(oldIcon.transform, time, oldIconTween);
+
+		var destination = newIcon.transform.localPosition;
+		newIcon.transform.localPosition += Vector3.back * 2f;
+
+		TweenParms newIconTween = new TweenParms().Prop(
+			"localPosition", destination).Ease(
+			EaseType.EaseInOutExpo).Delay(0f);
+		HOTween.To(newIcon.transform, time, newIconTween);
+
+		yield return new WaitForSeconds(time);
+		Destroy(oldIcon);
 	}
 
     public Hero GetPlayer(int i)

@@ -253,7 +253,7 @@ public class Hero : BaseUnit {
 	public void ChangeSpiritPower(SpiritPower newPower)
 	{
 		DeactivateSpiritPower();
-		DropSpiritPower();
+		//DropSpiritPower();
 		Destroy(currentSpiritPower);
 		currentSpiritPower = newPower;
 		ui.UpdateSpiritPowerIcons();
