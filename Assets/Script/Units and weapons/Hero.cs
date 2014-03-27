@@ -46,7 +46,7 @@ public class Hero : BaseUnit {
 		weapons[1].AddEffect(eff);
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
-		currentSpiritPower = gameObject.AddComponent<SpiritSpeedBoost>();
+		currentSpiritPower = gameObject.AddComponent<SpiritFire>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
