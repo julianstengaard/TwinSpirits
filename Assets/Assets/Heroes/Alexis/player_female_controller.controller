@@ -89,6 +89,40 @@ BlendTree:
   m_MaxThreshold: 2
   m_UseAutomaticThresholds: 0
   m_BlendType: 0
+--- !u!206 &20628469
+BlendTree:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Blend Tree
+  m_Childs:
+  - m_Motion: {fileID: 7400008, guid: faf921a0df631482284de462d1c9e6b2, type: 3}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: .340000004
+    m_CycleOffset: 0
+    m_IsAnim: 1
+    m_Mirror: 0
+  - m_Motion: {fileID: 7400008, guid: faf921a0df631482284de462d1c9e6b2, type: 3}
+    m_Threshold: .300000012
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_IsAnim: 1
+    m_Mirror: 0
+  - m_Motion: {fileID: 7400008, guid: faf921a0df631482284de462d1c9e6b2, type: 3}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 3
+    m_CycleOffset: 0
+    m_IsAnim: 1
+    m_Mirror: 0
+  m_BlendParameter: MovementSpeed
+  m_BlendParameterY: MovementSpeed
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 0
+  m_BlendType: 0
 --- !u!1101 &110100000
 Transition:
   m_ObjectHideFlags: 3
@@ -271,13 +305,13 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110245220}
   m_DstState: {fileID: 110293677}
-  m_TransitionDuration: .178571358
+  m_TransitionDuration: .311498016
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
-    m_ExitTime: .819999993
+    m_ExitTime: .687073708
   - m_ConditionMode: 2
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
@@ -394,10 +428,10 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: walk_forward
-  m_Speed: 2.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400008, guid: faf921a0df631482284de462d1c9e6b2, type: 3}
+  - {fileID: 20628469}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 192, y: -48, z: 0}
   m_IKOnFeet: 0
@@ -522,12 +556,11 @@ StateMachine:
   - {fileID: 110219790}
   - {fileID: 110293677}
   - {fileID: 110261419}
-  - {fileID: 110252820}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110252820}
+      first: {fileID: 0}
       second: []
     data:
       first: {fileID: 110200000}

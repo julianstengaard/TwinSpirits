@@ -2014,7 +2014,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: -.00599748129, z: 0, w: -.999982059}
-  m_LocalPosition: {x: -1.62052488, y: 51.138855, z: -21.1541443}
+  m_LocalPosition: {x: -5.37975788, y: 51.4666634, z: -19.9210434}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400216}
@@ -3465,7 +3465,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100260}
   m_LocalRotation: {x: 0, y: .00599748129, z: -0, w: -.999982059}
-  m_LocalPosition: {x: 1.74935484, y: .0992630646, z: -1.35958326}
+  m_LocalPosition: {x: .139801621, y: .0992623791, z: -1.37889075}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
   m_Children:
   - {fileID: 400262}
@@ -3953,7 +3953,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100254}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .479999989, y: .100000001, z: .129999995}
@@ -4416,6 +4416,7 @@ MonoBehaviour:
   spiritSyncActive: 0
   otherPlayer: {fileID: 11400028}
   CollectRadius: 1
+  ExchangingSpiritPower: 0
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4460,7 +4461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34327c7620e614cba94f6c0f9984fdf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Body: {fileID: 0}
+  Body: {fileID: 100260}
   ImmuneTags: []
 --- !u!114 &11400028
 MonoBehaviour:
@@ -4491,6 +4492,7 @@ MonoBehaviour:
   spiritSyncActive: 0
   otherPlayer: {fileID: 11400022}
   CollectRadius: 1
+  ExchangingSpiritPower: 0
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5069,7 +5071,7 @@ CharacterController:
   m_Radius: .5
   m_SlopeLimit: 45
   m_StepOffset: .300000012
-  m_SkinWidth: .230000004
+  m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: .709999979, z: 0}
 --- !u!143 &14300002
@@ -5080,10 +5082,10 @@ CharacterController:
   m_GameObject: {fileID: 100260}
   serializedVersion: 2
   m_Height: 1.41999996
-  m_Radius: .5
+  m_Radius: .230000004
   m_SlopeLimit: 45
   m_StepOffset: .300000012
-  m_SkinWidth: .230000004
+  m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: .709999979, z: 0}
 --- !u!1001 &100100000
