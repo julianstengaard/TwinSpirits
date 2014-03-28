@@ -2228,7 +2228,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100028}
-  m_LocalRotation: {x: -.333181798, y: .909698069, z: -.106434539, w: -.223855168}
+  m_LocalRotation: {x: -.333181769, y: .90969795, z: -.106434524, w: -.223855138}
   m_LocalPosition: {x: .101299509, y: .0375674255, z: -.0632802248}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -2743,7 +2743,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100102}
-  m_LocalRotation: {x: -.333181798, y: .909698069, z: -.106434539, w: -.223855168}
+  m_LocalRotation: {x: -.333181769, y: .90969795, z: -.106434524, w: -.223855138}
   m_LocalPosition: {x: .101299509, y: .0375674255, z: -.0632802248}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -4143,7 +4143,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1fec020565736894485178b6983071ca, type: 2}
+  - {fileID: 2100000, guid: 2716fa144b0da4e278431a4ffb46ea85, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4185,7 +4185,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1fec020565736894485178b6983071ca, type: 2}
+  - {fileID: 2100000, guid: 2716fa144b0da4e278431a4ffb46ea85, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4410,7 +4410,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100200}
-  m_Mesh: {fileID: 4300000, guid: 6a0d3dc6b58dff84f958da3a8e6ce553, type: 3}
+  m_Mesh: {fileID: 4300000, guid: f173c3a1de1314a658d2fce2df4c5e80, type: 3}
 --- !u!33 &3300026
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -4424,7 +4424,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100204}
-  m_Mesh: {fileID: 4300000, guid: 6a0d3dc6b58dff84f958da3a8e6ce553, type: 3}
+  m_Mesh: {fileID: 4300000, guid: f173c3a1de1314a658d2fce2df4c5e80, type: 3}
 --- !u!33 &3300030
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -4815,12 +4815,14 @@ MonoBehaviour:
   dead: 0
   immortal: 0
   damageLocked: 0
+  PlayerSlot: 0
   currentSpiritAmount: 0
   currentSpiritPower: {fileID: 0}
   spiritActive: 0
   spiritSyncActive: 0
   otherPlayer: {fileID: 11400010}
   CollectRadius: 1
+  ExchangingSpiritPower: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4882,12 +4884,14 @@ MonoBehaviour:
   dead: 0
   immortal: 0
   damageLocked: 0
+  PlayerSlot: 0
   currentSpiritAmount: 0
   currentSpiritPower: {fileID: 0}
   spiritActive: 0
   spiritSyncActive: 0
   otherPlayer: {fileID: 11400002}
   CollectRadius: 1
+  ExchangingSpiritPower: 0
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
