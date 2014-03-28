@@ -46,7 +46,7 @@ public class Hero : BaseUnit {
 		AddEffectToWeapons(new Damage(15));
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
-		currentSpiritPower = gameObject.AddComponent<SpiritSpeedBoost>();
+		currentSpiritPower = gameObject.AddComponent<SpiritFire>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
@@ -255,7 +255,7 @@ public class Hero : BaseUnit {
 	public void ChangeSpiritPower(SpiritPower newPower)
 	{
 		DeactivateSpiritPower();
-		DropSpiritPower();
+		//DropSpiritPower();
 		Destroy(currentSpiritPower);
 		currentSpiritPower = newPower;
 		ui.UpdateSpiritPowerIcons();

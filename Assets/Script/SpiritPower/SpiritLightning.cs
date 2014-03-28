@@ -131,13 +131,13 @@ public class SpiritLightning : SpiritPower
 		BaseUnit previous = null;
 		foreach (BaseUnit target in chainedEnemies) {
 			target.TakeDamage(damageOnSync);
+			//First lightning
 			if (target == chainFrom) {
-				previous = target;
-			}
-			else {
+				linkChain.Add(CreateChainLink(source, target.transform.position, "SpiritLinkLightning"));
+			} else {
 				linkChain.Add(CreateChainLink(previous.transform.position, target.transform.position, "SpiritLinkLightning"));
-				previous = target;
 			}
+			previous = target;
 		}
 
 		//Remove the effects again
