@@ -17,13 +17,13 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		var ps = GameObject.FindGameObjectsWithTag("Player");
+		var ps = GameObject.FindObjectsOfType<Hero>();
 		if(ps.Length > 0) {
 			foreach(var player in ps) {
-				if (player.name == "Player1")
-					Player1 = player.GetComponent<Hero>();
-				else if (player.name == "Player2")
-					Player2 = player.GetComponent<Hero>();
+				if (player.PlayerSlot == Hero.Player.One)
+					Player1 = player;
+				else if (player.PlayerSlot == Hero.Player.Two)
+					Player2 = player;
 			}
 		}
 	}

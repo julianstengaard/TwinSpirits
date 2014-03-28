@@ -121,7 +121,7 @@ public class SpiritMeterUI : MonoBehaviour {
 
 	private void UpdateSpiritPowerIcon(Hero player, GameObject icon)
 	{
-		int playerNumber = player.name == "Player1" ? 1 : 2;
+		int playerNumber = player.PlayerSlot == Hero.Player.One ? 1 : 2;
 
 		//Stop if player has no power
 	    if (player.currentSpiritPower == null) {

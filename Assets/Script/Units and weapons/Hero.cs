@@ -82,7 +82,8 @@ public class Hero : BaseUnit {
 			return;
 
 		// MOVEMENT
-		var pos = new Vector3(_input.LeftStickX, 0, _input.LeftStickY);
+		var tPos = new Vector3(_input.LeftStickX, 0, _input.LeftStickY);
+		var pos = tPos.sqrMagnitude > 1 ? tPos.normalized : tPos;
 		var dir = pos * GetMoveSpeed() * Time.deltaTime;
 
 		_anim.SetBool("Attacking", _input.RightBumper);
@@ -90,7 +91,9 @@ public class Hero : BaseUnit {
 			MakeDangerous();
 		else
 			MakeInert();
-		_anim.SetBool ("Moving", dir.magnitude > 0);
+
+		_anim.SetBool ("Moving", dir.sqrMagnitude > 0);
+		_anim.SetFloat("MovementSpeed", pos.magnitude);
 
 		_cc.Move(dir);
 

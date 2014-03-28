@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: KnockBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec99d7063d23421785bcb6d7a4607dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dir: 1
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
