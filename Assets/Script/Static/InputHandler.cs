@@ -22,7 +22,6 @@ public class InputHandler : MonoBehaviour {
 		if(InputManager.ActiveDevice.Action1) {
 			var heroes = GameObject.FindObjectsOfType<Hero>();
 
-			print (heroes.Length);
 			foreach(var hero in heroes) {
 				if(!hero.IsControlled) {
 					hero.AttachInputDevice(InputManager.ActiveDevice);
