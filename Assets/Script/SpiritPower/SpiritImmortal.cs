@@ -4,33 +4,39 @@ using System.Collections;
 public class SpiritImmortal : SpiritPower 
 {
 	private GameObject immortalitySphere;
-	private GameObject pushSphere;
+	private GameObject pullSphere;
 
 	private CharacterController[] enemies;
 	private Vector3 center; 
-	private float knockbackPower = 200f; 
+	private float maxPullDistance = 10f; 
+	private float maxPullDistanceSqr; 
 	
 	void Start() {
 		costActivate 		=  10f;
 		costPerSecond 		=  10f;
 		costActivateSync 	= 100f;
+		maxPullDistanceSqr  = maxPullDistance * maxPullDistance; 
 	}
 	
 	/* BEGIN REGULAR POWER */
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Activating" + this.GetType());
-
-		immortalitySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		immortalitySphere.transform.position = otherHero.transform.position + Vector3.up;
-		immortalitySphere.transform.localScale *= 2f;
-		immortalitySphere.collider.enabled = false;
-		immortalitySphere.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
-		immortalitySphere.renderer.material.SetColor("_Color", new Color(0f, 1f, 1f, 0.5f));
+		immortalitySphere = CreateShieldMesh(new Color(0f, 1f, 1f, 0.5f), otherHero.transform);
 
 		otherHero.immortal = true;
 		
 		return null;
+	}
+	public static GameObject CreateShieldMesh(Color color, Transform trans) {
+		var shieldMesh = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		shieldMesh.transform.position = trans.position + Vector3.up;
+		shieldMesh.transform.localScale *= 2f;
+		shieldMesh.collider.enabled = false;
+		shieldMesh.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
+		shieldMesh.renderer.material.SetColor("_Color", color);
+
+		return shieldMesh;
 	}
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{
@@ -94,16 +100,7 @@ public class SpiritImmortal : SpiritPower
 
 		center = (sourceHero.transform.position + otherHero.transform.position) * 0.5f;
 
-		//Effect
-		pushSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		pushSphere.transform.position = center;
-		pushSphere.transform.localScale *= 10f;
-		pushSphere.collider.enabled = false;
-		pushSphere.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
-		pushSphere.renderer.material.SetColor("_Color", new Color(0f, 1f, 1f, 0.5f));
-		GameObject.Destroy(pushSphere, 0.5f);
-
-		StartCoroutine(KnockBackEnemies());
+		StartCoroutine(PullEnemies());
 		return null;
 	}
 	
@@ -112,13 +109,35 @@ public class SpiritImmortal : SpiritPower
 		return null;
 	}
 
-	IEnumerator KnockBackEnemies() {
-		yield return new WaitForFixedUpdate();
-		foreach (CharacterController enemy in enemies) {
-			//enemy.transform.position += (enemy.transform.position - center).normalized * (1f/i);
-			enemy.SimpleMove((enemy.transform.position - center).normalized * knockbackPower);
-		}			
+	IEnumerator PullEnemies() {
+		//Effect
+		pullSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		pullSphere.transform.position = center;
+		pullSphere.transform.localScale = Vector3.one * (maxPullDistance * 2f);
+		pullSphere.collider.enabled = false;
+		pullSphere.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
+		pullSphere.renderer.material.SetColor("_Color", new Color(0f, 1f, 1f, 0.5f));
 
+		yield return new WaitForFixedUpdate();
+
+		//Try to pull enemies over n ticks
+		int ticks = 10;
+		for (int i = 0; i < ticks; i++) {
+			pullSphere.transform.localScale = Vector3.Lerp(Vector3.one * (maxPullDistance * 2f), Vector3.one, i/(float) ticks);
+			foreach (CharacterController enemy in enemies) {
+				var offset = center - enemy.transform.position;
+				var sqrMagnitude = offset.sqrMagnitude;
+				if (sqrMagnitude > maxPullDistanceSqr) {
+					continue;
+				}
+				else if(sqrMagnitude > 1f) {
+					offset = offset.normalized;
+					enemy.Move(offset);
+				}
+			}
+			yield return new WaitForFixedUpdate();
+		}
+		GameObject.Destroy(pullSphere);
 		yield return null;
 	}
 	

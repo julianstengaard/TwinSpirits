@@ -10,7 +10,7 @@ public class RandomSoundPlayer : MonoBehaviour {
 	private AudioSource _source;
 	private bool ready = false;
 
-	void Start () {
+	void Awake () {
 		_source = GetComponent<AudioSource>();
 
 		if(_source == null) print("No audio source");

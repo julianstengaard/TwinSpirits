@@ -5,7 +5,7 @@ using RAIN.Core;
 using RAIN.Action;
 using RAIN.Representation;
 
-[RAINAction("Check for alive")]
+[RAINAction("Check for alive target")]
 public class AICheckDeath : RAINAction
 {
 	public Expression target;
@@ -22,7 +22,7 @@ public class AICheckDeath : RAINAction
 
     public override ActionResult Execute(AI ai)
     {
-		var unit = target.Evaluate(ai.DeltaTime, ai.WorkingMemory).GetValue<GameObject>().GetComponent<Hero>();
+		var unit = target.Evaluate(ai.DeltaTime, ai.WorkingMemory).GetValue<GameObject>().GetComponent<BaseUnit>();
 
 		if(unit != null) {
 			if(unit.dead)

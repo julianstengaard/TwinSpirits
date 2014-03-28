@@ -19,29 +19,32 @@ MonoBehaviour:
       name=&quot;Detect Hero&quot; entityobjectvariable=&quot;targetUnit&quot; aspectvariable=&quot;&quot;
       aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;twinhero&amp;quot;&quot;
       /&gt;&lt;sequencer usepriorities=&quot;False&quot; repeatuntil=&quot;failure&quot;
-      priority=&quot;&quot; name=&quot;sequencer&quot;&gt;&lt;move turnspeed=&quot;&quot;
-      repeatuntil=&quot;success&quot; priority=&quot;&quot; name=&quot;move&quot;
-      movetarget=&quot;targetUnit&quot; movespeed=&quot;&quot; facetarget=&quot;targetUnit&quot;
-      closeenoughdistance=&quot;7&quot; closeenoughangle=&quot;10&quot; /&gt;&lt;action
-      repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;dGFyZ2V0VW5pdA==&quot;
-      parameters=&quot;dGFyZ2V0&quot; namespace=&quot;(global)&quot; name=&quot;action&quot;
-      classname=&quot;AISavePosition&quot; /&gt;&lt;animate repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;animate&quot; animationstate=&quot;Attack&quot;
+      priority=&quot;&quot; name=&quot;sequencer&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+      priority=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
+      name=&quot;Is this alive&quot; classname=&quot;AIIsAlive&quot; /&gt;&lt;move
+      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Move
+      towards hero&quot; movetarget=&quot;targetUnit&quot; movespeed=&quot;&quot;
+      facetarget=&quot;targetUnit&quot; closeenoughdistance=&quot;7&quot; closeenoughangle=&quot;10&quot;
+      /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;dGFyZ2V0VW5pdA==&quot;
+      parameters=&quot;dGFyZ2V0&quot; namespace=&quot;(global)&quot; name=&quot;Save
+      hero position&quot; classname=&quot;AISavePosition&quot; /&gt;&lt;animate repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;Start animation&quot; animationstate=&quot;Attack&quot;
       /&gt;&lt;timer waitforsec=&quot;1&quot; returnvalue=&quot;success&quot; priority=&quot;&quot;
-      name=&quot;timer&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot;
-      priority=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;Attack_Roll&quot;
-      name=&quot;mecparam&quot; damptime=&quot;0&quot; /&gt;&lt;move turnspeed=&quot;&quot;
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move&quot; movetarget=&quot;targetPosition&quot;
+      name=&quot;Wait for animation to complete&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot;
+      repeatuntil=&quot;&quot; priority=&quot;&quot; parametertype=&quot;boolean&quot;
+      parametername=&quot;Attack_Roll&quot; name=&quot;Start rolling&quot; damptime=&quot;0&quot;
+      /&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+      name=&quot;Fast move towards to saved position&quot; movetarget=&quot;targetPosition&quot;
       movespeed=&quot;10&quot; facetarget=&quot;&quot; closeenoughdistance=&quot;&quot;
       closeenoughangle=&quot;&quot; /&gt;&lt;mecparam valueexpression=&quot;false&quot;
       repeatuntil=&quot;&quot; priority=&quot;&quot; parametertype=&quot;boolean&quot;
-      parametername=&quot;Attack_Roll&quot; name=&quot;mecparam&quot; damptime=&quot;0&quot;
+      parametername=&quot;Attack_Roll&quot; name=&quot;Stop rolling&quot; damptime=&quot;0&quot;
       /&gt;&lt;timer waitforsec=&quot;2&quot; returnvalue=&quot;success&quot; priority=&quot;&quot;
-      name=&quot;timer&quot; /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot;
-      parametervalues=&quot;dGFyZ2V0VW5pdA==&quot; parameters=&quot;dGFyZ2V0&quot;
-      namespace=&quot;(global)&quot; name=&quot;action&quot; classname=&quot;AICheckDeath&quot;
-      /&gt;&lt;/sequencer&gt;&lt;/sequencer&gt;&lt;/behaviortree&gt;" type="System.String"
-      id="treeData" /><field type="System.Array" id="treeBindings" elementtype="System.String"
-      /></fields><references /></scriptableobject>
+      name=&quot;Wait for 2 seconds before reattacking&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
+      priority=&quot;&quot; parametervalues=&quot;dGFyZ2V0VW5pdA==&quot; parameters=&quot;dGFyZ2V0&quot;
+      namespace=&quot;(global)&quot; name=&quot;Make sure the target's still alive&quot;
+      classname=&quot;AICheckDeath&quot; /&gt;&lt;/sequencer&gt;&lt;/sequencer&gt;&lt;/behaviortree&gt;"
+      type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
+      elementtype="System.String" /></fields><references /></scriptableobject>
     _serializedGameObjects: []
     _serializedCustomData: []

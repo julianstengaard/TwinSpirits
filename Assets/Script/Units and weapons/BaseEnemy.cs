@@ -20,22 +20,10 @@ public class BaseEnemy : BaseUnit {
 
 		ai = GetComponentInChildren<AIRig>();
 		ai.AI.Motor.DefaultSpeed = MovementSpeed;
-
-		StartCoroutine(PlayWhenSoundReady());
-
-	}
-
-	private IEnumerator PlayWhenSoundReady() {
-		//Wait a bit becasue Unity is slow :P
-		for (int i = 0; i < 5; i++) {
-			yield return new WaitForFixedUpdate();
-			if (_randomSounds == null) {
-				_randomSounds = GetComponent<RandomSoundPlayer>();
-			} else {
-				break;
-			}
-		}
+		
+		_randomSounds = GetComponent<RandomSoundPlayer>();
 		_randomSounds.PlayRandomSound("Warcry");
+
 	}
 
 	private void OnApplicationQuit() {

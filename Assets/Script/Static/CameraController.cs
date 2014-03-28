@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 	public bool singlePlayer;
+	public bool switchPlayer;
+
 	Hero Player1;
 	Hero Player2;
 
@@ -17,8 +19,12 @@ public class CameraController : MonoBehaviour {
 	void Start () {
 		var ps = GameObject.FindGameObjectsWithTag("Player");
 		if(ps.Length > 0) {
-			Player1 = ps[0].GetComponent<Hero>();
-			Player2 = ps[1].GetComponent<Hero>();
+			foreach(var player in ps) {
+				if (player.name == "Player1")
+					Player1 = player.GetComponent<Hero>();
+				else if (player.name == "Player2")
+					Player2 = player.GetComponent<Hero>();
+			}
 		}
 	}
 
@@ -30,8 +36,10 @@ public class CameraController : MonoBehaviour {
 			return;
 		}
 
-		if (singlePlayer) {
+		if (singlePlayer && !switchPlayer) {
 			target = Player1.transform.position;
+		} else if (singlePlayer && switchPlayer) {
+			target = Player2.transform.position;
 		} else if (!Player1.dead && !Player2.dead) {
 			target = (Player1.transform.position + Player2.transform.position) * 0.5f;
 		} else if (!Player1.dead && Player2.dead) {

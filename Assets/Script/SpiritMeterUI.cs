@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Reflection;
+using Holoville.HOTween;
 
 public class SpiritMeterUI : MonoBehaviour {
 	private Hero Player1;
@@ -10,12 +12,15 @@ public class SpiritMeterUI : MonoBehaviour {
 	public Material SpiritImmortalIcon;
 	public Material SpiritHPRegenIcon;
 	public Material SpiritLightningIcon;
+	public Material SpiritFireIcon;
 
     public Material SyncOnIcon;
     public Material SyncOffIcon;
 
 	private GameObject p1Icon;
+	private System.Type p1SpiritPrevious;
 	private GameObject p2Icon;
+	private System.Type p2SpiritPrevious;
 
     private GameObject syncIcon;
 	private GameObject p1Meter;
@@ -27,6 +32,8 @@ public class SpiritMeterUI : MonoBehaviour {
     private Vector3 p2Zero      = new Vector3(-0.05f, 0f, 0.001f);
 
 	private bool playersFound = false;
+	private bool animatingSpiritPowerP1 = false;
+	private bool animatingSpiritPowerP2 = false;
 
 	// Use this for initialization
 	void Start () 
@@ -49,7 +56,6 @@ public class SpiritMeterUI : MonoBehaviour {
 			UpdateSpiritMeter(1);
 			UpdateSpiritMeter(2);
 		    UpdateSyncIcon();
-            UpdateSpiritPowerIcons();
 		}
 	}
 
@@ -64,6 +70,7 @@ public class SpiritMeterUI : MonoBehaviour {
                if (player.name == "Player2")
                    Player2 = player.GetComponent<Hero>(); ;
 		    }
+			UpdateSpiritPowerIcons();
 			return true;
 		}
 		else {
@@ -114,10 +121,37 @@ public class SpiritMeterUI : MonoBehaviour {
 
 	private void UpdateSpiritPowerIcon(Hero player, GameObject icon)
 	{
+		int playerNumber = player.name == "Player1" ? 1 : 2;
+
+		//Stop if player has no power
 	    if (player.currentSpiritPower == null) {
             return;
 	    }
+		//Stop if already animating this player
+		if (playerNumber == 1 ? animatingSpiritPowerP1 : animatingSpiritPowerP2) {
+			return;
+		}
 
+		//Which player should we check agianst
+		var previous = playerNumber == 1 ? p1SpiritPrevious : p2SpiritPrevious;
+
+		//Stop if no change to spirit power since last time
+		if (player.currentSpiritPower.GetType() == previous) {
+			return;
+		}
+
+		//Update previous power to current one
+		if (playerNumber == 1) {
+			p1SpiritPrevious = player.currentSpiritPower.GetType();
+		} else if (playerNumber == 2) {
+			p2SpiritPrevious = player.currentSpiritPower.GetType();
+		}
+
+		//Clone the old icon, so we can throw it away
+		var oldIcon = (GameObject) Instantiate(icon, icon.transform.position, icon.transform.rotation);
+		oldIcon.transform.parent = icon.transform.parent;
+
+		//Update with the new icon
 	    if (player.currentSpiritPower.GetType() == typeof(SpiritSpeedBoost)) {
 			icon.renderer.material = SpiritSpeedBoostIcon;
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritBungie)) {
@@ -128,7 +162,42 @@ public class SpiritMeterUI : MonoBehaviour {
 			icon.renderer.material = SpiritHPRegenIcon;
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritLightning)) {
 			icon.renderer.material = SpiritLightningIcon;
+		} else if (player.currentSpiritPower.GetType() == typeof(SpiritFire)) {
+			icon.renderer.material = SpiritFireIcon;
 		}
+
+		//Animate it
+		StartCoroutine(AnimateIconTransition(oldIcon, icon, playerNumber));
+	}
+
+	private IEnumerator AnimateIconTransition(GameObject oldIcon, GameObject newIcon, int playerNumber) {
+		float time = 0.8f;
+
+		if (playerNumber == 1)
+			animatingSpiritPowerP1 = true;
+		else if (playerNumber == 2)
+			animatingSpiritPowerP2 = true;
+
+		TweenParms oldIconTween = new TweenParms().Prop(
+			"localPosition", oldIcon.transform.localPosition + Vector3.back * 2f).Ease(
+			EaseType.EaseInOutExpo).Delay(0f);
+		HOTween.To(oldIcon.transform, time, oldIconTween);
+
+		var destination = newIcon.transform.localPosition;
+		newIcon.transform.localPosition += Vector3.back * 2f;
+
+		TweenParms newIconTween = new TweenParms().Prop(
+			"localPosition", destination).Ease(
+			EaseType.EaseInOutExpo).Delay(0f);
+		HOTween.To(newIcon.transform, time, newIconTween);
+
+		yield return new WaitForSeconds(time);
+		Destroy(oldIcon);
+
+		if (playerNumber == 1)
+			animatingSpiritPowerP1 = false;
+		else if (playerNumber == 2)
+			animatingSpiritPowerP2 = false;
 	}
 
     public Hero GetPlayer(int i)

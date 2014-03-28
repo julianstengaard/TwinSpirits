@@ -12,6 +12,7 @@ public class SpiritBungie : SpiritPower
 	private Vector3 	initialPosition;
 
 	private float 		damageOnSync		=  100f;
+	private int			damageTicks			= 	10;
 
 	private CharacterController heroCC;
 
@@ -89,7 +90,7 @@ public class SpiritBungie : SpiritPower
 	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
-		CreateBungieLink(sourceHero, otherHero, "SpiritLinkRay");
+
 
         if (!secondSync)
         {
@@ -103,29 +104,33 @@ public class SpiritBungie : SpiritPower
 
 		StartCoroutine(DeathRay(sourceHero, otherHero));
 
-		DestroyBungieLink (0.5f);
 		return null;
 	}
 
 	IEnumerator DeathRay(Hero sourceHero, Hero otherHero)
 	{
-		yield return new WaitForFixedUpdate();
+		CreateBungieLink(sourceHero, otherHero, "SpiritLinkRay");
+		for (int i = 0; i < damageTicks; i++) {
+			UpdateBungieLink(sourceHero, otherHero);
+			yield return new WaitForFixedUpdate();
 
-		//Create the ray
-		Vector3 raycastDirection = (otherHero.transform.position - sourceHero.transform.position).normalized;
-		Vector3 raycastFrom 	 = sourceHero.transform.position - raycastDirection;
-		Vector3 raycastTo	 	 = otherHero.transform.position  + raycastDirection;
-		float	raycastDistance	 = (raycastFrom - raycastTo).magnitude;
+			//Create the ray
+			Vector3 raycastDirection = (otherHero.transform.position - sourceHero.transform.position).normalized;
+			Vector3 raycastFrom 	 = sourceHero.transform.position - raycastDirection;
+			Vector3 raycastTo	 	 = otherHero.transform.position  + raycastDirection;
+			float	raycastDistance	 = (raycastFrom - raycastTo).magnitude;
 
-		RaycastHit[] hits;
-		hits = Physics.SphereCastAll(raycastFrom, 2f, raycastDirection, raycastDistance, 1 << 8);
+			RaycastHit[] hits;
+			hits = Physics.SphereCastAll(raycastFrom, 2f, raycastDirection, raycastDistance, 1 << 8);
 
-		//Find enemies to do effect on
-		foreach (RaycastHit hit in hits) {
-			if (hit.collider.gameObject.tag == "Enemy") {
-				hit.collider.gameObject.GetComponent<BaseEnemy>().TakeDamage(damageOnSync);
+			//Find enemies to do effect on
+			foreach (RaycastHit hit in hits) {
+				if (hit.collider.gameObject.tag == "Enemy") {
+					hit.collider.gameObject.GetComponent<BaseEnemy>().TakeDamage(damageOnSync/(float) damageTicks);
+				}
 			}
 		}
+		DestroyBungieLink (0f);
 	}
 
 	public override IEnumerator OnUpdateSync (Hero sourceHero, Hero otherHero)
