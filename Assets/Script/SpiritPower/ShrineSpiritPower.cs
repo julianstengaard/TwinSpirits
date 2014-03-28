@@ -31,7 +31,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (!_transferring && other.tag == "Player") {
 			var collector = other.GetComponent<Hero>();
-			if (!_attachedSpiritPower.SpiritPowerEquals(collector.currentSpiritPower)) {
+			if (!collector.ExchangingSpiritPower && !_attachedSpiritPower.SpiritPowerEquals(collector.currentSpiritPower)) {
 				StartCoroutine(InitiatePowerTransfer(collector));
 			}
 		}
@@ -39,6 +39,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 
 	private IEnumerator InitiatePowerTransfer(Hero collector) {
 		_transferring = true;
+		collector.ExchangingSpiritPower = true;
 		float time = 0.5f;
 		
 		GameObject shrinePower = _attachedSpiritPower.gameObject;
@@ -76,6 +77,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 
 		//Transfer complete
 		_attachedSpiritPower = shrinePower.GetComponent<CollectableSpiritPower>();
+		collector.ExchangingSpiritPower = false;
 		_transferring = false;
 	}
 
