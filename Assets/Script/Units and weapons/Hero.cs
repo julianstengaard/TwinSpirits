@@ -36,6 +36,9 @@ public class Hero : BaseUnit {
 
 	private RandomSoundPlayer SoundController;
 
+	[HideInInspector]
+	public bool ExchangingSpiritPower = false;
+
 	// METHODS -----
 
 	new void Start() {
@@ -317,6 +320,5 @@ public class Hero : BaseUnit {
 	}
 	public void SwordSound() {
 		SoundController.PlayRandomSound("SwordSwing");
-
 	}
 }
