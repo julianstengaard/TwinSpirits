@@ -6,6 +6,8 @@ using RAIN.Entities;
 using RAIN.Entities.Aspects;
 
 public class Hero : BaseUnit {
+	public enum Player {One, Two}
+	public Player PlayerSlot;
 	protected InputDevice _input;
 
 	public bool IsControlled {get; private set;}
@@ -41,9 +43,7 @@ public class Hero : BaseUnit {
 
 		// TESTING
 		var weapons = GetComponentsInChildren<Weapon>();
-		var eff =new Damage(15);
-		weapons[0].AddEffect(eff);
-		weapons[1].AddEffect(eff);
+		AddEffectToWeapons(new Damage(15));
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
 		currentSpiritPower = gameObject.AddComponent<SpiritSpeedBoost>();
@@ -57,6 +57,8 @@ public class Hero : BaseUnit {
 		}
 
 		SoundController = GetComponent<RandomSoundPlayer>();
+
+		print(currentSpiritPower);
 	}
 
 	// Update is called once per frame

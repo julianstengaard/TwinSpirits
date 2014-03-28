@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(BoxCollider))]
 public class Weapon : MonoBehaviour {
 	public GameObject Body;
 	//public float Damage;

@@ -1,0 +1,753 @@
+fileFormatVersion: 2
+guid: faf921a0df631482284de462d1c9e6b2
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: char_player_female_mesh
+    100002: char_player_female_rig
+    100004: //RootNode
+    100006: chest
+    100008: f_index_01_L
+    100010: f_index_01_R
+    100012: f_index_02_L
+    100014: f_index_02_R
+    100016: f_middle_01_L
+    100018: f_middle_01_R
+    100020: f_middle_02_L
+    100022: f_middle_02_R
+    100024: foot_L
+    100026: foot_R
+    100028: forearm_L
+    100030: forearm_R
+    100032: hand_L
+    100034: hand_R
+    100036: head
+    100038: hips
+    100040: neck
+    100042: palm_01_L
+    100044: palm_01_R
+    100046: palm_02_L
+    100048: palm_02_R
+    100050: root_bone
+    100052: shin_L
+    100054: shin_R
+    100056: shoulder_L
+    100058: shoulder_R
+    100060: spine
+    100062: sword_bone
+    100064: thigh_L
+    100066: thigh_R
+    100068: thumb_01_L
+    100070: thumb_01_R
+    100072: thumb_02_L
+    100074: thumb_02_R
+    100076: thumb_03_L
+    100078: thumb_03_R
+    100080: toe_L
+    100082: toe_R
+    100084: upper_arm_L
+    100086: upper_arm_R
+    100088: widget_swordblade
+    100090: widget_swordshaft
+    400000: char_player_female_mesh
+    400002: char_player_female_rig
+    400004: //RootNode
+    400006: chest
+    400008: f_index_01_L
+    400010: f_index_01_R
+    400012: f_index_02_L
+    400014: f_index_02_R
+    400016: f_middle_01_L
+    400018: f_middle_01_R
+    400020: f_middle_02_L
+    400022: f_middle_02_R
+    400024: foot_L
+    400026: foot_R
+    400028: forearm_L
+    400030: forearm_R
+    400032: hand_L
+    400034: hand_R
+    400036: head
+    400038: hips
+    400040: neck
+    400042: palm_01_L
+    400044: palm_01_R
+    400046: palm_02_L
+    400048: palm_02_R
+    400050: root_bone
+    400052: shin_L
+    400054: shin_R
+    400056: shoulder_L
+    400058: shoulder_R
+    400060: spine
+    400062: sword_bone
+    400064: thigh_L
+    400066: thigh_R
+    400068: thumb_01_L
+    400070: thumb_01_R
+    400072: thumb_02_L
+    400074: thumb_02_R
+    400076: thumb_03_L
+    400078: thumb_03_R
+    400080: toe_L
+    400082: toe_R
+    400084: upper_arm_L
+    400086: upper_arm_R
+    400088: widget_swordblade
+    400090: widget_swordshaft
+    4300000: widget_swordblade
+    4300002: widget_swordshaft
+    4300004: char_player_female_mesh
+    7400000: attack_forward
+    7400002: attack_stationary
+    7400004: Idle1
+    7400006: source
+    7400008: walk_forward
+    7400010: idle
+    9500000: //RootNode
+    13700000: char_player_female_mesh
+    13700002: widget_swordblade
+    13700004: widget_swordshaft
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: attack_forward
+      takeName: source
+      firstFrame: 400
+      lastFrame: 481
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: char_player_female_mesh
+        weight: 1
+      - path: char_player_female_rig
+        weight: 1
+      - path: char_player_female_rig/root_bone
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck/head
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L/f_index_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L/thumb_03_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L/f_middle_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R/f_index_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R/thumb_03_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R/f_middle_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/sword_bone
+        weight: 1
+      - path: widget_swordblade
+        weight: 1
+      - path: widget_swordshaft
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: attack_stationary
+      takeName: source
+      firstFrame: 600
+      lastFrame: 684
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: char_player_female_mesh
+        weight: 1
+      - path: char_player_female_rig
+        weight: 1
+      - path: char_player_female_rig/root_bone
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck/head
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L/f_index_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L/thumb_03_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L/f_middle_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R/f_index_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R/thumb_03_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R/f_middle_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/sword_bone
+        weight: 1
+      - path: widget_swordblade
+        weight: 1
+      - path: widget_swordshaft
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle
+      takeName: source
+      firstFrame: 200
+      lastFrame: 320
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: char_player_female_mesh
+        weight: 1
+      - path: char_player_female_rig
+        weight: 1
+      - path: char_player_female_rig/root_bone
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck/head
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L/f_index_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L/thumb_03_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L/f_middle_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R/f_index_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R/thumb_03_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R/f_middle_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/sword_bone
+        weight: 1
+      - path: widget_swordblade
+        weight: 1
+      - path: widget_swordshaft
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: source
+      takeName: source
+      firstFrame: 0
+      lastFrame: 684
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: char_player_female_mesh
+        weight: 1
+      - path: char_player_female_rig
+        weight: 1
+      - path: char_player_female_rig/root_bone
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck/head
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L/f_index_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L/thumb_03_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L/f_middle_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R/f_index_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R/thumb_03_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R/f_middle_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/sword_bone
+        weight: 1
+      - path: widget_swordblade
+        weight: 1
+      - path: widget_swordshaft
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walk_forward
+      takeName: walk_forward
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: char_player_female_mesh
+        weight: 1
+      - path: char_player_female_rig
+        weight: 1
+      - path: char_player_female_rig/root_bone
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/neck/head
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/f_index_01_L/f_index_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_01_L/thumb_01_L/thumb_02_L/thumb_03_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/palm_02_L/f_middle_01_L/f_middle_02_L
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/f_index_01_R/f_index_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R/thumb_03_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/palm_02_R/f_middle_01_R/f_middle_02_R
+        weight: 1
+      - path: char_player_female_rig/root_bone/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/sword_bone
+        weight: 1
+      - path: widget_swordblade
+        weight: 1
+      - path: widget_swordshaft
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
