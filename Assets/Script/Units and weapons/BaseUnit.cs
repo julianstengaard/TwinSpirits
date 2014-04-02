@@ -21,10 +21,6 @@ public abstract class BaseUnit : MonoBehaviour {
 	protected float maxMovementSpeed = 10f;
 	[HideInInspector] public float movementSpeedBuff = 0f;
 
-	public float HealthBarPosition = 1.5f; // Remember: Only default value
-	public GameObject HealthBar;
-	private float HealthBarWidth = 0.14f;
-
 	public bool dead = false;
 	public bool immortal = false;
     public bool damageLocked = false;
@@ -34,13 +30,6 @@ public abstract class BaseUnit : MonoBehaviour {
 	protected void Start() {
 		_anim = GetComponent<Animator>();
 		_cc = GetComponent<CharacterController>();
-		HealthBar = GameObject.CreatePrimitive(PrimitiveType.Plane);
-		HealthBar.renderer.material.color = Color.red;
-		HealthBar.transform.parent = transform;
-		HealthBar.transform.position = transform.position + Vector3.up * HealthBarPosition;
-		HealthBar.collider.enabled = false;
-		var s = new Vector3(HealthBarWidth, 1f, 0.01f);
-		HealthBar.transform.localScale = s;
 
 	    if (!(FullHealth > 0f))
             FullHealth = Health;
@@ -53,11 +42,6 @@ public abstract class BaseUnit : MonoBehaviour {
 		if (stunned && stunTimeout < Time.time) {
 			stunned = false;
 		}
-		HealthBar.transform.LookAt(Camera.main.transform);
-		HealthBar.transform.Rotate(Vector3.left, -90f);
-		var s = HealthBar.transform.localScale;
-		s.x = HealthBarWidth * Health / FullHealth;
-		HealthBar.transform.localScale = s;
 	}
 
 	protected void FixedUpdate() {

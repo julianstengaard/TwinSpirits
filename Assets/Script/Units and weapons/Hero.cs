@@ -39,6 +39,8 @@ public class Hero : BaseUnit {
 	[HideInInspector]
 	public bool ExchangingSpiritPower = false;
 
+	private float lastLookTimestamp = 0;
+
 	// METHODS -----
 
 	new void Start() {
@@ -46,7 +48,7 @@ public class Hero : BaseUnit {
 
 		// TESTING
 		var weapons = GetComponentsInChildren<Weapon>();
-		AddEffectToWeapons(new Damage(15));
+		AddEffectToWeapons(new Damage(25));
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
 		currentSpiritPower = gameObject.AddComponent<SpiritFire>();
@@ -72,7 +74,7 @@ public class Hero : BaseUnit {
 			return;
 
 		//Revive comrade if close!
-		if (otherPlayer.dead && Health >= 2f) {
+		if (otherPlayer.dead && Health > 1f) {
 			if ((transform.position - otherPlayer.transform.position).magnitude < 2f)
 			{
 			    float transferedHealth = Mathf.Floor(Health/2f);
@@ -119,8 +121,14 @@ public class Hero : BaseUnit {
 			}
 		} else {
 			var lookPoint = transform.position;
-			lookPoint.x += _input.RightStickX;
-			lookPoint.z += _input.RightStickY;
+			if(_input.RightStickX != 0 ||  _input.RightStickY != 0) {
+				lookPoint.x += _input.RightStickX;
+				lookPoint.z += _input.RightStickY;
+				lastLookTimestamp = Time.time;
+			} else if(Time.time - lastLookTimestamp > 0.5f) {
+				lookPoint.x += _input.LeftStickX;
+				lookPoint.z += _input.LeftStickY;
+			}
 
 			transform.LookAt(lookPoint);
 		}
@@ -159,6 +167,9 @@ public class Hero : BaseUnit {
 		dead = true;
 		GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_Color", new Color(1f, 0, 0));
 		aspect.IsActive = false;
+		_anim.SetBool("Dead", true);
+		_anim.SetBool("Attacking", false);
+		MakeInert();
 	}
 
 	public void Revived (float health) {
@@ -166,6 +177,7 @@ public class Hero : BaseUnit {
 		Health = Mathf.Min(health, FullHealth);
 		GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_Color", new Color(156/255f, 156/255f, 156/255f));
 		aspect.IsActive = true;
+		_anim.SetBool("Dead", false);
 	}
 
 

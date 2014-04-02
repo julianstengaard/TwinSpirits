@@ -5,6 +5,10 @@ using RAIN.Core;
 public class BaseEnemy : BaseUnit {
 	public float BaseDamage;
 
+	public GameObject HealthBar;
+	public float HealthBarPosition = 1.5f; // Remember: Only default value
+	private float HealthBarWidth = 0.14f;
+
 	[SerializeField]
 	private float OverallDropChance;
 	[SerializeField]
@@ -14,8 +18,17 @@ public class BaseEnemy : BaseUnit {
 	protected AIRig ai;
 	protected RandomSoundPlayer _randomSounds;
 
-	private new void Start() {
+	protected new void Start() {
 		base.Start();
+
+		HealthBar = GameObject.CreatePrimitive(PrimitiveType.Plane);
+		HealthBar.renderer.material.color = Color.red;
+		HealthBar.transform.parent = transform;
+		HealthBar.transform.position = transform.position + Vector3.up * HealthBarPosition;
+		HealthBar.collider.enabled = false;
+		var s = new Vector3(HealthBarWidth, 1f, 0.01f);
+		HealthBar.transform.localScale = s;
+
 		AddEffectToWeapons(new Damage(BaseDamage));
 
 		ai = GetComponentInChildren<AIRig>();
@@ -24,6 +37,15 @@ public class BaseEnemy : BaseUnit {
 		_randomSounds = GetComponent<RandomSoundPlayer>();
 		_randomSounds.PlayRandomSound("Warcry");
 
+	}
+
+	protected new void LateUpdate() {
+		base.LateUpdate();
+		HealthBar.transform.LookAt(Camera.main.transform);
+		HealthBar.transform.Rotate(Vector3.left, -90f);
+		var s = HealthBar.transform.localScale;
+		s.x = HealthBarWidth * Health / FullHealth;
+		HealthBar.transform.localScale = s;
 	}
 
 	private void OnApplicationQuit() {

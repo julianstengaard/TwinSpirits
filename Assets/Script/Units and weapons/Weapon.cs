@@ -9,6 +9,8 @@ public class Weapon : MonoBehaviour {
 	public string[] ImmuneTags;
 	public List<Effect> AttackEffects = new List<Effect>();
 	private Animator _anim;
+
+	[SerializeField]
 	private bool isDangerous = true; // NOT USED YET
 
 

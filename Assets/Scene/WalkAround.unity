@@ -2087,7 +2087,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: mazeLength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: mazeWidth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: mazeHeight
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: maxPathIterationLenght
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
@@ -2384,8 +2396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeWidth: 100
   mazeHeight: 100
-  mazeLength: 100
-  maxPathIterationLenght: 4
+  mazeLength: 10
+  maxPathIterationLenght: 40
   cellSpacing: 60
   cellSize: 40
   StartCell: {fileID: 100006, guid: d129406501e6a4cceb4b6683ea70dd78, type: 2}

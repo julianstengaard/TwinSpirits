@@ -19,9 +19,9 @@ public class SpiritRegenHP : SpiritPower {
 	{
 		//Debug.Log("Activating" + this.GetType());
 		otherHero.Heal(regenPerSecond);
-		
-		healthBarDefaultColor = otherHero.HealthBar.renderer.material.GetColor("_Color");
-		otherHero.HealthBar.renderer.material.SetColor("_Color", healthBarEffectColor);
+
+//		healthBarDefaultColor = otherHero.HealthBar.renderer.material.GetColor("_Color");
+//		otherHero.HealthBar.renderer.material.SetColor("_Color", healthBarEffectColor);
 		
 		return base.OnActivate(sourceHero, otherHero);
 	}
@@ -33,8 +33,8 @@ public class SpiritRegenHP : SpiritPower {
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
-		if(IsActive && healthBarDefaultColor != null)
-			otherHero.HealthBar.renderer.material.SetColor("_Color", healthBarDefaultColor);
+//		if(IsActive && healthBarDefaultColor != null)
+//			otherHero.HealthBar.renderer.material.SetColor("_Color", healthBarDefaultColor);
 
 
 		return base.OnDeactivate(sourceHero, otherHero);
