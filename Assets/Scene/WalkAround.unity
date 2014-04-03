@@ -2053,6 +2053,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.06632757
@@ -2091,16 +2095,60 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: mazeWidth
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: mazeHeight
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: maxPathIterationLenght
-      value: 40
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[0]
+      value: 
+      objectReference: {fileID: 100224, guid: 323b4f70cf8c64ead88c3de44cdeb548, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[1]
+      value: 
+      objectReference: {fileID: 100060, guid: efb7a122d73624d18950d95e1cb2a409, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[2]
+      value: 
+      objectReference: {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[3]
+      value: 
+      objectReference: {fileID: 100000, guid: 9b484f6470c3040bb92696e17172f2f1, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[4]
+      value: 
+      objectReference: {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[5]
+      value: 
+      objectReference: {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[6]
+      value: 
+      objectReference: {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[7]
+      value: 
+      objectReference: {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[8]
+      value: 
+      objectReference: {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[9]
+      value: 
+      objectReference: {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
   m_RootGameObject: {fileID: 1338388115}
@@ -2394,116 +2442,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f0839a0e1294942985ef1a463cdc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeWidth: 100
-  mazeHeight: 100
+  mazeWidth: 10
+  mazeHeight: 10
   mazeLength: 10
-  maxPathIterationLenght: 40
+  maxPathIterationLenght: 5
   cellSpacing: 60
   cellSize: 40
   StartCell: {fileID: 100006, guid: d129406501e6a4cceb4b6683ea70dd78, type: 2}
   BossCell: {fileID: 100136, guid: f3c1d9cd54cca4297ad6c490b90130be, type: 2}
-  mazeCellPrefabs0000:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  mazeCellPrefabs0001:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
-  - {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100000, guid: 9b484f6470c3040bb92696e17172f2f1, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs0010:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
-  - {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
+  IslandsWithBridgeOpenings:
   - {fileID: 100224, guid: 323b4f70cf8c64ead88c3de44cdeb548, type: 2}
-  mazeCellPrefabs0011:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
-  - {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100224, guid: 323b4f70cf8c64ead88c3de44cdeb548, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs0100:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
   - {fileID: 100060, guid: efb7a122d73624d18950d95e1cb2a409, type: 2}
   - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100224, guid: 323b4f70cf8c64ead88c3de44cdeb548, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs0101:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100224, guid: 323b4f70cf8c64ead88c3de44cdeb548, type: 2}
+  - {fileID: 100000, guid: 9b484f6470c3040bb92696e17172f2f1, type: 2}
   - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs0110:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100224, guid: 323b4f70cf8c64ead88c3de44cdeb548, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs0111:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100224, guid: 323b4f70cf8c64ead88c3de44cdeb548, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs1000:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
   - {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
   - {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  mazeCellPrefabs1001:
   - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
-  - {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  mazeCellPrefabs1010:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
-  - {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  mazeCellPrefabs1011:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
-  - {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  mazeCellPrefabs1100:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
   - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs1101:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
   - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs1110:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-  mazeCellPrefabs1111:
-  - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-  - {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-  - {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-  - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-  - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
   bridgeSpanPrefab: {fileID: 100010, guid: 4d8fc0a8566c048f4a0a1f3e6ecf510b, type: 2}
   bridgeEndPrefab: {fileID: 100004, guid: 94187ecaad1db4ea4a2e9eb0174d8363, type: 2}
 --- !u!1 &1343792018
