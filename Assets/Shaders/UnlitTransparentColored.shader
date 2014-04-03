@@ -6,9 +6,14 @@ Shader "Custom/Unlit/Transparent Colored" {
     }
     
     SubShader {
-        Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+        Tags {
+			"Queue"="Transparent" 
+			"IgnoreProjector"="True" 
+			"RenderType"="Transparent"
+		}
         LOD 100
     
+		ZTest Always
         ZWrite Off
         Blend SrcAlpha OneMinusSrcAlpha 
 

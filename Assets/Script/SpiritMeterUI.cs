@@ -26,10 +26,10 @@ public class SpiritMeterUI : MonoBehaviour {
 	private GameObject p1Meter;
 	private GameObject p2Meter;
 
-	private Vector3 p1MeterZero = new Vector3(-0.37f, 0f, 0.001f);
-	private Vector3 p2MeterZero = new Vector3(0.37f, 0f, 0.001f);
-	private Vector3 p1Zero 		= new Vector3(0.05f, 0f, 0.001f);
-    private Vector3 p2Zero      = new Vector3(-0.05f, 0f, 0.001f);
+    private Vector3 p1MeterZero = new Vector3(-0.39f, -0.15f, 0.05f);
+    private Vector3 p2MeterZero = new Vector3(0.39f, -0.15f, 0.05f);
+	private Vector3 p1Zero 		= new Vector3(0.03f, -0.15f, 0.05f);
+    private Vector3 p2Zero      = new Vector3(-0.03f, -0.15f, 0.05f);
 
 	private bool playersFound = false;
 	private bool animatingSpiritPowerP1 = false;
@@ -81,13 +81,13 @@ public class SpiritMeterUI : MonoBehaviour {
 	void UpdateSpiritMeter(int playerNumber) {
 		if (playerNumber == 1) {
 			float spiritAmount = Player1.currentSpiritAmount/100f;
-			p1Meter.transform.localScale 	= new Vector3(spiritAmount*0.82f, 0.6f, 1);
+			p1Meter.transform.localScale 	= new Vector3(spiritAmount*0.85f, 0.6f, 1);
             p1Meter.transform.localPosition = Vector3.Lerp(p1MeterZero, p1Zero, spiritAmount);
 			ColorizeSpiritMeter(p1Meter, Player1.currentSpiritPower, spiritAmount*100f);
 		}
 		else if (playerNumber == 2) {
 			float spiritAmount = Player2.currentSpiritAmount/100f;
-			p2Meter.transform.localScale = new Vector3(spiritAmount*0.82f, 0.6f, 1);
+			p2Meter.transform.localScale = new Vector3(spiritAmount*0.85f, 0.6f, 1);
             p2Meter.transform.localPosition = Vector3.Lerp(p2MeterZero, p2Zero, spiritAmount); 
 			ColorizeSpiritMeter(p2Meter, Player2.currentSpiritPower, spiritAmount*100f);
 		}
