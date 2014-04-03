@@ -6,6 +6,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 	public GameObject[] SpiritPowers;
 
 	private CollectableSpiritPower _attachedSpiritPower;
+	//private Vector3 _attachedSpiritPowerPosition;
 	private SphereCollider _pickUpSphere;
 
 	private bool _active;
@@ -24,8 +25,14 @@ public class ShrineSpiritPower : MonoBehaviour {
 		if (active && !_transferring) {
 			//Rotate the pickUp
 			var currentRotation = _attachedSpiritPower.transform.rotation.eulerAngles;
+			_attachedSpiritPower.transform.position = AttachedSpiritPowerPosition();
 			_attachedSpiritPower.transform.rotation = Quaternion.Euler(currentRotation + new Vector3(0f, 1f, 0f));
 		}
+	}
+
+	public Vector3 AttachedSpiritPowerPosition() {
+		//return transform.position + new Vector3(-0.35f, 1.2f, -0f);
+		return transform.position + new Vector3(0f, 1.2f, 0f);
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -43,14 +50,28 @@ public class ShrineSpiritPower : MonoBehaviour {
 		float time = 0.5f;
 		
 		GameObject shrinePower = _attachedSpiritPower.gameObject;
-		Vector3 shrineOrigin = shrinePower.transform.position;
-		Vector3 collectorOrigin = collector.transform.position + Vector3.up;
+		Vector3 shrineOrigin = AttachedSpiritPowerPosition();
+		Vector3 collectorOrigin = collector.transform.position;
+		Vector3 midPoint = (collectorOrigin + shrineOrigin) * 0.5f;
+		Vector3 localScalePower = shrinePower.transform.localScale;
 
-		TweenParms shrineParms = new TweenParms().Prop(
-			"position", collectorOrigin).Prop(
-			"localScale", new Vector3(0f, 0f, 0f)).Ease(
-			EaseType.EaseInOutExpo).Delay(0f);
-		HOTween.To(shrinePower.transform, time, shrineParms);
+		TweenParms shrineParmsFirst = new TweenParms().Prop(
+			"position", midPoint).Prop(
+			"localScale", localScalePower * 0.7f).Ease(
+			EaseType.EaseInExpo).Delay(0f);
+		HOTween.To(shrinePower.transform, time * 0.5f, shrineParmsFirst);
+
+		yield return new WaitForSeconds(time * 0.5f);
+
+		//Set power as child of target
+		shrinePower.transform.parent = collector.transform;
+
+		TweenParms shrineParmsSecond = new TweenParms().Prop(
+			"localPosition", new Vector3(0f, 0f, 0f)).Prop(
+			"localScale", localScalePower * 0f).Ease(
+			EaseType.EaseOutExpo).Delay(0f);
+		HOTween.To(shrinePower.transform, time * 0.5f, shrineParmsSecond);
+
 
 		yield return new WaitForSeconds(time);
 		//Destroy recieved object
@@ -62,7 +83,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 		shrinePower.transform.localScale = new Vector3(0f, 0f, 0f);
 
 		TweenParms collectorParms = new TweenParms().Prop(
-			"position", shrineOrigin).Prop(
+			"position", AttachedSpiritPowerPosition()).Prop(
 			"localScale", new Vector3(0.8f, 0.8f, 0.8f)).Prop(
 			"rotation", Quaternion.Euler(45f, 0f, 45f)).Ease(
 			EaseType.EaseInOutExpo).Delay(0f);
@@ -71,12 +92,10 @@ public class ShrineSpiritPower : MonoBehaviour {
 		//Recieve new
 		_attachedSpiritPower.Collected(collector);
 
-
-
-
-
 		//Transfer complete
 		_attachedSpiritPower = shrinePower.GetComponent<CollectableSpiritPower>();
+
+		yield return new WaitForSeconds(time);
 		collector.ExchangingSpiritPower = false;
 		_transferring = false;
 	}
@@ -89,7 +108,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 
 		CreateSphereCollider();
 		var randomPower = SpiritPowers[Random.Range(0, SpiritPowers.Length)];
-		var spiritPowerGO = (GameObject) GameObject.Instantiate(randomPower, transform.position + new Vector3(-0.35f, 1.2f, -0f), Quaternion.Euler(45f, 0f, 45f));
+		var spiritPowerGO = (GameObject) GameObject.Instantiate(randomPower, AttachedSpiritPowerPosition(), Quaternion.Euler(45f, 0f, 45f));
 		_attachedSpiritPower = spiritPowerGO.GetComponent<CollectableSpiritPower>();
 		spiritPowerGO.transform.parent = gameObject.transform;
 
