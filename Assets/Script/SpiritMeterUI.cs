@@ -13,6 +13,7 @@ public class SpiritMeterUI : MonoBehaviour {
 	public Material SpiritHPRegenIcon;
 	public Material SpiritLightningIcon;
 	public Material SpiritFireIcon;
+	public Material SpiritPingPongIcon;
 
     public Material SyncOnIcon;
     public Material SyncOffIcon;
@@ -164,6 +165,8 @@ public class SpiritMeterUI : MonoBehaviour {
 			icon.renderer.material = SpiritLightningIcon;
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritFire)) {
 			icon.renderer.material = SpiritFireIcon;
+		} else if (player.currentSpiritPower.GetType() == typeof(SpiritPingPong)) {
+			icon.renderer.material = SpiritPingPongIcon;
 		}
 
 		//Animate it

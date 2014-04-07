@@ -1393,7 +1393,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100044}
-  m_LocalRotation: {x: .345491469, y: -.438373953, z: -.297025591, w: .774751365}
+  m_LocalRotation: {x: .345491499, y: -.438373983, z: -.297025621, w: .774751425}
   m_LocalPosition: {x: -.0632366613, y: .0105137732, z: -.0418642238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1454,7 +1454,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100060}
-  m_LocalRotation: {x: .320551932, y: .630274892, z: -.320551932, w: .630274892}
+  m_LocalRotation: {x: .320551962, y: .630274951, z: -.320551962, w: .630274951}
   m_LocalPosition: {x: -.376263469, y: 0, z: 8.35472734e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1489,7 +1489,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100050}
-  m_LocalRotation: {x: .606347978, y: .390339345, z: -.263053536, w: .640921295}
+  m_LocalRotation: {x: .606348038, y: .390339375, z: -.263053566, w: .640921354}
   m_LocalPosition: {x: .0697700232, y: .175084934, z: .869249046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1747,7 +1747,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100118}
-  m_LocalRotation: {x: -.0100809699, y: .896080732, z: -.00464630825, w: -.443752259}
+  m_LocalRotation: {x: -.0100809708, y: .896080792, z: -.00464630872, w: -.443752289}
   m_LocalPosition: {x: -0, y: 0, z: -7.1054272e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2041,7 +2041,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3014.82007, y: -3.60595655, z: -5879.94043}
+  m_LocalPosition: {x: 306.67923, y: -1.24344015, z: -553.023071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400150}
@@ -2187,12 +2187,12 @@ MonoBehaviour:
   stunTimeout: 0
   MovementSpeed: 2
   movementSpeedBuff: 0
-  HealthBarPosition: 1.5
-  HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
   damageLocked: 0
   BaseDamage: 1
+  HealthBar: {fileID: 0}
+  HealthBarPosition: 1.5
   OverallDropChance: 100
   Drops:
   - Chance: 60
@@ -2406,6 +2406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 100148}
   ImmuneTags: []
+  isDangerous: 1
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

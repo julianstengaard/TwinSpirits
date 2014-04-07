@@ -6,22 +6,34 @@ public class SpiritBungie : SpiritPower
 	private Color 		targetHeroColor;
 	private BaseUnit[] 	enemiesToKill;
 
-	private float 		currentBungieTime	= 	 0f;
-	private float 		durationToBungie	= 	 0.5f;
-	private float 		closestDistance		= 	 2f;
+	private float 		currentBungieTime	= 0f;
+	private float 		durationToBungie	= 0.5f;
+	private float 		closestDistance		= 2f;
 	private Vector3 	initialPosition;
-
-	private float 		damageOnSync		=  100f;
-	private int			damageTicks			= 	10;
+	
+	private float		syncTimer;
+	private float		damageTimer;
+	private bool		circleActive;
+	private float		circleMinWidth		= 0.01f;
+	private float		circleMaxWidth		= 0.4f;
+	private float		syncDuration		= 10f;
+	private float		intervalDuration	= 1f;
+	private float 		damagePerInterval	= 10f;
 
 	private CharacterController heroCC;
 
 	private GameObject link;
+	private GameObject[] circleLink;
+	private GameObject _particleEffectPrefab;
+
+	private Hero srcHero;
+	private Hero othHero;
 
 	void Start() {
 		costActivate 		=  10f;
 		costPerSecond 		=  10f;
 		costActivateSync 	= 100f;
+		_particleEffectPrefab = (GameObject) Resources.Load("SpiritCircleParticle", typeof(GameObject));
 	}
 	
 	/* BEGIN REGULAR POWER */
@@ -90,7 +102,9 @@ public class SpiritBungie : SpiritPower
 	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
-
+		//Only allow one of these per person
+		if (circleActive)
+			return null;
 
         if (!secondSync)
         {
@@ -101,46 +115,60 @@ public class SpiritBungie : SpiritPower
             //Stop other Heros effect
             otherHero.SwitchToSyncPower();
         }
-
 		StartCoroutine(DeathRay(sourceHero, otherHero));
 
 		return null;
 	}
 
-	IEnumerator DeathRay(Hero sourceHero, Hero otherHero)
-	{
-		CreateBungieLink(sourceHero, otherHero, "SpiritLinkRay");
-		for (int i = 0; i < damageTicks; i++) {
-			UpdateBungieLink(sourceHero, otherHero);
-			yield return new WaitForFixedUpdate();
+	void Update () {
+		if (circleActive) {
+			syncTimer += Time.deltaTime;
+			damageTimer += Time.deltaTime;
+			//Is the circle time over?
+			if (syncTimer > syncDuration)
+				circleActive = false;
 
-			//Create the ray
-			Vector3 raycastDirection = (otherHero.transform.position - sourceHero.transform.position).normalized;
-			Vector3 raycastFrom 	 = sourceHero.transform.position - raycastDirection;
-			Vector3 raycastTo	 	 = otherHero.transform.position  + raycastDirection;
-			float	raycastDistance	 = (raycastFrom - raycastTo).magnitude;
-
-			RaycastHit[] hits;
-			hits = Physics.SphereCastAll(raycastFrom, 2f, raycastDirection, raycastDistance, 1 << 8);
-
-			//Find enemies to do effect on
-			foreach (RaycastHit hit in hits) {
-				if (hit.collider.gameObject.tag == "Enemy") {
-					hit.collider.gameObject.GetComponent<BaseEnemy>().TakeDamage(damageOnSync/(float) damageTicks);
-				}
+			//Should this tick deal damage?
+			if (damageTimer > intervalDuration) {
+				UpdateCircleLink(srcHero, othHero, true);
+				damageTimer -= intervalDuration;
+			} else {
+				UpdateCircleLink(srcHero, othHero, false);
 			}
 		}
-		DestroyBungieLink (0f);
+	}
+	
+
+	IEnumerator DeathRay(Hero sourceHero, Hero otherHero)
+	{
+		//Find enemies
+		var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+		enemiesToKill = new BaseUnit[enemies.Length];
+		for (int i = 0; i < enemies.Length; i++) {
+			enemiesToKill[i] = enemies[i].GetComponent<BaseUnit>();
+		}
+
+		syncTimer = 0f;
+		circleActive = true;
+		CreateCircleLink(sourceHero, otherHero, "SpiritLinkRay", 16);
+		srcHero = sourceHero;
+		othHero = otherHero;
+		yield return new WaitForSeconds(syncDuration);
+		DestroyCircleLink (0f);
 	}
 
 	public override IEnumerator OnUpdateSync (Hero sourceHero, Hero otherHero)
 	{
-		UpdateBungieLink(sourceHero, otherHero);
 		return null;
 	}
 	
 	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
 	{
+		if (circleActive) {
+			DestroyCircleLink (0f);
+			circleActive = false;
+		}
 		return null;
 	}
 	/* END SYNC POWER */
@@ -156,7 +184,76 @@ public class SpiritBungie : SpiritPower
 	{
 		link = (GameObject) Instantiate(Resources.Load(prefab), Vector3.zero, Quaternion.identity); 
 		UpdateBungieLink (sourceHero, otherHero);
+	}
 
+	private void CreateCircleLink (Hero sourceHero, Hero otherHero, string prefab, int divisions)
+	{
+		circleLink = new GameObject[divisions];
+		for (int i = 0; i < divisions; i++) {
+			circleLink[i] = (GameObject) Instantiate(Resources.Load(prefab), Vector3.up, Quaternion.identity); 
+		}
+		UpdateCircleLink (sourceHero, otherHero, true);
+	}
+
+	private void UpdateCircleLink (Hero sourceHero, Hero otherHero, bool damageTick) 
+	{
+		Vector3 center = (sourceHero.transform.position + otherHero.transform.position) * 0.5f + Vector3.up;
+		float radius = (sourceHero.transform.position - otherHero.transform.position).magnitude * 0.5f;
+		float width = Mathf.Clamp(1f/radius, circleMinWidth, circleMaxWidth);
+		
+		for (int i = 0; i < circleLink.Length; i++) {
+			float rotationY = (360f/circleLink.Length) * i;
+			Quaternion rotation = Quaternion.Euler(0f, rotationY, 0f);
+			Vector3 linkRelativePosition = rotation * new Vector3(1f,0f,0f);
+			circleLink[i].transform.position = center + (linkRelativePosition * radius);
+
+			//Calculate scale/rotation
+			float spanningScale = (radius * 0.2f * Mathf.PI)/circleLink.Length;
+			rotation *= Quaternion.Euler(0, 90, 0);
+
+			//Scale and rotate it
+			var s = circleLink[i].transform.localScale;
+			s.x = spanningScale;
+			s.z = width;
+			circleLink[i].transform.localScale = s;
+			circleLink[i].transform.localRotation = rotation;
+		}
+
+		if (damageTick) {
+			DealDamageWithCircleLink(center, radius, width);
+		}
+	}
+
+	private void DealDamageWithCircleLink(Vector3 center, float radius, float width) {
+		foreach (var enemy in enemiesToKill) {
+			if (enemy != null && !enemy.dead) {
+				//Is enemy in the DANGER ZONE?!
+				Vector3 centerSameHeight = center + new Vector3(0f, enemy.transform.position.y - center.y, 0f);
+				Vector3 hitDirection = enemy.transform.position - centerSameHeight;
+				Vector3 hitPointCircle = centerSameHeight + hitDirection.normalized * radius;
+
+				float enemyDistance = Vector3.Distance(hitPointCircle, enemy.collider.ClosestPointOnBounds(hitPointCircle));
+				if (enemyDistance < width) {
+					enemy.TakeDamage(damagePerInterval);
+					StartCoroutine(CreateCircleDamageParticle(enemy.gameObject));
+				}
+			}
+		}
+	}
+
+	private IEnumerator CreateCircleDamageParticle(GameObject target) {
+		GameObject _particleEffect = (GameObject) Instantiate(_particleEffectPrefab, target.transform.position, Quaternion.identity);
+		GameObject.Destroy(_particleEffect, 1f);
+		yield return null;
+	}
+
+	private void DestroyCircleLink (float time)
+	{
+		for (int i = 0; i < circleLink.Length; i++) {
+			if (circleLink[i] != null)
+				GameObject.Destroy(circleLink[i], time);
+		}
+		circleActive = false;
 	}
 
 	private void UpdateBungieLink (Hero sourceHero, Hero otherHero)
