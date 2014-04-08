@@ -22,7 +22,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (active && !_transferring) {
+		if (_active && !_transferring) {
 			//Rotate the pickUp
 			var currentRotation = _attachedSpiritPower.transform.rotation.eulerAngles;
 			_attachedSpiritPower.transform.position = AttachedSpiritPowerPosition();

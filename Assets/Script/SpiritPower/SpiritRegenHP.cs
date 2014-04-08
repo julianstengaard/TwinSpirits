@@ -4,9 +4,6 @@ using System.Collections;
 public class SpiritRegenHP : SpiritPower {
 	private float regenPerSecond = 1f;
 	private float regenPerSync	 = 100f;
-
-	private Color healthBarDefaultColor;
-	private Color healthBarEffectColor = Color.magenta;
 		
 	void Start() {
 		costActivate 		=  10f;
@@ -19,9 +16,6 @@ public class SpiritRegenHP : SpiritPower {
 	{
 		//Debug.Log("Activating" + this.GetType());
 		otherHero.Heal(regenPerSecond);
-
-//		healthBarDefaultColor = otherHero.HealthBar.renderer.material.GetColor("_Color");
-//		otherHero.HealthBar.renderer.material.SetColor("_Color", healthBarEffectColor);
 		
 		return base.OnActivate(sourceHero, otherHero);
 	}
@@ -90,7 +84,7 @@ public class SpiritRegenHP : SpiritPower {
 	
 	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
 	{
-		Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
+		//Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
 		yield return null;
 	}
 	/* END SYNC POWER */
