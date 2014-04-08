@@ -81,13 +81,13 @@ public class Hero : BaseUnit {
 		}
 
 
-		//Revive comrade if close!
-		if (otherPlayer.dead && Health > 1f) {
+		//Revive comrade if close! TODO 3 second revive
+		if (otherPlayer.dead) {
 			if ((transform.position - otherPlayer.transform.position).magnitude < 2f)
 			{
 			    float transferedHealth = Mathf.Floor(Health/2f);
-                otherPlayer.Revived(transferedHealth);
-                Health -= transferedHealth;
+                otherPlayer.Revived(Mathf.Max(1f, transferedHealth));
+				Health = Mathf.Max(1f, Health - transferedHealth);
 			}
 		}
 

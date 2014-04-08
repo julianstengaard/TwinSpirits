@@ -6,6 +6,8 @@ using Holoville.HOTween;
 public class SpiritPingPong : SpiritPower 
 {
 	private GameObject _ball;
+    private bool _ballReady = true;
+    private bool _ballActive = false;
 	private float _ballRadius = 0.2f;
 	private float _syncBallRadius = 0.3f;
 	//private float _ballRadiusSqr;
@@ -27,8 +29,10 @@ public class SpiritPingPong : SpiritPower
 	private float _catchRadiusSqr = 0.6f;
 	private float _syncSuctionThresholdSqr = 9f;
 	private float _syncSuctionAmount = 2f;
+    private float _ballLifeTime = 20f;
+    private float _ballLifeTimeCounter = 0f;
 	private float _syncBallLifeTime = 20f;
-	private float _syncBallLifeTimeCounter = 0;
+	private float _syncBallLifeTimeCounter = 0f;
 
 	private int _currentBounces;
 	private int _maxBounces = 10;
@@ -39,7 +43,7 @@ public class SpiritPingPong : SpiritPower
 	
 	void Start() {
 		costActivate 		=  10f;
-		costPerSecond 		=  10f;
+		costPerSecond 		=  0f;
 		costActivateSync 	= 100f;
 		_particleEffectPrefab = (GameObject) Resources.Load("SpiritPingPongParticle", typeof(GameObject));
 	}
@@ -47,8 +51,15 @@ public class SpiritPingPong : SpiritPower
 	/* BEGIN REGULAR POWER */
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
+        if (!_ballReady)
+            return null;
+
 		if (syncActive)
 			syncActive = false;
+        
+        _ballActive = true;
+        _ballReady = false;
+        _ballLifeTimeCounter = 0f;
 
 		DestroyBall();
 		_ball = CreateBallSphere(new Color(1f, 1f, 1f, 0.8f), otherHero.transform, _ballRadius);
@@ -77,8 +88,7 @@ public class SpiritPingPong : SpiritPower
 	}
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{
-		UpdateBall(_maxBounces, false);
-
+		
 		return null;
 	}
 
@@ -170,7 +180,8 @@ public class SpiritPingPong : SpiritPower
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
-		DestroyBall();
+        _ballReady = true;
+		
 		return null;
 	}
 	/* END REGULAR POWER */
@@ -241,6 +252,16 @@ public class SpiritPingPong : SpiritPower
 				UpdateBall(_maxBouncesSync, true);
 				_syncBallLifeTimeCounter += Time.deltaTime;
 			}
+		} else if (_ballActive) {
+            if (_ballLifeTime < _ballLifeTimeCounter) {
+                _ballActive = false;
+                DestroyBall();
+            }
+            else {
+                UpdateBall(_maxBounces, false);
+                _ballLifeTimeCounter += Time.deltaTime;
+            }
+            
 		}
 	}
 	
