@@ -8,17 +8,17 @@ public class Weapon : MonoBehaviour {
 	//public float Damage;
 	public string[] ImmuneTags;
 	public List<Effect> AttackEffects = new List<Effect>();
-	private Animator _anim;
+//	private Animator _anim;
 
 	[SerializeField]
 	private bool isDangerous = true; // NOT USED YET
 
 
 	void Start() {
-		if(Body == null)
-			return;
-
-		_anim = Body.GetComponent<Animator>();
+//		if(Body == null)
+//			return;
+//
+//		_anim = Body.GetComponent<Animator>();
 	}
 
 	public void MakeDangerous() {
@@ -34,10 +34,10 @@ public class Weapon : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if(_anim == null) {
-			Start ();
-			return;
-		}
+//		if(_anim == null) {
+//			Start ();
+//			return;
+//		}
 
 		if(isDangerous) {
 			var unit = other.GetComponent<BaseUnit>();

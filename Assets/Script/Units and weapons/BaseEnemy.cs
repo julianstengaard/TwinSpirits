@@ -64,7 +64,7 @@ public class BaseEnemy : BaseUnit {
 	}
 
 	private void OnDeath() {
-		if(Random.Range(0f, 100f) > OverallDropChance) return;
+		if(Random.Range(0f, 1f) > OverallDropChance) return;
 		foreach(var drop in Drops) {
 			var roll = Random.Range(0f, 1f);
 			if(roll < drop.Chance) {
