@@ -349,31 +349,31 @@ MonoBehaviour:
   stunTimeout: 0
   MovementSpeed: 2
   movementSpeedBuff: 0
-  HealthBarPosition: 1.5
-  HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
   damageLocked: 0
   BaseDamage: 2
-  OverallDropChance: 100
+  HealthBar: {fileID: 0}
+  HealthBarPosition: 1.5
+  OverallDropChance: 1
   Drops:
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 10
+  - Chance: .100000001
     Item: {fileID: 11400000, guid: ba0fca9144bf84b1f8fff2a7d280f2d4, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -635,6 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 100000}
   ImmuneTags: []
+  isDangerous: 1
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
