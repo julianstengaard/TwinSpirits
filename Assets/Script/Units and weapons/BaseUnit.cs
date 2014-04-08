@@ -37,7 +37,7 @@ public abstract class BaseUnit : MonoBehaviour {
 		_anim = GetComponent<Animator>();
 		_cc = GetComponent<CharacterController>();
 
-		SkinnedMeshRenderer[] unitRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+		Renderer[] unitRenderers = GetComponentsInChildren<Renderer>();
 		foreach (var renderer in unitRenderers) {
 			if (renderer.gameObject.tag == "DamageBody") {
 				unitMaterial = renderer.material;

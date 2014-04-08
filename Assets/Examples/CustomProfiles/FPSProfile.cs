@@ -41,7 +41,7 @@ namespace InControl
 				new InputControlMapping
 				{
 					Handle = "SpiritLink",
-					Target = InputControlType.Action1,
+					Target = InputControlType.LeftBumper,
 					Source = KeyCodeButton( KeyCode.Space )
 				}
 			};

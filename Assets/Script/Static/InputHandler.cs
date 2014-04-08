@@ -19,7 +19,7 @@ public class InputHandler : MonoBehaviour {
 		if(activeDevices.Contains(InputManager.ActiveDevice))
 			return;
 
-		if(InputManager.ActiveDevice.Action1) {
+		if(InputManager.ActiveDevice.LeftBumper) {
 			var heroes = GameObject.FindObjectsOfType<Hero>();
 
 			foreach(var hero in heroes) {
