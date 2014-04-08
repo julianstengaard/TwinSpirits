@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300076}
   - 23: {fileID: 2300076}
-  - 114: {fileID: 11400000}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: SpiritFountain
+  m_Name: ItemFountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1329,9 +1329,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -9.42465306e-09, y: .902245998, z: -1.97192147e-08, w: -.431221843}
-  m_LocalPosition: {x: -3.92843556, y: .395060092, z: .113656022}
-  m_LocalScale: {x: .357692182, y: .357692242, z: .357692182}
+  m_LocalRotation: {x: 0, y: -.940889657, z: 0, w: -.338713408}
+  m_LocalPosition: {x: -3.60324717, y: .372019351, z: -.292868227}
+  m_LocalScale: {x: .357692122, y: .357692242, z: .357692122}
   m_Children: []
   m_Father: {fileID: 400176}
 --- !u!4 &400002
@@ -1399,7 +1399,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100176}
   m_LocalRotation: {x: 0, y: -.942904115, z: 0, w: .333064348}
-  m_LocalPosition: {x: 85.3094177, y: 280.48056, z: -223.109573}
+  m_LocalPosition: {x: -21.3799496, y: 212.089417, z: -351.674713}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400174}
@@ -1436,6 +1436,7 @@ Transform:
   - {fileID: 400188}
   - {fileID: 400184}
   - {fileID: 400206}
+  - {fileID: 400000}
   - {fileID: 400292}
   - {fileID: 400300}
   - {fileID: 400304}
@@ -1444,7 +1445,6 @@ Transform:
   - {fileID: 400308}
   - {fileID: 400312}
   - {fileID: 400316}
-  - {fileID: 400000}
   - {fileID: 400202}
   - {fileID: 400204}
   - {fileID: 400200}
@@ -3779,16 +3779,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3216efa1d4b0fa4eb06d095b297325e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fab2a2c4df7973479aa0cbf5693b532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiritPowers:
-  - {fileID: 100000, guid: 991db7c3a043a2143a3d0a9448cffff1, type: 2}
-  - {fileID: 100000, guid: 89290af67e4346447b18ad544024a464, type: 2}
-  - {fileID: 100000, guid: 55556af623301af4b9de5096f21d7cbf, type: 2}
-  - {fileID: 100000, guid: 405be5f9a1e2cb24daab345993f2f1fe, type: 2}
-  - {fileID: 100000, guid: 1e5f3e3d6fc783b43b4186a3bf068810, type: 2}
-  - {fileID: 100000, guid: bb80d7d20d0a2c849be77ae62aace5a0, type: 2}
+  Items:
+  - {fileID: 100000, guid: e8d1cc042250e483eab75e06a0030d17, type: 2}
+  - {fileID: 100000, guid: 18e96f85d3c354809b2675198db18718, type: 2}
+  - {fileID: 100000, guid: ba1fd9a647fe54a678831c55260f132f, type: 2}
+  - {fileID: 100000, guid: 3e6e30f8760c04f43a06502e1dc7d57c, type: 2}
+  - {fileID: 100000, guid: ebdc48f978ff24a4197a72a5210d0b1d, type: 2}
+  - {fileID: 100000, guid: ed9d4f5cc4a9549a39688e272a48af0f, type: 2}
+  - {fileID: 100000, guid: 686b414e4f20d442892f16b0f04466e9, type: 2}
+  - {fileID: 100000, guid: df62f32f014b643928085813f0549d4c, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
