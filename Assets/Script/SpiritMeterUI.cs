@@ -63,7 +63,7 @@ public class SpiritMeterUI : MonoBehaviour {
 	bool FindPlayers()
 	{
 		var ps = GameObject.FindObjectsOfType<Hero>();
-		if(ps.Length > 0) {
+		if(ps.Length >= 2) {
 		    foreach (var player in ps)
 		    {
 		       if (player.PlayerSlot == Hero.Player.One)
