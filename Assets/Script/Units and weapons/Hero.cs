@@ -70,8 +70,16 @@ public class Hero : BaseUnit {
 	new void Update () {
 		base.Update();
 
-		if (dead)
+		if (dead) {
+			unitMaterial.SetColor("_Color", deadColor);
 			return;
+		}
+		
+		if (damageLocked) {
+			damageLockTimer = (damageLockTimer + Time.deltaTime * 5f) % 1f;
+			unitMaterial.SetColor("_Color", Color.Lerp(initColor, damageLockColor, damageLockTimer));
+		}
+
 
 		//Revive comrade if close!
 		if (otherPlayer.dead && Health > 1f) {
@@ -142,40 +150,41 @@ public class Hero : BaseUnit {
 		}
 	}
 
-    public override void TakeDamage(float damage)
-    {
-        if (!immortal && !damageLocked)
-        {
-            Health = Mathf.Max(0, Health - damage);
-            _anim.SetTrigger("Damaged");
+	public override void TakeDamage(float damage)
+	{
+		if (!immortal && !damageLocked)
+		{
+			Health = Mathf.Max(0, Health - damage);
+			_anim.SetTrigger("Damaged");
+			StartCoroutine(DamageLockTimeout(1f));
+			
+			if (Health <= 0 && !dead)
+				Died();
+		}
+	}
 
-            damageLocked = true;
-            StartCoroutine(DamageLockTimeout(1f));
-
-            if (Health <= 0 && !dead)
-                Died();
-        }
-    }
-
-    private IEnumerator DamageLockTimeout(float t)
-    {
-        yield return new WaitForSeconds(t);
-        damageLocked = false;
-    }
-
+	private IEnumerator DamageLockTimeout(float t)
+	{
+		damageLockTimer = 0f;
+		damageLocked = true;
+		yield return new WaitForSeconds(t);
+		damageLocked = false;
+		unitMaterial.SetColor("_Color", initColor);
+	}
+	
 	protected override void Died () {
 		dead = true;
-		GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_Color", new Color(1f, 0, 0));
+		unitMaterial.SetColor("_Color", deadColor);
 		aspect.IsActive = false;
 		_anim.SetBool("Dead", true);
 		_anim.SetBool("Attacking", false);
 		MakeInert();
 	}
-
+	
 	public void Revived (float health) {
 		dead = false;
 		Health = Mathf.Min(health, FullHealth);
-		GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_Color", new Color(156/255f, 156/255f, 156/255f));
+		unitMaterial.SetColor("_Color", initColor);
 		aspect.IsActive = true;
 		_anim.SetBool("Dead", false);
 	}
@@ -184,15 +193,15 @@ public class Hero : BaseUnit {
 
 	private void UpdateSpiritLink() {
 		// SPIRIT STUFF
-		if (_input.Action1.WasPressed && !spiritActive && !spiritSyncActive)
+		if (_input.LeftBumper.WasPressed && !spiritActive && !spiritSyncActive)
 		{
 			ActivateSpiritPower();
 		}
-		else if (_input.Action1.IsPressed && spiritActive && !spiritSyncActive)
+		else if (_input.LeftBumper.IsPressed && spiritActive && !spiritSyncActive)
 		{
 			UpdateSpiritPower();
 		}
-		else if (_input.Action1.WasReleased)
+		else if (_input.LeftBumper.WasReleased)
 		{
 			if (spiritSyncActive) {
 				spiritSyncActive 	= false;

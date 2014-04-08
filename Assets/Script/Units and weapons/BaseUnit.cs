@@ -14,6 +14,12 @@ public abstract class BaseUnit : MonoBehaviour {
 
 	protected Animator _anim;
 	protected CharacterController _cc;
+	
+	protected Material unitMaterial;
+	protected Color initColor;
+	protected Color deadColor = new Color(1f, 0f, 0f);
+	protected Color damageLockColor = new Color(1f, 0f, 0f);
+	protected float damageLockTimer = 0f;
 
 
 	public float MovementSpeed;
@@ -31,12 +37,29 @@ public abstract class BaseUnit : MonoBehaviour {
 		_anim = GetComponent<Animator>();
 		_cc = GetComponent<CharacterController>();
 
+		SkinnedMeshRenderer[] unitRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+		foreach (var renderer in unitRenderers) {
+			if (renderer.gameObject.tag == "DamageBody") {
+				unitMaterial = renderer.material;
+			}
+		}
+		if (unitMaterial == null) {
+			unitMaterial = unitRenderers[0].material;
+		}
+		
+		initColor = unitMaterial.GetColor("_Color");
+
 	    if (!(FullHealth > 0f))
             FullHealth = Health;
 
 	}
-
-	protected void Update() {}
+	
+	protected void Update() {
+		if (damageLockTimer >= 0f) {
+			damageLockTimer -= Time.deltaTime;
+			unitMaterial.SetColor("_Color", Color.Lerp(initColor, damageLockColor, damageLockTimer));
+		}
+	}
 
 	protected void LateUpdate() {
 		if (stunned && stunTimeout < Time.time) {
@@ -48,10 +71,11 @@ public abstract class BaseUnit : MonoBehaviour {
 		_cc.Move(Vector3.down * 0.5f);
 	}
 
-    public virtual void TakeDamage(float damage)
-    {
+	public virtual void TakeDamage(float damage)
+	{
 		if (!immortal) {
 			Health = Mathf.Max(0, Health - damage);
+			damageLockTimer = 0.3f;
 			_anim.SetTrigger("Damaged");
 			if(Health <= 0 && !dead)
 				Died ();
