@@ -130,6 +130,9 @@ public class SpiritImmortal : SpiritPower
         if (readyToPull && Player1Triggered && Player2Triggered)
         {
             readyToPull = false;
+            Player1Triggered = false;
+            Player2Triggered = false;
+
             //Find enemies to do effect on
             GameObject[] enemiesObjects = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -148,14 +151,14 @@ public class SpiritImmortal : SpiritPower
 
     private void ThrowGravityTriggers(Hero sourceHero, Hero otherHero)
     {
-        GameObject triggerOtherGO = (GameObject) GameObject.Instantiate(_triggerPrefab, otherHero.transform.position, Quaternion.identity);
-        GameObject triggerSourceGO = (GameObject)GameObject.Instantiate(_triggerPrefab, sourceHero.transform.position, Quaternion.identity);
+        GameObject triggerOtherGO = (GameObject) GameObject.Instantiate(_triggerPrefab, sourceHero.transform.position, Quaternion.identity);
+        GameObject triggerSourceGO = (GameObject) GameObject.Instantiate(_triggerPrefab, otherHero.transform.position, Quaternion.identity);
         triggerP1 = triggerOtherGO.GetComponent<TriggerForSpiritImmortal>();
         triggerP2 = triggerSourceGO.GetComponent<TriggerForSpiritImmortal>();
         Vector3 throwDirectionOther = otherHero.transform.TransformDirection(Vector3.forward) * _throwRange;
         Vector3 throwDirectionSource = sourceHero.transform.TransformDirection(Vector3.forward) * _throwRange;
-        triggerP1.ActivateTrigger(otherHero.transform.position + throwDirectionOther, otherHero, this);
-        triggerP2.ActivateTrigger(sourceHero.transform.position + throwDirectionSource, sourceHero, this);
+        triggerP1.ActivateTrigger(sourceHero.transform.position + throwDirectionSource, otherHero, this);
+        triggerP2.ActivateTrigger(otherHero.transform.position + throwDirectionOther, sourceHero, this);
     }
 
     public override IEnumerator OnUpdateSync (Hero sourceHero, Hero otherHero)
