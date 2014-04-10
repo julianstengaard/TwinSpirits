@@ -166,9 +166,9 @@ public class SpiritPingPong : SpiritPower
 			var enemy = hit.collider.gameObject.GetComponent<BaseUnit>();
 			if (!_enemiesHitPrevious.Contains(enemy)) {
 				if (sync) {
-					enemy.TakeDamage(_damagePerHitCurrentSync);
+					enemy.TakeDamage(_damagePerHitCurrentSync, gameObject);
 				} else {
-					enemy.TakeDamage(_damagePerHitCurrent);
+                    enemy.TakeDamage(_damagePerHitCurrent, gameObject);
 				}
 				StartCoroutine(CreateBallDamageParticle(enemy.gameObject));
 				_enemiesHit.Add(enemy);

@@ -133,7 +133,7 @@ public class SpiritLightning : SpiritPower
 		Collider[] hits = Physics.OverlapSphere(position, _lightningSphereColliderRadius, 1 << 8);
 		foreach (var other in hits) {
 			if (other.tag == "Enemy") {
-				other.gameObject.GetComponent<BaseUnit>().TakeDamage(_damagePerLightningInterval);
+				other.gameObject.GetComponent<BaseUnit>().TakeDamage(_damagePerLightningInterval, gameObject);
 				CreateLightningDamageParticle(other.gameObject);
 			}
 		}

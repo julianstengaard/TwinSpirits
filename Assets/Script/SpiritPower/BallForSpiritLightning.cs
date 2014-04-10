@@ -55,7 +55,7 @@ public class BallForSpiritLightning : MonoBehaviour {
 		Collider[] hits = Physics.OverlapSphere(gameObject.transform.position, _explosionRadius, 1 << 8);
 		foreach (var other in hits) {
 			if (other.tag == "Enemy") {
-				other.gameObject.GetComponent<BaseUnit>().TakeDamage(_damageOnExplosion);
+				other.gameObject.GetComponent<BaseUnit>().TakeDamage(_damageOnExplosion, gameObject);
 			}
 		}
 		yield return new WaitForSeconds(1f);

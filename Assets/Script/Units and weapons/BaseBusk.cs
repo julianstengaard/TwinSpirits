@@ -7,7 +7,7 @@ public class BaseBusk : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		Hero collisionHero = other.gameObject.GetComponent<Hero>();
 		if (collisionHero != null) {
-			collisionHero.TakeDamage(damageOnTouch);
+			collisionHero.TakeDamage(damageOnTouch, gameObject);
 		}
 	}
 }

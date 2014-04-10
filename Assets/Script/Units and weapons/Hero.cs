@@ -42,6 +42,9 @@ public class Hero : BaseUnit {
 
 	private float lastLookTimestamp = 0;
 
+    [HideInInspector]
+    public bool SpiritShieldActive = false;
+
 	//Reviving
 	private Camera _mainCamera;
 	private bool _revivingOther = false;
@@ -68,7 +71,7 @@ public class Hero : BaseUnit {
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
-		currentSpiritPower = gameObject.AddComponent<SpiritLightning>();
+		currentSpiritPower = gameObject.AddComponent<SpiritImmortal>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
@@ -172,9 +175,17 @@ public class Hero : BaseUnit {
 		}
 	}
 
-	public override void TakeDamage(float damage)
+	public override void TakeDamage(float damage, GameObject src)
 	{
-		if (!immortal && !damageLocked)
+	    bool blocked = false;
+        if (SpiritShieldActive) {
+	        Vector3 blockAngle = gameObject.transform.TransformDirection(Vector3.forward);
+	        Vector3 incomingAngle = src.transform.position - gameObject.transform.position;
+            if (Vector3.Angle(blockAngle, incomingAngle) < 80f) {
+                blocked = true;
+            }
+        }
+        if (!damageLocked && !blocked)
 		{
 			Health = Mathf.Max(0, Health - damage);
 			_anim.SetTrigger("Damaged");

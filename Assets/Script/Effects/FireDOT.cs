@@ -26,7 +26,7 @@ public class FireDOT : MonoBehaviour {
 			//Else wait and do damage
 			yield return new WaitForSeconds(damageInterval);
 			timer += damageInterval;
-			_target.TakeDamage(damagePerInterval);
+			_target.TakeDamage(damagePerInterval, gameObject);
 		}
 		Destroy(_particleEffect);
 		Destroy(this, 0.5f);
