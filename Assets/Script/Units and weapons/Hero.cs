@@ -4,6 +4,7 @@ using System.Linq;
 using InControl;
 using RAIN.Entities;
 using RAIN.Entities.Aspects;
+using Holoville.HOTween;
 
 public class Hero : BaseUnit {
 	public enum Player {One, Two}
@@ -41,6 +42,15 @@ public class Hero : BaseUnit {
 
 	private float lastLookTimestamp = 0;
 
+	//Reviving
+	private Camera _mainCamera;
+	private bool _revivingOther = false;
+	private float _reviveTime = 6f;
+	private float _reviveTimer = 0f;
+	private GameObject _reviveHeartPrefab;
+	private GameObject _currentReviveHeart;
+	private GameObject _currentReviveHeartOverlay;
+
 	// METHODS -----
 
 	new void Start() {
@@ -51,6 +61,10 @@ public class Hero : BaseUnit {
 		AddEffectToWeapons(new Damage(25));
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
+
+		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
+		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
+
 		currentSpiritPower = gameObject.AddComponent<SpiritBungie>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
@@ -85,9 +99,13 @@ public class Hero : BaseUnit {
 		if (otherPlayer.dead) {
 			if ((transform.position - otherPlayer.transform.position).magnitude < 2f)
 			{
-			    float transferedHealth = Mathf.Floor(Health/2f);
-                otherPlayer.Revived(Mathf.Max(1f, transferedHealth));
-				Health = Mathf.Max(1f, Health - transferedHealth);
+				//Try to revive
+				RunRevive();
+			} else {
+				if (_revivingOther) {
+					_revivingOther = false;
+					GameObject.Destroy(_currentReviveHeart);
+				}
 			}
 		}
 
@@ -180,7 +198,53 @@ public class Hero : BaseUnit {
 		_anim.SetBool("Attacking", false);
 		MakeInert();
 	}
-	
+
+	private void RunRevive () {
+		if (!_revivingOther) {
+			//Start the revive
+			_reviveTimer = 0f;
+			_revivingOther = true;
+			Vector3 heartPosition = otherPlayer.transform.position + Vector3.up;
+			_currentReviveHeart = (GameObject) GameObject.Instantiate(_reviveHeartPrefab, heartPosition, Quaternion.LookRotation(_mainCamera.transform.forward - heartPosition));
+			Transform[] _currentReviveHeartOverlays = _currentReviveHeart.GetComponentsInChildren<Transform>();
+			foreach(var go in _currentReviveHeartOverlays) {
+				if (!go.gameObject.Equals(_currentReviveHeart)) {
+					_currentReviveHeartOverlay = go.gameObject;
+					break;
+				}
+			}
+			_currentReviveHeartOverlay.transform.localScale = new Vector3(1f, 0f, 1f);
+			//Tween in the heart
+			_currentReviveHeart.transform.localScale *= 0f;
+			TweenParms shrineParms = new TweenParms().Prop(
+				"localScale", new Vector3(1f, 1f, 1f)).Ease(
+				EaseType.EaseOutBounce).Delay(0f);
+			HOTween.To(_currentReviveHeart.transform, 0.7f, shrineParms);
+		} else {
+			_reviveTimer += Time.deltaTime;
+			//Scale heart
+			float pct = Mathf.Lerp(0f, 1f, _reviveTimer/_reviveTime);
+			Vector3 heartPosition = otherPlayer.transform.position + Vector3.up;
+			_currentReviveHeart.transform.rotation = Quaternion.LookRotation(heartPosition - _mainCamera.transform.position);
+			_currentReviveHeart.transform.position = heartPosition;
+			_currentReviveHeartOverlay.transform.localPosition = Vector3.down * 0.5f + new Vector3(0f, pct/2f, 0f) + _currentReviveHeart.transform.TransformDirection(Vector3.back) * 0.03f;
+			_currentReviveHeartOverlay.transform.localScale = new Vector3(1f, pct, 1f);
+			_currentReviveHeartOverlay.renderer.material.mainTextureScale = new Vector2(1f, pct); 
+			if (_reviveTimer >= _reviveTime) {
+				DoRevive();
+				_revivingOther = false;
+				GameObject.Destroy(_currentReviveHeart);
+			}
+		}
+
+	}
+
+	private void DoRevive () {
+		float transferedHealth = Mathf.Floor(Health/2f);
+		otherPlayer.Revived(Mathf.Max(1f, transferedHealth));
+		Health = Mathf.Max(1f, Health - transferedHealth);
+	}
+
 	public void Revived (float health) {
 		dead = false;
 		Health = Mathf.Min(health, FullHealth);
