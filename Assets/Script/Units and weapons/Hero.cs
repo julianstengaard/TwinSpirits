@@ -65,7 +65,7 @@ public class Hero : BaseUnit {
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
-		currentSpiritPower = gameObject.AddComponent<SpiritBungie>();
+		currentSpiritPower = gameObject.AddComponent<SpiritPingPong>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
