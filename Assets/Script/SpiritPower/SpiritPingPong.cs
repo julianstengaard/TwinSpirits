@@ -26,14 +26,13 @@ public class SpiritPingPong : SpiritPower
 
 	private float _speedCurrent;
 	private float _speedInit = 5f;
-	private float _minSpeedInit = 1f;
 	private float _accelerationPerBounce = 1.1f; //pct
 	private float _catchRadiusSqr = 0.6f;
 	private float _syncSuctionThresholdSqr = 9f;
 	private float _syncSuctionAmount = 2f;
-    private float _ballLifeTime = 20f;
+    private float _ballLifeTime = 10f;
     private float _ballLifeTimeCounter = 0f;
-	private float _syncBallLifeTime = 20f;
+	private float _syncBallLifeTime = 10f;
 	private float _syncBallLifeTimeCounter = 0f;
 
 	private int _currentBounces;
@@ -139,6 +138,8 @@ public class SpiritPingPong : SpiritPower
 		}
 		
 		if (bounced) {
+			_ballLifeTimeCounter = 0f;
+			_syncBallLifeTimeCounter = 0f;
 			_currentBounces++;
 			_speedCurrent *= _accelerationPerBounce;
 			_damagePerHitCurrent *= _damageIncreasePerBounce;

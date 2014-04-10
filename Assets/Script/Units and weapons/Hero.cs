@@ -51,6 +51,9 @@ public class Hero : BaseUnit {
 	private GameObject _currentReviveHeart;
 	private GameObject _currentReviveHeartOverlay;
 
+	[HideInInspector]
+	public Vector3 CurrentMoveVector = Vector3.zero;
+
 	// METHODS -----
 
 	new void Start() {
@@ -65,7 +68,7 @@ public class Hero : BaseUnit {
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
-		currentSpiritPower = gameObject.AddComponent<SpiritPingPong>();
+		currentSpiritPower = gameObject.AddComponent<SpiritLightning>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
@@ -115,7 +118,8 @@ public class Hero : BaseUnit {
 		// MOVEMENT
 		var tPos = new Vector3(_input.LeftStickX, 0, _input.LeftStickY);
 		var pos = tPos.sqrMagnitude > 1 ? tPos.normalized : tPos;
-		var dir = pos * GetMoveSpeed() * Time.deltaTime;
+		CurrentMoveVector = pos * GetMoveSpeed();
+		var dir = CurrentMoveVector * Time.deltaTime;
 
 		_anim.SetBool("Attacking", _input.RightBumper);
 		if(_input.RightBumper)
@@ -205,7 +209,7 @@ public class Hero : BaseUnit {
 			_reviveTimer = 0f;
 			_revivingOther = true;
 			Vector3 heartPosition = otherPlayer.transform.position + Vector3.up;
-			_currentReviveHeart = (GameObject) GameObject.Instantiate(_reviveHeartPrefab, heartPosition, Quaternion.LookRotation(_mainCamera.transform.forward - heartPosition));
+			_currentReviveHeart = (GameObject) GameObject.Instantiate(_reviveHeartPrefab, heartPosition, Quaternion.LookRotation(heartPosition - _mainCamera.transform.position));
 			Transform[] _currentReviveHeartOverlays = _currentReviveHeart.GetComponentsInChildren<Transform>();
 			foreach(var go in _currentReviveHeartOverlays) {
 				if (!go.gameObject.Equals(_currentReviveHeart)) {
