@@ -6,6 +6,11 @@ using Holoville.HOTween;
 public class SpiritPingPong : SpiritPower 
 {
 	private GameObject _ball;
+	private Color _ballColor = new Color(1f, 1f, 1f, 0.8f);
+	private Color _ballColorNoBounce = new Color(0.2f, 0.2f, 0.2f, 0.8f);
+
+    private bool _ballReady = true;
+    private bool _ballActive = false;
 	private float _ballRadius = 0.2f;
 	private float _syncBallRadius = 0.3f;
 	//private float _ballRadiusSqr;
@@ -20,26 +25,30 @@ public class SpiritPingPong : SpiritPower
 	private GameObject _particleEffectPrefab;
 
 	private float _speedCurrent;
-	private float _speedInit;
-	private float _timePerBounceInit = 2f;
-	private float _accelerationPerBounce = 0.1f;
-	private float _timePerBounceCurrent;
+	private float _speedInit = 5f;
+	private float _accelerationPerBounce = 1.1f; //pct
 	private float _catchRadiusSqr = 0.6f;
 	private float _syncSuctionThresholdSqr = 9f;
 	private float _syncSuctionAmount = 2f;
-	private float _syncBallLifeTime = 20f;
-	private float _syncBallLifeTimeCounter = 0;
+    private float _ballLifeTime = 10f;
+    private float _ballLifeTimeCounter = 0f;
+	private float _syncBallLifeTime = 10f;
+	private float _syncBallLifeTimeCounter = 0f;
 
 	private int _currentBounces;
 	private int _maxBounces = 10;
 	private int _maxBouncesSync = 20;
 
-	private float _damagePerHit = 10f;
-	private float _damagePerHitSync = 20f;
+	private float _damagePerHitBase = 10f;
+	private float _damagePerHitCurrent;
+	private float _damageIncreasePerBounce = 1.1f; //pct
+	private float _damagePerHitBaseSync = 20f;
+	private float _damagePerHitCurrentSync;
+	private float _damageIncreasePerBounceSync = 1.1f; //pct
 	
 	void Start() {
 		costActivate 		=  10f;
-		costPerSecond 		=  10f;
+		costPerSecond 		=  0f;
 		costActivateSync 	= 100f;
 		_particleEffectPrefab = (GameObject) Resources.Load("SpiritPingPongParticle", typeof(GameObject));
 	}
@@ -47,22 +56,28 @@ public class SpiritPingPong : SpiritPower
 	/* BEGIN REGULAR POWER */
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
+        if (!_ballReady)
+            return null;
+
 		if (syncActive)
 			syncActive = false;
+        
+        _ballActive = true;
+        _ballReady = false;
+        _ballLifeTimeCounter = 0f;
 
 		DestroyBall();
-		_ball = CreateBallSphere(new Color(1f, 1f, 1f, 0.8f), otherHero.transform, _ballRadius);
+		_ball = CreateBallSphere(_ballColor, otherHero.transform, _ballRadius);
 		_currentBounces = 0;
+		_damagePerHitCurrent = _damagePerHitBase;
+		_damagePerHitCurrentSync = _damagePerHitBaseSync;
 
 		_origin = otherHero;
 		_receiver = sourceHero;
 
 		_currentOriginPosition = _origin.transform.position + Vector3.up;
 		_currentTargetPosition = _receiver.transform.position + Vector3.up;
-	
-		_timePerBounceCurrent = _timePerBounceInit;
-		float distanceToCover = Vector3.Distance(_currentOriginPosition, _currentTargetPosition);
-		_speedCurrent = distanceToCover / _timePerBounceCurrent;
+		_speedCurrent = _speedInit;
 
 		return null;
 	}
@@ -77,8 +92,7 @@ public class SpiritPingPong : SpiritPower
 	}
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{
-		UpdateBall(_maxBounces, false);
-
+		
 		return null;
 	}
 
@@ -111,8 +125,10 @@ public class SpiritPingPong : SpiritPower
 		}
 		_ball.transform.position = GetBallMovement(_currentOriginPosition, _ball.transform.position, _currentTargetPosition, sync);
 		CheckForBallCollision(previousPosition, _ball.transform.position, sync);
-		
+
+		//No more bounce for you
 		if ((sync && _currentBounces >= _maxBouncesSync) || (!sync && _currentBounces >= _maxBounces)) {
+			_ball.renderer.material.SetColor("_Color", _ballColorNoBounce);
 			return;
 		}
 		
@@ -122,21 +138,22 @@ public class SpiritPingPong : SpiritPower
 		}
 		
 		if (bounced) {
+			_ballLifeTimeCounter = 0f;
+			_syncBallLifeTimeCounter = 0f;
 			_currentBounces++;
-			_timePerBounceCurrent /= 1f + _accelerationPerBounce;
-			float distanceToCover = Vector3.Distance(_currentOriginPosition, _currentTargetPosition);
-			_speedCurrent = distanceToCover / _timePerBounceCurrent;
+			_speedCurrent *= _accelerationPerBounce;
+			_damagePerHitCurrent *= _damageIncreasePerBounce;
+			_damagePerHitCurrentSync *= _damageIncreasePerBounceSync;
 		}
 	}
 
 	public Vector3 GetBallMovement(Vector3 origin, Vector3 current, Vector3 target, bool sync) {
-		Vector3 secondMove = (target-origin).normalized * _speedCurrent * Time.deltaTime;
-		if ((current - origin).sqrMagnitude > (current - target).sqrMagnitude) {
-			return current + secondMove;
-		}
-		Vector3 firstPosition = Vector3.Lerp(current, target, Time.deltaTime);
-		Vector3 firstMove = firstPosition - current;
-		return (firstMove.sqrMagnitude > secondMove.sqrMagnitude) ? (current + firstMove) : (current + secondMove);
+		float dPath = Vector3.Distance (origin, target);
+		float dCurrent = Vector3.Distance (origin, current);
+		float pct = dCurrent/dPath;
+		Vector3 baseMoveSpeed = (target-origin).normalized * _speedCurrent * Time.deltaTime;
+		Vector3 move = Vector3.Lerp(baseMoveSpeed*2f, baseMoveSpeed, pct);
+		return current + move;
 	}
 
 	private void CheckForBallCollision (Vector3 from, Vector3 to, bool sync) {
@@ -149,9 +166,9 @@ public class SpiritPingPong : SpiritPower
 			var enemy = hit.collider.gameObject.GetComponent<BaseUnit>();
 			if (!_enemiesHitPrevious.Contains(enemy)) {
 				if (sync) {
-					enemy.TakeDamage(_damagePerHitSync);
+					enemy.TakeDamage(_damagePerHitCurrentSync, gameObject);
 				} else {
-					enemy.TakeDamage(_damagePerHit);
+                    enemy.TakeDamage(_damagePerHitCurrent, gameObject);
 				}
 				StartCoroutine(CreateBallDamageParticle(enemy.gameObject));
 				_enemiesHit.Add(enemy);
@@ -170,7 +187,8 @@ public class SpiritPingPong : SpiritPower
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
-		DestroyBall();
+        _ballReady = true;
+		
 		return null;
 	}
 	/* END REGULAR POWER */
@@ -216,7 +234,7 @@ public class SpiritPingPong : SpiritPower
 			otherHero.SwitchToSyncPower();
 		}
 
-		_ball = CreateBallSphere(new Color(1f, 1f, 1f, 0.8f), otherHero.transform, _syncBallRadius);
+		_ball = CreateBallSphere(_ballColor, otherHero.transform, _syncBallRadius);
 		_currentBounces = 0;
 		
 		_origin = otherHero;
@@ -225,9 +243,7 @@ public class SpiritPingPong : SpiritPower
 		_currentOriginPosition = _origin.transform.position + Vector3.up;
 		_currentTargetPosition = _receiver.transform.position + Vector3.up;
 		
-		_timePerBounceCurrent = _timePerBounceInit;
-		float distanceToCover = Vector3.Distance(_currentOriginPosition, _currentTargetPosition);
-		_speedCurrent = distanceToCover / _timePerBounceCurrent;
+		_speedCurrent = _speedInit;
 		
 		return null;
 	}
@@ -241,6 +257,16 @@ public class SpiritPingPong : SpiritPower
 				UpdateBall(_maxBouncesSync, true);
 				_syncBallLifeTimeCounter += Time.deltaTime;
 			}
+		} else if (_ballActive) {
+            if (_ballLifeTime < _ballLifeTimeCounter) {
+                _ballActive = false;
+                DestroyBall();
+            }
+            else {
+                UpdateBall(_maxBounces, false);
+                _ballLifeTimeCounter += Time.deltaTime;
+            }
+            
 		}
 	}
 	

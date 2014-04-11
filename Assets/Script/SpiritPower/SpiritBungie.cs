@@ -234,7 +234,7 @@ public class SpiritBungie : SpiritPower
 
 				float enemyDistance = Vector3.Distance(hitPointCircle, enemy.collider.ClosestPointOnBounds(hitPointCircle));
 				if (enemyDistance < width) {
-					enemy.TakeDamage(damagePerInterval);
+					enemy.TakeDamage(damagePerInterval, gameObject);
 					StartCoroutine(CreateCircleDamageParticle(enemy.gameObject));
 				}
 			}

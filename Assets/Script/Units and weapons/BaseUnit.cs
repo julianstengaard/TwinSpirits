@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(CharacterController))]
-public abstract class BaseUnit : MonoBehaviour {
+public abstract class BaseUnit : MonoBehaviour
+{
 	public float Health;
 	public float FullHealth;
 	
@@ -71,7 +72,7 @@ public abstract class BaseUnit : MonoBehaviour {
 		_cc.Move(Vector3.down * 0.5f);
 	}
 
-	public virtual void TakeDamage(float damage)
+	public virtual void TakeDamage(float damage, GameObject src)
 	{
 		if (!immortal) {
 			Health = Mathf.Max(0, Health - damage);
@@ -104,7 +105,7 @@ public abstract class BaseUnit : MonoBehaviour {
 				e.DoEffect(this, attacker, origin, ref damage);
 				StartCoroutine(e.DoEffectCoroutine(this, attacker, origin));
 			}
-			TakeDamage(damage);
+			TakeDamage(damage, attacker);
 		}
 	}
 

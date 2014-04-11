@@ -5,173 +5,61 @@ using System.Linq;
 
 public class SpiritLightning : SpiritPower 
 {
-	private GameObject 		lightningPrefab;
-	private GameObject[] 	enemiesGameObjects;
-	private BaseUnit[] 		enemies;
-	private BaseUnit		currentTarget;
+	private GameObject _lightningBallPrefab;
+	private GameObject _lightningPrefab;
+	private GameObject _currentLightning;
+	private GameObject[] _enemiesGameObjects;
+	private BaseUnit[] _enemies;
 
-	private GameObject		 linkSingle;
-	private List<GameObject> linkChain;
+	private float _damagePerBall = 20f;
+	private float _ballBaseRange = 5f;
+	private float _ballTravelTime = 1f;
+	private float _ballExplosionRadius = 1.5f;
 
-	private List<BaseUnit> chainedEnemies;
-	private List<BaseUnit> nonChainedEnemies;
+	private float _damagePerLightningInterval = 20f;
+	private float _lightningDuration = 10f;
+	private float _lightningSphereColliderRadius = 1f;
+	private float _lightningTimer = 0f;
+	private float _lightningDamageIntervalTimer = 0f;
+	private float _lightningDamageInterval = 0.5f;
+	private GameObject _particleEffectPrefab;
 
-	private float damagePerSecond 	= 20f;
-	private float damageOnSync 		= 100f;
-
-	private float rangeSingle		= 20f;
-	private float rangeChains		= 20f;
-	private int	  numberOfChains	= 2;
+	private Camera _mainCamera;
 
 	void Start() {
 		costActivate 		=  10f;
-		costPerSecond 		=  10f;
+		costPerSecond 		=  0f;
 		costActivateSync 	= 100f;
+		_lightningBallPrefab = (GameObject) Resources.Load("SpiritLightningBall");
+		_lightningPrefab = (GameObject) Resources.Load("Lightning");
+		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
+		_particleEffectPrefab = (GameObject) Resources.Load("SpiritLightningParticle", typeof(GameObject));
 	}
 	
 	/* BEGIN REGULAR POWER */
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
-		currentTarget = FindNearestEnemy(otherHero.transform.position, false);
-
-		//Create lightning to it
-		if (currentTarget != null) {
-			CreateLightningLink(otherHero, currentTarget, "SpiritLinkLightning");
-		}
-
-		//Debug.Log("Activating" + this.GetType());
+		//Create a ball
+		GameObject ballGO = (GameObject) GameObject.Instantiate(_lightningBallPrefab, otherHero.transform.position, Quaternion.identity);
+		BallForSpiritLightning ball = ballGO.GetComponent<BallForSpiritLightning>();
+		Vector3 throwDirection = otherHero.transform.TransformDirection(Vector3.forward) * _ballBaseRange;
+		Vector3 moveDirection = otherHero.CurrentMoveVector;
+		ball.ActivateBall(otherHero.transform.position + throwDirection + moveDirection, _ballExplosionRadius, _damagePerBall, _ballTravelTime);
 
 		return null;
 	}
-
-	private BaseUnit FindNearestEnemy(Vector3 source, bool sync)
-	{
-		//Find enemies
-		enemiesGameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-		enemies = new BaseUnit[enemiesGameObjects.Length];
-		
-		for (int i = 0; i < enemiesGameObjects.Length; i++) {
-			enemies[i] = enemiesGameObjects[i].GetComponent<BaseUnit>();
-		}
-		
-		//Find nearest enemy
-		float minDistanceSqr = 999666999;
-		int nearestEnemy = -1;
-		for (int i = 0; i < enemies.Length; i++) {
-			float distanceSqr = (source - enemies[i].transform.position).sqrMagnitude;
-			if (distanceSqr < minDistanceSqr) {
-				nearestEnemy = i;
-				minDistanceSqr = distanceSqr;
-			}
-		}
-
-		float maxRange = sync ? rangeChains : rangeSingle;
-
-		if (nearestEnemy == -1 || Mathf.Sqrt(minDistanceSqr) > maxRange)
-			return null;
-		else 
-			return enemies[nearestEnemy];
-	}
-
-	private BaseUnit FindNearestEnemyChain(Vector3 source, List<BaseUnit> targets)
-	{
-		//Find nearest to chain to
-		float minDistanceSqr = 999666999;
-		BaseUnit nearestEnemy = null;
-		foreach (BaseUnit target in targets) {
-			float distanceSqr = (source - target.transform.position).sqrMagnitude;
-			if (distanceSqr < minDistanceSqr) {
-				nearestEnemy = target;
-				minDistanceSqr = distanceSqr;
-			}
-		}
-		if (nearestEnemy == null || Mathf.Sqrt(minDistanceSqr) > rangeChains)
-			return null;
-		else 
-			return nearestEnemy;
-	}
-
-	private void CreateChainLightning(Vector3 source)
-	{
-		nonChainedEnemies 	= new List<BaseUnit>();
-		chainedEnemies 		= new List<BaseUnit>();
-		linkChain 			= new List<GameObject>();
-
-		//Find enemies
-		enemiesGameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-		enemies = new BaseUnit[enemiesGameObjects.Length];
-		
-		for (int i = 0; i < enemiesGameObjects.Length; i++) {
-			enemies[i] = enemiesGameObjects[i].GetComponent<BaseUnit>();
-			nonChainedEnemies.Add(enemies[i]);
-		}
-
-		//Find nearest enemy
-		BaseUnit chainFrom = FindNearestEnemy(source, true);
-
-		//Create the chain (if within range)
-		if (chainFrom != null) {
-			//Add the first enemy to it
-			chainedEnemies.Add(chainFrom);
-			//And remove it from the potential targets
-			nonChainedEnemies.Remove(chainFrom);
-
-			//Then try chaining further
-			for (int i = 0; i < numberOfChains; i++) {
-				BaseUnit currentEnemy = FindNearestEnemyChain(chainedEnemies.Last().transform.position, nonChainedEnemies);
-				if (currentEnemy == null) {
-					break;
-				}
-				chainedEnemies.Add(currentEnemy);
-				nonChainedEnemies.Remove(currentEnemy);
-			}
-		}
-
-		//Create effects and deal damage for chain
-		BaseUnit previous = null;
-		foreach (BaseUnit target in chainedEnemies) {
-			target.TakeDamage(damageOnSync);
-			//First lightning
-			if (target == chainFrom) {
-				linkChain.Add(CreateChainLink(source, target.transform.position, "SpiritLinkLightning"));
-			} else {
-				linkChain.Add(CreateChainLink(previous.transform.position, target.transform.position, "SpiritLinkLightning"));
-			}
-			previous = target;
-		}
-
-		//Remove the effects again
-		foreach (GameObject chain in linkChain) {
-			GameObject.Destroy(chain, 0.5f);
-		}
-	}
-
-
 
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{
-		if (currentTarget != null && !currentTarget.dead) {
-			UpdateLightningLink(otherHero, currentTarget);
-			currentTarget.TakeDamage(damagePerSecond * Time.deltaTime);
-		}
-		else {
-			currentTarget = FindNearestEnemy(otherHero.transform.position, false);
-		}
-
-		if (currentTarget == null) {
-			DestroyLightningLink(0f);
-		}
-
 		return null;
 	}
+
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
-		DestroyLightningLink (0f);
 		return null;
 	}
 	/* END REGULAR POWER */
-	
 	
 	
 	/* BEGIN SYNC POWER */
@@ -193,94 +81,86 @@ public class SpiritLightning : SpiritPower
 		}
 		
 	}
-    public override IEnumerator OnActivateSync(Hero sourceHero, Hero otherHero, bool secondSync = false)
+	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
-		//CreateLightningLink(sourceHero, otherHero, "SpiritLinkRay");
 
-        if (!secondSync)
-        {
-            //Pay for activation
-            sourceHero.ChangeSpiritAmount(-costActivateSync);
-            otherHero.ChangeSpiritAmount(-costActivateSync);
-
-            //Stop other Heros effect
-            otherHero.SwitchToSyncPower();
-        }
-
-		Vector3 midpoint = (sourceHero.transform.position + otherHero.transform.position) * 0.5f;
-
-		CreateChainLightning(midpoint);
+		if (!secondSync)
+		{
+			//Pay for activation
+			sourceHero.ChangeSpiritAmount(-costActivateSync);
+			otherHero.ChangeSpiritAmount(-costActivateSync);
+			
+			//Stop other Heros effect
+			otherHero.SwitchToSyncPower();
+		}
+		StartCoroutine(LightningSync(sourceHero, otherHero));
 
 		return null;
 	}
 
+	private IEnumerator LightningSync(Hero sourceHero, Hero otherHero) {
+		_lightningTimer = _lightningDuration + Time.time;
+		_lightningDamageIntervalTimer = _lightningDamageInterval;
+
+		Vector3 center = (sourceHero.transform.position + otherHero.transform.position) * 0.5f;
+		_currentLightning = (GameObject) GameObject.Instantiate(_lightningPrefab, center, Quaternion.identity);
+
+		while (true) {
+			if (!syncActive) {
+				break;
+			}
+			yield return new WaitForEndOfFrame();
+			_lightningDamageIntervalTimer += Time.deltaTime;
+			if (Time.time < _lightningTimer) {
+				center = (sourceHero.transform.position + otherHero.transform.position) * 0.5f;
+				_currentLightning.transform.position = center + Vector3.up * _currentLightning.transform.localScale.y * 0.45f;
+				Vector3 rotationTarget = _mainCamera.transform.position - new Vector3(1f, _mainCamera.transform.position.y, 1f) + Vector3.up * _currentLightning.transform.position.y;
+				_currentLightning.transform.rotation = Quaternion.LookRotation(_currentLightning.transform.position - rotationTarget);
+				if (_lightningDamageIntervalTimer >= _lightningDamageInterval) {
+					_lightningDamageIntervalTimer = 0f;
+					DoLightningDamage(center);
+				}
+			} else {
+				break;
+			}
+		}
+		GameObject.Destroy(_currentLightning);
+		yield return null;
+	}
+
+	private void DoLightningDamage(Vector3 position) {
+		Collider[] hits = Physics.OverlapSphere(position, _lightningSphereColliderRadius, 1 << 8);
+		foreach (var other in hits) {
+			if (other.tag == "Enemy") {
+				other.gameObject.GetComponent<BaseUnit>().TakeDamage(_damagePerLightningInterval, gameObject);
+				CreateLightningDamageParticle(other.gameObject);
+			}
+		}
+	}
+
+	private IEnumerator CreateLightningDamageParticle(GameObject target) {
+		GameObject _particleEffect = (GameObject) Instantiate(_particleEffectPrefab, target.transform.position, Quaternion.identity);
+		GameObject.Destroy(_particleEffect, 1f);
+		yield return null;
+	}
+
 	public override IEnumerator OnUpdateSync (Hero sourceHero, Hero otherHero)
 	{
-		//UpdateBungieLink(sourceHero, otherHero);
 		return null;
 	}
 	
 	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
 	{
-		return null;
+		//Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
+		syncActive = false;
+		if (_currentLightning != null) {
+			GameObject.Destroy(_currentLightning);
+		}
+		yield return null;
 	}
 	/* END SYNC POWER */
-
-
-	private void CreateLightningLink (Hero otherHero, BaseUnit target, string prefab)
-	{
-		linkSingle = (GameObject) Instantiate(Resources.Load(prefab), Vector3.zero, Quaternion.identity); 
-		UpdateLightningLink (otherHero, target);
-	}
-
-	private void UpdateLightningLink (Hero otherHero, BaseUnit target)
-	{
-		linkSingle.renderer.enabled = true;
-
-		Vector3 midPoint = (otherHero.transform.position + target.transform.position) * 0.5f + Vector3.up;
-		linkSingle.transform.position = midPoint;
-
-		//Calculate scale/rotation
-		float spanningScale = Vector3.Distance(otherHero.transform.position, target.transform.position)/10f;
-		Quaternion rotation = Quaternion.LookRotation(otherHero.transform.position - target.transform.position, Vector3.up);
-		rotation *= Quaternion.Euler(0, 90, 0);
-
-		//Scale and rotate it
-		var s = linkSingle.transform.localScale;
-		s.x = spanningScale;
-		linkSingle.transform.localScale = s;
-		linkSingle.transform.localRotation = rotation;
-	}
-
-	private void DestroyLightningLink (float time)
-	{
-		GameObject.Destroy(linkSingle, time);
-	}
-
-	private GameObject CreateChainLink(Vector3 source, Vector3 target, string prefab) 
-	{
-		GameObject chainLink = (GameObject) Instantiate(Resources.Load(prefab), Vector3.zero, Quaternion.identity); 
-		
-		chainLink.renderer.enabled = true;
-		
-		Vector3 midPoint = (source + target) * 0.5f + Vector3.up;
-		chainLink.transform.position = midPoint;
-		
-		//Calculate scale/rotation
-		float spanningScale = Vector3.Distance(source, target)/10f;
-		Quaternion rotation = Quaternion.LookRotation(source - target, Vector3.up);
-		rotation *= Quaternion.Euler(0, 90, 0);
-		
-		//Scale and rotate it
-		var s = chainLink.transform.localScale;
-		s.x = spanningScale;
-		chainLink.transform.localScale = s;
-		chainLink.transform.localRotation = rotation;
-		
-		return chainLink;
-	}
-
+	
 	public override float GetCostActivate ()
 	{
 		return costActivate;
@@ -293,5 +173,5 @@ public class SpiritLightning : SpiritPower
 	{
 		return costActivateSync;
 	}
-	
+
 }

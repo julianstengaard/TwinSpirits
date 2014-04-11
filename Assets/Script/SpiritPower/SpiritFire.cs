@@ -59,7 +59,7 @@ public class SpiritFire : SpiritPower
 		foreach (var enemy in _enemies) {
 			var distanceSqr = Vector3.SqrMagnitude(enemy.transform.position - otherHero.transform.position);
 			if (distanceSqr < _burnSphereRadiusSqr) {
-				enemy.TakeDamage(_damagePerSecond * Time.deltaTime);
+				enemy.TakeDamage(_damagePerSecond * Time.deltaTime, gameObject);
 			}
 		}
 		return null;
