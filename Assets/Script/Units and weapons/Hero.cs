@@ -217,6 +217,10 @@ public class Hero : BaseUnit {
 		var hits = Physics.OverlapSphere(transform.position, CollectRadius, 1 << LayerMask.NameToLayer("Collectable"));
 
 		foreach(var c in hits) {
+			var coll = c.GetComponent<Collectable>();
+			if(coll == null || !coll.IsCollectable(this))
+				return;
+
 			var corrected = transform.position;
 			corrected.y += 0.5f;
 			var dir = corrected - c.transform.position;

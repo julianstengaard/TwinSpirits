@@ -5,6 +5,9 @@ public class CameraController : MonoBehaviour {
 	public bool SinglePlayer;
 	public bool SwitchPlayer;
 
+	public GameObject Blacker;
+	private bool fading = false;
+
     private Hero _player1;
     private Hero _player2;
 
@@ -67,6 +70,10 @@ public class CameraController : MonoBehaviour {
             _cameraLookTarget = _target;
             _cameraZOffset = 3f;
             _cameraHeight = 50f;
+			if(!fading) {
+				StartCoroutine(FadeToBlack());
+				fading = true;
+			}
 		}
 
 		//Vector3 wantedPosition = target + Vector3.back * distance + Vector3.up * height;
@@ -86,6 +93,21 @@ public class CameraController : MonoBehaviour {
 		} else {
 			transform.LookAt (_currentLook);
 		}
+	}
+
+	private IEnumerator FadeToBlack() {
+		yield return new WaitForSeconds(3);
+		for(var i = 0.0f; i <= 100; i++) {
+			Blacker.renderer.material.SetColor("_Color", new Color(0,0,0, i / 100.0f));
+			print (i);
+			yield return new WaitForSeconds(0.01f);
+		}
+		yield return new WaitForSeconds(1);
+		GameToMenu();
+	}
+
+	private void GameToMenu() {
+		Application.LoadLevel(0);
 	}
 
     //Calculate new magic values

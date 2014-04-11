@@ -1828,7 +1828,7 @@ GameObject:
   - 33: {fileID: 3300118}
   - 23: {fileID: 2300118}
   - 64: {fileID: 6400000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Simon level 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4956,6 +4956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opening: 3
+  forced: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4968,6 +4969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opening: 1
+  forced: 0
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5352,6 +5354,7 @@ MonoBehaviour:
   Spawners:
   - {fileID: 11400040}
   BridgeGates: []
+  Shrines: []
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

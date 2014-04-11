@@ -2,19 +2,19 @@
 using System.Collections;
 using Holoville.HOTween;
 
-public class ShrineItem : MonoBehaviour {
+public class ShrineItem : Activatable {
 	public GameObject[] Items;
 	
 	private Collectable _attachedItem;
 	private SphereCollider _pickUpSphere;
 	
 	private bool _active;
-	private float buryDepth = 1.5f;
+	private float buryDepth = 1.6f;
 	
 	// Use this for initialization
 	void Start () {
 		transform.position += Vector3.down * buryDepth;
-		Activate();
+		//Activate();
 	}
 	
 	void OnTriggerEnter(Collider other) {
@@ -27,7 +27,7 @@ public class ShrineItem : MonoBehaviour {
 		}
 	}
 	
-	public void Activate() {
+	public override void Activate() {
 		StartCoroutine(AnimateReveal());
 	}
 	private IEnumerator AnimateReveal() {
@@ -35,7 +35,7 @@ public class ShrineItem : MonoBehaviour {
 		
 		CreateSphereCollider();
 		var randomItem = Items[Random.Range(0, Items.Length)];
-		var itemGO = (GameObject) GameObject.Instantiate(randomItem, transform.position + new Vector3(-0.35f, 1.2f, -0f), Quaternion.identity);
+		var itemGO = (GameObject) GameObject.Instantiate(randomItem, transform.position + new Vector3(-0.35f, 1.2f, -0f), Quaternion.LookRotation(Vector3.right));
 		_attachedItem = itemGO.GetComponent<Collectable>();
 		itemGO.transform.parent = gameObject.transform;
 		

@@ -536,7 +536,7 @@ GameObject:
   - 33: {fileID: 3300048}
   - 23: {fileID: 2300048}
   - 64: {fileID: 6400000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Island-04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100020}
-  m_LocalRotation: {x: .00802148227, y: .821288109, z: .0115497634, w: -.570340455}
+  m_LocalRotation: {x: .00802148134, y: .82128799, z: .0115497625, w: -.570340395}
   m_LocalPosition: {x: -.397761792, y: -.00528329611, z: 2.27064157}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692242}
   m_Children: []
@@ -3407,6 +3407,7 @@ MonoBehaviour:
   Spawners:
   - {fileID: 11400042}
   BridgeGates: []
+  Shrines: []
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1
