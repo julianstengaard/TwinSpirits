@@ -207,6 +207,9 @@ public class Hero : BaseUnit {
 	
 	protected override void Died () {
 		dead = true;
+		if (spiritActive) {
+			DeactivateSpiritPower();
+		}
 		unitMaterial.SetColor("_Color", deadColor);
 		aspect.IsActive = false;
 		_anim.SetBool("Dead", true);

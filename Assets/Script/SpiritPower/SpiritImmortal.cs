@@ -78,8 +78,9 @@ public class SpiritImmortal : SpiritPower
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
-		GameObject.Destroy(_shield);
-		otherHero.immortal = false;
+		if (_shield != null) {
+			GameObject.Destroy(_shield);
+		}
         otherHero.SpiritShieldActive = false;
 
 		return null;
