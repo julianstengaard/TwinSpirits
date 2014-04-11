@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: doodad_brokenpillar3_prefab
   m_TagString: Untagged
@@ -23,8 +24,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 238.107117, y: 51.240078, z: -86.5200882}
+  m_LocalRotation: {x: .32956472, y: -.350891173, z: -.555838227, w: .67772156}
+  m_LocalPosition: {x: -.071959734, y: .119680397, z: 10.2111263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,6 +57,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300006, guid: af2cf8a55815a454192927124e54ed87, type: 3}
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.29707396, y: 2.69876409, z: 1.31644499}
+  m_Center: {x: 4.36804548e-05, y: 1.33536386, z: 1.87453097e-05}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

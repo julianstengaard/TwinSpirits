@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 95: {fileID: 9500000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: doodad_fence_prefab
   m_TagString: Untagged
@@ -24,8 +25,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.42625237, y: 2.56726395e-16, z: -11.5619297}
+  m_LocalRotation: {x: 9.31890781e-07, y: -.857275426, z: 1.5516647e-06, w: .514858186}
+  m_LocalPosition: {x: 14.7715693, y: .0109443665, z: 19.8634129}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,6 +58,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300000, guid: ef81297099397fd4e819e8d145fa83c3, type: 3}
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 1.5, z: .5}
+  m_Center: {x: 0, y: .75, z: 0}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2

@@ -1,6 +1,7 @@
 ﻿using Holoville.HOTween;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SpiritImmortal : SpiritPower 
 {
@@ -14,6 +15,8 @@ public class SpiritImmortal : SpiritPower
 	private Vector3 center;
 
     private float _throwRange = 5f;
+	private float _syncSlowAmount = 2f;
+	private float _syncSlowDuration = 10f;
 
     private GameObject _triggerPrefab;
     public bool Player1Triggered = false;
@@ -75,8 +78,9 @@ public class SpiritImmortal : SpiritPower
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
-		GameObject.Destroy(_shield);
-		otherHero.immortal = false;
+		if (_shield != null) {
+			GameObject.Destroy(_shield);
+		}
         otherHero.SpiritShieldActive = false;
 
 		return null;
@@ -167,7 +171,9 @@ public class SpiritImmortal : SpiritPower
 	}
 
 	IEnumerator PullEnemies() {
-        //Destroy triggers
+		float radius = (center - triggerP1.transform.position).magnitude;
+		float radiusSqr = radius * radius;
+		//Destroy triggers
         if (triggerP1 != null)
             GameObject.Destroy(triggerP1.gameObject);
         if (triggerP2 != null)
@@ -176,7 +182,7 @@ public class SpiritImmortal : SpiritPower
 		//Effect
 		pullSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 		pullSphere.transform.position = center;
-	    float radius = (center - triggerP1.transform.position).magnitude;
+	    
         pullSphere.transform.localScale = Vector3.one * (radius * 2f);
 		pullSphere.collider.enabled = false;
 		pullSphere.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
@@ -186,12 +192,13 @@ public class SpiritImmortal : SpiritPower
 
 		//Try to pull enemies over n ticks
 		int ticks = 10;
+		List<BaseUnit> slowedUnits = new List<BaseUnit>();
 		for (int i = 0; i < ticks; i++) {
             pullSphere.transform.localScale = Vector3.Lerp(Vector3.one * (radius * 2f), Vector3.one, i / (float)ticks);
 			foreach (CharacterController enemy in enemies) {
 				var offset = center - enemy.transform.position;
 				var sqrMagnitude = offset.sqrMagnitude;
-                if (sqrMagnitude > radius)
+                if (sqrMagnitude > radiusSqr)
                 {
 					continue;
 				}
@@ -199,10 +206,28 @@ public class SpiritImmortal : SpiritPower
 					offset = offset.normalized;
 					enemy.Move(offset);
 				}
+				if (i == 0) {
+					var enemyUnit = enemy.gameObject.GetComponent<BaseUnit>();
+					if (enemyUnit != null && !slowedUnits.Contains(enemyUnit))
+						slowedUnits.Add(enemyUnit);
+				}
 			}
 			yield return new WaitForFixedUpdate();
 		}
 		GameObject.Destroy(pullSphere);
+
+		//Slow enemies
+		foreach (var enemy in slowedUnits) {
+			if (enemy != null)
+				enemy.SetMovementSpeedBuff(-_syncSlowAmount);
+		}
+
+		//Give speed back
+		yield return new WaitForSeconds(_syncSlowDuration);
+		foreach (var enemy in slowedUnits) {
+			if (enemy != null)
+				enemy.SetMovementSpeedBuff(_syncSlowAmount);
+		}
 		yield return null;
 	}
 	
