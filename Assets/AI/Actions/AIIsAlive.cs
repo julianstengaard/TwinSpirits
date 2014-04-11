@@ -20,8 +20,6 @@ public class AIIsAlive : RAINAction
     public override ActionResult Execute(AI ai)
     {
 		var unit = ai.Body.GetComponent<BaseUnit>();
-
-		Debug.Log("Is Dead? : " + unit.dead);
 		
 		if(unit != null) {
 			if(unit.dead) {

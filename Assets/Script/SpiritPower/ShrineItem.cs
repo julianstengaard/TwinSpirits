@@ -7,14 +7,15 @@ public class ShrineItem : Activatable {
 	
 	private Collectable _attachedItem;
 	private SphereCollider _pickUpSphere;
-	
+
+	[SerializeField]
 	private bool _active;
 	private float buryDepth = 1.6f;
 	
 	// Use this for initialization
 	void Start () {
 		transform.position += Vector3.down * buryDepth;
-		//Activate();
+		if(_active) Activate();
 	}
 	
 	void OnTriggerEnter(Collider other) {

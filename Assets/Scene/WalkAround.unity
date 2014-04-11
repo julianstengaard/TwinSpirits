@@ -547,7 +547,7 @@ AudioSource:
   m_GameObject: {fileID: 411370007}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: b42d9ccd8deb74bc5a0ca4e45993bc89, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fbdca4a42e57540be8ffb4ad0d4f4813, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .829999983
   m_Pitch: 1
@@ -914,8 +914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cde6749a548b154aadb77f6bfc52e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLength: 4
-  spiritRegen: 8.86999989
+  levelLength: 8
+  spiritRegen: 0
 --- !u!4 &627169257
 Transform:
   m_ObjectHideFlags: 0

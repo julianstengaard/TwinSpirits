@@ -71,7 +71,7 @@ public class Hero : BaseUnit {
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
-		currentSpiritPower = gameObject.AddComponent<SpiritImmortal>();
+		currentSpiritPower = gameObject.AddComponent<SpiritLightning>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
@@ -185,7 +185,7 @@ public class Hero : BaseUnit {
                 blocked = true;
             }
         }
-        if (!damageLocked && !blocked)
+        if (!damageLocked && !blocked && !immortal)
 		{
 			Health = Mathf.Max(0, Health - damage);
 			_anim.SetTrigger("Damaged");

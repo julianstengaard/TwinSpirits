@@ -358,13 +358,13 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110245220}
   m_DstState: {fileID: 110293677}
-  m_TransitionDuration: .311498016
-  m_TransitionOffset: 0
+  m_TransitionDuration: .356854051
+  m_TransitionOffset: .00466151396
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
-    m_ExitTime: .687073708
+    m_ExitTime: .641718328
   - m_ConditionMode: 2
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
@@ -446,13 +446,13 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110230098}
   m_DstState: {fileID: 110225460}
-  m_TransitionDuration: .178571358
+  m_TransitionDuration: .635234833
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
-    m_ExitTime: .819999993
+    m_ExitTime: .363336563
   - m_ConditionMode: 2
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
@@ -687,6 +687,9 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
+      first: {fileID: 0}
+      second: []
+    data:
       first: {fileID: 110227574}
       second:
       - {fileID: 110134773}
@@ -694,9 +697,6 @@ StateMachine:
       first: {fileID: 110219601}
       second:
       - {fileID: 110143594}
-    data:
-      first: {fileID: 0}
-      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 48, y: -24, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

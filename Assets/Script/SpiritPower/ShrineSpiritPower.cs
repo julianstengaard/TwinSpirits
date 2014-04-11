@@ -9,6 +9,7 @@ public class ShrineSpiritPower : Activatable {
 	//private Vector3 _attachedSpiritPowerPosition;
 	private SphereCollider _pickUpSphere;
 
+	[SerializeField]
 	private bool _active;
 	private bool _transferring;
 
@@ -17,7 +18,7 @@ public class ShrineSpiritPower : Activatable {
 	// Use this for initialization
 	void Start () {
 		transform.position += Vector3.down * buryDepth;
-		//Activate();
+		if(_active) Activate();
 	}
 	
 	// Update is called once per frame
