@@ -2041,7 +2041,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 125.438667, y: .231880903, z: -429.914795}
+  m_LocalPosition: {x: 380.630798, y: 90.3775558, z: -616.495361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400150}
@@ -2407,7 +2407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 100148}
   ImmuneTags: []
-  isDangerous: 1
+  isDangerous: 0
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
