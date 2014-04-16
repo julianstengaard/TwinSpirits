@@ -224,14 +224,13 @@ public class SpiritPingPong : SpiritPower
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
 		DestroyBall();
 		_syncBallLifeTimeCounter = 0f;
-		if (!secondSync)
-		{
+		if (!secondSync) {
+			//Stop other Heros effect
+			otherHero.SwitchToSyncPower();
+			
 			//Pay for activation
 			sourceHero.ChangeSpiritAmount(-costActivateSync);
 			otherHero.ChangeSpiritAmount(-costActivateSync);
-			
-			//Stop other Heros effect
-			otherHero.SwitchToSyncPower();
 		}
 
 		_ball = CreateBallSphere(_ballColor, otherHero.transform, _syncBallRadius);

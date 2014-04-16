@@ -124,18 +124,18 @@ public class SpiritImmortal : SpiritPower
 	{
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
         //This cant be used twice
-        if (secondSync) 
+		if (secondSync && otherHero.currentSpiritPower.GetType() == typeof(SpiritImmortal)) 
             return null;
 
-	    if (!secondSync)
-	    {
-	        //Pay for activation
-	        sourceHero.ChangeSpiritAmount(-costActivateSync);
-	        otherHero.ChangeSpiritAmount(-costActivateSync);
+		if (!secondSync) {
+			//Stop other Heros effect
+			otherHero.SwitchToSyncPower();
+			
+			//Pay for activation
+			sourceHero.ChangeSpiritAmount(-costActivateSync);
+			otherHero.ChangeSpiritAmount(-costActivateSync);
+		}
 
-	        //Stop other Heros effect
-	        otherHero.SwitchToSyncPower();
-	    }
 	    readyToPull = true;
 	    ThrowGravityTriggers(sourceHero, otherHero);
 		return null;
