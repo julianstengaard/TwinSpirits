@@ -2041,7 +2041,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.20856237, y: 3.65659952, z: -9.68656731}
+  m_LocalPosition: {x: 125.438667, y: .231880903, z: -429.914795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400150}
@@ -2186,33 +2186,33 @@ MonoBehaviour:
   FullHealth: 0
   stunned: 0
   stunTimeout: 0
-  MovementSpeed: 2
+  MovementSpeed: 3
   movementSpeedBuff: 0
   dead: 0
   immortal: 0
   damageLocked: 0
-  BaseDamage: 1
+  BaseDamage: 2
   HealthBar: {fileID: 0}
   HealthBarPosition: 1.5
   OverallDropChance: 100
   Drops:
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 60
+  - Chance: .600000024
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
-  - Chance: 10
+  - Chance: .100000001
     Item: {fileID: 11400000, guid: ba0fca9144bf84b1f8fff2a7d280f2d4, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
@@ -2249,17 +2249,17 @@ MonoBehaviour:
       /></reference><reference type="RAIN.Motion.CharacterControllerMotor" refcount="1"
       id="3"><field type="RAIN.Motion.MoveLookTarget" reference="4" id="moveTarget"
       childrenvisible="False" /><field type="RAIN.Motion.MoveLookTarget" reference="5"
-      id="faceTarget" /><field value="2" type="System.Single" id="defaultSpeed" /><field
-      value="300" type="System.Single" id="defaultRotationSpeed" /><field value="0.1"
-      type="System.Single" id="defaultCloseEnoughDistance" /><field value="0.001"
-      type="System.Single" id="defaultCloseEnoughAngle" /><field value="90" type="System.Single"
-      id="defaultFaceBeforeMoveAngle" /><field value="0.5" type="System.Single" id="defaultStepUpHeight"
-      /><field value="False" type="System.Boolean" id="allow3DMovement" /><field value="False"
-      type="System.Boolean" id="allow3DRotation" /><field value="True" type="System.Boolean"
-      id="validPathRequired" /><field type="UnityEngine.CharacterController" id="characterController"
-      gameobject="2" /></reference><reference type="RAIN.Motion.MoveLookTarget" refcount="1"
-      id="4"><field value="0" type="System.Single" id="closeEnoughDistance" /><field
-      value="None" type="RAIN.Motion.MoveLookTarget+MoveLookTargetType" id="_targetType"
+      id="faceTarget" childrenvisible="False" /><field value="3" type="System.Single"
+      id="defaultSpeed" /><field value="300" type="System.Single" id="defaultRotationSpeed"
+      /><field value="0.1" type="System.Single" id="defaultCloseEnoughDistance" /><field
+      value="0.001" type="System.Single" id="defaultCloseEnoughAngle" /><field value="90"
+      type="System.Single" id="defaultFaceBeforeMoveAngle" /><field value="0.5" type="System.Single"
+      id="defaultStepUpHeight" /><field value="False" type="System.Boolean" id="allow3DMovement"
+      /><field value="False" type="System.Boolean" id="allow3DRotation" /><field value="True"
+      type="System.Boolean" id="validPathRequired" /><field type="UnityEngine.CharacterController"
+      id="characterController" gameobject="2" /></reference><reference type="RAIN.Motion.MoveLookTarget"
+      refcount="1" id="4"><field value="0" type="System.Single" id="closeEnoughDistance"
+      /><field value="None" type="RAIN.Motion.MoveLookTarget+MoveLookTargetType" id="_targetType"
       /><field type="UnityEngine.Transform" id="_transformTarget" gameobject="-1"
       /><field type="RAIN.Core.Kinematic" reference="-1" id="_kinematicTarget" /><field
       value="0,0,0" type="UnityEngine.Vector3" id="_vectorTarget" /><field type="RAIN.Navigation.Targets.NavigationTarget"
@@ -2360,7 +2360,7 @@ MonoBehaviour:
     _serializedGameObjects:
     - {fileID: 100148}
     - {fileID: 11400000, guid: ded573944be15450f8f794d30a57c804, type: 2}
-    - {fileID: 0}
+    - {fileID: 14300000}
     _serializedCustomData:
     - _data: 0a
     - _data: 0a
