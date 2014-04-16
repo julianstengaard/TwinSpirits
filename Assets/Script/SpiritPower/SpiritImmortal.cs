@@ -8,6 +8,8 @@ public class SpiritImmortal : SpiritPower
     private GameObject _shield;
 	private GameObject _shieldPrefab;
     private bool _shieldActive;
+	private float _shieldTimer;
+	private float _shieldDuration = 5f;
 
 	private GameObject pullSphere;
 
@@ -26,11 +28,14 @@ public class SpiritImmortal : SpiritPower
     private TriggerForSpiritImmortal triggerP1;
     private TriggerForSpiritImmortal triggerP2;
     private bool readyToPull = false;
+
+	private Hero _srcHero;
+	private Hero _othHero;
 	
 	void Start() {
 		costActivate 		=  10f;
-		costPerSecond 		=  10f;
-		costActivateSync 	= 100f;
+		costPerSecond 		=  0f;
+		costActivateSync 	= 50f;
         _shieldPrefab = (GameObject) Resources.Load("SpiritShield");
         _triggerPrefab = (GameObject) Resources.Load("SpiritImmortalTrigger");
 	}
@@ -39,6 +44,16 @@ public class SpiritImmortal : SpiritPower
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Activating" + this.GetType());
+		_shieldTimer = 0f;
+		_shieldActive = true;
+
+		if (_shield != null) {
+			GameObject.Destroy(_shield);
+		}
+
+		_srcHero = sourceHero;
+		_othHero = otherHero;
+
 	    _shield = (GameObject) Instantiate(_shieldPrefab, otherHero.transform.position, otherHero.transform.rotation);
         _shield.transform.rotation = Quaternion.LookRotation(otherHero.transform.TransformDirection(Vector3.right), Vector3.up);
         //Tween in the shield
@@ -70,24 +85,21 @@ public class SpiritImmortal : SpiritPower
 
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{
-        _shield.transform.position = otherHero.transform.position + otherHero.transform.TransformDirection(Vector3.forward);
-        _shield.transform.rotation = Quaternion.LookRotation(otherHero.transform.TransformDirection(Vector3.right), Vector3.up);
-
 		return null;
 	}
+
+	public void UpdateShield(Hero otherHero) {
+		_shield.transform.position = otherHero.transform.position + otherHero.transform.TransformDirection(Vector3.forward);
+		_shield.transform.rotation = Quaternion.LookRotation(otherHero.transform.TransformDirection(Vector3.right), Vector3.up);
+	}
+	 
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
-		if (_shield != null) {
-			GameObject.Destroy(_shield);
-		}
-        otherHero.SpiritShieldActive = false;
-
 		return null;
 	}
+
 	/* END REGULAR POWER */
-	
-	
 	
 	/* BEGIN SYNC POWER */
 	public override bool OnPotentialSync (Hero sourceHero, Hero otherHero)
@@ -129,8 +141,19 @@ public class SpiritImmortal : SpiritPower
 		return null;
 	}
 
-    private void Update()
+    void Update()
     {
+		if (_shieldActive && _shieldTimer < _shieldDuration) {
+			_shieldTimer += Time.deltaTime;
+			UpdateShield(_othHero);
+		} else if (_shieldActive) {
+			if (_shield != null) {
+				GameObject.Destroy(_shield);
+			}
+			_othHero.SpiritShieldActive = false;
+			_shieldActive = false;
+		}
+
         if (readyToPull && Player1Triggered && Player2Triggered)
         {
             readyToPull = false;

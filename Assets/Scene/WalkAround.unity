@@ -927,6 +927,46 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1001 &627706525
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.06632757
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.06870842
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .348311424
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+  m_RootGameObject: {fileID: 1338388115}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &678651489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,114 +1387,6 @@ Transform:
   - {fileID: 678651490}
   - {fileID: 1971478807}
   m_Father: {fileID: 104226608}
---- !u!1001 &1066831974
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2.06632757
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.06870842
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: .348311424
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: mazeLength
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: mazeWidth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: mazeHeight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: maxPathIterationLenght
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[0]
-      value: 
-      objectReference: {fileID: 100224, guid: 323b4f70cf8c64ead88c3de44cdeb548, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[1]
-      value: 
-      objectReference: {fileID: 100060, guid: efb7a122d73624d18950d95e1cb2a409, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[2]
-      value: 
-      objectReference: {fileID: 100000, guid: 2aedc4f327ba04fffb6c2bdd8b13ec26, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[3]
-      value: 
-      objectReference: {fileID: 100000, guid: 9b484f6470c3040bb92696e17172f2f1, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[4]
-      value: 
-      objectReference: {fileID: 100176, guid: 27575c8446bb441838022fe9c8cfa549, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[5]
-      value: 
-      objectReference: {fileID: 100138, guid: b62c76073478745adb25ed617c4902ee, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[6]
-      value: 
-      objectReference: {fileID: 100174, guid: a1f88aad2281241f98e59cee1fe02580, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[7]
-      value: 
-      objectReference: {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[8]
-      value: 
-      objectReference: {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
-    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-      propertyPath: IslandsWithBridgeOpenings.Array.data[9]
-      value: 
-      objectReference: {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-  m_RootGameObject: {fileID: 1338388115}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1199509568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,7 +1511,7 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-  m_PrefabInternal: {fileID: 1066831974}
+  m_PrefabInternal: {fileID: 627706525}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1338388117}
@@ -1597,7 +1529,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: 67db4dcca191e9748ada0c85ccecaafb,
     type: 2}
-  m_PrefabInternal: {fileID: 1066831974}
+  m_PrefabInternal: {fileID: 627706525}
   m_GameObject: {fileID: 1338388115}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1608,7 +1540,7 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
-  m_PrefabInternal: {fileID: 1066831974}
+  m_PrefabInternal: {fileID: 627706525}
   m_GameObject: {fileID: 1338388115}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.06632757, y: -1.06870842, z: .348311424}
@@ -1620,7 +1552,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb,
     type: 2}
-  m_PrefabInternal: {fileID: 1066831974}
+  m_PrefabInternal: {fileID: 627706525}
   m_GameObject: {fileID: 1338388115}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1646,6 +1578,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 1545f30ec13c74d669125a26fcf8fc98, type: 2}
   - {fileID: 100432, guid: 9ce1cffecb1d889459b400cf9fb102b6, type: 2}
   - {fileID: 100388, guid: 7c75a6125a721c24e81d996a78d6e4e9, type: 2}
+  - {fileID: 100000, guid: 593d51c0e1fd6f6448e80edb0d8b086b, type: 2}
   bridgeSpanPrefab: {fileID: 100010, guid: 4d8fc0a8566c048f4a0a1f3e6ecf510b, type: 2}
   bridgeEndPrefab: {fileID: 100004, guid: 94187ecaad1db4ea4a2e9eb0174d8363, type: 2}
 --- !u!1 &1343792018

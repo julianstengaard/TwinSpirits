@@ -6,7 +6,6 @@ public class ShrineSpiritPower : Activatable {
 	public GameObject[] SpiritPowers;
 
 	private CollectableSpiritPower _attachedSpiritPower;
-	//private Vector3 _attachedSpiritPowerPosition;
 	private SphereCollider _pickUpSphere;
 
 	[SerializeField]
@@ -33,7 +32,7 @@ public class ShrineSpiritPower : Activatable {
 
 	public Vector3 AttachedSpiritPowerPosition() {
 		//return transform.position + new Vector3(-0.35f, 1.2f, -0f);
-		return transform.position + new Vector3(0f, 1.2f, 0f);
+		return transform.position + new Vector3(0f, 1.6f, 0f);
 	}
 
 	void OnTriggerEnter(Collider other) {
