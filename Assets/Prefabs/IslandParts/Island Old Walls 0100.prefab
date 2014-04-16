@@ -1298,7 +1298,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100060}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -9.2728653, y: 151.797501, z: -259.132629}
+  m_LocalPosition: {x: -12.2023954, y: 9.36838913, z: 7.64731026}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400058}
@@ -2868,6 +2868,7 @@ MonoBehaviour:
   Spawners:
   - {fileID: 11400012}
   BridgeGates: []
+  Shrines: []
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2881,7 +2882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400064}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2895,7 +2896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400068}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2909,7 +2910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400072}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2948,7 +2949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400078}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2962,7 +2963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400082}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2976,7 +2977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400086}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2990,7 +2991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400090}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3004,7 +3005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400094}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3018,7 +3019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400098}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3032,7 +3033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400102}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 6fec79af6938d4c4ba4c241995d69240, type: 2}
+  - {fileID: 11400002, guid: f31b1e9f946af4b769aa883b542d7e6b, type: 2}
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
