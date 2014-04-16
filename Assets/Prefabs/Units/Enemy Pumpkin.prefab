@@ -2041,7 +2041,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 380.630798, y: 90.3775558, z: -616.495361}
+  m_LocalPosition: {x: 306.646667, y: .650561333, z: -538.317383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400150}
@@ -2171,6 +2171,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7ed10769852c64e98babf08bbdea0530, type: 3}
     - {fileID: 8300000, guid: 42ebd84b4d5ec42ae820b0c875a1185e, type: 3}
     - {fileID: 8300000, guid: 6772f9bd20980405ab7d4425b904cd02, type: 3}
+  - Name: Hit
+    Sounds:
+    - {fileID: 8300000, guid: 0cfcf8435a8e0e8418d87d24515521cf, type: 3}
+    - {fileID: 8300000, guid: 2c930ed2ef6cd8d43a7dc7028dbccad1, type: 3}
+    - {fileID: 8300000, guid: 5a9460a949e1e9343986ba8b73bae50e, type: 3}
+    - {fileID: 8300000, guid: b74100c559dfe5642b87a2d9c14d6d83, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

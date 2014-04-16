@@ -69,7 +69,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 2}
-  m_Center: {x: -0, y: 0, z: 1}
+  m_Center: {x: -0, y: 0, z: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +90,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: ed9d4f5cc4a9549a39688e272a48af0f, type: 2}
   - {fileID: 100000, guid: 686b414e4f20d442892f16b0f04466e9, type: 2}
   - {fileID: 100000, guid: df62f32f014b643928085813f0549d4c, type: 2}
+  _active: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
