@@ -2525,7 +2525,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100432}
   m_LocalRotation: {x: 0, y: -.710965455, z: 0, w: .703227043}
-  m_LocalPosition: {x: 356.553802, y: 69.9330826, z: -661.360901}
+  m_LocalPosition: {x: -36.5761642, y: 91.1142426, z: 163.968353}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400430}
@@ -3658,7 +3658,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!65 &6500002
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3694,7 +3694,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 2}
-  m_Center: {x: -0, y: 0, z: 0}
+  m_Center: {x: -0, y: 0, z: 1}
 --- !u!65 &6500008
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4371,7 +4371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400268}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 3a3187c68e9ef44e798119778aedc72d, type: 2}
+  - {fileID: 11400000, guid: 47e32b10191604e968ae584e0084b391, type: 2}
 --- !u!114 &11400050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4385,7 +4385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400274}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 3a3187c68e9ef44e798119778aedc72d, type: 2}
+  - {fileID: 11400000, guid: 47e32b10191604e968ae584e0084b391, type: 2}
 --- !u!114 &11400052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4399,7 +4399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400278}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 3a3187c68e9ef44e798119778aedc72d, type: 2}
+  - {fileID: 11400000, guid: 47e32b10191604e968ae584e0084b391, type: 2}
 --- !u!114 &11400054
 MonoBehaviour:
   m_ObjectHideFlags: 1

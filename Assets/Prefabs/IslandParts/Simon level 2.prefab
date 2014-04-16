@@ -3250,7 +3250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100388}
   m_LocalRotation: {x: 0, y: -.710965455, z: 0, w: .703227043}
-  m_LocalPosition: {x: 356.917084, y: 68.9745255, z: -633.829712}
+  m_LocalPosition: {x: 10.2052708, y: 138.311508, z: 143.568085}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400386}
@@ -5054,7 +5054,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!65 &6500006
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5066,7 +5066,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 2}
-  m_Center: {x: -0, y: 0, z: 0}
+  m_Center: {x: -0, y: 0, z: 1}
 --- !u!65 &6500008
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5467,7 +5467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400244}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 3a3187c68e9ef44e798119778aedc72d, type: 2}
+  - {fileID: 11400000, guid: 47e32b10191604e968ae584e0084b391, type: 2}
 --- !u!114 &11400056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5481,7 +5481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400250}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 3a3187c68e9ef44e798119778aedc72d, type: 2}
+  - {fileID: 11400000, guid: 47e32b10191604e968ae584e0084b391, type: 2}
 --- !u!114 &11400058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5495,7 +5495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400252}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 3a3187c68e9ef44e798119778aedc72d, type: 2}
+  - {fileID: 11400000, guid: 47e32b10191604e968ae584e0084b391, type: 2}
 --- !u!114 &11400060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5509,7 +5509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400258}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 3a3187c68e9ef44e798119778aedc72d, type: 2}
+  - {fileID: 11400000, guid: 47e32b10191604e968ae584e0084b391, type: 2}
 --- !u!114 &11400062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5523,7 +5523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FacePoint: {fileID: 400260}
   SpawnableUnits:
-  - {fileID: 11400000, guid: 3a3187c68e9ef44e798119778aedc72d, type: 2}
+  - {fileID: 11400000, guid: 47e32b10191604e968ae584e0084b391, type: 2}
 --- !u!114 &11400064
 MonoBehaviour:
   m_ObjectHideFlags: 1
