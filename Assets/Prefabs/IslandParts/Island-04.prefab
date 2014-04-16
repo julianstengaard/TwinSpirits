@@ -1313,7 +1313,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100020}
-  m_LocalRotation: {x: .00802148134, y: .82128799, z: .0115497625, w: -.570340395}
+  m_LocalRotation: {x: .00802148227, y: .821288049, z: .0115497634, w: -.570340455}
   m_LocalPosition: {x: -.397761792, y: -.00528329611, z: 2.27064157}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692242}
   m_Children: []
@@ -1535,7 +1535,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100224}
   m_LocalRotation: {x: 0, y: -.710965455, z: 0, w: .703227043}
-  m_LocalPosition: {x: -17.5030937, y: 193.547455, z: -324.906921}
+  m_LocalPosition: {x: 52.0868073, y: 477.85907, z: -1063.45251}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400222}
@@ -3302,8 +3302,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpiritPowers:
-  - {fileID: 100000, guid: cf20a9184bfe5ad459c376e5bbbed38c, type: 2}
   - {fileID: 100000, guid: 89290af67e4346447b18ad544024a464, type: 2}
+  - {fileID: 100000, guid: bb80d7d20d0a2c849be77ae62aace5a0, type: 2}
+  - {fileID: 100000, guid: 55556af623301af4b9de5096f21d7cbf, type: 2}
+  - {fileID: 100000, guid: 1e5f3e3d6fc783b43b4186a3bf068810, type: 2}
+  - {fileID: 100000, guid: cf20a9184bfe5ad459c376e5bbbed38c, type: 2}
+  _active: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
