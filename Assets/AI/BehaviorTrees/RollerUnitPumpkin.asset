@@ -24,10 +24,34 @@ MonoBehaviour:
       name=&quot;Is this alive&quot; classname=&quot;AIIsAlive&quot; /&gt;&lt;mecparam
       valueexpression=&quot;True&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
       parametertype=&quot;boolean&quot; parametername=&quot;Move&quot; name=&quot;Start
-      Moving&quot; damptime=&quot;0&quot; /&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;Move towards hero&quot; movetarget=&quot;targetUnit&quot;
-      movespeed=&quot;&quot; facetarget=&quot;targetUnit&quot; closeenoughdistance=&quot;7&quot;
-      closeenoughangle=&quot;10&quot; /&gt;&lt;mecparam valueexpression=&quot;False&quot;
+      Moving&quot; damptime=&quot;0&quot; /&gt;&lt;parallel tiebreaker=&quot;succeed&quot;
+      succeed=&quot;any&quot; repeatuntil=&quot;success&quot; priority=&quot;&quot;
+      name=&quot;parallel&quot; fail=&quot;all&quot;&gt;&lt;constraint repeatuntil=&quot;running&quot;
+      name=&quot;constraint&quot; constraint=&quot;changeTarget&quot;&gt;&lt;sequencer
+      usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;sequencer&quot;&gt;&lt;move
+      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move&quot;
+      movetarget=&quot;&quot; movespeed=&quot;&quot; facetarget=&quot;targetUnit&quot;
+      closeenoughdistance=&quot;&quot; closeenoughangle=&quot;10&quot; /&gt;&lt;expression
+      returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+      name=&quot;expression&quot; expression=&quot;changeTarget = false&quot; /&gt;&lt;/sequencer&gt;&lt;/constraint&gt;&lt;constraint
+      repeatuntil=&quot;success&quot; name=&quot;constraint&quot; constraint=&quot;newTarget
+      == null || newTarget == targetUnit&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+      succeed=&quot;any&quot; repeatuntil=&quot;success&quot; name=&quot;parallel&quot;
+      fail=&quot;all&quot;&gt;&lt;detect sensor=&quot;&amp;quot;UnitVision&amp;quot;&quot;
+      repeatuntil=&quot;running&quot; name=&quot;detect&quot; entityobjectvariable=&quot;newTarget&quot;
+      aspectvariable=&quot;&quot; aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;twinhero&amp;quot;&quot;
+      /&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot;
+      movetarget=&quot;targetUnit&quot; movespeed=&quot;&quot; facetarget=&quot;targetUnit&quot;
+      closeenoughdistance=&quot;7&quot; closeenoughangle=&quot;8&quot; /&gt;&lt;expression
+      returnvalue=&quot;success&quot; repeatuntil=&quot;running&quot; name=&quot;expression&quot;
+      expression=&quot;debug(newTarget)&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+      repeatuntil=&quot;running&quot; name=&quot;constraint&quot; constraint=&quot;newTarget
+      != null &amp;amp;&amp;amp; !changeTarget&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
+      name=&quot;constraint&quot; constraint=&quot;newTarget != targetUnit&quot; /&gt;&lt;expression
+      returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; name=&quot;expression&quot;
+      expression=&quot;targetUnit = newTarget&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+      repeatuntil=&quot;&quot; name=&quot;expression&quot; expression=&quot;newTarget
+      = null&quot; /&gt;&lt;/constraint&gt;&lt;/parallel&gt;&lt;mecparam valueexpression=&quot;False&quot;
       repeatuntil=&quot;&quot; priority=&quot;&quot; parametertype=&quot;boolean&quot;
       parametername=&quot;Move&quot; name=&quot;Stop Moving&quot; damptime=&quot;0&quot;
       /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;dGFyZ2V0VW5pdA==&quot;
