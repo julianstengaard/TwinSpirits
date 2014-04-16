@@ -1,0 +1,1812 @@
+fileFormatVersion: 2
+guid: 1acffc690bed649a0802bf0f47cc2f4a
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: bottom
+    100002: BottomqControl
+    100004: //RootNode
+    100006: ikHandle1
+    100008: ikHandle2
+    100010: ikHandle3
+    100012: Jaw
+    100014: joint20
+    100016: joint22
+    100018: joint24
+    100020: joint25
+    100022: joint26
+    100024: joint27
+    100026: joint28
+    100028: joint29
+    100030: joint30
+    100032: joint31
+    100034: joint32
+    100036: L_Brow
+    100038: L_BrowControl
+    100040: L_Elbow
+    100042: L_Eye
+    100044: L_Index
+    100046: L_Index2
+    100048: L_middleFinger
+    100050: L_middleFinger2
+    100052: L_Pinky
+    100054: L_Pinky2
+    100056: L_shoulder
+    100058: L_Thumb
+    100060: L_Thumb2
+    100062: L_wrist
+    100064: Mouth
+    100066: mouthTop
+    100068: nurbsCircle1
+    100070: nurbsCircle10
+    100072: nurbsCircle11
+    100074: nurbsCircle12
+    100076: nurbsCircle13
+    100078: nurbsCircle14
+    100080: nurbsCircle15
+    100082: nurbsCircle16
+    100084: nurbsCircle17
+    100086: nurbsCircle18
+    100088: nurbsCircle19
+    100090: nurbsCircle2
+    100092: nurbsCircle20
+    100094: nurbsCircle21
+    100096: nurbsCircle22
+    100098: nurbsCircle23
+    100100: nurbsCircle24
+    100102: nurbsCircle25
+    100104: nurbsCircle26
+    100106: nurbsCircle27
+    100108: nurbsCircle3
+    100110: nurbsCircle4
+    100112: nurbsCircle5
+    100114: nurbsCircle6
+    100116: nurbsCircle7
+    100118: nurbsCircle8
+    100120: nurbsCircle9
+    100122: pumpkinminionExport:pCylinder2
+    100124: pumpkinminionExport:pCylinder4
+    100126: pumpkinminionExport:polySurface1
+    100128: pumpkinminionLeftEye
+    100130: pumpkinminionRighttEye
+    100132: R_Brow
+    100134: R_BrowControl
+    100136: R_Elbow
+    100138: R_Eye
+    100140: R_shoulder
+    100142: R_wrist
+    100144: Root
+    100146: Top
+    100148: TopControlq
+    400000: bottom
+    400002: BottomqControl
+    400004: //RootNode
+    400006: ikHandle1
+    400008: ikHandle2
+    400010: ikHandle3
+    400012: Jaw
+    400014: joint20
+    400016: joint22
+    400018: joint24
+    400020: joint25
+    400022: joint26
+    400024: joint27
+    400026: joint28
+    400028: joint29
+    400030: joint30
+    400032: joint31
+    400034: joint32
+    400036: L_Brow
+    400038: L_BrowControl
+    400040: L_Elbow
+    400042: L_Eye
+    400044: L_Index
+    400046: L_Index2
+    400048: L_middleFinger
+    400050: L_middleFinger2
+    400052: L_Pinky
+    400054: L_Pinky2
+    400056: L_shoulder
+    400058: L_Thumb
+    400060: L_Thumb2
+    400062: L_wrist
+    400064: Mouth
+    400066: mouthTop
+    400068: nurbsCircle1
+    400070: nurbsCircle10
+    400072: nurbsCircle11
+    400074: nurbsCircle12
+    400076: nurbsCircle13
+    400078: nurbsCircle14
+    400080: nurbsCircle15
+    400082: nurbsCircle16
+    400084: nurbsCircle17
+    400086: nurbsCircle18
+    400088: nurbsCircle19
+    400090: nurbsCircle2
+    400092: nurbsCircle20
+    400094: nurbsCircle21
+    400096: nurbsCircle22
+    400098: nurbsCircle23
+    400100: nurbsCircle24
+    400102: nurbsCircle25
+    400104: nurbsCircle26
+    400106: nurbsCircle27
+    400108: nurbsCircle3
+    400110: nurbsCircle4
+    400112: nurbsCircle5
+    400114: nurbsCircle6
+    400116: nurbsCircle7
+    400118: nurbsCircle8
+    400120: nurbsCircle9
+    400122: pumpkinminionExport:pCylinder2
+    400124: pumpkinminionExport:pCylinder4
+    400126: pumpkinminionExport:polySurface1
+    400128: pumpkinminionLeftEye
+    400130: pumpkinminionRighttEye
+    400132: R_Brow
+    400134: R_BrowControl
+    400136: R_Elbow
+    400138: R_Eye
+    400140: R_shoulder
+    400142: R_wrist
+    400144: Root
+    400146: Top
+    400148: TopControlq
+    4300000: pumpkinminionExport:pCylinder2
+    4300002: pumpkinminionExport:pCylinder4
+    4300004: pumpkinminionExport:polySurface1
+    4300006: pumpkinminionLeftEye
+    4300008: pumpkinminionRighttEye
+    7400000: Idle
+    7400002: Walk
+    7400004: Attack
+    7400006: Shout
+    7400008: Death
+    7400010: Roll Start
+    7400012: Roll Loop
+    7400014: Stop With Hit
+    7400016: Stop Without Hit
+    9500000: //RootNode
+    13700000: pumpkinminionExport:pCylinder2
+    13700002: pumpkinminionExport:pCylinder4
+    13700004: pumpkinminionExport:polySurface1
+    13700006: pumpkinminionLeftEye
+    13700008: pumpkinminionRighttEye
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 58
+      lastFrame: 92
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 96
+      lastFrame: 131
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Shout
+      takeName: Take 001
+      firstFrame: 130
+      lastFrame: 162
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 162
+      lastFrame: 186
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Roll Start
+      takeName: Take 001
+      firstFrame: 190
+      lastFrame: 253
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Roll Loop
+      takeName: Take 001
+      firstFrame: 254
+      lastFrame: 263
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Stop With Hit
+      takeName: Take 001
+      firstFrame: 264
+      lastFrame: 342
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Stop Without Hit
+      takeName: Take 001
+      firstFrame: 345
+      lastFrame: 372
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: nurbsCircle27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/L_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle2/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/ikHandle1
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle5/nurbsCircle6/nurbsCircle7/nurbsCircle11
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle12
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle13
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle14
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle15/TopControlq/Top
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle16/BottomqControl/bottom
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/ikHandle3
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle21
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle17/nurbsCircle18/nurbsCircle19/nurbsCircle23
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/nurbsCircle24/nurbsCircle26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/R_Eye
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/Jaw/Mouth
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/joint20/mouthTop
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_BrowControl/L_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Index/L_Index2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_middleFinger/L_middleFinger2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Pinky/L_Pinky2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/L_shoulder/L_Elbow/L_wrist/joint22/L_Thumb/L_Thumb2
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_BrowControl/R_Brow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint24/joint25
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint26/joint27
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint28/joint29
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30
+        weight: 1
+      - path: nurbsCircle27/nurbsCircle1/Root/R_shoulder/R_Elbow/R_wrist/joint32/joint30/joint31
+        weight: 1
+      - path: pumpkinminionExport:pCylinder2
+        weight: 1
+      - path: pumpkinminionExport:pCylinder4
+        weight: 1
+      - path: pumpkinminionExport:polySurface1
+        weight: 1
+      - path: pumpkinminionLeftEye
+        weight: 1
+      - path: pumpkinminionRighttEye
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

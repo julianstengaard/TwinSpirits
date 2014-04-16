@@ -6,6 +6,6 @@ public class RollerEnemy : BaseEnemy {
 
 	protected new void Start() {
 		base.Start ();
-		AddEffectToWeapons(new Knockback(40));
+		AddEffectToWeapons(new Knockback(60));
 	}
 }
