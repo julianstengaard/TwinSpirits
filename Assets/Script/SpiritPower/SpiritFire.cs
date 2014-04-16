@@ -14,16 +14,16 @@ public class SpiritFire : SpiritPower
 	private GameObject[] _enemiesGO;
 	private BaseEnemy[] _enemies;
 
-	private float _damagePerSecond = 10f;
+	private float _damagePerSecond = 20f;
 
 	private float _syncDuration = 5f;
 	private float _syncDamageInterval = 1f;
-	private float _syncDamagePerInterval = 5f;
+	private float _syncDamagePerInterval = 15f;
 	
 	void Start() {
 		costActivate 		=  10f;
 		costPerSecond 		=  10f;
-		costActivateSync 	= 100f;
+		costActivateSync 	= 50f;
 		_burnSphereRadiusSqr = _burnSphereRadius * _burnSphereRadius;
 		_syncSphereRadiusSqr = _syncSphereRadius * _syncSphereRadius;
 	}
@@ -67,7 +67,9 @@ public class SpiritFire : SpiritPower
 	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
-		GameObject.Destroy(_burnSphere);
+		if (_burnSphere != null) {
+			GameObject.Destroy(_burnSphere);
+		}
 		return null;
 	}
 	/* END REGULAR POWER */
@@ -117,18 +119,21 @@ public class SpiritFire : SpiritPower
 	}
 
 	private IEnumerator CreateSyncExplosion(Vector3 center) {
+		if (_syncSphere != null) {
+			GameObject.Destroy(_syncSphere);
+		}
 		//Create "explosion"
-		var syncMesh = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		syncMesh.transform.position = center + Vector3.up;
-		syncMesh.collider.enabled = false;
-		syncMesh.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
-		syncMesh.renderer.material.SetColor("_Color", new Color(1f, 0f, 0f, 0.5f));
+		_syncSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		_syncSphere.transform.position = center + Vector3.up;
+		_syncSphere.collider.enabled = false;
+		_syncSphere.renderer.material = new Material(Shader.Find("Transparent/Diffuse"));
+		_syncSphere.renderer.material.SetColor("_Color", new Color(1f, 0f, 0f, 0.5f));
 
 		//Expand it over time
 		TweenParms explosionParms = new TweenParms().Prop(
 			"localScale", Vector3.one * _syncSphereRadius * 2f).Ease(
 			EaseType.EaseInExpo).Delay(0f);
-		HOTween.To(syncMesh.transform, 1f, explosionParms);
+		HOTween.To(_syncSphere.transform, 1f, explosionParms);
 
 		//Wait for animation
 		yield return new WaitForSeconds(1f);
@@ -140,7 +145,7 @@ public class SpiritFire : SpiritPower
 				fireDOT.InitDOT(_syncDuration, _syncDamageInterval, _syncDamagePerInterval);
 			}
 		}
-		Destroy(syncMesh);
+		GameObject.Destroy(_syncSphere);
 	}
 	
 	public override IEnumerator OnUpdateSync (Hero sourceHero, Hero otherHero)
@@ -151,6 +156,9 @@ public class SpiritFire : SpiritPower
 	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
 	{
 		//Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
+		if (_syncSphere != null) {
+			GameObject.Destroy(_syncSphere);
+		}
 		yield return null;
 	}
 	/* END SYNC POWER */
