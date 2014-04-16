@@ -15,7 +15,8 @@ public abstract class BaseUnit : MonoBehaviour
 
 	protected Animator _anim;
 	protected CharacterController _cc;
-	
+
+	protected Renderer unitRenderer;
 	protected Material unitMaterial;
 	protected Color initColor;
 	protected Color deadColor = new Color(1f, 0f, 0f);
@@ -31,6 +32,7 @@ public abstract class BaseUnit : MonoBehaviour
 	public bool dead = false;
 	public bool immortal = false;
     public bool damageLocked = false;
+	protected bool usesGravity = true;
 
 	// METHODS
 
@@ -42,10 +44,12 @@ public abstract class BaseUnit : MonoBehaviour
 		foreach (var renderer in unitRenderers) {
 			if (renderer.gameObject.tag == "DamageBody") {
 				unitMaterial = renderer.material;
+				unitRenderer = renderer;
 			}
 		}
 		if (unitMaterial == null) {
 			unitMaterial = unitRenderers[0].material;
+			unitRenderer = unitRenderers[0];
 		}
 		
 		initColor = unitMaterial.GetColor("_Color");
@@ -69,7 +73,8 @@ public abstract class BaseUnit : MonoBehaviour
 	}
 
 	protected void FixedUpdate() {
-		_cc.Move(Vector3.down * 0.5f);
+		if (usesGravity)
+			_cc.Move(Vector3.down * 0.5f);
 	}
 
 	public virtual void TakeDamage(float damage, GameObject src)
