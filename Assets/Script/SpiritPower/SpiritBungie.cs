@@ -70,7 +70,7 @@ public class SpiritBungie : SpiritPower
 
 		return null;
 	}
-	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero, bool onDestroy)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
 		DestroyBungieLink (0f);
@@ -113,7 +113,6 @@ public class SpiritBungie : SpiritPower
             //Pay for activation
 			sourceHero.ChangeSpiritAmount(-costActivateSync);
 			otherHero.ChangeSpiritAmount(-costActivateSync);
-
         }
 		StartCoroutine(DeathRay(sourceHero, otherHero));
 
