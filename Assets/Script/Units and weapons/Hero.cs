@@ -330,7 +330,7 @@ public class Hero : BaseUnit {
 		}
 		
 		//Regular spirit power
-		if (currentSpiritAmount > currentSpiritPower.GetCostActivate() && !spiritSyncActive)
+		if (currentSpiritAmount >= currentSpiritPower.GetCostActivate() && !spiritSyncActive)
 		{
 			currentSpiritPower.OnActivate(this, otherPlayer);
 			spiritActive = true;
@@ -360,6 +360,7 @@ public class Hero : BaseUnit {
 	public void SwitchToSyncPower()
 	{
 		DeactivateSpiritPower();
+		currentSpiritAmount += currentSpiritPower.GetCostActivate();
         currentSpiritPower.OnActivateSync(this, otherPlayer, true);
         currentSpiritPower.syncActive = true;
 		spiritSyncActive = true;

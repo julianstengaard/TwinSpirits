@@ -106,14 +106,14 @@ public class SpiritBungie : SpiritPower
 		if (circleActive)
 			return null;
 
-        if (!secondSync)
-        {
-            //Pay for activation
-            sourceHero.ChangeSpiritAmount(-costActivateSync);
-            otherHero.ChangeSpiritAmount(-costActivateSync);
+		if (!secondSync) {
+			//Stop other Heros effect
+			otherHero.SwitchToSyncPower();
 
-            //Stop other Heros effect
-            otherHero.SwitchToSyncPower();
+            //Pay for activation
+			sourceHero.ChangeSpiritAmount(-costActivateSync);
+			otherHero.ChangeSpiritAmount(-costActivateSync);
+
         }
 		StartCoroutine(DeathRay(sourceHero, otherHero));
 

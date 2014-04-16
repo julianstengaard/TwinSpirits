@@ -85,14 +85,13 @@ public class SpiritLightning : SpiritPower
 	{
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
 
-		if (!secondSync)
-		{
+		if (!secondSync) {
+			//Stop other Heros effect
+			otherHero.SwitchToSyncPower();
+			
 			//Pay for activation
 			sourceHero.ChangeSpiritAmount(-costActivateSync);
 			otherHero.ChangeSpiritAmount(-costActivateSync);
-			
-			//Stop other Heros effect
-			otherHero.SwitchToSyncPower();
 		}
 		StartCoroutine(LightningSync(sourceHero, otherHero));
 
