@@ -36,7 +36,7 @@ public class ShrineItem : Activatable {
 		
 		CreateSphereCollider();
 		var randomItem = Items[Random.Range(0, Items.Length)];
-		var itemGO = (GameObject) GameObject.Instantiate(randomItem, transform.position + new Vector3(-0.35f, 1.2f, -0f), Quaternion.LookRotation(Vector3.right));
+		var itemGO = (GameObject) GameObject.Instantiate(randomItem, transform.position + new Vector3(0f, 1.6f, 0f), Quaternion.LookRotation(Vector3.right));
 		_attachedItem = itemGO.GetComponent<Collectable>();
 		itemGO.transform.parent = gameObject.transform;
 		
