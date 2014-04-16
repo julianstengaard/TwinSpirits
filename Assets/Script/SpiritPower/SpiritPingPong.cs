@@ -184,7 +184,7 @@ public class SpiritPingPong : SpiritPower
 	
 
 
-	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero, bool onDestroy)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
         _ballReady = true;

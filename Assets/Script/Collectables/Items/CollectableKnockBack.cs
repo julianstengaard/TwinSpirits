@@ -6,7 +6,7 @@ public class CollectableKnockBack : Collectable {
 	#region implemented abstract members of Collectable
 
 	public override void Collected (Hero collector)	{
-		collector.AddEffectToWeapons(new Knockback(100));
+		collector.AddEffectToWeapons(new Knockback(2));
 	}
 
 	#endregion

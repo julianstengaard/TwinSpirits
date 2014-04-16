@@ -57,6 +57,13 @@ public class Hero : BaseUnit {
 	[HideInInspector]
 	public Vector3 CurrentMoveVector = Vector3.zero;
 
+	private bool _dashing = false;
+	private float _dashDistance = 2.5f;
+	private int _dashOverFrames = 10;
+	private float _dashCooldown = 1f;
+	private float _dashTimer = 0f;
+	private TrailRenderer _dashTrail;
+
 	// METHODS -----
 
 	new void Start() {
@@ -67,6 +74,7 @@ public class Hero : BaseUnit {
 		AddEffectToWeapons(new Damage(25));
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
+		_dashTrail = GetComponent<TrailRenderer>();
 
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
@@ -133,7 +141,7 @@ public class Hero : BaseUnit {
 		_anim.SetBool ("Moving", dir.sqrMagnitude > 0);
 		_anim.SetFloat("MovementSpeed", pos.magnitude);
 
-		_cc.Move(dir);
+		Vector3 lookDirection = Vector3.zero; 
 
 		// LOOK DIRECTION
 		if (_input.Name == FPSProfile.ProfileName) {
@@ -147,6 +155,7 @@ public class Hero : BaseUnit {
 				
 				// Determine the target rotation.  This is the rotation if the transform looks at the target point.
 				var targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
+				lookDirection = targetPoint - transform.position;
 				
 				// Smoothly rotate towards the target point.
 				//transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurnSpeed * Time.deltaTime); // WITH SPEED
@@ -162,8 +171,20 @@ public class Hero : BaseUnit {
 				lookPoint.x += _input.LeftStickX;
 				lookPoint.z += _input.LeftStickY;
 			}
-
 			transform.LookAt(lookPoint);
+			lookDirection = transform.forward;
+
+		}
+
+		if (_dashTimer >= 0f)
+			_dashTimer -= Time.deltaTime;
+
+		if (!_dashing) {
+			if (_input.Action1.WasPressed && _dashTimer <= 0f) {
+				if (lookDirection != Vector3.zero)
+					StartCoroutine(Dash(lookDirection, _dashDistance, _dashOverFrames));
+			} else 
+				_cc.Move(dir);
 		}
 
 		UpdateSpiritLink();
@@ -173,6 +194,30 @@ public class Hero : BaseUnit {
 		if (spiritRegen > 0f) {
 			ChangeSpiritAmount(spiritRegen * Time.deltaTime);
 		}
+	}
+
+	public IEnumerator Dash (Vector3 direction, float distance, float dashFrames) {
+		_dashing = true;
+		_dashTrail.enabled = true;
+		_dashTrail.time = -0.01f;
+		yield return new WaitForEndOfFrame();
+		_dashTrail.time = 2f;
+		for (int i = 0; i < 10; i++) {
+			yield return new WaitForFixedUpdate();
+			float move = EasedMove(i/(float)dashFrames);
+			_cc.Move(direction.normalized * (move * (distance/10)));
+		}
+		_dashing = false;
+		_dashTimer = _dashCooldown;
+		_dashTrail.enabled = false;
+		yield return null;
+	}
+	
+	private float EasedMove(float pct) {
+		if (pct < 0.5f)
+			return (1f - Mathf.Pow(1f - pct, 3f));
+		else 
+			return -1f * (Mathf.Cos(Mathf.PI*pct) - 1f);
 	}
 
 	public override void TakeDamage(float damage, GameObject src)
@@ -208,7 +253,7 @@ public class Hero : BaseUnit {
 	protected override void Died () {
 		dead = true;
 		if (spiritActive) {
-			DeactivateSpiritPower();
+			DeactivateSpiritPower(false);
 		}
 		unitMaterial.SetColor("_Color", deadColor);
 		aspect.IsActive = false;
@@ -290,7 +335,7 @@ public class Hero : BaseUnit {
 				spiritActive 		= false;
 			}
 			if (spiritActive) {
-				DeactivateSpiritPower();
+				DeactivateSpiritPower(false);
 			}
 		}
 	}
@@ -347,19 +392,19 @@ public class Hero : BaseUnit {
 		}
 		else
 		{
-			DeactivateSpiritPower();
+			DeactivateSpiritPower(false);
 		}
 	}
 	
-	void DeactivateSpiritPower()
+	void DeactivateSpiritPower(bool onDestroy)
 	{
-		currentSpiritPower.OnDeactivate(this, otherPlayer);
+		currentSpiritPower.OnDeactivate(this, otherPlayer, onDestroy);
 		spiritActive = false;
 	}
 	
 	public void SwitchToSyncPower()
 	{
-		DeactivateSpiritPower();
+		DeactivateSpiritPower(true);
 		currentSpiritAmount += currentSpiritPower.GetCostActivate();
         currentSpiritPower.OnActivateSync(this, otherPlayer, true);
         currentSpiritPower.syncActive = true;
@@ -368,7 +413,7 @@ public class Hero : BaseUnit {
 	
 	public void ChangeSpiritPower(SpiritPower newPower)
 	{
-		DeactivateSpiritPower();
+		DeactivateSpiritPower(true);
 		currentSpiritPower.OnDeactivateSync(this, otherPlayer);
 		Destroy(currentSpiritPower);
 		currentSpiritPower = newPower;

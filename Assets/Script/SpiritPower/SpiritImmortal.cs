@@ -93,8 +93,12 @@ public class SpiritImmortal : SpiritPower
 		_shield.transform.rotation = Quaternion.LookRotation(otherHero.transform.TransformDirection(Vector3.right), Vector3.up);
 	}
 	 
-	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero, bool onDestroy)
 	{
+		if (onDestroy && _shield != null) {
+			GameObject.Destroy(_shield);
+		}
+
 		//Debug.Log("Deactivating" + this.GetType());
 		return null;
 	}

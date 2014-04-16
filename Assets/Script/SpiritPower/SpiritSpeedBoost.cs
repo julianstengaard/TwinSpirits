@@ -33,7 +33,7 @@ public class SpiritSpeedBoost : SpiritPower
 	{
 		return null;
 	}
-	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero, bool onDestroy)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
 
@@ -42,7 +42,7 @@ public class SpiritSpeedBoost : SpiritPower
 		if(IsActive)
 			otherHero.movementSpeedBuff -= speedBoost;
 
-		return base.OnDeactivate(sourceHero, otherHero);
+		return base.OnDeactivate(sourceHero, otherHero, onDestroy);
 	}
 	/* END REGULAR POWER */
 

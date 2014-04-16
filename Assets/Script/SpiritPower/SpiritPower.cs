@@ -18,7 +18,7 @@ public abstract class SpiritPower : MonoBehaviour
 		return null;
 	}
 	public abstract IEnumerator OnUpdate		(Hero sourceHero, Hero otherHero); 
-	public virtual IEnumerator OnDeactivate	(Hero sourceHero, Hero otherHero) {
+	public virtual IEnumerator OnDeactivate	(Hero sourceHero, Hero otherHero, bool onDestroy) {
 		IsActive = false;
 		return null;
 	}
