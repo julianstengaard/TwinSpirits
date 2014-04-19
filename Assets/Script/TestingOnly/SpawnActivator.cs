@@ -17,9 +17,12 @@ public class SpawnActivator : MonoBehaviour {
 	private bool active;
 	private float ShrineChance = 0.3f;
 
+    private MiniMap _miniMap;
+
 	void Start() {
 		Shrines = transform.parent.GetComponentsInChildren<Activatable>();
 		print(Shrines.Length);
+	    _miniMap = GameObject.FindGameObjectWithTag("MiniMap").GetComponent<MiniMap>();
 	}
 
 	void Update() {
@@ -57,7 +60,9 @@ public class SpawnActivator : MonoBehaviour {
 			var blocker = (GameObject)GameObject.Instantiate(GateBlocker, gate.transform.position, gate.transform.rotation);
 			_activeBlockers.Add(blocker);
 		}
-		active = true;
+        active = true;
+        _miniMap.SetNeighborsDiscovered(gameObject.transform.root.gameObject);
+        _miniMap.SetCellDangerous(gameObject.transform.root.gameObject);
 	}
 
 	private void deactivateLockdown() {
@@ -70,6 +75,8 @@ public class SpawnActivator : MonoBehaviour {
 			if(Random.Range (0.0f, 1.0f) <= ShrineChance)
 				shrine.Activate();
 		active = false;
+
+        _miniMap.SetCellDone(gameObject.transform.root.gameObject);
 	}
 
 	private int getActivePlayersThreshold() {
@@ -82,6 +89,8 @@ public class SpawnActivator : MonoBehaviour {
 	}
 
 	void OnTriggerEnter() {
+        _miniMap.SetPlayerPosition(gameObject.transform.root.gameObject);
+
 		if(hasSpawned) return;
 
 		
