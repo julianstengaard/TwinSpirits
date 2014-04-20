@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: SpiritLightningBall
+  m_Name: FireBossBallPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 355.509277, y: -5.22106123, z: -535.293152}
+  m_LocalPosition: {x: 355.906433, y: -5.37207985, z: -535.891541}
   m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae0101fac201aa4a9625059de8ebba6, type: 3}
+  m_Script: {fileID: 11500000, guid: 829a011f346343e46af148d10902e3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BallColor: {r: 0, g: 0, b: 0, a: 0}

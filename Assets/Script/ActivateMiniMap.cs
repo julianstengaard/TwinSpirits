@@ -9,5 +9,6 @@ public class ActivateMiniMap : MonoBehaviour {
 	    _miniMap.SetInitialBorders(gameObject.transform.root.gameObject);
         _miniMap.SetCellDone(gameObject.transform.root.gameObject);
         _miniMap.SetNeighborsDiscovered(gameObject.transform.root.gameObject);
+	    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetMiniMap(_miniMap);
 	}
 }

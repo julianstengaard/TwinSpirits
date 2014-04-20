@@ -58,6 +58,7 @@ public class MiniMap : MonoBehaviour {
             GameObject.Destroy(_miniMapIslands[doneCell.column, doneCell.row]);
         }
         InstantiateMapIsland(doneCell.column, doneCell.row, "DONE");
+        _islandsDone++;
     }
 
     public void SetCellDangerous(GameObject cell) {
@@ -201,8 +202,10 @@ public class MiniMap : MonoBehaviour {
         }
     }
 
-    private void FixedUpdate()
-    {
-
+    public int GetIslandsDone() {
+        return _islandsDone;
+    }
+    public int GetIslandsTotal() {
+        return _totalIslands;
     }
 }
