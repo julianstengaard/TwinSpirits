@@ -84,7 +84,11 @@ public class CreateLevel : MonoBehaviour {
 		ImportCellPrefabs();
 
 		level.GenerateMazeFromCell(mazeFromX, mazeFromY, mazeLength, maxPathIterationLenght);
-		
+
+        //Send the maze to the minimap
+        var miniMap = GameObject.FindGameObjectWithTag("MiniMap").GetComponent<MiniMap>();
+        miniMap.CreateMiniMap(level);
+
 		InstantiateMaze(level);
 		InstantiateMazeBridges(level);
 	}
@@ -109,13 +113,14 @@ public class CreateLevel : MonoBehaviour {
 
 	private void InstantiateMaze(Maze maze)
 	{
-		mazeCellInstances = new GameObject[maze.width, maze.height];
+        mazeCellInstances = new GameObject[maze.width, maze.height];
 
 		for (int y = 0; y < maze.height; y++)
 		{
 			for (int x = 0; x < maze.width; x++)
 			{
 				int dictionaryKey = ConvertDoorsToDictionaryKey(maze.GetCell(x, y).doors);
+
 				//If start cell
 				if(x == mazeFromX && y == mazeFromY) {
 					Vector3 randomizedCellPosition = GetRandomCellDisplacement(x * cellSpacing, -y * cellSpacing, cellSpacing);
@@ -129,6 +134,10 @@ public class CreateLevel : MonoBehaviour {
 					var validIslands = (GameObject[]) mazeCellPrefabs[dictionaryKey];
 					mazeCellInstances[x,y] = InstantiateCell(validIslands , Random.Range (0, validIslands.Length), randomizedCellPosition, maze, x, y);
 				}
+
+			    if (mazeCellInstances[x, y] != null) {
+			        mazeCellInstances[x, y].AddComponent<MazeInstance>().represents = maze.GetCell(x, y);
+			    }
 			}
 		}
 	}
@@ -357,4 +366,14 @@ public class CreateLevel : MonoBehaviour {
 
 		return bridge;
 	}
+
+    public Maze GetMaze()
+    {
+        return level;
+    }
+
+    public GameObject[,] GetMazeCellInstances()
+    {
+        return mazeCellInstances;
+    }
 }

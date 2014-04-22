@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeftSpiritMeterAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3300002}
   - 23: {fileID: 2300002}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RightSpiritIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 33: {fileID: 3300004}
   - 23: {fileID: 2300004}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RightSpiritMeter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 400006}
   - 33: {fileID: 3300006}
   - 23: {fileID: 2300006}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RightSpiritMeterAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400008}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - 4: {fileID: 400010}
   - 33: {fileID: 3300008}
   - 23: {fileID: 2300008}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SyncIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - 4: {fileID: 400012}
   - 33: {fileID: 3300010}
   - 23: {fileID: 2300010}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - 4: {fileID: 400014}
   - 33: {fileID: 3300012}
   - 23: {fileID: 2300012}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - 4: {fileID: 400016}
   - 33: {fileID: 3300014}
   - 23: {fileID: 2300014}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - 4: {fileID: 400018}
   - 33: {fileID: 3300016}
   - 23: {fileID: 2300016}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - 4: {fileID: 400020}
   - 33: {fileID: 3300018}
   - 23: {fileID: 2300018}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - 4: {fileID: 400022}
   - 33: {fileID: 3300020}
   - 23: {fileID: 2300020}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - 4: {fileID: 400024}
   - 33: {fileID: 3300022}
   - 23: {fileID: 2300022}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,9 +230,25 @@ GameObject:
   - 4: {fileID: 400026}
   - 33: {fileID: 3300024}
   - 23: {fileID: 2300024}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeftSpiritMeter
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400028}
+  - 114: {fileID: 11400006}
+  m_Layer: 16
+  m_Name: MiniMap
+  m_TagString: MiniMap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,7 +263,7 @@ GameObject:
   - 4: {fileID: 400030}
   - 33: {fileID: 3300028}
   - 23: {fileID: 2300028}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +280,7 @@ GameObject:
   - 4: {fileID: 400032}
   - 33: {fileID: 3300030}
   - 23: {fileID: 2300030}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +297,7 @@ GameObject:
   - 4: {fileID: 400034}
   - 33: {fileID: 3300032}
   - 23: {fileID: 2300032}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +314,7 @@ GameObject:
   - 4: {fileID: 400036}
   - 33: {fileID: 3300034}
   - 23: {fileID: 2300034}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +331,7 @@ GameObject:
   - 4: {fileID: 400038}
   - 33: {fileID: 3300036}
   - 23: {fileID: 2300036}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +348,7 @@ GameObject:
   - 4: {fileID: 400040}
   - 33: {fileID: 3300038}
   - 23: {fileID: 2300038}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +365,7 @@ GameObject:
   - 4: {fileID: 400042}
   - 33: {fileID: 3300040}
   - 23: {fileID: 2300040}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +381,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400044}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: P1 Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +397,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400046}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: P2 Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +414,7 @@ GameObject:
   - 4: {fileID: 400048}
   - 33: {fileID: 3300042}
   - 23: {fileID: 2300042}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +431,7 @@ GameObject:
   - 4: {fileID: 400050}
   - 33: {fileID: 3300044}
   - 23: {fileID: 2300044}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Heart3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +448,7 @@ GameObject:
   - 4: {fileID: 400052}
   - 33: {fileID: 3300046}
   - 23: {fileID: 2300046}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeftSpiritIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,8 +462,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0299999993, y: -.150000006, z: .0500005484}
-  m_LocalScale: {x: .850000024, y: .600000024, z: 1}
+  m_LocalPosition: {x: .0299053192, y: 0, z: .0498046875}
+  m_LocalScale: {x: .850000024, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 400026}
 --- !u!4 &400002
@@ -457,7 +473,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .949999988, y: .119999997, z: -.25}
+  m_LocalPosition: {x: 1.05273438, y: .041015625, z: -.25}
   m_LocalScale: {x: .25, y: .25000003, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -480,8 +496,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0299999993, y: -.150000006, z: .0500000007}
-  m_LocalScale: {x: .850000024, y: .600000024, z: 1}
+  m_LocalPosition: {x: -.0302128792, y: 0, z: .0498046875}
+  m_LocalScale: {x: .850000024, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
 --- !u!4 &400008
@@ -491,7 +507,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.894921064, z: 1.87898636}
+  m_LocalPosition: {x: 0, y: -.799804688, z: 5.56640625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -501,6 +517,7 @@ Transform:
   - {fileID: 400044}
   - {fileID: 400046}
   - {fileID: 400010}
+  - {fileID: 400028}
   m_Father: {fileID: 0}
 --- !u!4 &400010
 Transform:
@@ -509,7 +526,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00100000005, y: .0632737279, z: -.0512759686}
+  m_LocalPosition: {x: .0009765625, y: .044921875, z: -.0512695312}
   m_LocalScale: {x: .25, y: .25, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -601,6 +618,17 @@ Transform:
   m_LocalScale: {x: 1, y: .25, z: 1}
   m_Children:
   - {fileID: 400000}
+  m_Father: {fileID: 400008}
+--- !u!4 &400028
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.48974609, y: 1.58203125, z: 0}
+  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
+  m_Children: []
   m_Father: {fileID: 400008}
 --- !u!4 &400030
 Transform:
@@ -746,7 +774,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.949999988, y: .119999997, z: -.25}
+  m_LocalPosition: {x: -1.03955078, y: .041015625, z: -.25}
   m_LocalScale: {x: .25, y: .25000003, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -1463,6 +1491,27 @@ MonoBehaviour:
   HeartFullMaterial: {fileID: 2100000, guid: 910598ff92cd4d14d8090df0c15460f5, type: 2}
   HeartHalfMaterial: {fileID: 2100000, guid: 21c526a72c191764194f93753aa61b82, type: 2}
   HeartEmptyMaterial: {fileID: 2100000, guid: e47518d81add96d4597eba3fcdff2c26, type: 2}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5f19e36d3c3774a80dedb13e7aae4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PrefabIslandDiscovered: {fileID: 100000, guid: 4adf0406a9422eb4fb96af5383a880b2,
+    type: 2}
+  PrefabIslandDanger: {fileID: 100000, guid: 2d94a4c2d1fa7284fb7247955c59d764, type: 2}
+  PrefabIslandDone: {fileID: 100000, guid: d5cf469c5f11cee42b3cc4e078c2f0df, type: 2}
+  PrefabPlayers: {fileID: 100000, guid: 9fbd6717ff63d674a85fb16d82eb109f, type: 2}
+  PrefabBridge: {fileID: 100000, guid: 8ab8c8e015a99374b95b02e51979c315, type: 2}
+  _miniMapLeftBorder: 0
+  _miniMapTopBorder: 0
+  _miniMapRightBorder: 0
+  _miniMapBottomBorder: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

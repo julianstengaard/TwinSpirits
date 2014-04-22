@@ -17,9 +17,14 @@ public class SpawnActivator : MonoBehaviour {
 	private bool active;
 	private float ShrineChance = 0.3f;
 
+    public bool SelfActivated = true;
+    public bool GameOverIsland = false;
+    private MiniMap _miniMap;
+
 	void Start() {
 		Shrines = transform.parent.GetComponentsInChildren<Activatable>();
-		print(Shrines.Length);
+		//print(Shrines.Length);
+	    _miniMap = GameObject.FindGameObjectWithTag("MiniMap").GetComponent<MiniMap>();
 	}
 
 	void Update() {
@@ -57,7 +62,9 @@ public class SpawnActivator : MonoBehaviour {
 			var blocker = (GameObject)GameObject.Instantiate(GateBlocker, gate.transform.position, gate.transform.rotation);
 			_activeBlockers.Add(blocker);
 		}
-		active = true;
+        active = true;
+        _miniMap.SetNeighborsDiscovered(gameObject.transform.root.gameObject);
+        _miniMap.SetCellDangerous(gameObject.transform.root.gameObject);
 	}
 
 	private void deactivateLockdown() {
@@ -70,6 +77,11 @@ public class SpawnActivator : MonoBehaviour {
 			if(Random.Range (0.0f, 1.0f) <= ShrineChance)
 				shrine.Activate();
 		active = false;
+
+        _miniMap.SetCellDone(gameObject.transform.root.gameObject);
+	    if (GameOverIsland) {
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetGameOver(true);
+	    }
 	}
 
 	private int getActivePlayersThreshold() {
@@ -82,19 +94,27 @@ public class SpawnActivator : MonoBehaviour {
 	}
 
 	void OnTriggerEnter() {
+        _miniMap.SetPlayerPosition(gameObject.transform.root.gameObject);
+        activePlayersWithin++;
+
 		if(hasSpawned) return;
 
-		
-		GenerateMesh();
-		activePlayersWithin++;
-		if(activePlayersWithin != getActivePlayersThreshold()) return;
+	    if (SelfActivated) {
+	        GenerateMesh();
+	        if (activePlayersWithin != getActivePlayersThreshold()) return;
 
-		hasSpawned = true;
-		Debug.Log("Starting island");
-		StartEverything();
+	        hasSpawned = true;
+	        StartEverything();
+	    }
 	}
 
-	void OnTriggerExit() {
+    public void RemoteActivate() {
+        GenerateMesh();
+        hasSpawned = true;
+        StartEverything();
+    }
+
+    void OnTriggerExit() {
 		activePlayersWithin--;
 	}
 }

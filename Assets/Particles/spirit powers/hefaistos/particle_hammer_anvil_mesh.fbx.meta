@@ -1,0 +1,118 @@
+fileFormatVersion: 2
+guid: 9419585474799354ba6db47d9caff14e
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: particle_anvil_mesh
+    100002: //RootNode
+    100004: particle_hammer_mesh_anim
+    100006: particle_hammer_origin_handle_mesh
+    100008: particle_hammer_origin_head_mesh
+    400000: particle_anvil_mesh
+    400002: //RootNode
+    400004: particle_hammer_mesh_anim
+    400006: particle_hammer_origin_handle_mesh
+    400008: particle_hammer_origin_head_mesh
+    2300000: particle_anvil_mesh
+    2300002: particle_hammer_mesh_anim
+    2300004: particle_hammer_origin_handle_mesh
+    2300006: particle_hammer_origin_head_mesh
+    3300000: particle_anvil_mesh
+    3300002: particle_hammer_mesh_anim
+    3300004: particle_hammer_origin_handle_mesh
+    3300006: particle_hammer_origin_head_mesh
+    4300000: particle_hammer_origin_head_mesh
+    4300002: particle_hammer_mesh_anim
+    4300004: particle_anvil_mesh
+    4300006: particle_hammer_origin_handle_mesh
+    7400000: Default Take
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 195
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: particle_anvil_mesh
+        weight: 1
+      - path: particle_hammer_mesh_anim
+        weight: 1
+      - path: particle_hammer_origin_handle_mesh
+        weight: 1
+      - path: particle_hammer_origin_head_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 180
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

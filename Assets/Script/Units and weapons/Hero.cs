@@ -474,4 +474,8 @@ public class Hero : BaseUnit {
 	public void SwordSound() {
 		SoundController.PlayRandomSound("SwordSwing");
 	}
+
+    public void UseGravity(bool b) {
+        usesGravity = b;
+    }
 }
