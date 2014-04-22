@@ -18,7 +18,7 @@ public class SpiritBungie : SpiritPower
 	private float		circleMaxWidth		= 0.4f;
 	private float		syncDuration		= 10f;
 	private float		intervalDuration	= 1f;
-	private float 		damagePerInterval	= 20f;
+	private float 		damagePerInterval	= 50f;
 
 	private CharacterController heroCC;
 

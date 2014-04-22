@@ -1153,7 +1153,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100070}
-  m_LocalRotation: {x: -.333181769, y: .90969795, z: -.106434524, w: -.223855138}
+  m_LocalRotation: {x: -.333181798, y: .909698069, z: -.106434539, w: -.223855168}
   m_LocalPosition: {x: .101299509, y: .0375674255, z: -.0632802248}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -1254,6 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 100082}
   ImmuneTags: []
+  isDangerous: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1266,20 +1267,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  FullHealth: 0
   stunned: 0
   stunTimeout: 0
   MovementSpeed: 5
   movementSpeedBuff: 0
-  HealthBarPosition: 1.64999998
-  HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
+  damageLocked: 0
+  PlayerSlot: 0
   currentSpiritAmount: 0
   currentSpiritPower: {fileID: 0}
   spiritActive: 0
   spiritSyncActive: 0
   otherPlayer: {fileID: 0}
   CollectRadius: 1
+  ExchangingSpiritPower: 0
+  SpiritShieldActive: 0
+  CurrentMoveVector: {x: 0, y: 0, z: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1293,6 +1298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 100082}
   ImmuneTags: []
+  isDangerous: 1
 --- !u!119 &11900000
 Projector:
   m_ObjectHideFlags: 1

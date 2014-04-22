@@ -1319,6 +1319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 100084}
   ImmuneTags: []
+  isDangerous: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1332,6 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 100084}
   ImmuneTags: []
+  isDangerous: 1
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1370,8 +1372,6 @@ MonoBehaviour:
   stunTimeout: 0
   MovementSpeed: 5
   movementSpeedBuff: 0
-  HealthBarPosition: 1.64999998
-  HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
   damageLocked: 0
@@ -1382,6 +1382,9 @@ MonoBehaviour:
   spiritSyncActive: 0
   otherPlayer: {fileID: 0}
   CollectRadius: 1
+  ExchangingSpiritPower: 0
+  SpiritShieldActive: 0
+  CurrentMoveVector: {x: 0, y: 0, z: 0}
 --- !u!119 &11900000
 Projector:
   m_ObjectHideFlags: 1

@@ -198,16 +198,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 50
+  FullHealth: 0
   stunned: 0
   stunTimeout: 0
   MovementSpeed: 0
   movementSpeedBuff: 0
-  HealthBarPosition: 1.5
-  HealthBar: {fileID: 0}
   dead: 0
   immortal: 0
+  damageLocked: 0
   activator: {fileID: 0}
-  ActivationSound: {fileID: 8200000}
 --- !u!143 &14300000
 CharacterController:
   m_ObjectHideFlags: 1

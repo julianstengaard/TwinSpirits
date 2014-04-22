@@ -161,6 +161,7 @@ public class MiniMap : MonoBehaviour {
     }
 
     public void SetPlayerPosition(GameObject cell) {
+		if(cell == null) return;
         MazeCell playerCell = cell.GetComponent<MazeInstance>().represents;
         Vector3 targetPosition = new Vector3(playerCell.column * _mapIslandSpacing, -playerCell.row * _mapIslandSpacing, 0f);
         _players.transform.localPosition = targetPosition;
