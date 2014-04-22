@@ -5,116 +5,183 @@ using System.Linq;
 using InControl;
 
 public class MainMenu : MonoBehaviour {
+    public GameObject NewGameMenu;
+    public GameObject PlayerJoinMenu;
 
-	public LevelCreationInfo LevelCreationInfoGO;
+    private InputHandler _inputHandler;
 
 	public TextMesh RegenMesh;
 	public TextMesh LevelLengthMesh;
 	public TextMesh PlayButtonMesh;
 
-	private List<TextMesh> selectables = new List<TextMesh>();
-	private int selectedField;
+    public TextMesh GameStartingMesh;
+    public TextMesh Player1JoinMesh;
+    public GameObject Player1Joined;
+    public TextMesh Player2JoinMesh;
+    public GameObject Player2Joined;
 
-	private Color textColor			= new Color(1f, 1f, 1f);
-	private Color textColorHighlight = new Color(1f, 0f, 0f);
+    private LevelCreationInfo _levelCreationInfoGO;
+	private List<TextMesh> _selectables = new List<TextMesh>();
 
-	private int levelLength = 10;
-	private int regen = 0;
+	private Color _textColor			= new Color(1f, 1f, 1f);
+	private Color _textColorHighlight = new Color(1f, 0f, 0f);
 
-	private bool inputReady = true;
+	private int _levelLength = 10;
+	private int _regen = 0;
 
+	private bool _inputReady = true;
+    private bool _gameStarting = false;
+
+    private int _selectedField;
+    private int _currentMenu = 0;
+    private int _playersJoined = 0;
 
 	// Use this for initialization
 	void Start () {
-		//Add selectables
-		selectables.Add(RegenMesh);
-		selectables.Add(LevelLengthMesh);
-		selectables.Add(PlayButtonMesh);
+	    FindLevelInputHandler();
+	    FindLevelCreationInfo();
 
-		//Set up input
-		InputManager.Setup();
-		InputManager.AttachDevice(new UnityInputDevice(new FPSProfile()));
+		//Add selectables
+		_selectables.Add(RegenMesh);
+		_selectables.Add(LevelLengthMesh);
+		_selectables.Add(PlayButtonMesh);
 
 		//Set selection at Play
-		selectedField = 2;
+		_selectedField = 2;
 
 		UpdateHighlight();
 		ChangeLevelLength();
 		ChangeRegen();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		InputManager.Update();
-		
-		//Start game
-		if (selectedField == 2 && InputManager.ActiveDevice.Action1) {
-			GameObject.DontDestroyOnLoad(LevelCreationInfoGO.gameObject);
-			Application.LoadLevel(1);
-		}
 
-		//Check if stick has been reset
-		if (InputManager.ActiveDevice.LeftStickX == 0 && InputManager.ActiveDevice.LeftStickY == 0) {
-			inputReady = true;
-		}
+    // Update is called once per frame
+    private void Update() {
+        if (_currentMenu == 0) {
+            //Start game button (switch to next menu)
+            if (_selectedField == 2 && InputManager.ActiveDevice.Action1) {
+                NewGameMenu.SetActive(false);
+                PlayerJoinMenu.SetActive(true);
+                _currentMenu = 1;
+            }
 
-		//Move up/down
-		if (inputReady) {
-			if (InputManager.ActiveDevice.LeftStickY < -0.3f) {
-				inputReady = false;
-				selectedField = (selectedField + 1) % selectables.Count();
-				UpdateHighlight();
-			} else if (InputManager.ActiveDevice.LeftStickY > 0.3f) {
-				inputReady = false;
-				selectedField = (selectables.Count() + (selectedField - 1))  % (selectables.Count());
-				UpdateHighlight();
-			}
+            //Check if stick has been reset
+            if (InputManager.ActiveDevice.LeftStickX == 0 && InputManager.ActiveDevice.LeftStickY == 0) {
+                _inputReady = true;
+            }
 
-			//If over Regen
-			if (selectedField == 0) {
-				//Move left/right
-				if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
-					inputReady = false;
-					ChangeRegen(-1);
-				} else if (InputManager.ActiveDevice.LeftStickX > 0.3f) {
-					inputReady = false;
-					ChangeRegen(1);
-				}
-			}
+            //Move up/down
+            if (_inputReady) {
+                if (InputManager.ActiveDevice.LeftStickY < -0.3f) {
+                    _inputReady = false;
+                    _selectedField = (_selectedField + 1)%_selectables.Count();
+                    UpdateHighlight();
+                } else if (InputManager.ActiveDevice.LeftStickY > 0.3f) {
+                    _inputReady = false;
+                    _selectedField = (_selectables.Count() + (_selectedField - 1))%(_selectables.Count());
+                    UpdateHighlight();
+                }
 
-			//If over Level Length
-			if (selectedField == 1) {
-				//Move left/right
-				if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
-					inputReady = false;
-					ChangeLevelLength(-1);
-				} else if (InputManager.ActiveDevice.LeftStickX > 0.3f) {
-					inputReady = false;
-					ChangeLevelLength(1);
-				}
-			}
-		}
-	}
+                //If over Regen
+                if (_selectedField == 0) {
+                    //Move left/right
+                    if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
+                        _inputReady = false;
+                        ChangeRegen(-1);
+                    } else if (InputManager.ActiveDevice.LeftStickX > 0.3f) {
+                        _inputReady = false;
+                        ChangeRegen(1);
+                    }
+                }
+
+                //If over Level Length
+                if (_selectedField == 1) {
+                    //Move left/right
+                    if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
+                        _inputReady = false;
+                        ChangeLevelLength(-1);
+                    } else if (InputManager.ActiveDevice.LeftStickX > 0.3f) {
+                        _inputReady = false;
+                        ChangeLevelLength(1);
+                    }
+                }
+            }
+        }
+
+        else if (_currentMenu == 1) {
+            if (!_gameStarting && _playersJoined == 2) {
+                _gameStarting = true;
+                StartCoroutine(StartGameInSeconds(1f));
+            } else {
+                if (InputManager.ActiveDevice.Action1.WasPressed) {
+                    if (_inputHandler.PlayerJoin(InputManager.ActiveDevice)) {
+                        _playersJoined++;
+                        UpdateJoinedStatus();
+                    }
+                }
+            }
+        }
+    }
+
+    private IEnumerator StartGameInSeconds(float time) {
+        GameStartingMesh.gameObject.SetActive(true);
+        yield return new WaitForSeconds(time);
+        GameObject.DontDestroyOnLoad(_levelCreationInfoGO.gameObject);
+        GameObject.DontDestroyOnLoad(_inputHandler.gameObject);
+        Application.LoadLevel(1);
+    }
+
+    private void UpdateJoinedStatus() {
+        if (_playersJoined > 0) {
+            Player1JoinMesh.text = "PLAYER 1";
+            Player1Joined.SetActive(true);
+        } 
+        if (_playersJoined == 2) {
+            Player2JoinMesh.text = "PLAYER 2";
+            Player2Joined.SetActive(true);
+        }
+    }
+
+    private void FindLevelCreationInfo() {
+        LevelCreationInfo[] levelCreationInfos = FindObjectsOfType<LevelCreationInfo>();
+        for (int i = 0; i < levelCreationInfos.Length; i++) {
+            if (i > 0)
+                Destroy(levelCreationInfos[i].gameObject);
+            else
+                _levelCreationInfoGO = levelCreationInfos[i];
+        }
+    }
+
+    private void FindLevelInputHandler() {
+        InputHandler[] inputHandlers = FindObjectsOfType<InputHandler>();
+        for (int i = 0; i < inputHandlers.Length; i++) {
+            if (i > 0)
+                Destroy(inputHandlers[i].gameObject);
+            else {
+                _inputHandler = inputHandlers[i];
+                _inputHandler.Activate();
+            }
+        }
+    }
 
 	void UpdateHighlight()
 	{
-		for (int i = 0; i < selectables.Count(); i++) {
-			if ((int) selectedField == i) {
-				selectables.ElementAt(i).color = textColorHighlight;
+		for (int i = 0; i < _selectables.Count(); i++) {
+			if ((int) _selectedField == i) {
+				_selectables.ElementAt(i).color = _textColorHighlight;
 			} else {
-				selectables.ElementAt(i).color = textColor;
+				_selectables.ElementAt(i).color = _textColor;
 			}
 		}
 	}
 
 	void ChangeLevelLength(int i = 0) {
-		levelLength = Mathf.Max(2, levelLength + i);
-		LevelLengthMesh.text = levelLength.ToString();
-		LevelCreationInfoGO.levelLength = levelLength;
+		_levelLength = Mathf.Max(2, _levelLength + i);
+		LevelLengthMesh.text = _levelLength.ToString();
+		_levelCreationInfoGO.levelLength = _levelLength;
 	}
 	void ChangeRegen(int i = 0) {
-		regen = Mathf.Max(0, regen + i);
-		RegenMesh.text = regen.ToString();
-		LevelCreationInfoGO.spiritRegen = regen;
+		_regen = Mathf.Max(0, _regen + i);
+		RegenMesh.text = _regen.ToString();
+		_levelCreationInfoGO.spiritRegen = _regen;
 	}
 }
