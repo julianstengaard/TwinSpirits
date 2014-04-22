@@ -60,8 +60,12 @@ public class BaseEnemy : BaseUnit {
 		if (!immortal) {
 			Health = Mathf.Max(0, Health - damage);
 			damageLockTimer = 0.3f;
+
+			// Make the AI change targets
 			ai.AI.WorkingMemory.SetItem("changeTarget", true);
 			ai.AI.WorkingMemory.SetItem("targetUnit", src);
+
+			// Show the damaged animation
 			_anim.SetTrigger("Damaged");
 			if(Health <= 0 && !dead) {
 				Died ();

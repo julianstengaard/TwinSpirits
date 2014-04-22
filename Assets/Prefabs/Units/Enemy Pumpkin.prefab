@@ -2188,11 +2188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2283c8589eb47858fc1797ed7ed5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 1000
+  Health: 100
   FullHealth: 0
   stunned: 0
   stunTimeout: 0
-  MovementSpeed: .5
+  MovementSpeed: 3
   movementSpeedBuff: 0
   dead: 0
   immortal: 0
