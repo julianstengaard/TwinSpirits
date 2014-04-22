@@ -43,6 +43,12 @@ namespace InControl
 					Handle = "SpiritLink",
 					Target = InputControlType.LeftBumper,
 					Source = KeyCodeButton( KeyCode.Space )
+				},
+				new InputControlMapping
+				{
+					Handle = "Activate",
+					Target = InputControlType.Action1,
+					Source = KeyCodeButton( KeyCode.E )
 				}
 			};
 

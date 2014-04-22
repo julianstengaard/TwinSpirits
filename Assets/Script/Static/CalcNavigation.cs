@@ -29,11 +29,11 @@ public class CalcNavigation : MonoBehaviour {
 		mesh.StartCreatingContours(rig);
 		while (mesh.Creating) {
 			mesh.CreateContours();
-			yield return new WaitForEndOfFrame();
-			Debug.Log("Loading : " + mesh.CreatingProgress + " at " + Time.time);
+			yield return new WaitForFixedUpdate();
+			//Debug.Log("Loading : " + mesh.CreatingProgress + " at " + Time.time);
 		}
 		
-		Debug.Log ("New NavMesh generated");
+		//Debug.Log ("New NavMesh generated");
 		
 		mesh.GenerateNavMeshGraph();
 	}

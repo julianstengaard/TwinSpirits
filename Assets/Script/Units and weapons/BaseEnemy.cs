@@ -53,13 +53,32 @@ public class BaseEnemy : BaseUnit {
 	}
 
 	private void OnDestroy() {
-		if(!isQuiting)
-			OnDeath();
+
+	}
+
+	public override void TakeDamage(float damage, GameObject src) {
+		if (!immortal) {
+			Health = Mathf.Max(0, Health - damage);
+			damageLockTimer = 0.3f;
+
+			// Make the AI change targets
+			ai.AI.WorkingMemory.SetItem("changeTarget", true);
+			ai.AI.WorkingMemory.SetItem("targetUnit", src);
+
+			// Show the damaged animation
+			_anim.SetTrigger("Damaged");
+			if(Health <= 0 && !dead) {
+				Died ();
+			} else {
+				_randomSounds.PlayRandomSound("Hit");
+			}
+		}
 	}
 
 	protected override void Died() {
 		var timeToDeath = _randomSounds.PlayRandomSound("Death") + 0.5f;
 		dead = true;
+		OnDeath();
 		GameObject.Destroy(gameObject, timeToDeath);
 	}
 
@@ -74,6 +93,17 @@ public class BaseEnemy : BaseUnit {
 
 				GameObject.Instantiate(drop.Item, new Vector3(x, p.y, z), Quaternion.identity);
 			}
+		}
+		ai.enabled = false;
+		MakeInert();
+		usesGravity = false;
+		collider.enabled = false;
+		var unitParts = gameObject.GetComponentsInChildren<Transform>();
+		foreach (var part in unitParts) {
+			if (part.gameObject.Equals(this.gameObject)){
+				continue;
+			}
+			part.gameObject.SetActive(false);
 		}
 	}
 

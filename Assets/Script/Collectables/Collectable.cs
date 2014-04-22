@@ -11,4 +11,7 @@ public abstract class Collectable : MonoBehaviour {
 	}
 
 	public abstract void Collected(Hero collector);
+	public virtual bool IsCollectable(Hero collector) {
+		return true;
+	}
 }

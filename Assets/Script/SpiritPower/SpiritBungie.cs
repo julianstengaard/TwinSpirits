@@ -18,7 +18,7 @@ public class SpiritBungie : SpiritPower
 	private float		circleMaxWidth		= 0.4f;
 	private float		syncDuration		= 10f;
 	private float		intervalDuration	= 1f;
-	private float 		damagePerInterval	= 10f;
+	private float 		damagePerInterval	= 20f;
 
 	private CharacterController heroCC;
 
@@ -30,9 +30,9 @@ public class SpiritBungie : SpiritPower
 	private Hero othHero;
 
 	void Start() {
-		costActivate 		=  10f;
-		costPerSecond 		=  10f;
-		costActivateSync 	= 100f;
+		costActivate 		=  5f;
+		costPerSecond 		=  5f;
+		costActivateSync 	= 50f;
 		_particleEffectPrefab = (GameObject) Resources.Load("SpiritCircleParticle", typeof(GameObject));
 	}
 	
@@ -70,7 +70,7 @@ public class SpiritBungie : SpiritPower
 
 		return null;
 	}
-	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero, bool onDestroy)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
 		DestroyBungieLink (0f);
@@ -106,14 +106,13 @@ public class SpiritBungie : SpiritPower
 		if (circleActive)
 			return null;
 
-        if (!secondSync)
-        {
-            //Pay for activation
-            sourceHero.ChangeSpiritAmount(-costActivateSync);
-            otherHero.ChangeSpiritAmount(-costActivateSync);
+		if (!secondSync) {
+			//Stop other Heros effect
+			otherHero.SwitchToSyncPower();
 
-            //Stop other Heros effect
-            otherHero.SwitchToSyncPower();
+            //Pay for activation
+			sourceHero.ChangeSpiritAmount(-costActivateSync);
+			otherHero.ChangeSpiritAmount(-costActivateSync);
         }
 		StartCoroutine(DeathRay(sourceHero, otherHero));
 
@@ -233,7 +232,7 @@ public class SpiritBungie : SpiritPower
 				Vector3 hitPointCircle = centerSameHeight + hitDirection.normalized * radius;
 
 				float enemyDistance = Vector3.Distance(hitPointCircle, enemy.collider.ClosestPointOnBounds(hitPointCircle));
-				if (enemyDistance < width) {
+				if (enemyDistance < width * 2f) {
 					enemy.TakeDamage(damagePerInterval, gameObject);
 					StartCoroutine(CreateCircleDamageParticle(enemy.gameObject));
 				}

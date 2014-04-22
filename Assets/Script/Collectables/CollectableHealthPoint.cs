@@ -14,4 +14,7 @@ public class CollectableHealthPoint : Collectable {
 		collector.Heal(1);	
 	}
 
+	public override bool IsCollectable (Hero collector)	{
+		return collector.Health != collector.FullHealth;
+	}
 }

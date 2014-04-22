@@ -11,10 +11,10 @@ public class SpiritLightning : SpiritPower
 	private GameObject[] _enemiesGameObjects;
 	private BaseUnit[] _enemies;
 
-	private float _damagePerBall = 20f;
+	private float _damagePerBall = 50f;
 	private float _ballBaseRange = 5f;
 	private float _ballTravelTime = 1f;
-	private float _ballExplosionRadius = 1.5f;
+	private float _ballExplosionRadius = 2f;
 
 	private float _damagePerLightningInterval = 20f;
 	private float _lightningDuration = 10f;
@@ -29,7 +29,7 @@ public class SpiritLightning : SpiritPower
 	void Start() {
 		costActivate 		=  10f;
 		costPerSecond 		=  0f;
-		costActivateSync 	= 100f;
+		costActivateSync 	=  50f;
 		_lightningBallPrefab = (GameObject) Resources.Load("SpiritLightningBall");
 		_lightningPrefab = (GameObject) Resources.Load("Lightning");
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
@@ -54,7 +54,7 @@ public class SpiritLightning : SpiritPower
 		return null;
 	}
 
-	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero, bool onDestroy)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
 		return null;
@@ -85,14 +85,13 @@ public class SpiritLightning : SpiritPower
 	{
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
 
-		if (!secondSync)
-		{
+		if (!secondSync) {
+			//Stop other Heros effect
+			otherHero.SwitchToSyncPower();
+			
 			//Pay for activation
 			sourceHero.ChangeSpiritAmount(-costActivateSync);
 			otherHero.ChangeSpiritAmount(-costActivateSync);
-			
-			//Stop other Heros effect
-			otherHero.SwitchToSyncPower();
 		}
 		StartCoroutine(LightningSync(sourceHero, otherHero));
 

@@ -5,6 +5,12 @@ public class CameraController : MonoBehaviour {
 	public bool SinglePlayer;
 	public bool SwitchPlayer;
 
+	public GameObject Blacker;
+    public Camera UICamera;
+    private MiniMap _miniMap;
+
+	private bool fading = false;
+
     private Hero _player1;
     private Hero _player2;
 
@@ -18,6 +24,7 @@ public class CameraController : MonoBehaviour {
     private Vector3 _target;
     private Vector3 _currentLook;
     private bool _intro = true;
+    private bool _gameOver = false;
 
 	// Use this for initialization
 	void Start () {
@@ -62,11 +69,9 @@ public class CameraController : MonoBehaviour {
             _target = _player2.transform.position;
             _cameraLookTarget = _target;
 		} else {
-            //GAME OVER
-            _target = (_player1.transform.position + _player2.transform.position) * 0.5f;
-            _cameraLookTarget = _target;
-            _cameraZOffset = 3f;
-            _cameraHeight = 50f;
+            if (!_gameOver)
+                SetGameOver(false);
+            
 		}
 
 		//Vector3 wantedPosition = target + Vector3.back * distance + Vector3.up * height;
@@ -87,6 +92,60 @@ public class CameraController : MonoBehaviour {
 			transform.LookAt (_currentLook);
 		}
 	}
+
+	private IEnumerator FadeToBlack() {
+		yield return new WaitForSeconds(3);
+		for(var i = 0.0f; i <= 100; i++) {
+			Blacker.renderer.material.SetColor("_Color", new Color(0,0,0, i / 100.0f));
+			print (i);
+			yield return new WaitForSeconds(0.01f);
+		}
+		yield return new WaitForSeconds(2);
+		GameToMenu();
+	}
+
+	private void GameToMenu() {
+		Application.LoadLevel(0);
+	}
+
+    public void SetGameOver(bool victory) {
+        //GAME OVER
+        _target = (_player1.transform.position + _player2.transform.position) * 0.5f;
+        _cameraLookTarget = _target;
+        _cameraZOffset = 3f;
+        _cameraHeight = 50f;
+
+        string s = _miniMap.GetIslandsDone() == 1 ? "" : "s";
+        if (!victory) {
+            SwitchUIToGameOver("You lost...", "But survived " + _miniMap.GetIslandsDone() + " island" + s + " of " + _miniMap.GetIslandsTotal() + " total");
+        } else {
+            SwitchUIToGameOver("A WINNER IS YOU!", "You beat " + _miniMap.GetIslandsDone() + " island" + s + " of " + _miniMap.GetIslandsTotal() + " total");
+        }
+
+        if (!fading) {
+            StartCoroutine(FadeToBlack());
+            fading = true;
+        }
+    }
+
+    private void SwitchUIToGameOver(string head, string body) {
+        var transforms = UICamera.GetComponentsInChildren<Transform>(true);
+
+        foreach (var t in transforms) {
+            if (t.gameObject == UICamera.gameObject) {} 
+            else if (t.gameObject.name == "GameOverTextHead") {
+                t.gameObject.SetActive(true);
+                t.GetComponent<TextMesh>().text = head;
+            } 
+            else if (t.gameObject.name == "GameOverTextBody") {
+                t.gameObject.SetActive(true);
+                t.GetComponent<TextMesh>().text = body;
+            } else {
+                t.gameObject.SetActive(false);
+            }
+
+        }
+    }
 
     //Calculate new magic values
     private void UpdateSmartCameraValues()
@@ -113,5 +172,9 @@ public class CameraController : MonoBehaviour {
         _cameraZLookOffset  = Mathf.Min(0f, cameraZLookOffsetFromWidth + cameraZLookOffsetFromDepth);
         _cameraHeight       = Mathf.Max(Mathf.Max(cameraHeightFromWidth, cameraHeightFromDepth), cameraHeightFromDiagonal);
         _cameraZOffset      = Mathf.Max(Mathf.Max(cameraZOffsetFromWidth, cameraZOffsetFromDepth), cameraHeightFromDiagonal);
+    }
+
+    public void SetMiniMap(MiniMap map) {
+        _miniMap = map;
     }
 }

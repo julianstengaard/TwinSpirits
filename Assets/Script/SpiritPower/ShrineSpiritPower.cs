@@ -2,22 +2,22 @@
 using System.Collections;
 using Holoville.HOTween;
 
-public class ShrineSpiritPower : MonoBehaviour {
+public class ShrineSpiritPower : Activatable {
 	public GameObject[] SpiritPowers;
 
 	private CollectableSpiritPower _attachedSpiritPower;
-	//private Vector3 _attachedSpiritPowerPosition;
 	private SphereCollider _pickUpSphere;
 
+	[SerializeField]
 	private bool _active;
 	private bool _transferring;
 
-	private float buryDepth = 1.5f;
+	private float buryDepth = 1.6f;
 
 	// Use this for initialization
 	void Start () {
 		transform.position += Vector3.down * buryDepth;
-		Activate();
+		if(_active) Activate();
 	}
 	
 	// Update is called once per frame
@@ -32,7 +32,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 
 	public Vector3 AttachedSpiritPowerPosition() {
 		//return transform.position + new Vector3(-0.35f, 1.2f, -0f);
-		return transform.position + new Vector3(0f, 1.2f, 0f);
+		return transform.position + new Vector3(0f, 1.6f, 0f);
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -100,7 +100,7 @@ public class ShrineSpiritPower : MonoBehaviour {
 		_transferring = false;
 	}
 
-	public void Activate() {
+	public override void Activate() {
 		StartCoroutine(AnimateReveal());
 	}
 	private IEnumerator AnimateReveal() {

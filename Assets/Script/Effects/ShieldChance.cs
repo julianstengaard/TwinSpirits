@@ -7,6 +7,7 @@ public class ShieldChance : Effect
 	private Hero hero;
 	private bool isShieldUp = false;
 	private GameObject shield;
+	public GameObject shieldPrefab;
 
 	public ShieldChance(float chance) {
 		_chance = chance;
@@ -25,7 +26,7 @@ public class ShieldChance : Effect
 		
 		isShieldUp = true;
 		hero.immortal = true;
-		shield = SpiritImmortal.CreateShieldMesh(new Color(0f, 0.6f, 0f, 0.5f), hero.transform);
+		shield = shieldPrefab != null ? (GameObject)GameObject.Instantiate(shieldPrefab, hero.transform.position, Quaternion.identity) : SpiritImmortal.CreateShieldMesh(new Color(0f, 0.6f, 0f, 0.5f), hero.transform);
 		shield.transform.parent = hero.transform;
 		var timer = shield.AddComponent<SimpleSelfTimer>();
 		timer.trigger += RemoveEffect;

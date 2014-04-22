@@ -24,14 +24,14 @@ public class SpiritRegenHP : SpiritPower {
 		otherHero.Heal(regenPerSecond * Time.deltaTime);
 		return null;
 	}
-	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero)
+	public override IEnumerator OnDeactivate (Hero sourceHero, Hero otherHero, bool onDestroy)
 	{
 		//Debug.Log("Deactivating" + this.GetType());
 //		if(IsActive && healthBarDefaultColor != null)
 //			otherHero.HealthBar.renderer.material.SetColor("_Color", healthBarDefaultColor);
 
 
-		return base.OnDeactivate(sourceHero, otherHero);
+		return base.OnDeactivate(sourceHero, otherHero, onDestroy);
 	}
 	/* END REGULAR POWER */
 	
