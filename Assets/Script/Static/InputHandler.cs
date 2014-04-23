@@ -8,7 +8,14 @@ public class InputHandler : MonoBehaviour {
     private bool _playersControlled = false;
     private bool _isActive = false;
 
+    public bool SkipMenuDebug = false;
 
+    void Start() {
+        if (SkipMenuDebug) {
+            Reset();
+            Activate();
+        }
+    }
 
     private void Reset() {
         _isActive = false;
@@ -19,6 +26,9 @@ public class InputHandler : MonoBehaviour {
     void OnLevelWasLoaded(int level) {
         if (level == 0)
             Reset();
+        if (level == 1 && !SkipMenuDebug) {
+            DetroyOtherInputHandler();
+        }
     }
 
     public void Activate() {
@@ -32,11 +42,18 @@ public class InputHandler : MonoBehaviour {
         if (!_isActive) return;
 
         InputManager.Update();
-
-	    if (Application.loadedLevel == 1 && !_playersControlled) {
-	        AssumeControl();
-	    }
-	}
+        if (!_playersControlled) {
+            if (SkipMenuDebug) {
+                if (InputManager.ActiveDevice.Action1.WasPressed) {
+                    if (PlayerJoin(InputManager.ActiveDevice))
+                        AssumeControlDebug(InputManager.ActiveDevice);
+                }
+            }
+            else if (Application.loadedLevel == 1) {
+                AssumeControl();
+            }
+        }
+    }
 
     public bool PlayerJoin (InputDevice inputDevice) {
         if (!activeDevices.Contains(inputDevice)) {
@@ -60,6 +77,30 @@ public class InputHandler : MonoBehaviour {
                 heroes[0].AttachInputDevice(activeDevices[1]);
             }
             _playersControlled = true;
+        }
+    }
+
+    private void AssumeControlDebug(InputDevice inputDevice) {
+        var heroes = GameObject.FindObjectsOfType<Hero>();
+
+        int playersConnected = 0;
+        foreach (var hero in heroes) {
+            if (!hero.IsControlled) {
+                hero.AttachInputDevice(inputDevice);
+                playersConnected++;
+                break;
+            }
+        }
+        if (playersConnected >= 2) {
+            _playersControlled = true;
+        }
+    }
+
+    private void DetroyOtherInputHandler() {
+        InputHandler[] inputHandlers = FindObjectsOfType<InputHandler>();
+        for (int i = 0; i < inputHandlers.Length; i++) {
+            if (inputHandlers[i].gameObject != gameObject)
+                Destroy(inputHandlers[i].gameObject);
         }
     }
 }
