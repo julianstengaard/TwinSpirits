@@ -10,6 +10,8 @@ public class Hero : BaseUnit {
 	public Player PlayerSlot;
 	protected InputDevice _input;
 
+	private float _damageRecievedModifier = 1f;
+
 	public bool IsControlled {get; private set;}
 
 	//public float TurnSpeed; // ONLY USED IF ROTATION IS SLERPED
@@ -86,6 +88,7 @@ public class Hero : BaseUnit {
 		GameObject levelInfo = GameObject.Find("LevelCreationInfo");
 		if (levelInfo != null) {
 			spiritRegen = levelInfo.GetComponent<LevelCreationInfo>().spiritRegen;
+			_damageRecievedModifier = levelInfo.GetComponent<LevelCreationInfo>().DamageRecievedModifier;
 		}
 
 		SoundController = GetComponent<RandomSoundPlayer>();
@@ -235,7 +238,7 @@ public class Hero : BaseUnit {
 
 	    if (!damageLocked && !blocked && !immortal && !dead)
 		{
-			Health = Mathf.Max(0, Health - damage);
+			Health = Mathf.Max(0, Health - (damage * _damageRecievedModifier));
             SoundController.PlayRandomSound("TakeDamage");
 			_anim.SetTrigger("Damaged");
 			StartCoroutine(DamageLockTimeout(1f));
@@ -497,4 +500,8 @@ public class Hero : BaseUnit {
     public void UseGravity(bool b) {
         usesGravity = b;
     }
+
+	public void SetDamageRecievedModifier(float modifier) {
+		_damageRecievedModifier = modifier;
+	}
 }

@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour {
 
 	public TextMesh RegenMesh;
 	public TextMesh LevelLengthMesh;
+	public TextMesh DifficultyMesh;
 	public TextMesh PlayButtonMesh;
 
     public TextMesh GameStartingMesh;
@@ -29,6 +30,7 @@ public class MainMenu : MonoBehaviour {
 	private Color _textColor = new Color(1f, 1f, 1f);
 	private Color _textColorHighlight = new Color(1f, 0f, 0f);
 
+	private int _difficulty = 1;
 	private int _levelLength = 10;
 	private int _regen = 0;
 
@@ -45,12 +47,13 @@ public class MainMenu : MonoBehaviour {
 	    FindLevelCreationInfo();
 
 		//Add selectables
+		_selectables.Add(DifficultyMesh);
 		_selectables.Add(RegenMesh);
 		_selectables.Add(LevelLengthMesh);
 		_selectables.Add(PlayButtonMesh);
 
 		//Set selection at Play
-		_selectedField = 2;
+		_selectedField = 3;
 
 		UpdateHighlight();
 		ChangeLevelLength();
@@ -61,7 +64,7 @@ public class MainMenu : MonoBehaviour {
     private void Update() {
         if (_currentMenu == 0) {
             //Start game button (switch to next menu)
-            if (_selectedField == 2 && InputManager.ActiveDevice.Action1) {
+            if (_selectedField == 3 && InputManager.ActiveDevice.Action1) {
                 NewGameMenu.SetActive(false);
                 PlayerJoinMenu.SetActive(true);
                 gameObject.audio.PlayOneShot(AcceptSound);
@@ -87,8 +90,20 @@ public class MainMenu : MonoBehaviour {
                     gameObject.audio.PlayOneShot(SelectSound);
                 }
 
+				//If over Difficulty
+				if (_selectedField == 0) {
+					//Move left/right
+					if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
+						_inputReady = false;
+						ChangeDifficulty(-1);
+					} else if (InputManager.ActiveDevice.LeftStickX > 0.3f) {
+						_inputReady = false;
+						ChangeDifficulty(1);
+					}
+				}
+
                 //If over Regen
-                if (_selectedField == 0) {
+                if (_selectedField == 1) {
                     //Move left/right
                     if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
                         _inputReady = false;
@@ -100,7 +115,7 @@ public class MainMenu : MonoBehaviour {
                 }
 
                 //If over Level Length
-                if (_selectedField == 1) {
+                if (_selectedField == 2) {
                     //Move left/right
                     if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
                         _inputReady = false;
@@ -190,5 +205,16 @@ public class MainMenu : MonoBehaviour {
 		_regen = Mathf.Max(0, _regen + i);
 		RegenMesh.text = _regen.ToString();
 		_levelCreationInfoGO.spiritRegen = _regen;
+	}
+	void ChangeDifficulty(int i = 0) {
+		//_selectedField = (_selectables.Count() + (_selectedField - 1))%(_selectables.Count());
+		_difficulty = (3 + (_difficulty + i)) % 3;
+		if (_difficulty == 0)
+			DifficultyMesh.text = "EASY";
+		if (_difficulty == 1)
+			DifficultyMesh.text = "NORMAL";
+		if (_difficulty == 2)
+			DifficultyMesh.text = "HARD";
+		_levelCreationInfoGO.DamageRecievedModifier = Mathf.Max((float) _difficulty, 0.5f);
 	}
 }
