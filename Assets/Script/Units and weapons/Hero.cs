@@ -58,6 +58,7 @@ public class Hero : BaseUnit {
 	[HideInInspector]
 	public Vector3 CurrentMoveVector = Vector3.zero;
 
+	public bool DashEnabled = false;
 	private bool _dashing = false;
 	private float _dashDistance = 2.5f;
 	private int _dashOverFrames = 10;
@@ -75,8 +76,9 @@ public class Hero : BaseUnit {
 		AddEffectToWeapons(new Damage(25));
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
-		_dashTrail = GetComponent<TrailRenderer>();
-
+		if (DashEnabled) {
+			_dashTrail = GetComponent<TrailRenderer> ();
+		}
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
@@ -180,11 +182,13 @@ public class Hero : BaseUnit {
 			_dashTimer -= Time.deltaTime;
 
 		if (!_dashing) {
-			if (_input.Action1.WasPressed && _dashTimer <= 0f) {
-				if (lookDirection != Vector3.zero)
-					StartCoroutine(Dash(lookDirection, _dashDistance, _dashOverFrames));
-			} else 
-				_cc.Move(dir);
+			if (DashEnabled && _input.Action1.WasPressed && _dashTimer <= 0f) {
+				if (lookDirection != Vector3.zero) {
+					StartCoroutine (Dash (lookDirection, _dashDistance, _dashOverFrames));
+				}
+			} else {
+				_cc.Move (dir);
+			}
 		}
 
 		UpdateSpiritLink();
