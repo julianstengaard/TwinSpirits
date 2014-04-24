@@ -379,7 +379,6 @@ GameObject:
   - 114: {fileID: 411370013}
   - 119: {fileID: 411370014}
   - 82: {fileID: 411370016}
-  - 82: {fileID: 411370015}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -464,6 +463,8 @@ MonoBehaviour:
   SwitchPlayer: 0
   Blacker: {fileID: 922939594}
   UICamera: {fileID: 2144106932}
+  MainMusic: {fileID: 8300000, guid: fbdca4a42e57540be8ffb4ad0d4f4813, type: 3}
+  GameOverMusic: {fileID: 8300000, guid: 0c81dafd09cccab49b3439378970295a, type: 3}
 --- !u!119 &411370014
 Projector:
   m_ObjectHideFlags: 0
@@ -482,64 +483,6 @@ Projector:
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 1024
---- !u!82 &411370015
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 411370007}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: dc6770426a8ae43699115ef1cf91ae76, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: .317999989
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!82 &411370016
 AudioSource:
   m_ObjectHideFlags: 0
@@ -548,9 +491,9 @@ AudioSource:
   m_GameObject: {fileID: 411370007}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: fbdca4a42e57540be8ffb4ad0d4f4813, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: .600000024
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -954,8 +897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cde6749a548b154aadb77f6bfc52e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLength: 8
-  spiritRegen: 0
+  levelLength: 2
+  spiritRegen: 50
 --- !u!4 &627169257
 Transform:
   m_ObjectHideFlags: 0

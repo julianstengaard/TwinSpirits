@@ -12,6 +12,7 @@ public class CollectableSpiritPoint : Collectable {
 
 	public override void Collected (Hero collector)	{
 		collector.ChangeSpiritAmount(2);	
+        Destroy(gameObject);
 	}
 
 }

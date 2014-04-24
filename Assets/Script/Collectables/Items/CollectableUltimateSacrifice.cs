@@ -11,7 +11,9 @@ public class CollectableUltimateSacrifice : Collectable {
 			collector.otherPlayer.AddEffectToWeapons(effect);
 			collector.RemoveEffectFromWeapon(effect);
 		}
-		collector.AddEffectToWeapons(new Damage(15));
+        collector.AddEffectToWeapons(new Damage(15));
+        base.CreatePopUpText("Ultimate sacrifice", collector);
+        GameObject.Destroy(gameObject);
 	}
 	#endregion
 }

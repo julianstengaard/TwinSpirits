@@ -129,10 +129,10 @@ public class SpiritBungie : SpiritPower
 
 			//Should this tick deal damage?
 			if (damageTimer > intervalDuration) {
-				UpdateCircleLink(srcHero, othHero, true);
+				UpdateCircleLink(srcHero, othHero, damageTimer/intervalDuration, true);
 				damageTimer -= intervalDuration;
 			} else {
-				UpdateCircleLink(srcHero, othHero, false);
+				UpdateCircleLink(srcHero, othHero, damageTimer/intervalDuration, false);
 			}
 		}
 	}
@@ -161,13 +161,15 @@ public class SpiritBungie : SpiritPower
 	{
 		return null;
 	}
-	
-	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
+
+    public override IEnumerator OnDeactivateSync(Hero sourceHero, Hero otherHero, bool onDestroy = false)
 	{
-		if (circleActive) {
-			DestroyCircleLink (0f);
-			circleActive = false;
-		}
+        if (circleActive) {
+            DestroyCircleLink(0f);
+            circleActive = false;
+        } else {
+            DestroyBungieLink(0f);
+        }
 		return null;
 	}
 	/* END SYNC POWER */
@@ -191,11 +193,11 @@ public class SpiritBungie : SpiritPower
 		for (int i = 0; i < divisions; i++) {
 			circleLink[i] = (GameObject) Instantiate(Resources.Load(prefab), Vector3.up, Quaternion.identity); 
 		}
-		UpdateCircleLink (sourceHero, otherHero, true);
+		UpdateCircleLink (sourceHero, otherHero, 0f, true);
 	}
 
-	private void UpdateCircleLink (Hero sourceHero, Hero otherHero, bool damageTick) 
-	{
+	private void UpdateCircleLink (Hero sourceHero, Hero otherHero, float pctToNextDamage, bool damageTick) {
+	    Color rayColor = GetColor(pctToNextDamage);
 		Vector3 center = (sourceHero.transform.position + otherHero.transform.position) * 0.5f + Vector3.up;
 		float radius = (sourceHero.transform.position - otherHero.transform.position).magnitude * 0.5f;
 		float width = Mathf.Clamp(1f/radius, circleMinWidth, circleMaxWidth);
@@ -216,6 +218,7 @@ public class SpiritBungie : SpiritPower
 			s.z = width;
 			circleLink[i].transform.localScale = s;
 			circleLink[i].transform.localRotation = rotation;
+            circleLink[i].renderer.material.SetColor("_Color", rayColor);
 		}
 
 		if (damageTick) {
@@ -224,15 +227,23 @@ public class SpiritBungie : SpiritPower
 	}
 
 	private void DealDamageWithCircleLink(Vector3 center, float radius, float width) {
+        //Find enemies
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemiesToKill = new BaseUnit[enemies.Length];
+        for (int i = 0; i < enemies.Length; i++) {
+            enemiesToKill[i] = enemies[i].GetComponent<BaseUnit>();
+        }
+
+	    float hitRangeSqr = (width*2f)*(width*2f);
 		foreach (var enemy in enemiesToKill) {
 			if (enemy != null && !enemy.dead) {
 				//Is enemy in the DANGER ZONE?!
-				Vector3 centerSameHeight = center + new Vector3(0f, enemy.transform.position.y - center.y, 0f);
-				Vector3 hitDirection = enemy.transform.position - centerSameHeight;
-				Vector3 hitPointCircle = centerSameHeight + hitDirection.normalized * radius;
+				Vector3 circleOrigin = GetVectorWithYSet(center, 0f);
+                Vector3 hitDirection = GetVectorWithYSet(enemy.transform.position, 0f) - circleOrigin;
+                Vector3 hitPointOnCircle = GetVectorWithYSet(circleOrigin + hitDirection.normalized * radius, enemy.transform.position.y);
 
-				float enemyDistance = Vector3.Distance(hitPointCircle, enemy.collider.ClosestPointOnBounds(hitPointCircle));
-				if (enemyDistance < width * 2f) {
+                float enemyDistanceSqr = (hitPointOnCircle - enemy.collider.ClosestPointOnBounds(hitPointOnCircle)).sqrMagnitude;
+                if (enemyDistanceSqr < hitRangeSqr) {
 					enemy.TakeDamage(damagePerInterval, gameObject);
 					StartCoroutine(CreateCircleDamageParticle(enemy.gameObject));
 				}
@@ -276,7 +287,9 @@ public class SpiritBungie : SpiritPower
 
 	private void DestroyBungieLink (float time)
 	{
-		GameObject.Destroy(link, time);
+	    if (link != null) {
+	        GameObject.Destroy(link, time);
+	    }
 	}
 
 	public override float GetCostActivate ()
@@ -291,5 +304,16 @@ public class SpiritBungie : SpiritPower
 	{
 		return costActivateSync;
 	}
+
+    private Color GetColor(float pct) {
+        if (pct < 0.5f)
+            return new Color(1f, 1f, 1f, Mathf.Lerp(1f, 0.01f, pct * 2));
+        else
+            return new Color(1f, 1f, 1f, Mathf.Lerp(0.01f, 1f, (pct - 0.8f) * 5f));
+    }
+
+    private Vector3 GetVectorWithYSet(Vector3 vector, float y) {
+        return new Vector3(vector.x, y, vector.z);
+    }
 	
 }

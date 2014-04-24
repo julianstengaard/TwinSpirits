@@ -875,7 +875,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_LocalRotation: {x: .0137138581, y: .10628593, z: .0291020442, w: .993815005}
+  m_LocalRotation: {x: .013713859, y: .106285937, z: .029102046, w: .993815064}
   m_LocalPosition: {x: -.0492277108, y: .0152893849, z: .00200258568}
   m_LocalScale: {x: .999999821, y: 1, z: 1}
   m_Children:
@@ -958,7 +958,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100022}
-  m_LocalRotation: {x: -.687503636, y: .109321915, z: -.0607999749, w: .715325654}
+  m_LocalRotation: {x: -.687503695, y: .109321922, z: -.0607999787, w: .715325713}
   m_LocalPosition: {x: -.144009054, y: 2.23517418e-08, z: 1.49011612e-08}
   m_LocalScale: {x: 1.00000012, y: .99999994, z: 1}
   m_Children:
@@ -972,7 +972,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100024}
-  m_LocalRotation: {x: .0410999171, y: .123234585, z: .0257495977, w: .991191685}
+  m_LocalRotation: {x: .0410999209, y: .123234592, z: .0257495996, w: .991191745}
   m_LocalPosition: {x: -.172789603, y: 4.0687155e-08, z: 8.38190317e-09}
   m_LocalScale: {x: .999999881, y: .999999762, z: .999999702}
   m_Children:
@@ -1127,7 +1127,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100050}
-  m_LocalRotation: {x: -.041099906, y: .12323457, z: -.0257495847, w: .991191685}
+  m_LocalRotation: {x: -.0410999097, y: .123234577, z: -.0257495865, w: .991191745}
   m_LocalPosition: {x: -.172789589, y: -1.91212166e-08, z: 3.72529008e-09}
   m_LocalScale: {x: .999999881, y: .999999881, z: .99999994}
   m_Children:
@@ -1212,7 +1212,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100082}
-  m_LocalRotation: {x: 0, y: 0, z: -.707106709, w: .707106829}
+  m_LocalRotation: {x: 0, y: 0, z: -.707106769, w: .707106888}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1247,7 +1247,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100088}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+  m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1271,7 +1271,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100092}
   m_LocalRotation: {x: 0, y: .00599748129, z: -0, w: -.999982059}
-  m_LocalPosition: {x: 1.74935484, y: .0992630646, z: -1.35958326}
+  m_LocalPosition: {x: 304.512085, y: 3.50446987, z: -554.350464}
   m_LocalScale: {x: .357692271, y: .357692242, z: .357692271}
   m_Children:
   - {fileID: 400090}
@@ -1301,7 +1301,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: .181999996
+  m_Volume: .600000024
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1310,7 +1310,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1449,9 +1449,27 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 8cb41e21af2c443e28141bf8541dc6ad, type: 3}
   - Name: SwordSwing
     Sounds:
-    - {fileID: 8300000, guid: 1d7b73153dcc2440c94fa0d4d5678bc5, type: 3}
-    - {fileID: 8300000, guid: d2b7a6989a337411eb30b99171e454f9, type: 3}
-    - {fileID: 8300000, guid: e03cfc4f381fb4343970302a50e43c92, type: 3}
+    - {fileID: 8300000, guid: 69e1fb35a9ea91a4f86950da83b27e0c, type: 3}
+    - {fileID: 8300000, guid: 26dd292f3686dc149a2ec87566ea1b3b, type: 3}
+    - {fileID: 8300000, guid: 771b06aeed2e10b45ab00a60b6575f6a, type: 3}
+  - Name: TakeDamage
+    Sounds:
+    - {fileID: 8300000, guid: 2ccc934dfbfe6014eb20e83cc3953dd0, type: 3}
+  - Name: Death
+    Sounds:
+    - {fileID: 8300000, guid: af0e982761901d748ab4207a0a2eaa21, type: 3}
+  - Name: Heal
+    Sounds:
+    - {fileID: 8300000, guid: e4e20102327d61e419ceadd7b2b0b372, type: 3}
+  - Name: Revive
+    Sounds:
+    - {fileID: 8300000, guid: a3df547bf8b369e4bb1d6f80a93407d5, type: 3}
+  - Name: SpiritShieldBlock
+    Sounds:
+    - {fileID: 8300000, guid: 756d2bcfcb0485a4cbb20c2be478995c, type: 3}
+  - Name: ImmortalShieldBlock
+    Sounds:
+    - {fileID: 8300000, guid: 303fea623afb9a648a87b4ab2f3c0ebc, type: 3}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

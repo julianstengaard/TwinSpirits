@@ -10,7 +10,9 @@ public class CollectableDivineFavor : Collectable {
 	public override void Collected (Hero collector)	{
 		var sc = new ShieldChance(0.1f);
 		sc.shieldPrefab = ShieldPrefab;
-		collector.AddEffectToWeapons(sc);
+        collector.AddEffectToWeapons(sc);
+        base.CreatePopUpText("Divine favor", collector);
+        GameObject.Destroy(gameObject);
 	}
 	#endregion
 }

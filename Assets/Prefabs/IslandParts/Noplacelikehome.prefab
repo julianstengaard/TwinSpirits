@@ -1169,6 +1169,7 @@ GameObject:
   - 23: {fileID: 2300024}
   - 65: {fileID: 6500004}
   - 114: {fileID: 11400038}
+  - 82: {fileID: 8200000}
   m_Layer: 0
   m_Name: ItemFountain
   m_TagString: Untagged
@@ -1188,6 +1189,7 @@ GameObject:
   - 23: {fileID: 2300026}
   - 65: {fileID: 6500014}
   - 114: {fileID: 11400040}
+  - 82: {fileID: 8200006}
   m_Layer: 0
   m_Name: ItemFountain
   m_TagString: Untagged
@@ -1207,6 +1209,7 @@ GameObject:
   - 23: {fileID: 2300028}
   - 114: {fileID: 11400042}
   - 65: {fileID: 6500016}
+  - 82: {fileID: 8200008}
   m_Layer: 0
   m_Name: SpiritFountain
   m_TagString: Untagged
@@ -1226,6 +1229,7 @@ GameObject:
   - 23: {fileID: 2300030}
   - 114: {fileID: 11400044}
   - 65: {fileID: 6500018}
+  - 82: {fileID: 8200010}
   m_Layer: 0
   m_Name: SpiritFountain
   m_TagString: Untagged
@@ -2227,7 +2231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: -.00599748129, z: 0, w: -.999982059}
-  m_LocalPosition: {x: 304.080902, y: -1.36590958, z: -546.089172}
+  m_LocalPosition: {x: 298.41098, y: -1.07955551, z: -533.117798}
   m_LocalScale: {x: 2.79569936, y: 2.79569936, z: 2.79569936}
   m_Children:
   - {fileID: 400350}
@@ -4571,6 +4575,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: .5, z: 0}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100234}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!82 &8200002
 AudioSource:
   m_ObjectHideFlags: 1
@@ -4581,7 +4643,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: .181999996
+  m_Volume: .600000024
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4590,7 +4652,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -4644,7 +4706,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: .181999996
+  m_Volume: .600000024
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4653,7 +4715,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -4674,6 +4736,180 @@ AudioSource:
       value: 0
       inSlope: -1.54478121
       outSlope: -1.54478121
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8200006
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100236}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8200008
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100238}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8200010
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100240}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -5038,9 +5274,27 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 8cb41e21af2c443e28141bf8541dc6ad, type: 3}
   - Name: SwordSwing
     Sounds:
-    - {fileID: 8300000, guid: 1d7b73153dcc2440c94fa0d4d5678bc5, type: 3}
-    - {fileID: 8300000, guid: d2b7a6989a337411eb30b99171e454f9, type: 3}
-    - {fileID: 8300000, guid: e03cfc4f381fb4343970302a50e43c92, type: 3}
+    - {fileID: 8300000, guid: 69e1fb35a9ea91a4f86950da83b27e0c, type: 3}
+    - {fileID: 8300000, guid: 26dd292f3686dc149a2ec87566ea1b3b, type: 3}
+    - {fileID: 8300000, guid: 771b06aeed2e10b45ab00a60b6575f6a, type: 3}
+  - Name: TakeDamage
+    Sounds:
+    - {fileID: 8300000, guid: 2ccc934dfbfe6014eb20e83cc3953dd0, type: 3}
+  - Name: Death
+    Sounds:
+    - {fileID: 8300000, guid: af0e982761901d748ab4207a0a2eaa21, type: 3}
+  - Name: Heal
+    Sounds:
+    - {fileID: 8300000, guid: e4e20102327d61e419ceadd7b2b0b372, type: 3}
+  - Name: Revive
+    Sounds:
+    - {fileID: 8300000, guid: a3df547bf8b369e4bb1d6f80a93407d5, type: 3}
+  - Name: SpiritShieldBlock
+    Sounds:
+    - {fileID: 8300000, guid: 756d2bcfcb0485a4cbb20c2be478995c, type: 3}
+  - Name: ImmortalShieldBlock
+    Sounds:
+    - {fileID: 8300000, guid: 303fea623afb9a648a87b4ab2f3c0ebc, type: 3}
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5094,6 +5348,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: ed9d4f5cc4a9549a39688e272a48af0f, type: 2}
   - {fileID: 100000, guid: 686b414e4f20d442892f16b0f04466e9, type: 2}
   - {fileID: 100000, guid: df62f32f014b643928085813f0549d4c, type: 2}
+  EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
+  ItemPickupSound: {fileID: 8300000, guid: f8b8a76cfcb86264093ca0ece42232c2, type: 3}
   _active: 1
 --- !u!114 &11400040
 MonoBehaviour:
@@ -5115,6 +5371,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: ed9d4f5cc4a9549a39688e272a48af0f, type: 2}
   - {fileID: 100000, guid: 686b414e4f20d442892f16b0f04466e9, type: 2}
   - {fileID: 100000, guid: df62f32f014b643928085813f0549d4c, type: 2}
+  EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
+  ItemPickupSound: {fileID: 8300000, guid: f8b8a76cfcb86264093ca0ece42232c2, type: 3}
   _active: 1
 --- !u!114 &11400042
 MonoBehaviour:
@@ -5132,6 +5390,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55556af623301af4b9de5096f21d7cbf, type: 2}
   - {fileID: 100000, guid: cf20a9184bfe5ad459c376e5bbbed38c, type: 2}
   - {fileID: 100000, guid: 1e5f3e3d6fc783b43b4186a3bf068810, type: 2}
+  EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
+  SpiritPowerSound: {fileID: 8300000, guid: 1297d35c17f9368478df929f44342ce6, type: 3}
   _active: 1
 --- !u!114 &11400044
 MonoBehaviour:
@@ -5149,6 +5409,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55556af623301af4b9de5096f21d7cbf, type: 2}
   - {fileID: 100000, guid: cf20a9184bfe5ad459c376e5bbbed38c, type: 2}
   - {fileID: 100000, guid: 1e5f3e3d6fc783b43b4186a3bf068810, type: 2}
+  EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
+  SpiritPowerSound: {fileID: 8300000, guid: 1297d35c17f9368478df929f44342ce6, type: 3}
   _active: 1
 --- !u!114 &11400046
 MonoBehaviour:
@@ -5215,9 +5477,27 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 8cb41e21af2c443e28141bf8541dc6ad, type: 3}
   - Name: SwordSwing
     Sounds:
-    - {fileID: 8300000, guid: 1d7b73153dcc2440c94fa0d4d5678bc5, type: 3}
-    - {fileID: 8300000, guid: d2b7a6989a337411eb30b99171e454f9, type: 3}
-    - {fileID: 8300000, guid: e03cfc4f381fb4343970302a50e43c92, type: 3}
+    - {fileID: 8300000, guid: 69e1fb35a9ea91a4f86950da83b27e0c, type: 3}
+    - {fileID: 8300000, guid: 26dd292f3686dc149a2ec87566ea1b3b, type: 3}
+    - {fileID: 8300000, guid: 771b06aeed2e10b45ab00a60b6575f6a, type: 3}
+  - Name: TakeDamage
+    Sounds:
+    - {fileID: 8300000, guid: 2ccc934dfbfe6014eb20e83cc3953dd0, type: 3}
+  - Name: Death
+    Sounds:
+    - {fileID: 8300000, guid: af0e982761901d748ab4207a0a2eaa21, type: 3}
+  - Name: Heal
+    Sounds:
+    - {fileID: 8300000, guid: e4e20102327d61e419ceadd7b2b0b372, type: 3}
+  - Name: Revive
+    Sounds:
+    - {fileID: 8300000, guid: a3df547bf8b369e4bb1d6f80a93407d5, type: 3}
+  - Name: SpiritShieldBlock
+    Sounds:
+    - {fileID: 8300000, guid: 756d2bcfcb0485a4cbb20c2be478995c, type: 3}
+  - Name: ImmortalShieldBlock
+    Sounds:
+    - {fileID: 8300000, guid: 303fea623afb9a648a87b4ab2f3c0ebc, type: 3}
 --- !u!114 &11400052
 MonoBehaviour:
   m_ObjectHideFlags: 1

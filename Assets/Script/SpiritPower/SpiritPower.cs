@@ -18,7 +18,7 @@ public abstract class SpiritPower : MonoBehaviour
 		return null;
 	}
 	public abstract IEnumerator OnUpdate		(Hero sourceHero, Hero otherHero); 
-	public virtual IEnumerator OnDeactivate	(Hero sourceHero, Hero otherHero, bool onDestroy) {
+	public virtual IEnumerator OnDeactivate	(Hero sourceHero, Hero otherHero, bool onDestroy = false) {
 		IsActive = false;
 		return null;
 	}
@@ -27,7 +27,7 @@ public abstract class SpiritPower : MonoBehaviour
 
     public abstract IEnumerator OnActivateSync  (Hero sourceHero, Hero otherHero, bool secondSync = false);
 	public abstract IEnumerator OnUpdateSync	(Hero sourceHero, Hero otherHero);
-	public abstract IEnumerator OnDeactivateSync(Hero sourceHero, Hero otherHero);
+    public abstract IEnumerator OnDeactivateSync(Hero sourceHero, Hero otherHero, bool onDestroy = false);
 
 	public abstract float 	GetCostActivate 	();
 	public abstract float 	GetCostThisUpdate 	();

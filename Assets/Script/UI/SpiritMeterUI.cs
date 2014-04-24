@@ -19,9 +19,9 @@ public class SpiritMeterUI : MonoBehaviour {
     public Material SyncOffIcon;
 
 	private GameObject p1Icon;
-	private System.Type p1SpiritPrevious;
+	private System.Type p1SpiritPrevious = null;
 	private GameObject p2Icon;
-	private System.Type p2SpiritPrevious;
+    private System.Type p2SpiritPrevious = null;
 
     private GameObject syncIcon;
 	private GameObject p1Meter;
@@ -63,20 +63,19 @@ public class SpiritMeterUI : MonoBehaviour {
 	bool FindPlayers()
 	{
 		var ps = GameObject.FindObjectsOfType<Hero>();
-		if(ps.Length >= 2) {
-		    foreach (var player in ps)
-		    {
-		       if (player.PlayerSlot == Hero.Player.One)
+		if(ps.Length == 2) {
+		    foreach (var player in ps) {
+		        if (player.PlayerSlot == Hero.Player.One)
 					Player1 = player;
-               if (player.PlayerSlot == Hero.Player.Two)
+                if (player.PlayerSlot == Hero.Player.Two)
 					Player2 = player;
 		    }
-			UpdateSpiritPowerIcons();
-			return true;
+			if (UpdateSpiritPowerIcons())
+			    return true;
+            else 
+                print("dafuq");
 		}
-		else {
-			return false;
-		}
+		return false;
 
 	}
 	void UpdateSpiritMeter(int playerNumber) {
@@ -115,30 +114,32 @@ public class SpiritMeterUI : MonoBehaviour {
         }
     }
 
-	public void UpdateSpiritPowerIcons() {
-		UpdateSpiritPowerIcon(Player1, p1Icon);
-		UpdateSpiritPowerIcon(Player2, p2Icon);
-	}
+    public bool UpdateSpiritPowerIcons() {
+        bool b;
+		b = UpdateSpiritPowerIcon(Player1, p1Icon);
+		b = UpdateSpiritPowerIcon(Player2, p2Icon) && b;
+        return b;
+    }
 
-	private void UpdateSpiritPowerIcon(Hero player, GameObject icon)
+	private bool UpdateSpiritPowerIcon(Hero player, GameObject icon)
 	{
 		int playerNumber = player.PlayerSlot == Hero.Player.One ? 1 : 2;
 
 		//Stop if player has no power
 	    if (player.currentSpiritPower == null) {
-            return;
+            return false;
 	    }
 		//Stop if already animating this player
 		if (playerNumber == 1 ? animatingSpiritPowerP1 : animatingSpiritPowerP2) {
-			return;
+            return false;
 		}
 
-		//Which player should we check agianst
+		//Which player should we check against
 		var previous = playerNumber == 1 ? p1SpiritPrevious : p2SpiritPrevious;
 
-		//Stop if no change to spirit power since last time
-		if (player.currentSpiritPower.GetType() == previous) {
-			return;
+		//Stop if no change to spirit power since last time (and not first time)
+        if (previous != null && player.currentSpiritPower.GetType() == previous) {
+            return false;
 		}
 
 		//Update previous power to current one
@@ -171,6 +172,7 @@ public class SpiritMeterUI : MonoBehaviour {
 
 		//Animate it
 		StartCoroutine(AnimateIconTransition(oldIcon, icon, playerNumber));
+	    return true;
 	}
 
 	private IEnumerator AnimateIconTransition(GameObject oldIcon, GameObject newIcon, int playerNumber) {
