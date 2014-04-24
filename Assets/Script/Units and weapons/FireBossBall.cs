@@ -5,6 +5,7 @@ using Holoville.HOTween;
 
 public class FireBossBall : MonoBehaviour {
     public Color BallColor;
+    public AudioClip ExplodeSound;
 
     private bool _arches;
     private float _height;
@@ -55,6 +56,9 @@ public class FireBossBall : MonoBehaviour {
     }
 
     private IEnumerator Explode() {
+        gameObject.audio.clip = ExplodeSound;
+        gameObject.audio.Play();
+
         //Tween Color
         BallColor = new Color(1f, 1f, 0f, 1f);
         Color finalColor = new Color(1f, 1f, 0f, 0f);
@@ -102,6 +106,8 @@ public class FireBossBall : MonoBehaviour {
         foreach (RaycastHit hit in hits) {
             var player = hit.collider.gameObject.GetComponent<BaseUnit>();
             if (!_playersHit.Contains(player)) {
+                gameObject.audio.clip = ExplodeSound;
+                gameObject.audio.Play();
                 player.TakeDamage(_damageOnHit, gameObject);
                 _playersHit.Add(player);
             }

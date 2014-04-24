@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class FireBoss : MonoBehaviour {
+    public AudioClip InitiateSound;
+
     public GameObject FireballStraightPrefab;
     public GameObject FireballArchPrefab;
 
@@ -53,6 +55,9 @@ public class FireBoss : MonoBehaviour {
 	}
 
     public void Activate() {
+        gameObject.audio.clip = InitiateSound;
+        gameObject.audio.Play();
+
         _isActive = true;
         _volleyTimer = TimeBetweenVolleys / 2f;
         _isAttacking = false;

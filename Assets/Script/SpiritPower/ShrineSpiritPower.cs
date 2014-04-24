@@ -4,6 +4,8 @@ using Holoville.HOTween;
 
 public class ShrineSpiritPower : Activatable {
 	public GameObject[] SpiritPowers;
+    public AudioClip EmergeSound;
+    public AudioClip SpiritPowerSound;
 
 	private CollectableSpiritPower _attachedSpiritPower;
 	private SphereCollider _pickUpSphere;
@@ -16,7 +18,7 @@ public class ShrineSpiritPower : Activatable {
 
 	// Use this for initialization
 	void Start () {
-		transform.position += Vector3.down * buryDepth;
+        transform.position += Vector3.down * buryDepth;
 		if(_active) Activate();
 	}
 	
@@ -45,6 +47,10 @@ public class ShrineSpiritPower : Activatable {
 	}
 
 	private IEnumerator InitiatePowerTransfer(Hero collector) {
+        gameObject.audio.Stop();
+        gameObject.audio.clip = SpiritPowerSound;
+        gameObject.audio.Play();
+
 		_transferring = true;
 		collector.ExchangingSpiritPower = true;
 		float time = 0.5f;
@@ -101,6 +107,8 @@ public class ShrineSpiritPower : Activatable {
 	}
 
 	public override void Activate() {
+	    gameObject.audio.clip = EmergeSound;
+        gameObject.audio.Play();
 		StartCoroutine(AnimateReveal());
 	}
 	private IEnumerator AnimateReveal() {

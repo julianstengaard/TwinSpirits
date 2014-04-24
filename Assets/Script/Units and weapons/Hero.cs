@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Linq;
 using InControl;
 using RAIN.Entities;
 using RAIN.Entities.Aspects;
@@ -79,7 +78,7 @@ public class Hero : BaseUnit {
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
-		currentSpiritPower = gameObject.AddComponent<SpiritImmortal>();
+		currentSpiritPower = gameObject.AddComponent<SpiritBungie>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
@@ -90,8 +89,6 @@ public class Hero : BaseUnit {
 		}
 
 		SoundController = GetComponent<RandomSoundPlayer>();
-
-		print(currentSpiritPower);
 	}
 
 	// Update is called once per frame
@@ -227,12 +224,19 @@ public class Hero : BaseUnit {
 	        Vector3 blockAngle = gameObject.transform.TransformDirection(Vector3.forward);
 	        Vector3 incomingAngle = src.transform.position - gameObject.transform.position;
             if (Vector3.Angle(blockAngle, incomingAngle) < 80f) {
+                SoundController.PlayRandomSound("SpiritShieldBlock");
                 blocked = true;
             }
+        } 
+        
+        if (immortal && !blocked) {
+            SoundController.PlayRandomSound("ImmortalShieldBlock");
         }
-        if (!damageLocked && !blocked && !immortal)
+
+	    if (!damageLocked && !blocked && !immortal && !dead)
 		{
 			Health = Mathf.Max(0, Health - damage);
+            SoundController.PlayRandomSound("TakeDamage");
 			_anim.SetTrigger("Damaged");
 			StartCoroutine(DamageLockTimeout(1f));
 			
@@ -240,6 +244,13 @@ public class Hero : BaseUnit {
 				Died();
 		}
 	}
+
+    public override void Heal(float healAmount) {
+        if (!dead) {
+            Health = Mathf.Min(FullHealth, Health + healAmount);
+            SoundController.PlayRandomSound("Heal");
+        }
+    }
 
 	private IEnumerator DamageLockTimeout(float t)
 	{
@@ -251,7 +262,10 @@ public class Hero : BaseUnit {
 	}
 	
 	protected override void Died () {
+        if (dead) return;
+
 		dead = true;
+        SoundController.PlayRandomSound("Death");
 		if (spiritActive) {
 			DeactivateSpiritPower(false);
 		}
@@ -303,6 +317,7 @@ public class Hero : BaseUnit {
 	}
 
 	private void DoRevive () {
+        SoundController.PlayRandomSound("Revive");
 		float transferedHealth = Mathf.Floor(Health/2f);
 		otherPlayer.Revived(Mathf.Max(1f, transferedHealth));
 		Health = Mathf.Max(1f, Health - transferedHealth);
@@ -354,7 +369,6 @@ public class Hero : BaseUnit {
 			//rigidbody.AddForce(dir.normalized * 1000);
 			if(Vector3.Distance(corrected, c.transform.position) < 1f) {
 				c.SendMessage("Collected", this);
-				GameObject.Destroy(c.gameObject);
 			} else {
 				c.gameObject.transform.position = Vector3.Lerp(c.transform.position, corrected, 0.1f);
 			}
@@ -414,7 +428,7 @@ public class Hero : BaseUnit {
 	public void ChangeSpiritPower(SpiritPower newPower)
 	{
 		DeactivateSpiritPower(true);
-		currentSpiritPower.OnDeactivateSync(this, otherPlayer);
+		currentSpiritPower.OnDeactivateSync(this, otherPlayer, true);
 		Destroy(currentSpiritPower);
 		currentSpiritPower = newPower;
 		ui.UpdateSpiritPowerIcons();

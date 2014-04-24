@@ -1,4 +1,10 @@
-﻿Shader "TwinSpirit/SeethroughOutline" {
+﻿//http://forum.unity3d.com/threads/96393-Achieving-a-multi-pass-effect-with-a-Surface-Shader
+
+//http://answers.unity3d.com/questions/11175/how-to-make-an-outline-of-an-object-behind-a-wall.html
+
+ 
+
+Shader "Custom/NewOcclusionOutline" {
 
     Properties {
 
@@ -184,4 +190,4 @@
 
     FallBack "VertexLit"
 
-}	
+}

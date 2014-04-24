@@ -81,8 +81,8 @@ public class SpiritRegenHP : SpiritPower {
 	{
 		return null;
 	}
-	
-	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
+
+    public override IEnumerator OnDeactivateSync(Hero sourceHero, Hero otherHero, bool onDestroy = false)
 	{
 		//Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
 		yield return null;

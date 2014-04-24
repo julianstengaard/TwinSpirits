@@ -7,6 +7,9 @@ public class CameraController : MonoBehaviour {
 
 	public GameObject Blacker;
     public Camera UICamera;
+    public AudioClip MainMusic;
+    public AudioClip GameOverMusic;
+
     private MiniMap _miniMap;
 
 	private bool fading = false;
@@ -28,6 +31,9 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+	    gameObject.audio.clip = MainMusic;
+        gameObject.audio.Play();
+
 		var ps = GameObject.FindObjectsOfType<Hero>();
 		if(ps.Length > 0) {
 			foreach(var player in ps) {
@@ -97,7 +103,6 @@ public class CameraController : MonoBehaviour {
 		yield return new WaitForSeconds(3);
 		for(var i = 0.0f; i <= 100; i++) {
 			Blacker.renderer.material.SetColor("_Color", new Color(0,0,0, i / 100.0f));
-			print (i);
 			yield return new WaitForSeconds(0.01f);
 		}
 		yield return new WaitForSeconds(2);
@@ -109,6 +114,12 @@ public class CameraController : MonoBehaviour {
 	}
 
     public void SetGameOver(bool victory) {
+        _gameOver = true;
+
+        gameObject.audio.Stop();
+        gameObject.audio.clip = GameOverMusic;
+        gameObject.audio.Play();
+
         //GAME OVER
         _target = (_player1.transform.position + _player2.transform.position) * 0.5f;
         _cameraLookTarget = _target;
