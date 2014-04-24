@@ -8,7 +8,7 @@ public class DeathFloor : MonoBehaviour {
 	        var heroes = GameObject.FindGameObjectsWithTag("Player");
 	        foreach (var heroGO in heroes) {
                 var hero = heroGO.GetComponent<Hero>();
-	            hero.TakeDamage(10000f, gameObject);
+	            hero.TakeDamage(10000f, gameObject, true);
                 hero.UseGravity(false);
 	        }
 	    } else {

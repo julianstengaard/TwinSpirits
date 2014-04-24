@@ -58,7 +58,7 @@ public class BaseEnemy : BaseUnit {
 
 	}
 
-	public override void TakeDamage(float damage, GameObject src) {
+	public override void TakeDamage(float damage, GameObject src, bool forceKill = false) {
 		if (!immortal) {
 			Health = Mathf.Max(0, Health - damage);
 			damageLockTimer = 0.3f;

@@ -217,7 +217,7 @@ public class Hero : BaseUnit {
 			return -1f * (Mathf.Cos(Mathf.PI*pct) - 1f);
 	}
 
-	public override void TakeDamage(float damage, GameObject src)
+	public override void TakeDamage(float damage, GameObject src, bool forceKill = false)
 	{
 	    bool blocked = false;
         if (SpiritShieldActive) {
@@ -240,8 +240,13 @@ public class Hero : BaseUnit {
 			_anim.SetTrigger("Damaged");
 			StartCoroutine(DamageLockTimeout(1f));
 			
-			if (Health <= 0 && !dead)
+			if (Health <= 0f && !dead)
 				Died();
+		}
+
+		if (forceKill) {
+			Health = 0f;
+			Died ();
 		}
 	}
 

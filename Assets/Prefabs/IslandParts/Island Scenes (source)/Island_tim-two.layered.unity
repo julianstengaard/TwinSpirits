@@ -12416,6 +12416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opening: 1
   forced: 1
+  Cap: {fileID: 0}
 --- !u!1 &281810331
 GameObject:
   m_ObjectHideFlags: 0
@@ -18875,6 +18876,7 @@ GameObject:
   - 23: {fileID: 462575276}
   - 65: {fileID: 462575275}
   - 114: {fileID: 462575274}
+  - 82: {fileID: 462575278}
   m_Layer: 0
   m_Name: ItemFountain
   m_TagString: Untagged
@@ -18909,11 +18911,12 @@ MonoBehaviour:
   - {fileID: 100000, guid: e8d1cc042250e483eab75e06a0030d17, type: 2}
   - {fileID: 100000, guid: 18e96f85d3c354809b2675198db18718, type: 2}
   - {fileID: 100000, guid: ba1fd9a647fe54a678831c55260f132f, type: 2}
-  - {fileID: 100000, guid: 3e6e30f8760c04f43a06502e1dc7d57c, type: 2}
   - {fileID: 100000, guid: ebdc48f978ff24a4197a72a5210d0b1d, type: 2}
-  - {fileID: 100000, guid: ed9d4f5cc4a9549a39688e272a48af0f, type: 2}
   - {fileID: 100000, guid: 686b414e4f20d442892f16b0f04466e9, type: 2}
   - {fileID: 100000, guid: df62f32f014b643928085813f0549d4c, type: 2}
+  - {fileID: 100012, guid: 069f29cecd882c048afe4d9dd7900e23, type: 2}
+  EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
+  ItemPickupSound: {fileID: 8300000, guid: f8b8a76cfcb86264093ca0ece42232c2, type: 3}
   _active: 0
 --- !u!65 &462575275
 BoxCollider:
@@ -18958,6 +18961,65 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1654761951}
   m_GameObject: {fileID: 462575272}
   m_Mesh: {fileID: 4300000, guid: 60ea340c3a6326848b1c73e85822c0dc, type: 3}
+--- !u!82 &462575278
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: d44d328017063ec4b9db3ae6ee729b85,
+    type: 2}
+  m_PrefabInternal: {fileID: 1654761951}
+  m_GameObject: {fileID: 462575272}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &462625103
 GameObject:
   m_ObjectHideFlags: 0
@@ -25485,7 +25547,11 @@ MonoBehaviour:
   Spawners:
   - {fileID: 1604038115}
   BridgeGates: []
-  Shrines: []
+  Shrines:
+  - {fileID: 1462565192}
+  - {fileID: 462575274}
+  SelfActivated: 1
+  GameOverIsland: 0
 --- !u!135 &634388407
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -55586,6 +55652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opening: 2
   forced: 0
+  Cap: {fileID: 0}
 --- !u!1001 &1374889569
 Prefab:
   m_ObjectHideFlags: 0
@@ -58873,6 +58940,7 @@ GameObject:
   - 23: {fileID: 1462565193}
   - 114: {fileID: 1462565192}
   - 65: {fileID: 1462565191}
+  - 82: {fileID: 1462565195}
   m_Layer: 0
   m_Name: SpiritFountain
   m_TagString: Untagged
@@ -58921,6 +58989,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55556af623301af4b9de5096f21d7cbf, type: 2}
   - {fileID: 100000, guid: cf20a9184bfe5ad459c376e5bbbed38c, type: 2}
   - {fileID: 100000, guid: 1e5f3e3d6fc783b43b4186a3bf068810, type: 2}
+  EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
+  SpiritPowerSound: {fileID: 8300000, guid: 1297d35c17f9368478df929f44342ce6, type: 3}
   _active: 0
 --- !u!23 &1462565193
 Renderer:
@@ -58952,6 +59022,65 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1361318032}
   m_GameObject: {fileID: 1462565189}
   m_Mesh: {fileID: 4300000, guid: 60ea340c3a6326848b1c73e85822c0dc, type: 3}
+--- !u!82 &1462565195
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: cbfabe24ab7d3ae46877c21d407cc386,
+    type: 2}
+  m_PrefabInternal: {fileID: 1361318032}
+  m_GameObject: {fileID: 1462565189}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1463928820
 GameObject:
   m_ObjectHideFlags: 0
@@ -66453,6 +66582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opening: 0
   forced: 0
+  Cap: {fileID: 0}
 --- !u!1 &1634317750
 GameObject:
   m_ObjectHideFlags: 0
@@ -71953,6 +72083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opening: 3
   forced: 1
+  Cap: {fileID: 0}
 --- !u!1001 &1773778946
 Prefab:
   m_ObjectHideFlags: 0
@@ -79630,6 +79761,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 964227041}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Shrines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -79662,6 +79797,14 @@ Prefab:
       propertyPath: Spawners.Array.data[0]
       value: 
       objectReference: {fileID: 1604038115}
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Shrines.Array.data[0]
+      value: 
+      objectReference: {fileID: 1462565192}
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Shrines.Array.data[1]
+      value: 
+      objectReference: {fileID: 462575274}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
   m_RootGameObject: {fileID: 634388404}
