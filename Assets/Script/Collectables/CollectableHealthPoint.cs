@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CollectableHealthPoint : Collectable {
     public AudioClip HealthPickupSound;
+	private bool _collected = false;
 
 	public virtual void Start() {
 		var x = Random.Range (-0.5f, 0.5f);
@@ -13,6 +14,9 @@ public class CollectableHealthPoint : Collectable {
 	}
 
 	public override void Collected (Hero collector) {
+		if (_collected == true) return;
+
+		_collected = true;
 	    gameObject.audio.clip = HealthPickupSound;
         gameObject.audio.Play();
 		collector.Heal(1);
