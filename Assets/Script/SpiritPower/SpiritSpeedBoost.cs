@@ -100,7 +100,7 @@ public class SpiritSpeedBoost : SpiritPower
 		return null;
 	}
 
-	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
+    public override IEnumerator OnDeactivateSync(Hero sourceHero, Hero otherHero, bool onDestroy = false)
 	{
 		yield return new WaitForSeconds(spiritSyncDuration);
 

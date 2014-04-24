@@ -4,6 +4,8 @@ using Holoville.HOTween;
 
 public class ShrineItem : Activatable {
 	public GameObject[] Items;
+    public AudioClip EmergeSound;
+    public AudioClip ItemPickupSound;
 	
 	private Collectable _attachedItem;
 	private SphereCollider _pickUpSphere;
@@ -19,8 +21,11 @@ public class ShrineItem : Activatable {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-
 		if (_active && other.tag == "Player") {
+            gameObject.audio.Stop();
+            gameObject.audio.clip = ItemPickupSound;
+            gameObject.audio.Play();
+
 			var collector = other.GetComponent<Hero>();
 			_attachedItem.Collected(collector);
 			GameObject.Destroy(_attachedItem.gameObject);
@@ -29,6 +34,8 @@ public class ShrineItem : Activatable {
 	}
 	
 	public override void Activate() {
+        gameObject.audio.clip = EmergeSound;
+        gameObject.audio.Play();
 		StartCoroutine(AnimateReveal());
 	}
 	private IEnumerator AnimateReveal() {

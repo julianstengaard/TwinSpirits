@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour {
     public GameObject NewGameMenu;
     public GameObject PlayerJoinMenu;
 
+    public AudioClip SelectSound;
+    public AudioClip AcceptSound;
+
     private InputHandler _inputHandler;
 
 	public TextMesh RegenMesh;
@@ -23,7 +26,7 @@ public class MainMenu : MonoBehaviour {
     private LevelCreationInfo _levelCreationInfoGO;
 	private List<TextMesh> _selectables = new List<TextMesh>();
 
-	private Color _textColor			= new Color(1f, 1f, 1f);
+	private Color _textColor = new Color(1f, 1f, 1f);
 	private Color _textColorHighlight = new Color(1f, 0f, 0f);
 
 	private int _levelLength = 10;
@@ -61,6 +64,7 @@ public class MainMenu : MonoBehaviour {
             if (_selectedField == 2 && InputManager.ActiveDevice.Action1) {
                 NewGameMenu.SetActive(false);
                 PlayerJoinMenu.SetActive(true);
+                gameObject.audio.PlayOneShot(AcceptSound);
                 _currentMenu = 1;
             }
 
@@ -75,10 +79,12 @@ public class MainMenu : MonoBehaviour {
                     _inputReady = false;
                     _selectedField = (_selectedField + 1)%_selectables.Count();
                     UpdateHighlight();
+                    gameObject.audio.PlayOneShot(SelectSound);
                 } else if (InputManager.ActiveDevice.LeftStickY > 0.3f) {
                     _inputReady = false;
                     _selectedField = (_selectables.Count() + (_selectedField - 1))%(_selectables.Count());
                     UpdateHighlight();
+                    gameObject.audio.PlayOneShot(SelectSound);
                 }
 
                 //If over Regen
@@ -110,6 +116,7 @@ public class MainMenu : MonoBehaviour {
         else if (_currentMenu == 1) {
             if (!_gameStarting && _playersJoined == 2) {
                 _gameStarting = true;
+                gameObject.audio.PlayOneShot(AcceptSound);
                 StartCoroutine(StartGameInSeconds(1f));
             } else {
                 if (InputManager.ActiveDevice.Action1.WasPressed) {

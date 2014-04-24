@@ -155,5 +155,9 @@ public abstract class BaseUnit : MonoBehaviour
 			weapon.AttackEffects.Remove(effect);
 	}
 
-	public abstract void SetMovementSpeedBuff(float movementSpeedBuff);
+    public void UsesGravity(bool b) {
+        usesGravity = b;
+    }
+
+    public abstract void SetMovementSpeedBuff(float movementSpeedBuff);
 }

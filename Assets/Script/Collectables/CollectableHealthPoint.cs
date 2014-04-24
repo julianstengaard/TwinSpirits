@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class CollectableHealthPoint : Collectable {
+    public AudioClip HealthPickupSound;
+
 	public virtual void Start() {
 		var x = Random.Range (-0.5f, 0.5f);
 		var z = Random.Range (-0.5f, 0.5f);
@@ -10,8 +12,15 @@ public class CollectableHealthPoint : Collectable {
 		StartCoroutine(delayedLayerChange());
 	}
 
-	public override void Collected (Hero collector)	{
-		collector.Heal(1);	
+	public override void Collected (Hero collector) {
+	    gameObject.audio.clip = HealthPickupSound;
+        gameObject.audio.Play();
+		collector.Heal(1);
+	    gameObject.renderer.enabled = false;
+	    for (int i = 0; i < gameObject.transform.GetChildCount(); i++) {
+	        gameObject.transform.GetChild(i).gameObject.SetActive(false);
+        }
+        Destroy(gameObject, HealthPickupSound.length);
 	}
 
 	public override bool IsCollectable (Hero collector)	{

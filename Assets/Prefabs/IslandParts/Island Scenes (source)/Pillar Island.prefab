@@ -288,6 +288,7 @@ GameObject:
   - 23: {fileID: 2300014}
   - 65: {fileID: 6500004}
   - 114: {fileID: 11400010}
+  - 82: {fileID: 8200002}
   m_Layer: 0
   m_Name: ItemFountain
   m_TagString: Untagged
@@ -2253,6 +2254,7 @@ GameObject:
   - 23: {fileID: 2300166}
   - 114: {fileID: 11400054}
   - 65: {fileID: 6500072}
+  - 82: {fileID: 8200000}
   m_Layer: 0
   m_Name: SpiritFountain
   m_TagString: Untagged
@@ -3507,7 +3509,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.9967241, y: .619791985, z: 7.13847065}
+  m_LocalPosition: {x: 309.832733, y: 1.96631432, z: -543.715149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400152}
@@ -9057,6 +9059,122 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100268}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8200002
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100034}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9084,6 +9202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opening: 1
   forced: 0
+  Cap: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9145,6 +9264,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: 686b414e4f20d442892f16b0f04466e9, type: 2}
   - {fileID: 100000, guid: df62f32f014b643928085813f0549d4c, type: 2}
   - {fileID: 100012, guid: 069f29cecd882c048afe4d9dd7900e23, type: 2}
+  EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
+  ItemPickupSound: {fileID: 8300000, guid: f8b8a76cfcb86264093ca0ece42232c2, type: 3}
   _active: 0
 --- !u!114 &11400012
 MonoBehaviour:
@@ -9329,6 +9450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opening: 2
   forced: 0
+  Cap: {fileID: 0}
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9342,6 +9464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opening: 3
   forced: 0
+  Cap: {fileID: 0}
 --- !u!114 &11400036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9491,6 +9614,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55556af623301af4b9de5096f21d7cbf, type: 2}
   - {fileID: 100000, guid: cf20a9184bfe5ad459c376e5bbbed38c, type: 2}
   - {fileID: 100000, guid: 1e5f3e3d6fc783b43b4186a3bf068810, type: 2}
+  EmergeSound: {fileID: 0}
+  SpiritPowerSound: {fileID: 0}
   _active: 0
 --- !u!114 &11400056
 MonoBehaviour:
@@ -9505,6 +9630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opening: 0
   forced: 0
+  Cap: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

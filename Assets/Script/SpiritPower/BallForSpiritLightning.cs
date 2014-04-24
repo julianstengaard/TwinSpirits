@@ -3,6 +3,9 @@ using System.Collections;
 using Holoville.HOTween;
 
 public class BallForSpiritLightning : MonoBehaviour {
+    public AudioClip SpawnSound;
+    public AudioClip ExplodeSound;
+
 	private Vector3 _originPosition;
 	private Vector3 _targetPosition;
 	private float _explosionRadius;
@@ -17,7 +20,9 @@ public class BallForSpiritLightning : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		BallColor = new Color(1f, 1f, 0f, 0.7f); 
+		BallColor = new Color(1f, 1f, 0f, 0.7f);
+	    gameObject.audio.clip = SpawnSound;
+        gameObject.audio.Play();
 	}
 	
 	// Update is called once per frame
@@ -35,6 +40,10 @@ public class BallForSpiritLightning : MonoBehaviour {
 	}
 
 	private IEnumerator Explode() {
+        gameObject.audio.Stop();
+        gameObject.audio.clip = ExplodeSound;
+        gameObject.audio.Play();
+
 		//Tween Color
 		BallColor = new Color(1f, 1f, 0f, 1f);
 		Color finalColor = new Color(1f, 1f, 0f, 0f);
