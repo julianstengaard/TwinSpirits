@@ -18,6 +18,9 @@ public class BaseEnemy : BaseUnit {
 	protected AIRig ai;
 	protected RandomSoundPlayer _randomSounds;
 
+	public GameObject TakeDamageParticlePrefab;
+	private GameObject _takeDamageParticle;
+
 	protected new void Start() {
 		base.Start();
 
@@ -36,7 +39,6 @@ public class BaseEnemy : BaseUnit {
 		
 		_randomSounds = GetComponent<RandomSoundPlayer>();
 		_randomSounds.PlayRandomSound("Warcry");
-
 	}
 
 	protected new void LateUpdate() {
@@ -64,6 +66,13 @@ public class BaseEnemy : BaseUnit {
 			// Make the AI change targets
 			ai.AI.WorkingMemory.SetItem("changeTarget", true);
 			ai.AI.WorkingMemory.SetItem("targetUnit", src);
+
+			//Fire particles
+			if (TakeDamageParticlePrefab != null) {
+				Vector3 particlePoint = transform.position + Vector3.up + (src.transform.position - transform.position).normalized * 1.0f;
+				_takeDamageParticle = (GameObject) GameObject.Instantiate(TakeDamageParticlePrefab, particlePoint, Quaternion.identity);
+			}
+
 
 			// Show the damaged animation
 			_anim.SetTrigger("Damaged");

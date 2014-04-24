@@ -2041,7 +2041,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.85876846, y: 3.2734437, z: 7.72100496}
+  m_LocalPosition: {x: 312.541168, y: 11.7549667, z: -530.604187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400150}
@@ -2220,6 +2220,8 @@ MonoBehaviour:
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
   - Chance: .100000001
     Item: {fileID: 11400000, guid: ba0fca9144bf84b1f8fff2a7d280f2d4, type: 2}
+  TakeDamageParticlePrefab: {fileID: 100016, guid: 1d2fb4f1e2912ec4e87a66171ae4c72f,
+    type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

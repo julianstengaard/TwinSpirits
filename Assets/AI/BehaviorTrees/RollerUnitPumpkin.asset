@@ -44,7 +44,7 @@ MonoBehaviour:
       movetarget=&quot;targetUnit&quot; movespeed=&quot;&quot; facetarget=&quot;targetUnit&quot;
       closeenoughdistance=&quot;7&quot; closeenoughangle=&quot;8&quot; /&gt;&lt;expression
       returnvalue=&quot;success&quot; repeatuntil=&quot;running&quot; name=&quot;expression&quot;
-      expression=&quot;debug(newTarget)&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+      expression=&quot;&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
       repeatuntil=&quot;running&quot; name=&quot;constraint&quot; constraint=&quot;newTarget
       != null &amp;amp;&amp;amp; !changeTarget&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
       name=&quot;constraint&quot; constraint=&quot;newTarget != targetUnit&quot; /&gt;&lt;expression
