@@ -20,7 +20,7 @@ public class BallForSpiritLightning : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		BallColor = new Color(1f, 1f, 0f, 0.7f);
+		BallColor = new Color(0.85f, 1f, 1f, 0.7f);
 	    gameObject.audio.clip = SpawnSound;
         gameObject.audio.Play();
 	}
@@ -45,8 +45,8 @@ public class BallForSpiritLightning : MonoBehaviour {
         gameObject.audio.Play();
 
 		//Tween Color
-		BallColor = new Color(1f, 1f, 0f, 1f);
-		Color finalColor = new Color(1f, 1f, 0f, 0f);
+		BallColor = new Color(0.85f, 1f, 1f, 1f);
+		Color finalColor = new Color(0.95f, 1f, 1f, 0f);
 		TweenParms tweenColorParms = new TweenParms().Prop(
 			"BallColor", finalColor).Ease(
 			EaseType.EaseInCirc).Delay(0f);
