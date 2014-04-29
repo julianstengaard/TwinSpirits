@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 public class AreaEnemy : BaseEnemy {
-	public void Start() {
+	public new void Start() {
 		base.Start();
 
 		AddEffectToWeapons(new Knockback(3));

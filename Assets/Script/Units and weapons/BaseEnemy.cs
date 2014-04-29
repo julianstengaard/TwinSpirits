@@ -13,13 +13,11 @@ public class BaseEnemy : BaseUnit {
 	private float OverallDropChance;
 	[SerializeField]
 	private Drop[] Drops;
-	private bool isQuiting;
 
 	protected AIRig ai;
 	protected RandomSoundPlayer _randomSounds;
 
 	public GameObject TakeDamageParticlePrefab;
-	private GameObject _takeDamageParticle;
 
 	protected new void Start() {
 		base.Start();
@@ -50,14 +48,6 @@ public class BaseEnemy : BaseUnit {
 		HealthBar.transform.localScale = s;
 	}
 
-	private void OnApplicationQuit() {
-		isQuiting = true;
-	}
-
-	private void OnDestroy() {
-
-	}
-
 	public override void TakeDamage(float damage, GameObject src, bool forceKill = false) {
 		if (!immortal) {
 			Health = Mathf.Max(0, Health - damage);
@@ -70,7 +60,7 @@ public class BaseEnemy : BaseUnit {
 			//Fire particles
 			if (TakeDamageParticlePrefab != null) {
 				Vector3 particlePoint = transform.position + Vector3.up + (src.transform.position - transform.position).normalized * 1.0f;
-				_takeDamageParticle = (GameObject) GameObject.Instantiate(TakeDamageParticlePrefab, particlePoint, Quaternion.identity);
+				GameObject.Instantiate(TakeDamageParticlePrefab, particlePoint, Quaternion.identity);
 			}
 
 

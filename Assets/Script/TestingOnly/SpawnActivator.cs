@@ -14,7 +14,7 @@ public class SpawnActivator : MonoBehaviour {
 	private bool lockdownTimeoutExpired;
 	private float lockdownTimer = 8;
 	private int activePlayersWithin = 0;
-	private bool active;
+	private bool isActive;
 	private float ShrineChance = 0.3f;
 
     public bool SelfActivated = true;
@@ -32,7 +32,7 @@ public class SpawnActivator : MonoBehaviour {
 
 		var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-		if(enemies.Length == 0 && active)
+		if(enemies.Length == 0 && isActive)
 			deactivateLockdown ();
 	}
 
@@ -62,7 +62,7 @@ public class SpawnActivator : MonoBehaviour {
 			var blocker = (GameObject)GameObject.Instantiate(GateBlocker, gate.transform.position, gate.transform.rotation);
 			_activeBlockers.Add(blocker);
 		}
-        active = true;
+        isActive = true;
         _miniMap.SetNeighborsDiscovered(gameObject.transform.root.gameObject);
         _miniMap.SetCellDangerous(gameObject.transform.root.gameObject);
 	}
@@ -76,7 +76,7 @@ public class SpawnActivator : MonoBehaviour {
 		foreach(var shrine in Shrines)
 			if(Random.Range (0.0f, 1.0f) <= ShrineChance)
 				shrine.Activate();
-		active = false;
+		isActive = false;
 
         _miniMap.SetCellDone(gameObject.transform.root.gameObject);
 	    if (GameOverIsland) {

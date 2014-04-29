@@ -24,13 +24,12 @@ public class SpiritImmortal : SpiritPower {
     private GameObject _triggerPrefab;
     public bool Player1Triggered = false;
     public bool Player2Triggered = false;
-    private bool readyForGravity = false;
 
     private TriggerForSpiritImmortal triggerP1;
     private TriggerForSpiritImmortal triggerP2;
     private bool readyToPull = false;
 
-	private Hero _srcHero;
+
 	private Hero _othHero;
 	
 	void Start() {
@@ -53,7 +52,6 @@ public class SpiritImmortal : SpiritPower {
 			GameObject.Destroy(_shield);
 		}
 
-		_srcHero = sourceHero;
 		_othHero = otherHero;
 
 	    _shield = (GameObject) Instantiate(_shieldPrefab, otherHero.transform.position, otherHero.transform.rotation);

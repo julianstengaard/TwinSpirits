@@ -5,7 +5,7 @@ public class CollectableHealthPoint : Collectable {
     public AudioClip HealthPickupSound;
 	private bool _collected = false;
 
-	public virtual void Start() {
+	public new virtual void Start() {
 		var x = Random.Range (-0.5f, 0.5f);
 		var z = Random.Range (-0.5f, 0.5f);
 		var y = Random.Range (1, 2);
@@ -21,7 +21,7 @@ public class CollectableHealthPoint : Collectable {
         gameObject.audio.Play();
 		collector.Heal(1);
 	    gameObject.renderer.enabled = false;
-	    for (int i = 0; i < gameObject.transform.GetChildCount(); i++) {
+	    for (int i = 0; i < gameObject.transform.childCount; i++) {
 	        gameObject.transform.GetChild(i).gameObject.SetActive(false);
         }
         Destroy(gameObject, HealthPickupSound.length);

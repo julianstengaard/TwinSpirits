@@ -60,7 +60,7 @@ public class ReplaceGameObjects : ScriptableWizard
 			
 			GameObject newObject;
 			
-			newObject = (GameObject)EditorUtility.InstantiatePrefab(NewType);
+			newObject = (GameObject)PrefabUtility.InstantiatePrefab(NewType);
 			
 			newObject.transform.position = go.transform.position;
 			

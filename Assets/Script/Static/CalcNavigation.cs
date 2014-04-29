@@ -25,7 +25,7 @@ public class CalcNavigation : MonoBehaviour {
 		while (mesh.Creating) {
 			mesh.CreateContours();
 			yield return new WaitForFixedUpdate();
-			Debug.Log("Loading : " + mesh.CreatingProgress + " at " + Time.time);
+			//Debug.Log("Loading : " + mesh.CreatingProgress + " at " + Time.time);
 		}
 		mesh.RegisterNavigationGraph();
 	}

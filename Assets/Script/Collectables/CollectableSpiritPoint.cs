@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CollectableSpiritPoint : Collectable {
-	public virtual void Start() {
+	public new virtual void Start() {
 		var x = Random.Range (-0.5f, 0.5f);
 		var z = Random.Range (-0.5f, 0.5f);
 		var y = Random.Range (1, 2);

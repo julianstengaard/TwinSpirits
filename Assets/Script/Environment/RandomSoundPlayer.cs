@@ -8,7 +8,6 @@ public class RandomSoundPlayer : MonoBehaviour {
 	private Dictionary<string, int> _lastPlayed = new Dictionary<string, int>();
 
 	private AudioSource _source;
-	private bool ready = false;
 
 	void Awake () {
 		_source = GetComponent<AudioSource>();
