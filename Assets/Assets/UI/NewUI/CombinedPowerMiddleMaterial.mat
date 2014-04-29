@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: SpiritMeterAmount
-  m_Shader: {fileID: 4800000, guid: 9ab17c095453e664c82f9d48d7f71136, type: 3}
+  m_Name: CombinedPowerMiddleMaterial
+  m_Shader: {fileID: 4800000, guid: 85d923f8bea855f4499d6daf3b1f5b47, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,25 +17,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DecalTex
-        second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 33a1856e2a71a9b4eb65a73fbf964be4, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Cutoff
-        second: .899999976
-      data:
-        first:
-          name: PixelSnap
-        second: 0
+        second: .5
       data:
         first:
           name: _Shininess
@@ -44,7 +33,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .432525933, g: .735294104, b: .447142363, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
@@ -52,4 +41,4 @@ Material:
       data:
         first:
           name: _Emission
-        second: {r: .639705896, g: .263408303, b: .263408303, a: 0}
+        second: {r: 0, g: 0, b: 0, a: 0}
