@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: pumpkin diffuse
-  m_Shader: {fileID: 4800000, guid: 90adaf19024e347a9afcdb2af2fd2f24, type: 3}
+  m_Shader: {fileID: 4800000, guid: 76d65cb9a44a24756816ca91bf094746, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -54,9 +54,9 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
           name: _RimCol
         second: {r: .847058833, g: .478431374, b: 0, a: 1}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
