@@ -56,7 +56,7 @@ Shader "Toon/Lighted Hero" {
 			ENDCG
 		}
 
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque" "Queue" = "Transparent"}
 		LOD 200
 		
 		CGPROGRAM
