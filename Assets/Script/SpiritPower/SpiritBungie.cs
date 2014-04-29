@@ -31,7 +31,7 @@ public class SpiritBungie : SpiritPower
 
 	void Start() {
 		costActivate 		=  5f;
-		costPerSecond 		=  5f;
+		costPerSecond 		=  0f;
 		costActivateSync 	= 50f;
 		_particleEffectPrefab = (GameObject) Resources.Load("SpiritCircleParticle", typeof(GameObject));
 	}
