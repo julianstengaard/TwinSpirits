@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour {
     private LevelCreationInfo _levelCreationInfoGO;
 	private List<TextMesh> _selectables = new List<TextMesh>();
 
-	private Color _textColor = new Color(1f, 1f, 1f);
+	private Color _textColor = new Color(0.55f, 0.35f, 0.16f);
 	private Color _textColorHighlight = new Color(1f, 0f, 0f);
 
 	private int _difficulty = 1;
