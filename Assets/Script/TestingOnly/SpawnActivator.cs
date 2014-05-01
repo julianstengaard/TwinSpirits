@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 
@@ -21,10 +22,19 @@ public class SpawnActivator : MonoBehaviour {
     public bool GameOverIsland = false;
     private MiniMap _miniMap;
 
+    private MazeCell _attachedToIsland;
+    private int minEnemies = 1;
+    private int maxEnemies = 10;
+
 	void Start() {
 		Shrines = transform.parent.GetComponentsInChildren<Activatable>();
 		//print(Shrines.Length);
 	    _miniMap = GameObject.FindGameObjectWithTag("MiniMap").GetComponent<MiniMap>();
+
+        _attachedToIsland = transform.root.gameObject.GetComponent<MazeInstance>().represents;
+        if (_attachedToIsland == null) {
+            Debug.LogError("SpawnGroup couldn't find MazeInstance on root GameObject");
+        }
 	}
 
 	void Update() {
@@ -46,9 +56,28 @@ public class SpawnActivator : MonoBehaviour {
 		GetComponentInChildren<CalcNavigation>().GenerateMesh();
 	}
 
-	private IEnumerator delayedSpawn() {
-		yield return new WaitForSeconds(SpawnDelayInSeconds);
-		foreach(var s in Spawners)
+    private IEnumerator delayedSpawn() {
+        yield return new WaitForSeconds(SpawnDelayInSeconds);
+        
+        int enemiesToSpawn = GetNumberOfSpawns();
+        print("Island is " + _attachedToIsland.stepsFromOrigin + " from start = trying to spawn " + enemiesToSpawn + " enemies.");
+
+        int enemiesRemaining = enemiesToSpawn;
+        int changes = 0;
+        while (enemiesRemaining > 0) {
+            changes = 0;
+            foreach (var spawner in Spawners) {
+                if(spawner.AddEnemiesToSpawn(1)) {
+                    enemiesRemaining -= 1;
+                    changes++;
+                    if (enemiesRemaining <= 0)
+                        break;
+                }
+            }
+            if(changes <= 0)
+                break;
+        }
+        foreach (var s in Spawners)
 			s.Spawn();
 	}
 
@@ -83,6 +112,13 @@ public class SpawnActivator : MonoBehaviour {
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetGameOver(true);
 	    }
 	}
+
+    private int GetNumberOfSpawns() {
+        if (!GameOverIsland)
+            return Mathf.Clamp(_attachedToIsland.stepsFromOrigin, minEnemies, maxEnemies);
+        else
+            return 1000;
+    }
 
 	private int getActivePlayersThreshold() {
 		var heroes = GameObject.FindObjectsOfType<Hero>();

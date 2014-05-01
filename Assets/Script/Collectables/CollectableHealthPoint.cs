@@ -21,7 +21,7 @@ public class CollectableHealthPoint : Collectable {
         gameObject.audio.Play();
 		collector.Heal(1);
 	    gameObject.renderer.enabled = false;
-	    for (int i = 0; i < gameObject.transform.GetChildCount(); i++) {
+	    for (int i = 0; i < gameObject.transform.childCount; i++) {
 	        gameObject.transform.GetChild(i).gameObject.SetActive(false);
         }
         Destroy(gameObject, HealthPickupSound.length);

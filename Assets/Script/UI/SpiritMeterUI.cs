@@ -97,8 +97,6 @@ public class SpiritMeterUI : MonoBehaviour {
 		    }
 			if (UpdateSpiritPowerIcons())
 			    return true;
-            else 
-                print("dafuq");
 		}
 		return false;
 	}

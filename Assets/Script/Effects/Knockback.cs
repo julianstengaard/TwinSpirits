@@ -13,7 +13,7 @@ public class Knockback : Effect
 
 	public override void DoEffect (BaseUnit target, GameObject source, Vector3 attackPosition, ref float damage)
 	{
-		Debug.Log("Knockback");
+		//Debug.Log("Knockback");
 	}
 
 	public override IEnumerator DoEffectCoroutine (BaseUnit target, GameObject source, Vector3 attackPosition)

@@ -21,7 +21,7 @@ public class SyncCostLineScaler : MonoBehaviour {
         Middle.transform.localPosition = (LeftEnd + RightEnd) * 0.5f;
 
         //Calculate scale/rotation
-        float spanningScale = Vector3.Distance(LeftEnd, RightEnd) - 1f;
+        float spanningScale = Vector3.Distance(Left.transform.localPosition, Right.transform.localPosition) - 1f;
         Quaternion rotation = Quaternion.identity;
 
         //Scale and rotate it
