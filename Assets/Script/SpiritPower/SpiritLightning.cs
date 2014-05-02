@@ -16,7 +16,7 @@ public class SpiritLightning : SpiritPower
 
 	private float _damagePerLightningInterval = 20f;
 	private float _lightningDuration = 10f;
-	private float _lightningSphereColliderRadius = 1f;
+	private float _lightningSphereColliderRadius = 2f;
 	private float _lightningDamageInterval = 0.5f;
 	private GameObject _particleEffectPrefab;
 
