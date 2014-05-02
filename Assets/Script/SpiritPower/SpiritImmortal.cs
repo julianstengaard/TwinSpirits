@@ -29,13 +29,12 @@ public class SpiritImmortal : SpiritPower {
     private TriggerForSpiritImmortal triggerP2;
     private bool readyToPull = false;
 
-
 	private Hero _othHero;
 	
 	void Start() {
-		costActivate 		=  10f;
+		costActivate 		=  20f;
 		costPerSecond 		=  0f;
-		costActivateSync 	= 50f;
+		costActivateSync 	= 30f;
         _shieldPrefab = (GameObject) Resources.Load("SpiritShield");
         _triggerPrefab = (GameObject) Resources.Load("SpiritImmortalTrigger");
         _syncSound = (AudioClip)Resources.Load("Audio/Whirl pool");
@@ -51,10 +50,10 @@ public class SpiritImmortal : SpiritPower {
 		if (_shield != null) {
 			GameObject.Destroy(_shield);
 		}
-
-		_othHero = otherHero;
+        _othHero = otherHero;
 
 	    _shield = (GameObject) Instantiate(_shieldPrefab, otherHero.transform.position, otherHero.transform.rotation);
+        _shield.GetComponent<TimedShieldBlink>().Activate(_shieldDuration);
         _shield.transform.rotation = Quaternion.LookRotation(otherHero.transform.TransformDirection(Vector3.right), Vector3.up);
         //Tween in the shield
         _shield.transform.localScale *= 0f;

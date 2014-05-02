@@ -21,18 +21,21 @@ public class MainMenu : MonoBehaviour {
     public TextMesh GameStartingMesh;
     public TextMesh Player1JoinMesh;
     public GameObject Player1Joined;
+    public GameObject Player1JoinButton;
     public TextMesh Player2JoinMesh;
     public GameObject Player2Joined;
+    public GameObject Player2JoinButton;
 
     private LevelCreationInfo _levelCreationInfoGO;
 	private List<TextMesh> _selectables = new List<TextMesh>();
 
-	private Color _textColor = new Color(1f, 1f, 1f);
+	private Color _textColor = new Color(0.55f, 0.35f, 0.16f);
 	private Color _textColorHighlight = new Color(1f, 0f, 0f);
 
 	private int _difficulty = 1;
 	private int _levelLength = 10;
 	private int _regen = 0;
+    private int _easyRegen = 1;
 
 	private bool _inputReady = true;
     private bool _gameStarting = false;
@@ -58,6 +61,7 @@ public class MainMenu : MonoBehaviour {
 		UpdateHighlight();
 		ChangeLevelLength();
 		ChangeRegen();
+	    ChangeDifficulty();
 	}
 
     // Update is called once per frame
@@ -145,6 +149,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     private IEnumerator StartGameInSeconds(float time) {
+        _levelCreationInfoGO.spiritRegen += (_difficulty == 0) ? _easyRegen : 0;
         GameStartingMesh.gameObject.SetActive(true);
         yield return new WaitForSeconds(time);
         GameObject.DontDestroyOnLoad(_levelCreationInfoGO.gameObject);
@@ -156,10 +161,12 @@ public class MainMenu : MonoBehaviour {
         if (_playersJoined > 0) {
             Player1JoinMesh.text = "PLAYER 1";
             Player1Joined.SetActive(true);
+            Player1JoinButton.SetActive(false);
         } 
         if (_playersJoined == 2) {
             Player2JoinMesh.text = "PLAYER 2";
             Player2Joined.SetActive(true);
+            Player2JoinButton.SetActive(false);
         }
     }
 
@@ -204,7 +211,7 @@ public class MainMenu : MonoBehaviour {
 	void ChangeRegen(int i = 0) {
 		_regen = Mathf.Max(0, _regen + i);
 		RegenMesh.text = _regen.ToString();
-		_levelCreationInfoGO.spiritRegen = _regen;
+        _levelCreationInfoGO.spiritRegen = _regen;
 	}
 	void ChangeDifficulty(int i = 0) {
 		//_selectedField = (_selectables.Count() + (_selectedField - 1))%(_selectables.Count());

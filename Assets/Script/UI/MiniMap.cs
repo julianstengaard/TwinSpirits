@@ -28,6 +28,8 @@ public class MiniMap : MonoBehaviour {
     private Vector3 _miniMapAnchor;
     private Vector3 _miniMapBaseScale;
 
+    private MazeCell _playerCell;
+
 	// Use this for initialization
 	void Start () {
         _miniMapAnchor = gameObject.transform.localPosition;
@@ -95,6 +97,7 @@ public class MiniMap : MonoBehaviour {
         _miniMapBottomBorder = -originCell.row * _mapIslandSpacing;
         UpdateMiniMapPosition(true);
         InstantiatePlayers(originCell.column, originCell.row);
+        SetPlayerPosition(origin);
     }
 
     private void InstantiatePlayers(int c, int r) {
@@ -161,8 +164,8 @@ public class MiniMap : MonoBehaviour {
 
     public void SetPlayerPosition(GameObject cell) {
 		if(cell == null) return;
-        MazeCell playerCell = cell.GetComponent<MazeInstance>().represents;
-        Vector3 targetPosition = new Vector3(playerCell.column * _mapIslandSpacing, -playerCell.row * _mapIslandSpacing, 0f);
+        _playerCell = cell.GetComponent<MazeInstance>().represents;
+        Vector3 targetPosition = new Vector3(_playerCell.column * _mapIslandSpacing, -_playerCell.row * _mapIslandSpacing, 0f);
         _players.transform.localPosition = targetPosition;
 
         TweenParms playersMoveTween = new TweenParms().Prop(
@@ -207,5 +210,8 @@ public class MiniMap : MonoBehaviour {
     }
     public int GetIslandsTotal() {
         return _totalIslands;
+    }
+    public MazeCell GetPlayerCellPosition() {
+        return _playerCell;
     }
 }

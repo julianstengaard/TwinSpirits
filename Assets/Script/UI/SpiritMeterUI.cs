@@ -15,11 +15,7 @@ public class SpiritMeterUI : MonoBehaviour {
 	public Material SpiritFireIcon;
 	public Material SpiritPingPongIcon;
 
-	public GameObject SpiritMeterDivider;
-	public Vector3 P1SpiritMeterDividerMin;
-	public Vector3 P1SpiritMeterDividerMax;
-	public Vector3 P2SpiritMeterDividerMin;
-	public Vector3 P2SpiritMeterDividerMax;
+    public GameObject SpiritMeterDivider;
 
     public Material SyncOnIcon;
     public Material SyncOffIcon;
@@ -29,16 +25,21 @@ public class SpiritMeterUI : MonoBehaviour {
 	private GameObject p2Icon;
     private System.Type p2SpiritPrevious = null;
 
+    private Vector3 _p1SpiritMeterDividerMin;
+    private Vector3 _p1SpiritMeterDividerMax;
+    private Vector3 _p2SpiritMeterDividerMin;
+    private Vector3 _p2SpiritMeterDividerMax;
+
     private GameObject syncIcon;
-	private GameObject p1Meter;
-	private GameObject p1SyncCostLine;
-	private GameObject p2Meter;
-	private GameObject p2SyncCostLine;
+    private GameObject p1Meter;
+    public SyncCostLineScaler p1SyncCostLine;
+    private GameObject p2Meter;
+    public SyncCostLineScaler p2SyncCostLine;
 
     private Vector3 p1MeterZero = new Vector3(-0.39f, -0f, 0.05f);
     private Vector3 p2MeterZero = new Vector3(0.39f, -0f, 0.05f);
-	private Vector3 p1Zero 		= new Vector3(0.03f, -0.0f, 0.05f);
-    private Vector3 p2Zero      = new Vector3(-0.03f, -0.0f, 0.05f);
+	private Vector3 p1MeterMid 		= new Vector3(0.03f, -0.0f, 0.05f);
+    private Vector3 p2MeterMid      = new Vector3(-0.03f, -0.0f, 0.05f);
 
 	private bool playersFound = false;
 	private bool animatingSpiritPowerP1 = false;
@@ -57,8 +58,18 @@ public class SpiritMeterUI : MonoBehaviour {
 		p1Meter = GameObject.Find(this.gameObject.name+"/LeftSpiritMeter/LeftSpiritMeterAmount");
 		p2Meter = GameObject.Find(this.gameObject.name+"/RightSpiritMeter/RightSpiritMeterAmount");
 
-		p1SyncCostLine = GameObject.Find(this.gameObject.name+"/LeftSpiritMeter/LeftSpiritSyncCostLine");
-		p2SyncCostLine = GameObject.Find(this.gameObject.name+"/RightSpiritMeter/RightSpiritSyncCostLine");
+        p1MeterMid = p1Meter.transform.localPosition;
+        p2MeterMid = p2Meter.transform.localPosition;
+        p1MeterZero = p1Meter.transform.localPosition + Vector3.left * p1Meter.transform.localScale.x / 2f;
+        p2MeterZero = p2Meter.transform.localPosition + Vector3.right * p2Meter.transform.localScale.x / 2f;
+
+        _p1SpiritMeterDividerMin = p1MeterZero;
+	    _p1SpiritMeterDividerMax = p1Meter.transform.localPosition + Vector3.right * p1Meter.transform.localScale.x / 2f;
+        _p2SpiritMeterDividerMin = p2MeterZero;
+        _p2SpiritMeterDividerMax = p2Meter.transform.localPosition + Vector3.left * p2Meter.transform.localScale.x / 2f;
+
+		p1SyncCostLine = GameObject.Find(this.gameObject.name+"/LeftSpiritMeter/LeftSpiritSyncCostLine").GetComponent<SyncCostLineScaler>();
+        p2SyncCostLine = GameObject.Find(this.gameObject.name + "/RightSpiritMeter/RightSpiritSyncCostLine").GetComponent<SyncCostLineScaler>();
 	}
 
 	// Update is called once per frame
@@ -86,8 +97,6 @@ public class SpiritMeterUI : MonoBehaviour {
 		    }
 			if (UpdateSpiritPowerIcons())
 			    return true;
-            else 
-                print("dafuq");
 		}
 		return false;
 	}
@@ -101,11 +110,11 @@ public class SpiritMeterUI : MonoBehaviour {
 			}
 			int p1divisions = (int) (100/Player1.currentSpiritPower.GetCostActivate());
 			_p1Dividers = new GameObject[p1divisions-1];
-			Vector3 distancePerDivider = (P1SpiritMeterDividerMax - P1SpiritMeterDividerMin)/p1divisions;
+			Vector3 distancePerDivider = (_p1SpiritMeterDividerMax - _p1SpiritMeterDividerMin)/p1divisions;
 			for (int i = 1; i < p1divisions; i++) {
 				_p1Dividers[i-1] = (GameObject) GameObject.Instantiate(SpiritMeterDivider, Vector3.zero, Quaternion.identity);
 				_p1Dividers[i-1].transform.parent = p1Meter.transform.parent;
-				_p1Dividers[i-1].transform.localPosition = P1SpiritMeterDividerMin + distancePerDivider * i;
+				_p1Dividers[i-1].transform.localPosition = _p1SpiritMeterDividerMin + distancePerDivider * i;
 			}
 		}
 		else if (playerNumber == 2) {
@@ -116,11 +125,11 @@ public class SpiritMeterUI : MonoBehaviour {
 			}
 			int p2divisions = (int) (100/Player2.currentSpiritPower.GetCostActivate());
 			_p2Dividers = new GameObject[p2divisions-1];
-			Vector3 distancePerDivider = (P2SpiritMeterDividerMax - P2SpiritMeterDividerMin)/p2divisions;
+			Vector3 distancePerDivider = (_p2SpiritMeterDividerMax - _p2SpiritMeterDividerMin)/p2divisions;
 			for (int i = 1; i < p2divisions; i++) {
-				_p2Dividers[i-1] = (GameObject) GameObject.Instantiate(SpiritMeterDivider, P2SpiritMeterDividerMin + distancePerDivider * i, Quaternion.identity);
+				_p2Dividers[i-1] = (GameObject) GameObject.Instantiate(SpiritMeterDivider, _p2SpiritMeterDividerMin + distancePerDivider * i, Quaternion.identity);
 				_p2Dividers[i-1].transform.parent = p2Meter.transform.parent;
-				_p2Dividers[i-1].transform.localPosition = P2SpiritMeterDividerMin + distancePerDivider * i;
+				_p2Dividers[i-1].transform.localPosition = _p2SpiritMeterDividerMin + distancePerDivider * i;
 			}
 		}
 	}
@@ -128,39 +137,41 @@ public class SpiritMeterUI : MonoBehaviour {
 	void UpdateSpiritMeter(int playerNumber) {
 		if (playerNumber == 1) {
 			float spiritAmount = Player1.currentSpiritAmount/100f;
-			p1Meter.transform.localScale 	= new Vector3(spiritAmount*0.85f, 0.5f, 1);
-            p1Meter.transform.localPosition = Vector3.Lerp(p1MeterZero, p1Zero, spiritAmount);
+			p1Meter.transform.localScale 	= new Vector3(spiritAmount*0.58f, 0.1f, 1);
+            p1Meter.transform.localPosition = Vector3.Lerp(p1MeterZero, p1MeterMid, spiritAmount);
 			ColorizeSpiritMeter(p1Meter, Player1.currentSpiritPower, spiritAmount*100f);
 
 			if (Player1.currentSpiritPower.GetCostActivateSync() <= Player1.currentSpiritAmount)
-				p1SyncCostLine.renderer.enabled = true;
+				p1SyncCostLine.SetVisible(true);
 			else
-				p1SyncCostLine.renderer.enabled = false;
+                p1SyncCostLine.SetVisible(false);
 
 			//Set the cost
 			float cost = Player1.currentSpiritPower.GetCostActivateSync()/100f;
-			p1SyncCostLine.transform.localScale	= new Vector3(cost*0.85f, 0.15f, 1);
-			Vector3 targetPosition = p1SyncCostLine.transform.position;
-			targetPosition.x = p1Meter.transform.position.x + p1Meter.transform.localScale.x/2f - p1SyncCostLine.transform.localScale.x/2f;
-			p1SyncCostLine.transform.position = targetPosition;
+            p1SyncCostLine.LeftEnd = new Vector3(-cost * 0.58f/p1SyncCostLine.transform.localScale.x/2f, 0f, 0f);
+            p1SyncCostLine.RightEnd = new Vector3(cost * 0.58f/p1SyncCostLine.transform.localScale.x/2f, 0f, 0f);
+            Vector3 targetPosition = p1SyncCostLine.transform.localPosition;
+            targetPosition.x = p1Meter.transform.localPosition.x + p1Meter.transform.localScale.x / 2f + p1SyncCostLine.LeftEnd.x * p1SyncCostLine.transform.localScale.x;
+            p1SyncCostLine.transform.localPosition = targetPosition;
 		}
 		else if (playerNumber == 2) {
 			float spiritAmount = Player2.currentSpiritAmount/100f;
-			p2Meter.transform.localScale = new Vector3(spiritAmount*0.85f, 0.5f, 1);
-            p2Meter.transform.localPosition = Vector3.Lerp(p2MeterZero, p2Zero, spiritAmount); 
+            p2Meter.transform.localScale = new Vector3(spiritAmount * 0.58f, 0.1f, 1);
+            p2Meter.transform.localPosition = Vector3.Lerp(p2MeterZero, p2MeterMid, spiritAmount); 
 			ColorizeSpiritMeter(p2Meter, Player2.currentSpiritPower, spiritAmount*100f);
 
 			if (Player2.currentSpiritPower.GetCostActivateSync() <= Player2.currentSpiritAmount)
-				p2SyncCostLine.renderer.enabled = true;
+                p2SyncCostLine.SetVisible(true);
 			else
-				p2SyncCostLine.renderer.enabled = false;
+                p2SyncCostLine.SetVisible(false);
 
 			//Set the cost
-			float cost = Player2.currentSpiritPower.GetCostActivateSync()/100f;
-			p2SyncCostLine.transform.localScale	= new Vector3(cost*0.85f, 0.15f, 1);
-			Vector3 targetPosition = p2SyncCostLine.transform.position;
-			targetPosition.x = p2Meter.transform.position.x - p2Meter.transform.localScale.x/2f + p2SyncCostLine.transform.localScale.x/2f;
-			p2SyncCostLine.transform.position = targetPosition;
+            float cost = Player2.currentSpiritPower.GetCostActivateSync() / 100f;
+            p2SyncCostLine.LeftEnd = new Vector3(-cost * 0.58f / p2SyncCostLine.transform.localScale.x / 2f, 0f, 0f);
+            p2SyncCostLine.RightEnd = new Vector3(cost * 0.58f / p2SyncCostLine.transform.localScale.x / 2f, 0f, 0f);
+            Vector3 targetPosition = p2SyncCostLine.transform.localPosition;
+            targetPosition.x = p2Meter.transform.localPosition.x - p2Meter.transform.localScale.x / 2f - p2SyncCostLine.LeftEnd.x * p2SyncCostLine.transform.localScale.x;
+            p2SyncCostLine.transform.localPosition = targetPosition;
 		}
 	}
 	

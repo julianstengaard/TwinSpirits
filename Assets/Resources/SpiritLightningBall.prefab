@@ -125,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.28166962, y: 2.64419532, z: .331302375}
+  m_LocalPosition: {x: -8.02290058, y: -4.87250233, z: 5.1727128}
   m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children:
   - {fileID: 400012}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnSound: {fileID: 8300000, guid: 6b3e3a7f08a85494e8d32fbaaaa0fdae, type: 3}
-  ExplodeSound: {fileID: 8300000, guid: 80fd8c8e7ae0ea440bdfac7eada5ad3c, type: 3}
+  ExplosionPrefab: {fileID: 100012, guid: 6c2e0e25fc7790b44b18cf918dbce679, type: 2}
   BallColor: {r: .808823526, g: 1, b: .992089212, a: 0}
 --- !u!135 &13500000
 SphereCollider:

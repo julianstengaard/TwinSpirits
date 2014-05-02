@@ -6,7 +6,7 @@ public class MeleeActivator : BaseUnit {
 
     protected new void Start() {
         base.Start();
-        usesGravity = false;
+        usesGravity = true;
     }
 
 	public override void SetMovementSpeedBuff (float movementSpeedBuff) { }

@@ -39,7 +39,8 @@ public class SpiritLightning : SpiritPower
 		GameObject ballGO = (GameObject) GameObject.Instantiate(_lightningBallPrefab, otherHero.transform.position, Quaternion.identity);
 		BallForSpiritLightning ball = ballGO.GetComponent<BallForSpiritLightning>();
 		Vector3 throwDirection = otherHero.transform.TransformDirection(Vector3.forward) * _ballBaseRange;
-		Vector3 moveDirection = otherHero.CurrentMoveVector;
+		//Vector3 moveDirection = otherHero.CurrentMoveVector;
+		Vector3 moveDirection = Vector3.zero;
 		ball.ActivateBall(otherHero.transform.position + throwDirection + moveDirection, _ballExplosionRadius, _damagePerBall, _ballTravelTime);
 
 		return null;

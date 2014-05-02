@@ -7,6 +7,9 @@ public class ShrineSpiritPower : Activatable {
     public AudioClip EmergeSound;
     public AudioClip SpiritPowerSound;
 
+    public bool Rotates = true;
+    public bool RotateAt45Degrees = false;
+
 	private CollectableSpiritPower _attachedSpiritPower;
 	private SphereCollider _pickUpSphere;
 
@@ -26,9 +29,11 @@ public class ShrineSpiritPower : Activatable {
 	void Update () {
 		if (_active && !_transferring) {
 			//Rotate the pickUp
-			var currentRotation = _attachedSpiritPower.transform.rotation.eulerAngles;
-			_attachedSpiritPower.transform.position = AttachedSpiritPowerPosition();
-			_attachedSpiritPower.transform.rotation = Quaternion.Euler(currentRotation + new Vector3(0f, 1f, 0f));
+		    if (Rotates) {
+		        var currentRotation = _attachedSpiritPower.transform.rotation.eulerAngles;
+		        _attachedSpiritPower.transform.position = AttachedSpiritPowerPosition();
+		        _attachedSpiritPower.transform.rotation = Quaternion.Euler(currentRotation + new Vector3(0f, 1f, 0f));
+		    }
 		}
 	}
 
@@ -88,10 +93,12 @@ public class ShrineSpiritPower : Activatable {
 		shrinePower = (GameObject) Instantiate(FindSpiritPowerGO(collector.currentSpiritPower), collectorOrigin, Quaternion.identity);
 		shrinePower.transform.localScale = new Vector3(0f, 0f, 0f);
 
+        var rotation = RotateAt45Degrees ? Quaternion.Euler(45f, 0f, 45f) : Quaternion.identity;
+
 		TweenParms collectorParms = new TweenParms().Prop(
 			"position", AttachedSpiritPowerPosition()).Prop(
 			"localScale", new Vector3(0.8f, 0.8f, 0.8f)).Prop(
-			"rotation", Quaternion.Euler(45f, 0f, 45f)).Ease(
+            "rotation", rotation).Ease(
 			EaseType.EaseInOutExpo).Delay(0f);
 		HOTween.To(shrinePower.transform, time, collectorParms);
 
@@ -115,8 +122,9 @@ public class ShrineSpiritPower : Activatable {
 		float time = 3f;
 
 		CreateSphereCollider();
-		var randomPower = SpiritPowers[Random.Range(0, SpiritPowers.Length)];
-		var spiritPowerGO = (GameObject) GameObject.Instantiate(randomPower, AttachedSpiritPowerPosition(), Quaternion.Euler(45f, 0f, 45f));
+		var randomPower = GetRandomSpiritPower();
+	    var rotation = RotateAt45Degrees ? Quaternion.Euler(45f, 0f, 45f) : Quaternion.identity;
+        var spiritPowerGO = (GameObject)GameObject.Instantiate(randomPower, AttachedSpiritPowerPosition(), rotation);
 		_attachedSpiritPower = spiritPowerGO.GetComponent<CollectableSpiritPower>();
 		spiritPowerGO.transform.parent = gameObject.transform;
 
@@ -139,9 +147,23 @@ public class ShrineSpiritPower : Activatable {
 		_active = true;
 	}
 
+    private GameObject GetRandomSpiritPower() {
+        var heroes = GameObject.FindObjectsOfType<Hero>();
+        if (heroes[0].currentSpiritPower.GetType() == heroes[1].currentSpiritPower.GetType()) {
+            while (true) {
+                GameObject power = SpiritPowers[Random.Range(0, SpiritPowers.Length)];
+                if (!power.GetComponent<CollectableSpiritPower>().SpiritPowerEquals(heroes[0].currentSpiritPower)) {
+                    return power;
+                }
+            }
+        } else {
+            return SpiritPowers[Random.Range(0, SpiritPowers.Length)];
+        }
+    }
+
 	private void CreateSphereCollider() {
 		_pickUpSphere = (SphereCollider) gameObject.AddComponent<SphereCollider>();
-		_pickUpSphere.radius = 2.5f;
+		_pickUpSphere.radius = 1.5f;
 		_pickUpSphere.isTrigger = true;
 	}
 

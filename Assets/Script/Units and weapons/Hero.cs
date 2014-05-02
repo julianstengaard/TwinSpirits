@@ -50,7 +50,9 @@ public class Hero : BaseUnit {
 	private Camera _mainCamera;
 	private bool _revivingOther = false;
 	private float _reviveTime = 6f;
-	private float _reviveTimer = 0f;
+    private float _reviveTimeNoEnemies = 1f;
+    private float _reviveTimeCurrent = 6f;
+    private float _reviveTimer = 0f;
 	private GameObject _reviveHeartPrefab;
 	private GameObject _currentReviveHeart;
 	private GameObject _currentReviveHeartOverlay;
@@ -81,7 +83,8 @@ public class Hero : BaseUnit {
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
-		currentSpiritPower = gameObject.AddComponent<SpiritBungie>();
+		//currentSpiritPower = gameObject.AddComponent<SpiritBungie>();
+		currentSpiritPower = gameObject.AddComponent<SpiritImmortal>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
@@ -110,7 +113,7 @@ public class Hero : BaseUnit {
 		}
 
 
-		//Revive comrade if close! TODO 3 second revive
+		//Revive comrade if close!
 		if (otherPlayer.dead) {
 			if ((transform.position - otherPlayer.transform.position).magnitude < 2f)
 			{
@@ -289,7 +292,10 @@ public class Hero : BaseUnit {
 
 	private void RunRevive () {
 		if (!_revivingOther) {
-			//Start the revive
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		    _reviveTimeCurrent = (enemies.Length == 0) ? _reviveTimeNoEnemies : _reviveTime;
+
+		    //Start the revive
 			_reviveTimer = 0f;
 			_revivingOther = true;
 			Vector3 heartPosition = otherPlayer.transform.position + Vector3.up;
@@ -311,14 +317,14 @@ public class Hero : BaseUnit {
 		} else {
 			_reviveTimer += Time.deltaTime;
 			//Scale heart
-			float pct = Mathf.Lerp(0f, 1f, _reviveTimer/_reviveTime);
+            float pct = Mathf.Lerp(0f, 1f, _reviveTimer / _reviveTimeCurrent);
 			Vector3 heartPosition = otherPlayer.transform.position + Vector3.up;
 			_currentReviveHeart.transform.rotation = Quaternion.LookRotation(heartPosition - _mainCamera.transform.position);
 			_currentReviveHeart.transform.position = heartPosition;
 			_currentReviveHeartOverlay.transform.localPosition = Vector3.down * 0.5f + new Vector3(0f, pct/2f, 0f) + _currentReviveHeart.transform.TransformDirection(Vector3.back) * 0.03f;
 			_currentReviveHeartOverlay.transform.localScale = new Vector3(1f, pct, 1f);
-			_currentReviveHeartOverlay.renderer.material.mainTextureScale = new Vector2(1f, pct); 
-			if (_reviveTimer >= _reviveTime) {
+			_currentReviveHeartOverlay.renderer.material.mainTextureScale = new Vector2(1f, pct);
+            if (_reviveTimer >= _reviveTimeCurrent) {
 				DoRevive();
 				_revivingOther = false;
 				GameObject.Destroy(_currentReviveHeart);

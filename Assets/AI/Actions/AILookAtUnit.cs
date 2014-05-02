@@ -22,9 +22,11 @@ public class AILookAtUnit : RAINAction
 
     public override ActionResult Execute(AI ai)
     {
+		//Debug.Log("stuff");
 		var unit = target.Evaluate(ai.DeltaTime, ai.WorkingMemory).GetValue<GameObject>();
 		if(unit == null)
 			return ActionResult.FAILURE;
+		//Debug.Log("happened");
 		Debug.DrawLine(ai.Body.transform.position, unit.transform.position);
 
 		ai.Body.transform.Rotate(Vector3.up, 90);

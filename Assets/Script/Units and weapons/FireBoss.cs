@@ -106,7 +106,7 @@ public class FireBoss : MonoBehaviour {
         }
         //Make sure last ball is fired
         yield return new WaitForSeconds(TimeBetweenStraightBalls * (StraightBallsPerLine - 1) - TimeBetweenStraightBallLines);
-        print("stopped");
+        //print("stopped");
         _isAttacking = false;
     }
 
