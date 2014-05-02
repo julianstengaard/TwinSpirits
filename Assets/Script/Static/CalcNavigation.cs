@@ -21,7 +21,7 @@ public class CalcNavigation : MonoBehaviour {
 
 		mesh.UnregisterNavigationGraph();
 
-		mesh.StartCreatingContours(rig, 2);
+		mesh.StartCreatingContours(rig, 4);
 		while (mesh.Creating) {
 			mesh.CreateContours();
 			yield return new WaitForFixedUpdate();

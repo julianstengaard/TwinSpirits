@@ -27,7 +27,7 @@ MonoBehaviour:
       /&gt;&lt;timer waitforsec=&quot;3&quot; returnvalue=&quot;success&quot; priority=&quot;&quot;
       name=&quot;timer&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot;
       priority=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;Decay&quot;
-      name=&quot;mecparam&quot; damptime=&quot;0&quot; /&gt;&lt;timer waitforsec=&quot;1&quot;
+      name=&quot;mecparam&quot; damptime=&quot;0&quot; /&gt;&lt;timer waitforsec=&quot;0.7&quot;
       returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot;
       /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;&quot;
       parameters=&quot;&quot; namespace=&quot;(global)&quot; name=&quot;action&quot;

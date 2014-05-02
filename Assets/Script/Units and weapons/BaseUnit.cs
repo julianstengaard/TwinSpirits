@@ -57,6 +57,7 @@ public abstract class BaseUnit : MonoBehaviour
 	    if (!(FullHealth > 0f))
             FullHealth = Health;
 
+		AddEffectToWeapons(new Knockback(0.4f));
 	}
 	
 	protected void Update() {
