@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: health.up_icon mat
-  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 208, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 7480b2d4f23725948b97584b94390d8f, type: 3}
+          m_Texture: {fileID: 2800000, guid: 55f5df95b63be7b42a4d391412b9dd3c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -69,12 +69,12 @@ Material:
         second: .714285731
       data:
         first:
-          name: _InvFade
-        second: .650714278
-      data:
-        first:
           name: _Shininess
         second: .699999988
+      data:
+        first:
+          name: _InvFade
+        second: .650714278
     m_Colors:
       data:
         first:
@@ -82,16 +82,8 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _TintColor
-        second: {r: 1, g: 1, b: 1, a: .501960814}
-      data:
-        first:
           name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 0}
-      data:
-        first:
-          name: _EmisColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
       data:
         first:
           name: _Emission
@@ -100,3 +92,11 @@ Material:
         first:
           name: _Tint
         second: {r: .5, g: .5, b: .5, a: .5}
+      data:
+        first:
+          name: _TintColor
+        second: {r: 1, g: 1, b: 1, a: .501960814}
+      data:
+        first:
+          name: _EmisColor
+        second: {r: 1, g: 0, b: 0, a: 0}

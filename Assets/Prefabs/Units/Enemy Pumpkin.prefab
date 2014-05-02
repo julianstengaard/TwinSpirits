@@ -895,7 +895,7 @@ GameObject:
   - 4: {fileID: 400100}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400006}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ikHandle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2041,7 +2041,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.85876846, y: 3.2734437, z: 7.72100496}
+  m_LocalPosition: {x: 175.805756, y: 1.62838674, z: -547.166504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400150}
@@ -2173,10 +2173,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 6772f9bd20980405ab7d4425b904cd02, type: 3}
   - Name: Hit
     Sounds:
-    - {fileID: 8300000, guid: 0cfcf8435a8e0e8418d87d24515521cf, type: 3}
-    - {fileID: 8300000, guid: 2c930ed2ef6cd8d43a7dc7028dbccad1, type: 3}
-    - {fileID: 8300000, guid: 5a9460a949e1e9343986ba8b73bae50e, type: 3}
-    - {fileID: 8300000, guid: b74100c559dfe5642b87a2d9c14d6d83, type: 3}
+    - {fileID: 8300000, guid: 30d44190ff49edf4f93caab8cd41e9f4, type: 3}
+    - {fileID: 8300000, guid: 442e8865c4c825748a979c4ecc5e4fcc, type: 3}
+    - {fileID: 8300000, guid: 8443e90d6b9379142869b7d6b4a452b1, type: 3}
+    - {fileID: 8300000, guid: b453701c2abc55743b84fe5c1f1a5d82, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2220,6 +2220,8 @@ MonoBehaviour:
     Item: {fileID: 11400000, guid: a80d1cacd29da47ddb1564cbf9aa26ff, type: 2}
   - Chance: .100000001
     Item: {fileID: 11400000, guid: ba0fca9144bf84b1f8fff2a7d280f2d4, type: 2}
+  TakeDamageParticlePrefab: {fileID: 100016, guid: 1d2fb4f1e2912ec4e87a66171ae4c72f,
+    type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

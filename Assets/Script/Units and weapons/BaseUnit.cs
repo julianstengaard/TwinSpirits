@@ -77,7 +77,7 @@ public abstract class BaseUnit : MonoBehaviour
 			_cc.Move(Vector3.down * 0.5f);
 	}
 
-	public virtual void TakeDamage(float damage, GameObject src)
+	public virtual void TakeDamage(float damage, GameObject src, bool forceKill = false)
 	{
 		if (!immortal) {
 			Health = Mathf.Max(0, Health - damage);
@@ -155,5 +155,9 @@ public abstract class BaseUnit : MonoBehaviour
 			weapon.AttackEffects.Remove(effect);
 	}
 
-	public abstract void SetMovementSpeedBuff(float movementSpeedBuff);
+    public void UsesGravity(bool b) {
+        usesGravity = b;
+    }
+
+    public abstract void SetMovementSpeedBuff(float movementSpeedBuff);
 }

@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
 public class SpiritLightning : SpiritPower 
 {
@@ -19,12 +17,10 @@ public class SpiritLightning : SpiritPower
 	private float _damagePerLightningInterval = 20f;
 	private float _lightningDuration = 10f;
 	private float _lightningSphereColliderRadius = 1f;
-	private float _lightningTimer = 0f;
-	private float _lightningDamageIntervalTimer = 0f;
 	private float _lightningDamageInterval = 0.5f;
 	private GameObject _particleEffectPrefab;
 
-	private Camera _mainCamera;
+    private Camera _mainCamera;
 
 	void Start() {
 		costActivate 		=  10f;
@@ -34,7 +30,7 @@ public class SpiritLightning : SpiritPower
 		_lightningPrefab = (GameObject) Resources.Load("Lightning");
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_particleEffectPrefab = (GameObject) Resources.Load("SpiritLightningParticle", typeof(GameObject));
-	}
+    }
 	
 	/* BEGIN REGULAR POWER */
 	public override IEnumerator OnActivate (Hero sourceHero, Hero otherHero)
@@ -43,7 +39,8 @@ public class SpiritLightning : SpiritPower
 		GameObject ballGO = (GameObject) GameObject.Instantiate(_lightningBallPrefab, otherHero.transform.position, Quaternion.identity);
 		BallForSpiritLightning ball = ballGO.GetComponent<BallForSpiritLightning>();
 		Vector3 throwDirection = otherHero.transform.TransformDirection(Vector3.forward) * _ballBaseRange;
-		Vector3 moveDirection = otherHero.CurrentMoveVector;
+		//Vector3 moveDirection = otherHero.CurrentMoveVector;
+		Vector3 moveDirection = Vector3.zero;
 		ball.ActivateBall(otherHero.transform.position + throwDirection + moveDirection, _ballExplosionRadius, _damagePerBall, _ballTravelTime);
 
 		return null;
@@ -71,7 +68,6 @@ public class SpiritLightning : SpiritPower
 		//If other Hero has pressed already
 		if (Mathf.Abs(potentialSyncTime - otherHero.currentSpiritPower.potentialSyncTime) < timeWindowForSync)
 		{
-			syncActive = true;
 			OnActivateSync(sourceHero, otherHero);
 			return true;
 		}
@@ -83,8 +79,10 @@ public class SpiritLightning : SpiritPower
 	}
 	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
-		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
-
+		if (_currentLightning != null) {
+	        GameObject.Destroy(_currentLightning);
+	    }
+        
 		if (!secondSync) {
 			//Stop other Heros effect
 			otherHero.SwitchToSyncPower();
@@ -93,70 +91,32 @@ public class SpiritLightning : SpiritPower
 			sourceHero.ChangeSpiritAmount(-costActivateSync);
 			otherHero.ChangeSpiritAmount(-costActivateSync);
 		}
-		StartCoroutine(LightningSync(sourceHero, otherHero));
+		LightningSync(sourceHero, otherHero);
 
 		return null;
 	}
 
-	private IEnumerator LightningSync(Hero sourceHero, Hero otherHero) {
-		_lightningTimer = _lightningDuration + Time.time;
-		_lightningDamageIntervalTimer = _lightningDamageInterval;
+	private void LightningSync(Hero sourceHero, Hero otherHero) {
+        Vector3 center = (sourceHero.transform.position + otherHero.transform.position) * 0.5f;
+        _currentLightning = (GameObject)GameObject.Instantiate(_lightningPrefab, center, Quaternion.identity);
 
-		Vector3 center = (sourceHero.transform.position + otherHero.transform.position) * 0.5f;
-		_currentLightning = (GameObject) GameObject.Instantiate(_lightningPrefab, center, Quaternion.identity);
-
-		while (true) {
-			if (!syncActive) {
-				break;
-			}
-			yield return new WaitForEndOfFrame();
-			_lightningDamageIntervalTimer += Time.deltaTime;
-			if (Time.time < _lightningTimer) {
-				center = (sourceHero.transform.position + otherHero.transform.position) * 0.5f;
-				_currentLightning.transform.position = center + Vector3.up * _currentLightning.transform.localScale.y * 0.45f;
-				Vector3 rotationTarget = _mainCamera.transform.position - new Vector3(1f, _mainCamera.transform.position.y, 1f) + Vector3.up * _currentLightning.transform.position.y;
-				_currentLightning.transform.rotation = Quaternion.LookRotation(_currentLightning.transform.position - rotationTarget);
-				if (_lightningDamageIntervalTimer >= _lightningDamageInterval) {
-					_lightningDamageIntervalTimer = 0f;
-					DoLightningDamage(center);
-				}
-			} else {
-				break;
-			}
-		}
-		GameObject.Destroy(_currentLightning);
-		yield return null;
+	    _currentLightning.GetComponent<LightningForSpiritLightning>()
+	        .Activate(sourceHero, otherHero, _lightningDuration, _lightningDamageInterval, _mainCamera,
+	            _lightningSphereColliderRadius, _damagePerLightningInterval, _particleEffectPrefab);
 	}
 
-	private void DoLightningDamage(Vector3 position) {
-		Collider[] hits = Physics.OverlapSphere(position, _lightningSphereColliderRadius, 1 << 8);
-		foreach (var other in hits) {
-			if (other.tag == "Enemy") {
-				other.gameObject.GetComponent<BaseUnit>().TakeDamage(_damagePerLightningInterval, gameObject);
-				CreateLightningDamageParticle(other.gameObject);
-			}
-		}
-	}
-
-	private IEnumerator CreateLightningDamageParticle(GameObject target) {
-		GameObject _particleEffect = (GameObject) Instantiate(_particleEffectPrefab, target.transform.position, Quaternion.identity);
-		GameObject.Destroy(_particleEffect, 1f);
-		yield return null;
-	}
-
-	public override IEnumerator OnUpdateSync (Hero sourceHero, Hero otherHero)
-	{
+	public override IEnumerator OnUpdateSync (Hero sourceHero, Hero otherHero) {
 		return null;
 	}
-	
-	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
+
+    public override IEnumerator OnDeactivateSync(Hero sourceHero, Hero otherHero, bool onDestroy = false)
 	{
 		//Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
 		syncActive = false;
 		if (_currentLightning != null) {
 			GameObject.Destroy(_currentLightning);
 		}
-		yield return null;
+        return null;
 	}
 	/* END SYNC POWER */
 	

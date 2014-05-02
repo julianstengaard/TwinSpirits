@@ -11,4 +11,5 @@ public enum Opening {
 public class BridgeOpening : MonoBehaviour {
 	public Opening opening;
 	public bool forced = false;
+	public GameObject Cap;
 }

@@ -3,8 +3,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SpiritImmortal : SpiritPower 
-{
+public class SpiritImmortal : SpiritPower {
+    private AudioClip _syncSound;
+
     private GameObject _shield;
 	private GameObject _shieldPrefab;
     private bool _shieldActive;
@@ -23,21 +24,20 @@ public class SpiritImmortal : SpiritPower
     private GameObject _triggerPrefab;
     public bool Player1Triggered = false;
     public bool Player2Triggered = false;
-    private bool readyForGravity = false;
 
     private TriggerForSpiritImmortal triggerP1;
     private TriggerForSpiritImmortal triggerP2;
     private bool readyToPull = false;
 
-	private Hero _srcHero;
 	private Hero _othHero;
 	
 	void Start() {
-		costActivate 		=  10f;
+		costActivate 		=  20f;
 		costPerSecond 		=  0f;
-		costActivateSync 	= 50f;
+		costActivateSync 	= 30f;
         _shieldPrefab = (GameObject) Resources.Load("SpiritShield");
         _triggerPrefab = (GameObject) Resources.Load("SpiritImmortalTrigger");
+        _syncSound = (AudioClip)Resources.Load("Audio/Whirl pool");
 	}
 	
 	/* BEGIN REGULAR POWER */
@@ -50,11 +50,10 @@ public class SpiritImmortal : SpiritPower
 		if (_shield != null) {
 			GameObject.Destroy(_shield);
 		}
-
-		_srcHero = sourceHero;
-		_othHero = otherHero;
+        _othHero = otherHero;
 
 	    _shield = (GameObject) Instantiate(_shieldPrefab, otherHero.transform.position, otherHero.transform.rotation);
+        _shield.GetComponent<TimedShieldBlink>().Activate(_shieldDuration);
         _shield.transform.rotation = Quaternion.LookRotation(otherHero.transform.TransformDirection(Vector3.right), Vector3.up);
         //Tween in the shield
         _shield.transform.localScale *= 0f;
@@ -89,6 +88,10 @@ public class SpiritImmortal : SpiritPower
 	}
 
 	public void UpdateShield(Hero otherHero) {
+	    if (_shield == null) {
+	        _shieldActive = false;
+            return;
+	    }
 		_shield.transform.position = otherHero.transform.position + otherHero.transform.TransformDirection(Vector3.forward);
 		_shield.transform.rotation = Quaternion.LookRotation(otherHero.transform.TransformDirection(Vector3.right), Vector3.up);
 	}
@@ -97,6 +100,7 @@ public class SpiritImmortal : SpiritPower
 	{
 		if (onDestroy && _shield != null) {
 			GameObject.Destroy(_shield);
+		    _shieldActive = false;
 		}
 
 		//Debug.Log("Deactivating" + this.GetType());
@@ -127,7 +131,14 @@ public class SpiritImmortal : SpiritPower
 	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
-        //This cant be used twice
+	    if (triggerP1 != null) {
+	        Destroy(triggerP1.gameObject);
+	    }
+        if (triggerP2 != null) {
+            Destroy(triggerP2.gameObject);
+        }
+
+	    //This cant be used twice
 		if (secondSync && otherHero.currentSpiritPower.GetType() == typeof(SpiritImmortal)) 
             return null;
 
@@ -198,7 +209,7 @@ public class SpiritImmortal : SpiritPower
 	}
 
 	IEnumerator PullEnemies() {
-		float radius = (center - triggerP1.transform.position).magnitude;
+		float radius = (center - triggerP1.transform.position).magnitude * 2f;
 		float radiusSqr = radius * radius;
 		//Destroy triggers
         if (triggerP1 != null)
@@ -208,6 +219,12 @@ public class SpiritImmortal : SpiritPower
 
 		//Effect
 		pullSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+	    var audioSrc = pullSphere.AddComponent<AudioSource>();
+	    audioSrc.clip = _syncSound;
+        audioSrc.rolloffMode = AudioRolloffMode.Linear;
+	    audioSrc.dopplerLevel = 0;
+	    audioSrc.Play();
+
 		pullSphere.transform.position = center;
 	    
         pullSphere.transform.localScale = Vector3.one * (radius * 2f);
@@ -218,25 +235,26 @@ public class SpiritImmortal : SpiritPower
 		yield return new WaitForFixedUpdate();
 
 		//Try to pull enemies over n ticks
-		int ticks = 10;
+	    int ticks = 120;
 		List<BaseUnit> slowedUnits = new List<BaseUnit>();
 		for (int i = 0; i < ticks; i++) {
-            pullSphere.transform.localScale = Vector3.Lerp(Vector3.one * (radius * 2f), Vector3.one, i / (float)ticks);
+            pullSphere.transform.localScale = Vector3.Lerp(Vector3.one * (radius * 2f), Vector3.one, i*6 / (float)ticks);
 			foreach (CharacterController enemy in enemies) {
+                if (i == 0) {
+                    var enemyUnit = enemy.gameObject.GetComponent<BaseUnit>();
+                    if (enemyUnit != null && !slowedUnits.Contains(enemyUnit)) {
+                        slowedUnits.Add(enemyUnit);
+                    }
+                }
 				var offset = center - enemy.transform.position;
 				var sqrMagnitude = offset.sqrMagnitude;
                 if (sqrMagnitude > radiusSqr)
                 {
 					continue;
 				}
-				else if(sqrMagnitude > 1f) {
-					offset = offset.normalized;
+				if(sqrMagnitude > 1f) {
+				    offset = offset/12f;
 					enemy.Move(offset);
-				}
-				if (i == 0) {
-					var enemyUnit = enemy.gameObject.GetComponent<BaseUnit>();
-					if (enemyUnit != null && !slowedUnits.Contains(enemyUnit))
-						slowedUnits.Add(enemyUnit);
 				}
 			}
 			yield return new WaitForFixedUpdate();
@@ -246,7 +264,7 @@ public class SpiritImmortal : SpiritPower
 		//Slow enemies
 		foreach (var enemy in slowedUnits) {
 			if (enemy != null)
-				enemy.SetMovementSpeedBuff(-_syncSlowAmount);
+                enemy.SetMovementSpeedBuff(-_syncSlowAmount);
 		}
 
 		//Give speed back
@@ -257,13 +275,31 @@ public class SpiritImmortal : SpiritPower
 		}
 		yield return null;
 	}
-	
-	public override IEnumerator OnDeactivateSync (Hero sourceHero, Hero otherHero)
+
+    public override IEnumerator OnDeactivateSync(Hero sourceHero, Hero otherHero, bool onDestroy = false)
 	{
 		//Debug.Log("Deactivating" + this.GetType() + " SYNC POWER!");
-		yield return null;
+        if (onDestroy) {
+            if (triggerP1 != null) {
+                Destroy(triggerP1.gameObject);
+            }
+            if (triggerP2 != null) {
+                Destroy(triggerP2.gameObject);
+            }
+        }
+
+        yield return null;
 	}
-	/* END SYNC POWER */
+
+    void OnDestroy() {
+        if (triggerP1 != null) {
+            Destroy(triggerP1.gameObject);
+        }
+        if (triggerP2 != null) {
+            Destroy(triggerP2.gameObject);
+        }
+    }
+    /* END SYNC POWER */
 	
 	public override float GetCostActivate ()
 	{

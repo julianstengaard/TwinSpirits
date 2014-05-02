@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Linq;
 using InControl;
 using RAIN.Entities;
 using RAIN.Entities.Aspects;
@@ -10,6 +9,8 @@ public class Hero : BaseUnit {
 	public enum Player {One, Two}
 	public Player PlayerSlot;
 	protected InputDevice _input;
+
+	private float _damageRecievedModifier = 1f;
 
 	public bool IsControlled {get; private set;}
 
@@ -49,7 +50,9 @@ public class Hero : BaseUnit {
 	private Camera _mainCamera;
 	private bool _revivingOther = false;
 	private float _reviveTime = 6f;
-	private float _reviveTimer = 0f;
+    private float _reviveTimeNoEnemies = 1f;
+    private float _reviveTimeCurrent = 6f;
+    private float _reviveTimer = 0f;
 	private GameObject _reviveHeartPrefab;
 	private GameObject _currentReviveHeart;
 	private GameObject _currentReviveHeartOverlay;
@@ -57,6 +60,7 @@ public class Hero : BaseUnit {
 	[HideInInspector]
 	public Vector3 CurrentMoveVector = Vector3.zero;
 
+	public bool DashEnabled = false;
 	private bool _dashing = false;
 	private float _dashDistance = 2.5f;
 	private int _dashOverFrames = 10;
@@ -74,11 +78,13 @@ public class Hero : BaseUnit {
 		AddEffectToWeapons(new Damage(25));
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
-		_dashTrail = GetComponent<TrailRenderer>();
-
+		if (DashEnabled) {
+			_dashTrail = GetComponent<TrailRenderer> ();
+		}
 		_mainCamera = GameObject.FindGameObjectWithTag("MainCamera").camera;
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
+		//currentSpiritPower = gameObject.AddComponent<SpiritBungie>();
 		currentSpiritPower = gameObject.AddComponent<SpiritImmortal>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
@@ -87,11 +93,10 @@ public class Hero : BaseUnit {
 		GameObject levelInfo = GameObject.Find("LevelCreationInfo");
 		if (levelInfo != null) {
 			spiritRegen = levelInfo.GetComponent<LevelCreationInfo>().spiritRegen;
+			_damageRecievedModifier = levelInfo.GetComponent<LevelCreationInfo>().DamageRecievedModifier;
 		}
 
 		SoundController = GetComponent<RandomSoundPlayer>();
-
-		print(currentSpiritPower);
 	}
 
 	// Update is called once per frame
@@ -109,7 +114,7 @@ public class Hero : BaseUnit {
 		}
 
 
-		//Revive comrade if close! TODO 3 second revive
+		//Revive comrade if close!
 		if (otherPlayer.dead) {
 			if ((transform.position - otherPlayer.transform.position).magnitude < 2f)
 			{
@@ -180,11 +185,13 @@ public class Hero : BaseUnit {
 			_dashTimer -= Time.deltaTime;
 
 		if (!_dashing) {
-			if (_input.Action1.WasPressed && _dashTimer <= 0f) {
-				if (lookDirection != Vector3.zero)
-					StartCoroutine(Dash(lookDirection, _dashDistance, _dashOverFrames));
-			} else 
-				_cc.Move(dir);
+			if (DashEnabled && _input.Action1.WasPressed && _dashTimer <= 0f) {
+				if (lookDirection != Vector3.zero) {
+					StartCoroutine (Dash (lookDirection, _dashDistance, _dashOverFrames));
+				}
+			} else {
+				_cc.Move (dir);
+			}
 		}
 
 		UpdateSpiritLink();
@@ -220,26 +227,45 @@ public class Hero : BaseUnit {
 			return -1f * (Mathf.Cos(Mathf.PI*pct) - 1f);
 	}
 
-	public override void TakeDamage(float damage, GameObject src)
+	public override void TakeDamage(float damage, GameObject src, bool forceKill = false)
 	{
 	    bool blocked = false;
         if (SpiritShieldActive) {
 	        Vector3 blockAngle = gameObject.transform.TransformDirection(Vector3.forward);
 	        Vector3 incomingAngle = src.transform.position - gameObject.transform.position;
             if (Vector3.Angle(blockAngle, incomingAngle) < 80f) {
+                SoundController.PlayRandomSound("SpiritShieldBlock");
                 blocked = true;
             }
+        } 
+        
+        if (immortal && !blocked) {
+            SoundController.PlayRandomSound("ImmortalShieldBlock");
         }
-        if (!damageLocked && !blocked && !immortal)
+
+	    if (!damageLocked && !blocked && !immortal && !dead)
 		{
-			Health = Mathf.Max(0, Health - damage);
+			Health = Mathf.Max(0, Health - (damage * _damageRecievedModifier));
+            SoundController.PlayRandomSound("TakeDamage");
 			_anim.SetTrigger("Damaged");
 			StartCoroutine(DamageLockTimeout(1f));
 			
-			if (Health <= 0 && !dead)
+			if (Health <= 0f && !dead)
 				Died();
 		}
+
+		if (forceKill) {
+			Health = 0f;
+			Died ();
+		}
 	}
+
+    public override void Heal(float healAmount) {
+        if (!dead) {
+            Health = Mathf.Min(FullHealth, Health + healAmount);
+            SoundController.PlayRandomSound("Heal");
+        }
+    }
 
 	private IEnumerator DamageLockTimeout(float t)
 	{
@@ -251,7 +277,10 @@ public class Hero : BaseUnit {
 	}
 	
 	protected override void Died () {
+        if (dead) return;
+
 		dead = true;
+        SoundController.PlayRandomSound("Death");
 		if (spiritActive) {
 			DeactivateSpiritPower(false);
 		}
@@ -264,7 +293,10 @@ public class Hero : BaseUnit {
 
 	private void RunRevive () {
 		if (!_revivingOther) {
-			//Start the revive
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		    _reviveTimeCurrent = (enemies.Length == 0) ? _reviveTimeNoEnemies : _reviveTime;
+
+		    //Start the revive
 			_reviveTimer = 0f;
 			_revivingOther = true;
 			Vector3 heartPosition = otherPlayer.transform.position + Vector3.up;
@@ -286,14 +318,14 @@ public class Hero : BaseUnit {
 		} else {
 			_reviveTimer += Time.deltaTime;
 			//Scale heart
-			float pct = Mathf.Lerp(0f, 1f, _reviveTimer/_reviveTime);
+            float pct = Mathf.Lerp(0f, 1f, _reviveTimer / _reviveTimeCurrent);
 			Vector3 heartPosition = otherPlayer.transform.position + Vector3.up;
 			_currentReviveHeart.transform.rotation = Quaternion.LookRotation(heartPosition - _mainCamera.transform.position);
 			_currentReviveHeart.transform.position = heartPosition;
 			_currentReviveHeartOverlay.transform.localPosition = Vector3.down * 0.5f + new Vector3(0f, pct/2f, 0f) + _currentReviveHeart.transform.TransformDirection(Vector3.back) * 0.03f;
 			_currentReviveHeartOverlay.transform.localScale = new Vector3(1f, pct, 1f);
-			_currentReviveHeartOverlay.renderer.material.mainTextureScale = new Vector2(1f, pct); 
-			if (_reviveTimer >= _reviveTime) {
+			_currentReviveHeartOverlay.renderer.material.mainTextureScale = new Vector2(1f, pct);
+            if (_reviveTimer >= _reviveTimeCurrent) {
 				DoRevive();
 				_revivingOther = false;
 				GameObject.Destroy(_currentReviveHeart);
@@ -303,6 +335,7 @@ public class Hero : BaseUnit {
 	}
 
 	private void DoRevive () {
+        SoundController.PlayRandomSound("Revive");
 		float transferedHealth = Mathf.Floor(Health/2f);
 		otherPlayer.Revived(Mathf.Max(1f, transferedHealth));
 		Health = Mathf.Max(1f, Health - transferedHealth);
@@ -354,7 +387,6 @@ public class Hero : BaseUnit {
 			//rigidbody.AddForce(dir.normalized * 1000);
 			if(Vector3.Distance(corrected, c.transform.position) < 1f) {
 				c.SendMessage("Collected", this);
-				GameObject.Destroy(c.gameObject);
 			} else {
 				c.gameObject.transform.position = Vector3.Lerp(c.transform.position, corrected, 0.1f);
 			}
@@ -414,7 +446,7 @@ public class Hero : BaseUnit {
 	public void ChangeSpiritPower(SpiritPower newPower)
 	{
 		DeactivateSpiritPower(true);
-		currentSpiritPower.OnDeactivateSync(this, otherPlayer);
+		currentSpiritPower.OnDeactivateSync(this, otherPlayer, true);
 		Destroy(currentSpiritPower);
 		currentSpiritPower = newPower;
 		ui.UpdateSpiritPowerIcons();
@@ -478,4 +510,8 @@ public class Hero : BaseUnit {
     public void UseGravity(bool b) {
         usesGravity = b;
     }
+
+	public void SetDamageRecievedModifier(float modifier) {
+		_damageRecievedModifier = modifier;
+	}
 }

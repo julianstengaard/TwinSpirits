@@ -3,6 +3,9 @@ using System.Collections;
 using Holoville.HOTween;
 
 public class BallForSpiritLightning : MonoBehaviour {
+    public AudioClip SpawnSound;
+    public GameObject ExplosionPrefab;
+
 	private Vector3 _originPosition;
 	private Vector3 _targetPosition;
 	private float _explosionRadius;
@@ -17,7 +20,9 @@ public class BallForSpiritLightning : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		BallColor = new Color(1f, 1f, 0f, 0.7f); 
+		BallColor = new Color(0.85f, 1f, 1f, 0.7f);
+	    gameObject.audio.clip = SpawnSound;
+        gameObject.audio.Play();
 	}
 	
 	// Update is called once per frame
@@ -28,29 +33,34 @@ public class BallForSpiritLightning : MonoBehaviour {
 				MoveBall();
 			} else if (!_exploded) {
 				_exploded = true;
-				StartCoroutine(Explode());
+				Explode();
 			}
 			UpdateColor();
 		}
 	}
 
-	private IEnumerator Explode() {
-		//Tween Color
-		BallColor = new Color(1f, 1f, 0f, 1f);
-		Color finalColor = new Color(1f, 1f, 0f, 0f);
-		TweenParms tweenColorParms = new TweenParms().Prop(
-			"BallColor", finalColor).Ease(
-			EaseType.EaseInCirc).Delay(0f);
-		HOTween.To(this, 0.3f, tweenColorParms);
+	private void Explode() {
+        GameObject explosion = (GameObject)GameObject.Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+        explosion.GetComponent<ExplosionForSpiritLightning>().Activate(_explosionRadius, _damageOnExplosion);
+        GameObject.Destroy(gameObject);
 
-		//Tween in explosion
-		gameObject.transform.localScale *= 0f;
-		Vector3 finalSize = Vector3.one * _explosionRadius * 2f;
-		TweenParms tweenParms = new TweenParms().Prop(
-			"localScale", finalSize).Ease(
-			EaseType.EaseInCirc).Delay(0f);
-		HOTween.To(gameObject.transform, 0.3f, tweenParms);
+        /* OLD EXPLOSION
+        //Tween Color
+        BallColor = new Color(0.85f, 1f, 1f, 1f);
+        Color finalColor = new Color(0.95f, 1f, 1f, 0f);
+        TweenParms tweenColorParms = new TweenParms().Prop(
+            "BallColor", finalColor).Ease(
+            EaseType.EaseInCirc).Delay(0f);
+        HOTween.To(this, 0.3f, tweenColorParms);
 
+        //Tween in explosion
+        gameObject.transform.localScale *= 0f;
+        Vector3 finalSize = Vector3.one * _explosionRadius * 2f;
+        TweenParms tweenParms = new TweenParms().Prop(
+            "localScale", finalSize).Ease(
+            EaseType.EaseInCirc).Delay(0f);
+        HOTween.To(gameObject.transform, 0.3f, tweenParms);
+        
 		yield return new WaitForSeconds(0.2f);
 		Collider[] hits = Physics.OverlapSphere(gameObject.transform.position, _explosionRadius, 1 << 8);
 		foreach (var other in hits) {
@@ -60,6 +70,7 @@ public class BallForSpiritLightning : MonoBehaviour {
 		}
 		yield return new WaitForSeconds(1f);
 		GameObject.Destroy(gameObject);
+       */
 	}
 
 	private void MoveBall() {

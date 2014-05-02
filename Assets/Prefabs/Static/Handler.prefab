@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400002}
+  m_Layer: 0
+  m_Name: Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.06632757, y: -1.06870842, z: .348311424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f0839a0e1294942985ef1a463cdc70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazeWidth: 10
+  mazeHeight: 10
+  mazeLength: 2
+  maxPathIterationLenght: 5
+  cellSpacing: 60
+  cellSize: 40
+  StartCell: {fileID: 100082, guid: c41dc667ffcd72f4787c722f836f6cfb, type: 2}
+  BossCell: {fileID: 100136, guid: f3c1d9cd54cca4297ad6c490b90130be, type: 2}
+  IslandsWithBridgeOpenings:
+  - {fileID: 100310, guid: 87c7943e889a4a646b024172b30ae496, type: 2}
+  - {fileID: 100070, guid: 276e762f710b48e4da8a5c4e8f8573fb, type: 2}
+  - {fileID: 100000, guid: 593d51c0e1fd6f6448e80edb0d8b086b, type: 2}
+  - {fileID: 100388, guid: 560dc051bba372d41820aa15afbef33d, type: 2}
+  - {fileID: 100110, guid: babd43b2b94c6484cad3e13fe257dbc7, type: 2}
+  - {fileID: 100422, guid: b8aaddd358eddb44ebf9775fe5ae5015, type: 2}
+  - {fileID: 100098, guid: f5770225ed8cd3142a3050b669bdceef, type: 2}
+  - {fileID: 100056, guid: 1225e107a7b86364480a7734a0c03d3d, type: 2}
+  - {fileID: 100356, guid: b2f9bcaa4efcd0b4aa90fc2856c6de5b, type: 2}
+  - {fileID: 100290, guid: 077e9afb987dccf4990d37e85ba7ce19, type: 2}
+  bridgeSpanPrefab: {fileID: 100010, guid: 4d8fc0a8566c048f4a0a1f3e6ecf510b, type: 2}
+  bridgeEndPrefab: {fileID: 100004, guid: 94187ecaad1db4ea4a2e9eb0174d8363, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1
