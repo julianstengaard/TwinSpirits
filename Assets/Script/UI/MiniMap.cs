@@ -15,7 +15,6 @@ public class MiniMap : MonoBehaviour {
     private GameObject[,] _miniMapVerticalBridges;
     private GameObject _players;
 
-    private bool _gameOver = false;
     private int _islandsDone = 0;
     private int _totalIslands = 1;
 

@@ -27,9 +27,6 @@ public class Projectile : Weapon {
 	}
 	
 	void Update () {
-		if(startPosition == null)
-			return;
-
 		float fracComplete = (Time.time - startTime) / journeyTime;
 
 		Vector3 a = Vector3.Lerp(startPosition, aimPosition, fracComplete);

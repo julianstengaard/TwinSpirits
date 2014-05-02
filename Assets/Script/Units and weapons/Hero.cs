@@ -73,8 +73,9 @@ public class Hero : BaseUnit {
 	new void Start() {
 		base.Start();
 
+		CollectRadius += 1;
+
 		// TESTING
-		var weapons = GetComponentsInChildren<Weapon>();
 		AddEffectToWeapons(new Damage(25));
 		
 		ui = GameObject.Find("UI").GetComponent<SpiritMeterUI>();
@@ -383,7 +384,7 @@ public class Hero : BaseUnit {
 
 			var corrected = transform.position;
 			corrected.y += 0.5f;
-			var dir = corrected - c.transform.position;
+			//var dir = corrected - c.transform.position;
 			//rigidbody.AddForce(dir.normalized * 1000);
 			if(Vector3.Distance(corrected, c.transform.position) < 1f) {
 				c.SendMessage("Collected", this);

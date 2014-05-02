@@ -18,24 +18,16 @@ public class CalcNavigation : MonoBehaviour {
 		var rig = GetComponent<NavMeshRig>();
 		
 		RAIN.Navigation.NavMesh.NavMesh mesh = rig.NavMesh;
-		mesh.ResetGraph();
-		
-		mesh.StartCollectingColliders(rig);
-		while(mesh.Collecting) {
-			mesh.CollectColliders();
-			yield return new WaitForEndOfFrame();
-		}
-		//mesh.CollectAllColliders();
-		mesh.StartCreatingContours(rig);
+
+		mesh.UnregisterNavigationGraph();
+
+		mesh.StartCreatingContours(rig, 4);
 		while (mesh.Creating) {
 			mesh.CreateContours();
 			yield return new WaitForFixedUpdate();
 			//Debug.Log("Loading : " + mesh.CreatingProgress + " at " + Time.time);
 		}
-		
-		//Debug.Log ("New NavMesh generated");
-		
-		mesh.GenerateNavMeshGraph();
+		mesh.RegisterNavigationGraph();
 	}
 	
 	// Update is called once per frame

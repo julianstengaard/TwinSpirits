@@ -26,8 +26,8 @@ public class AISavePosition : RAINAction
     public override ActionResult Execute(AI ai)
     {
 		var targetPosition = unit.transform.position;
-		ai.WorkingMemory.SetItem("targetPosition", unit.transform.position);
-		Debug.DrawLine(ai.Body.transform.position, unit.transform.position, Color.red, 3f);
+		ai.WorkingMemory.SetItem("targetPosition", targetPosition);
+		Debug.DrawLine(ai.Body.transform.position, targetPosition, Color.red, 3f);
 		return ActionResult.SUCCESS;
     }
 
