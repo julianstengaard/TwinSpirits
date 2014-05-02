@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
 public class CollectableSpiritPoint : Collectable {
+	public AudioClip SpiritPickupSound;
+	private bool _collected = false;
+
     private float _selfDestructAfter = 10f;
     private float _selfDestructAfterTimer = 0f;
 
@@ -19,9 +22,17 @@ public class CollectableSpiritPoint : Collectable {
         _selfDestructAfterTimer += Time.deltaTime;
     }
 
-    public override void Collected (Hero collector)	{
-		collector.ChangeSpiritAmount(2);	
-        Destroy(gameObject);
+	public override void Collected (Hero collector) {
+		if (_collected == true) return;
+		
+		_collected = true;
+		gameObject.audio.clip = SpiritPickupSound;
+		gameObject.audio.Play();
+		collector.ChangeSpiritAmount(2);
+		gameObject.renderer.enabled = false;
+		for (int i = 0; i < gameObject.transform.childCount; i++) {
+			gameObject.transform.GetChild(i).gameObject.SetActive(false);
+		}
+		Destroy(gameObject, SpiritPickupSound.length);
 	}
-
 }
