@@ -5,6 +5,7 @@ public class SpiritBungie : SpiritPower
 {
 	private Color 		targetHeroColor;
 	private BaseUnit[] 	enemiesToKill;
+	private AudioClip 	_circleSound;
 
 	private float 		currentBungieTime	= 0f;
 	private float 		durationToBungie	= 0.5f;
@@ -34,6 +35,7 @@ public class SpiritBungie : SpiritPower
 		costPerSecond 		=  0f;
 		costActivateSync 	= 50f;
 		_particleEffectPrefab = (GameObject) Resources.Load("SpiritCircleParticle", typeof(GameObject));
+		_circleSound = (AudioClip) Resources.Load("Audio/Cirkel (ulti)", typeof(AudioClip));
 	}
 	
 	/* BEGIN REGULAR POWER */
@@ -193,6 +195,12 @@ public class SpiritBungie : SpiritPower
 		for (int i = 0; i < divisions; i++) {
 			circleLink[i] = (GameObject) Instantiate(Resources.Load(prefab), Vector3.up, Quaternion.identity); 
 		}
+		var audio = circleLink[0].AddComponent<AudioSource>();
+		audio.dopplerLevel = 0f;
+		audio.rolloffMode = AudioRolloffMode.Linear;
+		audio.clip = _circleSound;
+		audio.loop = true;
+		audio.Play();
 		UpdateCircleLink (sourceHero, otherHero, 0f, true);
 	}
 
