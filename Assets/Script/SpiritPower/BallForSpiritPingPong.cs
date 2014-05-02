@@ -10,7 +10,6 @@ public class BallForSpiritPingPong : MonoBehaviour {
     private Vector3 _currentTargetPosition;
     
     private float _ballRadius = 0.2f;
-    private float _syncBallRadius = 0.3f;
     private List<BaseUnit> _enemiesHit = new List<BaseUnit>();
     private List<BaseUnit> _enemiesHitPrevious = new List<BaseUnit>();
 
