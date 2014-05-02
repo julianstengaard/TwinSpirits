@@ -150,7 +150,7 @@ public class Hero : BaseUnit {
 			MakeInert();
 		}
 
-		if(_anim.GetCurrentAnimatorStateInfo(1).tagHash == 1203776827)
+		if(_anim.GetCurrentAnimatorStateInfo(1).tagHash == 1203776827 || _anim.GetCurrentAnimatorStateInfo(0).tagHash == 1203776827)
 			_weaponTrail.enabled = true;
 		else
 			_weaponTrail.enabled = false;

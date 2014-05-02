@@ -1105,6 +1105,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 76997885}
   m_Mesh: {fileID: 4300032, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &90060339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 90060340}
+  - 114: {fileID: 90060341}
+  m_Layer: 0
+  m_Name: PlaneSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90060340
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90060339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.37017366e-07, y: .264908075, z: 1.23125233e-07}
+  m_LocalScale: {x: .605748951, y: .605748713, z: .605748594}
+  m_Children: []
+  m_Father: {fileID: 698666034}
+--- !u!114 &90060341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90060339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090f4c3c1aaf14c4ca073ba666cc085e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planePrefab: {fileID: 100000, guid: 461fe6171d53f404da6ff783705abcf8, type: 2}
 --- !u!1 &98815849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5102,7 +5141,7 @@ BoxCollider:
   m_GameObject: {fileID: 648390133}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: .0799999982, y: .448508859, z: .129999995}
   m_Center: {x: -8.65732399e-12, y: .222515672, z: .000179803377}
@@ -5517,6 +5556,7 @@ Transform:
   m_LocalPosition: {x: -.02776758, y: .00265719299, z: -.000154581387}
   m_LocalScale: {x: 1.65084898, y: 1.65084898, z: 1.65084898}
   m_Children:
+  - {fileID: 90060340}
   - {fileID: 1951117404}
   m_Father: {fileID: 317539041}
 --- !u!114 &698666035
@@ -5541,7 +5581,7 @@ BoxCollider:
   m_GameObject: {fileID: 698666033}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: .0799999982, y: .448508859, z: .129999995}
   m_Center: {x: -8.65732399e-12, y: .222515672, z: .000179803377}
