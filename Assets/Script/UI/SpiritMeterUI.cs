@@ -115,6 +115,7 @@ public class SpiritMeterUI : MonoBehaviour {
 				_p1Dividers[i-1] = (GameObject) GameObject.Instantiate(SpiritMeterDivider, Vector3.zero, Quaternion.identity);
 				_p1Dividers[i-1].transform.parent = p1Meter.transform.parent;
 				_p1Dividers[i-1].transform.localPosition = _p1SpiritMeterDividerMin + distancePerDivider * i;
+				_p1Dividers[i-1].transform.localPosition = _p1Dividers[i-1].transform.localPosition.SetZ(-0.01f);
 			}
 		}
 		else if (playerNumber == 2) {
@@ -130,6 +131,7 @@ public class SpiritMeterUI : MonoBehaviour {
 				_p2Dividers[i-1] = (GameObject) GameObject.Instantiate(SpiritMeterDivider, _p2SpiritMeterDividerMin + distancePerDivider * i, Quaternion.identity);
 				_p2Dividers[i-1].transform.parent = p2Meter.transform.parent;
 				_p2Dividers[i-1].transform.localPosition = _p2SpiritMeterDividerMin + distancePerDivider * i;
+				_p2Dividers[i-1].transform.localPosition = _p2Dividers[i-1].transform.localPosition.SetZ(-0.01f);
 			}
 		}
 	}

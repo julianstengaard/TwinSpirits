@@ -385,6 +385,10 @@ Prefab:
       propertyPath: GameOverIsland
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Spawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 1750153987}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
   m_RootGameObject: {fileID: 887657680}
@@ -3847,110 +3851,110 @@ Transform:
   - {fileID: 769085790}
   - {fileID: 1132065252}
   - {fileID: 896253534}
-  - {fileID: 12132320}
-  - {fileID: 188618667}
   - {fileID: 307727656}
-  - {fileID: 965979758}
-  - {fileID: 1230508903}
   - {fileID: 1337432357}
-  - {fileID: 1699102769}
+  - {fileID: 1230508903}
+  - {fileID: 12132320}
   - {fileID: 1723167946}
-  - {fileID: 353989999}
-  - {fileID: 383445827}
-  - {fileID: 435558934}
-  - {fileID: 460086188}
-  - {fileID: 533237669}
+  - {fileID: 188618667}
+  - {fileID: 1699102769}
+  - {fileID: 965979758}
   - {fileID: 665324507}
-  - {fileID: 689168143}
-  - {fileID: 855085078}
-  - {fileID: 997627579}
-  - {fileID: 1562793819}
-  - {fileID: 1786492052}
-  - {fileID: 1928722523}
+  - {fileID: 353989999}
   - {fileID: 1970433985}
+  - {fileID: 1928722523}
+  - {fileID: 460086188}
   - {fileID: 2136860605}
-  - {fileID: 67892289}
+  - {fileID: 435558934}
+  - {fileID: 689168143}
+  - {fileID: 997627579}
+  - {fileID: 533237669}
+  - {fileID: 1562793819}
+  - {fileID: 383445827}
+  - {fileID: 1786492052}
+  - {fileID: 855085078}
   - {fileID: 403691118}
-  - {fileID: 533800354}
-  - {fileID: 540442240}
-  - {fileID: 561460563}
-  - {fileID: 629606823}
   - {fileID: 1660820600}
-  - {fileID: 2048570573}
+  - {fileID: 561460563}
+  - {fileID: 533800354}
+  - {fileID: 629606823}
+  - {fileID: 540442240}
   - {fileID: 2133419332}
-  - {fileID: 200001055}
-  - {fileID: 532419166}
-  - {fileID: 793960162}
-  - {fileID: 824461341}
-  - {fileID: 1006198289}
-  - {fileID: 1093686354}
-  - {fileID: 1229450379}
+  - {fileID: 2048570573}
+  - {fileID: 67892289}
   - {fileID: 1234982084}
-  - {fileID: 1235308661}
-  - {fileID: 1382254076}
+  - {fileID: 824461341}
+  - {fileID: 1093686354}
   - {fileID: 1549596539}
-  - {fileID: 1700206168}
-  - {fileID: 1772132739}
-  - {fileID: 1840957262}
+  - {fileID: 532419166}
+  - {fileID: 1229450379}
   - {fileID: 1919663125}
+  - {fileID: 793960162}
+  - {fileID: 1772132739}
+  - {fileID: 1006198289}
+  - {fileID: 1700206168}
+  - {fileID: 1840957262}
+  - {fileID: 1382254076}
+  - {fileID: 1235308661}
+  - {fileID: 200001055}
   - {fileID: 256449650}
   - {fileID: 650951829}
-  - {fileID: 1291457076}
   - {fileID: 2027330189}
+  - {fileID: 1291457076}
   - {fileID: 913152543}
   - {fileID: 1400926331}
-  - {fileID: 1308708692}
   - {fileID: 1893243539}
+  - {fileID: 1308708692}
   - {fileID: 1229122637}
   - {fileID: 198690024}
-  - {fileID: 106787473}
-  - {fileID: 549781125}
-  - {fileID: 672069811}
-  - {fileID: 676511315}
-  - {fileID: 985386169}
   - {fileID: 1261203652}
+  - {fileID: 106787473}
   - {fileID: 1312945910}
-  - {fileID: 1550319848}
-  - {fileID: 1665344351}
+  - {fileID: 549781125}
   - {fileID: 1729221528}
   - {fileID: 1846821743}
-  - {fileID: 160542499}
-  - {fileID: 318811833}
-  - {fileID: 328217926}
-  - {fileID: 754384882}
-  - {fileID: 798002121}
-  - {fileID: 912219817}
-  - {fileID: 1182255416}
-  - {fileID: 1343531170}
-  - {fileID: 1372092774}
-  - {fileID: 1829942409}
+  - {fileID: 1550319848}
+  - {fileID: 1665344351}
+  - {fileID: 672069811}
+  - {fileID: 985386169}
+  - {fileID: 676511315}
   - {fileID: 1988110159}
-  - {fileID: 2003999386}
   - {fileID: 2046104901}
+  - {fileID: 2003999386}
+  - {fileID: 328217926}
+  - {fileID: 1829942409}
+  - {fileID: 160542499}
+  - {fileID: 1182255416}
+  - {fileID: 318811833}
+  - {fileID: 798002121}
+  - {fileID: 754384882}
+  - {fileID: 1372092774}
+  - {fileID: 912219817}
+  - {fileID: 1343531170}
   - {fileID: 1354338122}
   - {fileID: 142276822}
   - {fileID: 1801643766}
   - {fileID: 1750153986}
-  - {fileID: 27013266}
-  - {fileID: 121676458}
-  - {fileID: 145441624}
-  - {fileID: 183288992}
-  - {fileID: 254255408}
-  - {fileID: 271044870}
-  - {fileID: 283770779}
-  - {fileID: 326287116}
-  - {fileID: 387734568}
+  - {fileID: 2086479373}
   - {fileID: 423874844}
-  - {fileID: 471687845}
+  - {fileID: 183288992}
+  - {fileID: 27013266}
+  - {fileID: 283770779}
   - {fileID: 723055838}
-  - {fileID: 875955518}
-  - {fileID: 908013356}
   - {fileID: 931970137}
+  - {fileID: 875955518}
+  - {fileID: 254255408}
+  - {fileID: 1947998909}
+  - {fileID: 1659316252}
+  - {fileID: 326287116}
+  - {fileID: 271044870}
   - {fileID: 985120190}
   - {fileID: 1031835490}
-  - {fileID: 1659316252}
-  - {fileID: 1947998909}
-  - {fileID: 2086479373}
+  - {fileID: 908013356}
+  - {fileID: 387734568}
+  - {fileID: 121676458}
+  - {fileID: 471687845}
+  - {fileID: 145441624}
   m_Father: {fileID: 0}
 --- !u!1 &217526536
 GameObject:
@@ -14643,7 +14647,7 @@ MonoBehaviour:
   SpawnDelayInSeconds: 3
   GateBlocker: {fileID: 100000, guid: e2338fdaad0d34beb86eef6b927ac7c4, type: 2}
   Spawners:
-  - {fileID: 0}
+  - {fileID: 1750153987}
   BridgeGates: []
   Shrines: []
   SelfActivated: 1
@@ -25056,12 +25060,11 @@ MonoBehaviour:
     _serializedData: <component version="1.0" type="RAIN.Navigation.NavMesh.NavMeshRig"><fields><field
       value="True" type="System.Boolean" id="_showVisual" /><field type="RAIN.Navigation.NavMesh.NavMesh"
       reference="0" id="_navMesh" /></fields><references><reference type="RAIN.Navigation.NavMesh.NavMesh"
-      refcount="1" id="0"><field value="Navigation Mesh" type="System.String" id="_navmeshName"
-      /><field type="System.Collections.Generic.List" id="_graphTags" elementtype="System.String"
+      refcount="1" id="0"><field value="" type="System.String" id="_graphName" /><field
+      type="System.Collections.Generic.List" id="_graphTags" elementtype="System.String"
       /><field value="10" type="System.Single" id="_size" /><field value="True" type="System.Boolean"
       id="_automaticGridSize" /><field value="1" type="System.Int32" id="_gridSize"
-      /><field value="True" type="System.Boolean" id="_generateVisualization" /><field
-      value="0.07374567,0.3768195,0.4558824,1" type="UnityEngine.Color" id="_meshColor"
+      /><field value="0.07374567,0.3768195,0.4558824,1" type="UnityEngine.Color" id="_meshColor"
       /><field value="-0.5" type="System.Single" id="_outlineColorOffset" /><field
       value="0.25" type="System.Single" id="_visualHeightOffset" /><field value="NavigationMesh"
       type="RAIN.Navigation.NavMesh.NavMesh+DisplayModeEnum" id="_displayMode" /><field
@@ -25072,12 +25075,12 @@ MonoBehaviour:
       /><field value="0.55" type="System.Single" id="_walkableRadius" /><field value="0.25"
       type="System.Single" id="_stepHeight" /><field value="0.1" type="System.Single"
       id="_cellSize" /><field value="0.2" type="System.Single" id="_maxVertexError"
-      /><field type="System.Collections.Generic.List" id="_colliderMeshes" elementtype="RAIN.Navigation.NavMesh.RecastNodes.ColliderMesh"
-      /><field type="System.Collections.Generic.List" id="_contourMeshes" elementtype="RAIN.Navigation.NavMesh.RecastNodes.ContourMesh"
-      /><field type="RAIN.Navigation.NavMesh.RecastNodes.PolyMesh" reference="-1"
-      id="_polyMesh" /></reference></references></component>
+      /><field type="RAIN.Navigation.NavMesh.NavMeshPathGraph" reference="1" id="_graph"
+      /></reference><reference type="RAIN.Navigation.NavMesh.NavMeshPathGraph" refcount="1"
+      id="1" customdata="0" /></references></component>
     _serializedGameObjects: []
-    _serializedCustomData: []
+    _serializedCustomData:
+    - _data: 0200000000000000000000000000000000000000006f12833a00000000
 --- !u!4 &1513870662
 Transform:
   m_ObjectHideFlags: 0
