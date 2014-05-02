@@ -7,7 +7,7 @@ public class Knockback : Effect
 	private CharacterController _cc;
 	private int _framesToKnockbackOver = 10;
 
-	public Knockback(int power) {
+	public Knockback(float power) {
 		knockbackPower = power;
 	}
 
