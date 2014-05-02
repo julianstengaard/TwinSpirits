@@ -11,10 +11,10 @@ public class Weapon : MonoBehaviour {
 //	private Animator _anim;
 
 	[SerializeField]
-	private bool isDangerous = true; // NOT USED YET
+	private bool isDangerous = true;
 
 
-	void Start() {
+	public void Start() {
 //		if(Body == null)
 //			return;
 //

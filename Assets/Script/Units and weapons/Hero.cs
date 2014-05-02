@@ -68,10 +68,17 @@ public class Hero : BaseUnit {
 	private float _dashTimer = 0f;
 	private TrailRenderer _dashTrail;
 
+	private TrailRenderer _weaponTrail;
+	private PlaneSpawner _attackPlanePoint;
+
 	// METHODS -----
 
 	new void Start() {
 		base.Start();
+		_weaponTrail = GetComponentInChildren<TrailRenderer>();
+		_attackPlanePoint = GetComponentInChildren<PlaneSpawner>();
+		
+		SoundController = GetComponent<RandomSoundPlayer>();
 
 		CollectRadius += 1;
 
@@ -96,8 +103,6 @@ public class Hero : BaseUnit {
 			spiritRegen = levelInfo.GetComponent<LevelCreationInfo>().spiritRegen;
 			_damageRecievedModifier = levelInfo.GetComponent<LevelCreationInfo>().DamageRecievedModifier;
 		}
-
-		SoundController = GetComponent<RandomSoundPlayer>();
 	}
 
 	// Update is called once per frame
@@ -139,10 +144,16 @@ public class Hero : BaseUnit {
 		var dir = CurrentMoveVector * Time.deltaTime;
 
 		_anim.SetBool("Attacking", _input.RightBumper);
-		if(_input.RightBumper)
+		if(_input.RightBumper) {
 			MakeDangerous();
-		else
+		} else {
 			MakeInert();
+		}
+
+		if(_anim.GetCurrentAnimatorStateInfo(1).tagHash == 1203776827)
+			_weaponTrail.enabled = true;
+		else
+			_weaponTrail.enabled = false;
 
 		_anim.SetBool ("Moving", dir.sqrMagnitude > 0);
 		_anim.SetFloat("MovementSpeed", pos.magnitude);
@@ -202,6 +213,17 @@ public class Hero : BaseUnit {
 		if (spiritRegen > 0f) {
 			ChangeSpiritAmount(spiritRegen * Time.deltaTime);
 		}
+	}
+
+	public void CreateAttackPlane() {
+		var forward = _attackPlanePoint.transform.up * -1;
+		var up = _attackPlanePoint.transform.right;
+
+		var plane =(GameObject) GameObject.Instantiate(_attackPlanePoint.planePrefab, _attackPlanePoint.transform.position, Quaternion.LookRotation(up, forward));
+		var weapon = plane.GetComponent<Weapon>();
+
+		weapon.Body = gameObject;
+		weapon.AttackEffects = GetEffectsFromWeapons();
 	}
 
 	public IEnumerator Dash (Vector3 direction, float distance, float dashFrames) {

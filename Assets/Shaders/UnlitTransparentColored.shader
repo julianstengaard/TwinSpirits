@@ -15,6 +15,7 @@ Shader "Custom/Unlit/Transparent Colored" {
     
 		ZTest Always
         ZWrite Off
+        Cull Off
         Blend SrcAlpha OneMinusSrcAlpha 
 
         Pass {

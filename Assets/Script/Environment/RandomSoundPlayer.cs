@@ -22,7 +22,8 @@ public class RandomSoundPlayer : MonoBehaviour {
 
 	public float PlayRandomSound(string name) {
 		if (_sounds [name] == null) {
-				Debug.LogError (name + " could not be found in sound array");
+			Debug.LogError (name + " could not be found in sound array");
+			return 0f;
 		}
 		var soundPos = Random.Range (0, _sounds [name].Length);
 
