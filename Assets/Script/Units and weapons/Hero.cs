@@ -73,6 +73,8 @@ public class Hero : BaseUnit {
 	new void Start() {
 		base.Start();
 
+		CollectRadius += 1;
+
 		// TESTING
 		AddEffectToWeapons(new Damage(25));
 		

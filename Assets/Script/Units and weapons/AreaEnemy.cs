@@ -6,7 +6,7 @@ public class AreaEnemy : BaseEnemy {
 	public new void Start() {
 		base.Start();
 
-		AddEffectToWeapons(new Knockback(3));
+		AddEffectToWeapons(new Knockback(1));
 	}
 
 	public void Splash() {

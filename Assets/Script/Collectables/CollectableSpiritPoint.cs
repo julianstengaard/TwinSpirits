@@ -7,7 +7,7 @@ public class CollectableSpiritPoint : Collectable {
     private float _selfDestructAfter = 10f;
     private float _selfDestructAfterTimer = 0f;
 
-	public virtual void Start() {
+	public new virtual void Start() {
 		var x = Random.Range (-0.5f, 0.5f);
 		var z = Random.Range (-0.5f, 0.5f);
 		var y = Random.Range (1, 2);
