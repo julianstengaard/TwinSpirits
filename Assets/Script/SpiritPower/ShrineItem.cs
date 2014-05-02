@@ -34,8 +34,10 @@ public class ShrineItem : Activatable {
 	}
 	
 	public override void Activate() {
-        gameObject.audio.clip = EmergeSound;
-        gameObject.audio.Play();
+		if (EmergeSound != null) {
+			gameObject.audio.clip = EmergeSound;
+			gameObject.audio.Play();
+		}
 		StartCoroutine(AnimateReveal());
 	}
 	private IEnumerator AnimateReveal() {
