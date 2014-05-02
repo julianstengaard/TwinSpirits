@@ -16,8 +16,8 @@ public class SyncCostLineScaler : MonoBehaviour {
      }
 
     void Scale() {
-        Left.transform.localPosition = LeftEnd + Vector3.right * 0.2f;
-        Right.transform.localPosition = RightEnd + Vector3.left * 0.2f;
+        Left.transform.localPosition = LeftEnd + Vector3.right * 0f;
+        Right.transform.localPosition = RightEnd + Vector3.left * 0f;
         Middle.transform.localPosition = (LeftEnd + RightEnd) * 0.5f;
 
         //Calculate scale/rotation
