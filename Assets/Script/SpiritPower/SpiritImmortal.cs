@@ -18,7 +18,7 @@ public class SpiritImmortal : SpiritPower {
 	private Vector3 center;
 
     private float _throwRange = 5f;
-	private float _syncSlowAmount = 2f;
+	private float _syncSlowAmount = 2.5f;
 	private float _syncSlowDuration = 10f;
 
     private GameObject _triggerPrefab;
@@ -240,6 +240,9 @@ public class SpiritImmortal : SpiritPower {
 		for (int i = 0; i < ticks; i++) {
             pullSphere.transform.localScale = Vector3.Lerp(Vector3.one * (radius * 2f), Vector3.one, i*6 / (float)ticks);
 			foreach (CharacterController enemy in enemies) {
+				if (enemy == null)
+					continue;
+
                 if (i == 0) {
                     var enemyUnit = enemy.gameObject.GetComponent<BaseUnit>();
                     if (enemyUnit != null && !slowedUnits.Contains(enemyUnit)) {
