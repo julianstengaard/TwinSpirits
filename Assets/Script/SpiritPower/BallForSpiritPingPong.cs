@@ -28,12 +28,12 @@ public class BallForSpiritPingPong : MonoBehaviour {
     private int _maxBounces = 10;
     private int _maxBouncesSync = 50;
 
-    private float _damagePerHitBase = 15f;
+    private float _damagePerHitBase = 30f;
     private float _damagePerHitCurrent;
-    private float _damageIncreasePerBounce = 1.1f; //pct
-    private float _damagePerHitBaseSync = 30f;
+    private float _damageIncreasePerBounce = 2.2f; //pct
+    private float _damagePerHitBaseSync = 60f;
     private float _damagePerHitCurrentSync;
-    private float _damageIncreasePerBounceSync = 1.1f; //pct
+    private float _damageIncreasePerBounceSync = 2.2f; //pct
 
     private bool _sync;
     private bool _ballActive = false;
