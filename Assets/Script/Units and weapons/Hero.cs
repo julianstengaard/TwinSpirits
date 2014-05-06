@@ -56,6 +56,8 @@ public class Hero : BaseUnit {
 	private GameObject _reviveHeartPrefab;
 	private GameObject _currentReviveHeart;
 	private GameObject _currentReviveHeartOverlay;
+	public ParticleSystem HealRay;
+	public ParticleSystem HealBurst;
 
 	[HideInInspector]
 	public Vector3 CurrentMoveVector = Vector3.zero;
@@ -130,6 +132,7 @@ public class Hero : BaseUnit {
 				if (_revivingOther) {
 					_revivingOther = false;
 					GameObject.Destroy(_currentReviveHeart);
+					HealRay.Stop();
 				}
 			}
 		}
@@ -213,6 +216,9 @@ public class Hero : BaseUnit {
 		if (spiritRegen > 0f) {
 			ChangeSpiritAmount(spiritRegen * Time.deltaTime);
 		}
+		
+		//Pointing ray
+		HealRay.transform.LookAt(otherPlayer.transform.position + HealRay.transform.localPosition);
 	}
 
 	public void CreateAttackPlane() {
@@ -322,6 +328,10 @@ public class Hero : BaseUnit {
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		    _reviveTimeCurrent = (enemies.Length == 0) ? _reviveTimeNoEnemies : _reviveTime;
 
+			//Starting ray
+			HealRay.Play();
+			HealRay.transform.LookAt(otherPlayer.transform.position);
+
 		    //Start the revive
 			_reviveTimer = 0f;
 			_revivingOther = true;
@@ -343,6 +353,7 @@ public class Hero : BaseUnit {
 			HOTween.To(_currentReviveHeart.transform, 0.7f, shrineParms);
 		} else {
 			_reviveTimer += Time.deltaTime;
+
 			//Scale heart
             float pct = Mathf.Lerp(0f, 1f, _reviveTimer / _reviveTimeCurrent);
 			Vector3 heartPosition = otherPlayer.transform.position + Vector3.up;
@@ -365,6 +376,7 @@ public class Hero : BaseUnit {
 		float transferedHealth = Mathf.Floor(Health/2f);
 		otherPlayer.Revived(Mathf.Max(1f, transferedHealth));
 		Health = Mathf.Max(1f, Health - transferedHealth);
+		HealRay.Stop();
 	}
 
 	public void Revived (float health) {
@@ -373,6 +385,7 @@ public class Hero : BaseUnit {
 		unitMaterial.SetColor("_Color", initColor);
 		aspect.IsActive = true;
 		_anim.SetBool("Dead", false);
+		HealBurst.Play();
 	}
 
 

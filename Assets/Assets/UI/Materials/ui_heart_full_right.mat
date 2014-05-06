@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ui_heart_half
+  m_Name: ui_heart_full_right
   m_Shader: {fileID: 4800000, guid: 85d923f8bea855f4499d6daf3b1f5b47, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 2180590b316b68741b1a004f84c2467e, type: 3}
+          m_Texture: {fileID: 2800000, guid: 77ca4bb23e8b34a498473d88f3525dd4, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:

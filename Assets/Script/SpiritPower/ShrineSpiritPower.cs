@@ -19,8 +19,14 @@ public class ShrineSpiritPower : Activatable {
 
 	private float buryDepth = 1.6f;
 
+	private ParticleSystem[] particles;
+
 	// Use this for initialization
 	void Start () {
+		particles = GetComponentsInChildren<ParticleSystem>();
+		foreach(var particle in particles)
+			particle.Stop();
+
         transform.position += Vector3.down * buryDepth;
 		if(_active) Activate();
 	}
@@ -121,6 +127,9 @@ public class ShrineSpiritPower : Activatable {
 		    gameObject.audio.clip = EmergeSound;
 	        gameObject.audio.Play();
 		}
+
+		foreach(var particle in particles)
+			particle.Play();
 		StartCoroutine(AnimateReveal());
 	}
 	private IEnumerator AnimateReveal() {
