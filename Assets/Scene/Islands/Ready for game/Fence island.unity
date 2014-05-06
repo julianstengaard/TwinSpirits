@@ -2683,6 +2683,7 @@ GameObject:
   - 4: {fileID: 299882613}
   - 33: {fileID: 299882615}
   - 23: {fileID: 299882614}
+  - 65: {fileID: 299882616}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -2731,6 +2732,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2086263131}
   m_GameObject: {fileID: 299882612}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &299882616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 299882612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.616028, z: 71.2281036}
+  m_Center: {x: -.00048828125, y: -.000122070312, z: .000122070312}
 --- !u!1 &301711529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +2754,7 @@ GameObject:
   - 4: {fileID: 301711530}
   - 33: {fileID: 301711532}
   - 23: {fileID: 301711531}
+  - 65: {fileID: 301711533}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -2789,6 +2803,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1340432715}
   m_GameObject: {fileID: 301711529}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &301711533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 301711529}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16687, y: 460.615997, z: 71.2280502}
+  m_Center: {x: .000244140625, y: -.000244140625, z: 0}
 --- !u!1001 &306477057
 Prefab:
   m_ObjectHideFlags: 0
@@ -3126,6 +3152,7 @@ GameObject:
   - 4: {fileID: 426729951}
   - 33: {fileID: 426729953}
   - 23: {fileID: 426729952}
+  - 65: {fileID: 426729954}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -3174,6 +3201,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1646407478}
   m_GameObject: {fileID: 426729950}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &426729954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426729950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.616028, z: 71.2280731}
+  m_Center: {x: .000122070312, y: .000244140625, z: -.00048828125}
 --- !u!1001 &431145726
 Prefab:
   m_ObjectHideFlags: 0
@@ -3236,6 +3275,7 @@ GameObject:
   - 4: {fileID: 440937800}
   - 33: {fileID: 440937802}
   - 23: {fileID: 440937801}
+  - 65: {fileID: 440937803}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -3284,6 +3324,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 402464490}
   m_GameObject: {fileID: 440937799}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &440937803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 440937799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16736, y: 460.616028, z: 71.2280655}
+  m_Center: {x: -.000122070312, y: -.000106811523, z: .000122070312}
 --- !u!1001 &442724914
 Prefab:
   m_ObjectHideFlags: 0
@@ -3400,6 +3452,7 @@ GameObject:
   - 4: {fileID: 473487109}
   - 33: {fileID: 473487111}
   - 23: {fileID: 473487110}
+  - 65: {fileID: 473487112}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -3448,6 +3501,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 675472736}
   m_GameObject: {fileID: 473487108}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &473487112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 473487108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16736, y: 460.615997, z: 71.2280807}
+  m_Center: {x: .00048828125, y: -.000457763672, z: -.00048828125}
 --- !u!1001 &475409137
 Prefab:
   m_ObjectHideFlags: 0
@@ -4606,6 +4671,7 @@ GameObject:
   - 4: {fileID: 624971330}
   - 33: {fileID: 624971332}
   - 23: {fileID: 624971331}
+  - 65: {fileID: 624971333}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -4654,6 +4720,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1331936654}
   m_GameObject: {fileID: 624971329}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &624971333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624971329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.616028, z: 71.2280426}
+  m_Center: {x: -.000129699707, y: -.000106811523, z: 0}
 --- !u!1 &625124702
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,6 +4944,7 @@ GameObject:
   - 4: {fileID: 649710828}
   - 33: {fileID: 649710830}
   - 23: {fileID: 649710829}
+  - 65: {fileID: 649710831}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -4914,6 +4993,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1832310205}
   m_GameObject: {fileID: 649710827}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &649710831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 649710827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16711, y: 460.616089, z: 71.2280655}
+  m_Center: {x: 0, y: 0, z: -.00048828125}
 --- !u!1001 &675472736
 Prefab:
   m_ObjectHideFlags: 0
@@ -4968,6 +5059,7 @@ GameObject:
   - 4: {fileID: 690891669}
   - 33: {fileID: 690891671}
   - 23: {fileID: 690891670}
+  - 65: {fileID: 690891672}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -5016,6 +5108,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1344782474}
   m_GameObject: {fileID: 690891668}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &690891672
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 690891668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16711, y: 460.616028, z: 71.2280426}
+  m_Center: {x: -3.05175781e-05, y: -.000106811523, z: -.000366210938}
 --- !u!1 &698563020
 GameObject:
   m_ObjectHideFlags: 0
@@ -5347,6 +5451,7 @@ GameObject:
   - 4: {fileID: 733103135}
   - 33: {fileID: 733103137}
   - 23: {fileID: 733103136}
+  - 65: {fileID: 733103138}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -5395,6 +5500,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 711291140}
   m_GameObject: {fileID: 733103134}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &733103138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733103134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16711, y: 460.616028, z: 71.2280807}
+  m_Center: {x: .000122070312, y: .000137329102, z: -.000244140625}
 --- !u!1001 &736652929
 Prefab:
   m_ObjectHideFlags: 0
@@ -7537,6 +7654,7 @@ GameObject:
   - 4: {fileID: 1016030165}
   - 33: {fileID: 1016030167}
   - 23: {fileID: 1016030166}
+  - 65: {fileID: 1016030168}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -7585,6 +7703,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2048368974}
   m_GameObject: {fileID: 1016030164}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1016030168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016030164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16711, y: 460.615997, z: 71.2280655}
+  m_Center: {x: -.000244140625, y: -.000122070312, z: .000244140625}
 --- !u!1 &1034325147
 GameObject:
   m_ObjectHideFlags: 0
@@ -8609,6 +8739,7 @@ GameObject:
   - 4: {fileID: 1156240653}
   - 33: {fileID: 1156240655}
   - 23: {fileID: 1156240654}
+  - 65: {fileID: 1156240656}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -8657,6 +8788,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 736652929}
   m_GameObject: {fileID: 1156240652}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1156240656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156240652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.616028, z: 71.228096}
+  m_Center: {x: -.000122070312, y: -.000183105469, z: 0}
 --- !u!1001 &1157830440
 Prefab:
   m_ObjectHideFlags: 0
@@ -8743,7 +8886,7 @@ MonoBehaviour:
   - {fileID: 100012, guid: 069f29cecd882c048afe4d9dd7900e23, type: 2}
   - {fileID: 100010, guid: 66477674a6d61d3409e2ac9be60b9584, type: 2}
   EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
-  ItemPickupSound: {fileID: 8300000, guid: f8b8a76cfcb86264093ca0ece42232c2, type: 3}
+  ItemPickupSound: {fileID: 8300000, guid: 573db2a0248e9ec4ebf810ca894614bb, type: 3}
   _active: 0
 --- !u!82 &1189015200
 AudioSource:
@@ -8948,6 +9091,7 @@ GameObject:
   - 4: {fileID: 1214150260}
   - 33: {fileID: 1214150259}
   - 23: {fileID: 1214150258}
+  - 65: {fileID: 1214150261}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -8996,6 +9140,18 @@ Transform:
   m_LocalScale: {x: .00262134243, y: .00262134336, z: .00262134243}
   m_Children: []
   m_Father: {fileID: 1131687643}
+--- !u!65 &1214150261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214150257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.616028, z: 71.2280731}
+  m_Center: {x: .00048828125, y: .000274658203, z: 0}
 --- !u!1 &1231374546
 GameObject:
   m_ObjectHideFlags: 0
@@ -10297,6 +10453,7 @@ GameObject:
   - 4: {fileID: 1400499016}
   - 33: {fileID: 1400499018}
   - 23: {fileID: 1400499017}
+  - 65: {fileID: 1400499019}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -10345,6 +10502,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1966497783}
   m_GameObject: {fileID: 1400499015}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1400499019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1400499015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16736, y: 460.616028, z: 71.2280426}
+  m_Center: {x: -.000183105469, y: -.000122070312, z: 0}
 --- !u!1 &1412584417
 GameObject:
   m_ObjectHideFlags: 0
@@ -10854,6 +11023,7 @@ GameObject:
   - 4: {fileID: 1462291891}
   - 33: {fileID: 1462291893}
   - 23: {fileID: 1462291892}
+  - 65: {fileID: 1462291894}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -10902,6 +11072,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1674485530}
   m_GameObject: {fileID: 1462291890}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1462291894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462291890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.616028, z: 71.2280655}
+  m_Center: {x: .000366210938, y: -.000106811523, z: -.00048828125}
 --- !u!1 &1464632358
 GameObject:
   m_ObjectHideFlags: 0
@@ -10999,6 +11181,7 @@ GameObject:
   - 4: {fileID: 1472532288}
   - 33: {fileID: 1472532290}
   - 23: {fileID: 1472532289}
+  - 65: {fileID: 1472532291}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -11047,6 +11230,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 442724914}
   m_GameObject: {fileID: 1472532287}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1472532291
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472532287}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16748, y: 460.616028, z: 71.2280807}
+  m_Center: {x: .000244140625, y: .000106811523, z: -.000244140625}
 --- !u!1001 &1473446210
 Prefab:
   m_ObjectHideFlags: 0
@@ -11869,6 +12064,7 @@ GameObject:
   - 4: {fileID: 1599533868}
   - 33: {fileID: 1599533870}
   - 23: {fileID: 1599533869}
+  - 65: {fileID: 1599533871}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -11917,6 +12113,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 583000681}
   m_GameObject: {fileID: 1599533867}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1599533871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599533867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16711, y: 460.616028, z: 71.2280273}
+  m_Center: {x: -.000244140625, y: -.000106811523, z: -.000122070312}
 --- !u!1 &1603030798
 GameObject:
   m_ObjectHideFlags: 0
@@ -12690,6 +12898,7 @@ GameObject:
   - 4: {fileID: 1727201840}
   - 33: {fileID: 1727201842}
   - 23: {fileID: 1727201841}
+  - 65: {fileID: 1727201843}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -12738,6 +12947,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 632032610}
   m_GameObject: {fileID: 1727201839}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1727201843
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727201839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.616028, z: 71.228035}
+  m_Center: {x: -.000122070312, y: -.000106811523, z: 0}
 --- !u!1 &1732629454
 GameObject:
   m_ObjectHideFlags: 0
@@ -13868,6 +14089,7 @@ GameObject:
   - 4: {fileID: 1851915728}
   - 33: {fileID: 1851915730}
   - 23: {fileID: 1851915729}
+  - 65: {fileID: 1851915731}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -13916,6 +14138,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1101082212}
   m_GameObject: {fileID: 1851915727}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1851915731
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1851915727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.616028, z: 71.2280655}
+  m_Center: {x: .000732421875, y: .000183105469, z: 0}
 --- !u!1 &1864609130
 GameObject:
   m_ObjectHideFlags: 0
@@ -13943,10 +14177,10 @@ Transform:
   m_Children:
   - {fileID: 1123044635}
   - {fileID: 1975401460}
-  - {fileID: 1819336599}
-  - {fileID: 1484287671}
-  - {fileID: 1399184414}
   - {fileID: 1453880217}
+  - {fileID: 1819336599}
+  - {fileID: 1399184414}
+  - {fileID: 1484287671}
   - {fileID: 188114073}
   - {fileID: 559104500}
   - {fileID: 701866796}
@@ -13959,18 +14193,18 @@ Transform:
   - {fileID: 1189015204}
   - {fileID: 1608071688}
   - {fileID: 978003984}
-  - {fileID: 1805210874}
   - {fileID: 1452035868}
+  - {fileID: 1805210874}
   - {fileID: 1720860374}
-  - {fileID: 1231374548}
-  - {fileID: 987635901}
-  - {fileID: 262096167}
-  - {fileID: 1322169497}
-  - {fileID: 1468871913}
-  - {fileID: 1567374111}
-  - {fileID: 1932772691}
   - {fileID: 2037843600}
+  - {fileID: 262096167}
+  - {fileID: 1468871913}
+  - {fileID: 1322169497}
+  - {fileID: 1567374111}
+  - {fileID: 1231374548}
+  - {fileID: 1932772691}
   - {fileID: 615598615}
+  - {fileID: 987635901}
   - {fileID: 1146062968}
   m_Father: {fileID: 0}
 --- !u!1 &1873910946
@@ -13983,6 +14217,7 @@ GameObject:
   - 4: {fileID: 1873910947}
   - 33: {fileID: 1873910949}
   - 23: {fileID: 1873910948}
+  - 65: {fileID: 1873910950}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -14031,6 +14266,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 53255578}
   m_GameObject: {fileID: 1873910946}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1873910950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873910946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16724, y: 460.615997, z: 71.2281265}
+  m_Center: {x: 0, y: .000106811523, z: -.000244140625}
 --- !u!1001 &1882536167
 Prefab:
   m_ObjectHideFlags: 0
@@ -14314,6 +14561,7 @@ GameObject:
   - 4: {fileID: 1927331572}
   - 33: {fileID: 1927331574}
   - 23: {fileID: 1927331573}
+  - 65: {fileID: 1927331575}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -14362,6 +14610,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 155151013}
   m_GameObject: {fileID: 1927331571}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &1927331575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1927331571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16772, y: 460.616028, z: 71.2281647}
+  m_Center: {x: -.000122070312, y: -9.15527344e-05, z: -.000244140625}
 --- !u!1 &1932772690
 GameObject:
   m_ObjectHideFlags: 0
@@ -14937,6 +15197,7 @@ GameObject:
   - 4: {fileID: 2058833927}
   - 33: {fileID: 2058833929}
   - 23: {fileID: 2058833928}
+  - 65: {fileID: 2058833930}
   m_Layer: 0
   m_Name: doodad_hedge_prefab
   m_TagString: Untagged
@@ -14985,6 +15246,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1287500285}
   m_GameObject: {fileID: 2058833926}
   m_Mesh: {fileID: 4300000, guid: caab383b2c077644994b8b98a132619a, type: 3}
+--- !u!65 &2058833930
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2058833926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1080.16711, y: 460.616028, z: 71.2280884}
+  m_Center: {x: -.000366210938, y: -.000106811523, z: -.000122070312}
 --- !u!1001 &2061731378
 Prefab:
   m_ObjectHideFlags: 0

@@ -2219,7 +2219,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnUnit
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -771928, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2840,12 +2840,11 @@ MonoBehaviour:
     _serializedData: <component version="1.0" type="RAIN.Navigation.NavMesh.NavMeshRig"><fields><field
       value="True" type="System.Boolean" id="_showVisual" /><field type="RAIN.Navigation.NavMesh.NavMesh"
       reference="0" id="_navMesh" /></fields><references><reference type="RAIN.Navigation.NavMesh.NavMesh"
-      refcount="1" id="0"><field value="Navigation Mesh" type="System.String" id="_navmeshName"
-      /><field type="System.Collections.Generic.List" id="_graphTags" elementtype="System.String"
+      refcount="1" id="0"><field value="" type="System.String" id="_graphName" /><field
+      type="System.Collections.Generic.List" id="_graphTags" elementtype="System.String"
       /><field value="10" type="System.Single" id="_size" /><field value="True" type="System.Boolean"
       id="_automaticGridSize" /><field value="1" type="System.Int32" id="_gridSize"
-      /><field value="True" type="System.Boolean" id="_generateVisualization" /><field
-      value="0.07374567,0.3768195,0.4558824,1" type="UnityEngine.Color" id="_meshColor"
+      /><field value="0.07374567,0.3768195,0.4558824,1" type="UnityEngine.Color" id="_meshColor"
       /><field value="-0.5" type="System.Single" id="_outlineColorOffset" /><field
       value="0.25" type="System.Single" id="_visualHeightOffset" /><field value="NavigationMesh"
       type="RAIN.Navigation.NavMesh.NavMesh+DisplayModeEnum" id="_displayMode" /><field
@@ -2856,12 +2855,12 @@ MonoBehaviour:
       /><field value="0.55" type="System.Single" id="_walkableRadius" /><field value="0.25"
       type="System.Single" id="_stepHeight" /><field value="0.1" type="System.Single"
       id="_cellSize" /><field value="0.2" type="System.Single" id="_maxVertexError"
-      /><field type="System.Collections.Generic.List" id="_colliderMeshes" elementtype="RAIN.Navigation.NavMesh.RecastNodes.ColliderMesh"
-      /><field type="System.Collections.Generic.List" id="_contourMeshes" elementtype="RAIN.Navigation.NavMesh.RecastNodes.ContourMesh"
-      /><field type="RAIN.Navigation.NavMesh.RecastNodes.PolyMesh" reference="-1"
-      id="_polyMesh" /></reference></references></component>
+      /><field type="RAIN.Navigation.NavMesh.NavMeshPathGraph" reference="1" id="_graph"
+      /></reference><reference type="RAIN.Navigation.NavMesh.NavMeshPathGraph" refcount="1"
+      id="1" customdata="0" /></references></component>
     _serializedGameObjects: []
-    _serializedCustomData: []
+    _serializedCustomData:
+    - _data: 0200000000000000000000000000000000000000006f12833a00000000
 --- !u!1 &338248935
 GameObject:
   m_ObjectHideFlags: 0
@@ -13412,7 +13411,7 @@ MonoBehaviour:
   - {fileID: 100012, guid: 069f29cecd882c048afe4d9dd7900e23, type: 2}
   - {fileID: 100010, guid: 66477674a6d61d3409e2ac9be60b9584, type: 2}
   EmergeSound: {fileID: 8300000, guid: 27c8d5be9db2a5d42963571555b4143f, type: 3}
-  ItemPickupSound: {fileID: 8300000, guid: f8b8a76cfcb86264093ca0ece42232c2, type: 3}
+  ItemPickupSound: {fileID: 8300000, guid: 573db2a0248e9ec4ebf810ca894614bb, type: 3}
   _active: 0
 --- !u!65 &1197239013
 BoxCollider:
@@ -16095,7 +16094,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnUnit
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -771928, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

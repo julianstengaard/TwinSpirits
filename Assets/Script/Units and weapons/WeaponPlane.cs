@@ -17,7 +17,6 @@ public class WeaponPlane : Weapon {
 	}
 
 	public void Update() {
-		var forward = transform.up * -0.25f;
 		var deltaTime = (Time.time - _startTime) / (1/_speed);
 		transform.position = Vector3.Lerp(_startPoint, _endPoint, deltaTime);
 

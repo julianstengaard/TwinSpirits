@@ -19,14 +19,23 @@ public class ShrineSpiritPower : Activatable {
 
 	private float buryDepth = 1.6f;
 
+	private ParticleSystem[] particles;
+
 	// Use this for initialization
 	void Start () {
+		particles = GetComponentsInChildren<ParticleSystem>();
+		foreach(var particle in particles)
+			particle.Stop();
+
         transform.position += Vector3.down * buryDepth;
 		if(_active) Activate();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (_attachedSpiritPower == null)
+			return;
+
 		if (_active && !_transferring) {
 			//Rotate the pickUp
 		    if (Rotates) {
@@ -118,13 +127,21 @@ public class ShrineSpiritPower : Activatable {
 		    gameObject.audio.clip = EmergeSound;
 	        gameObject.audio.Play();
 		}
+
+		foreach(var particle in particles)
+			particle.Play();
 		StartCoroutine(AnimateReveal());
 	}
 	private IEnumerator AnimateReveal() {
 		float time = 3f;
 
 		CreateSphereCollider();
-		var randomPower = GetRandomSpiritPower();
+		GameObject randomPower = null;
+
+		while (randomPower == null) {
+			randomPower = GetRandomSpiritPower();
+			yield return new WaitForSeconds(1f);
+		}
 	    var rotation = RotateAt45Degrees ? Quaternion.Euler(45f, 0f, 45f) : Quaternion.identity;
         var spiritPowerGO = (GameObject)GameObject.Instantiate(randomPower, AttachedSpiritPowerPosition(), rotation);
 		_attachedSpiritPower = spiritPowerGO.GetComponent<CollectableSpiritPower>();
