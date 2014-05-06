@@ -270,13 +270,15 @@ public class SpiritMeterUI : MonoBehaviour {
 		else if (playerNumber == 2)
 			animatingSpiritPowerP2 = true;
 
+		Vector3 tweenDirection = oldIcon.transform.localPosition + (playerNumber == 1 ? new Vector3(-2f, -2f, 0f) : new Vector3(2f, -2f, 0f));
+
 		TweenParms oldIconTween = new TweenParms().Prop(
-			"localPosition", oldIcon.transform.localPosition + Vector3.back * 2f).Ease(
+			"localPosition", tweenDirection).Ease(
 			EaseType.EaseInOutExpo).Delay(0f);
 		HOTween.To(oldIcon.transform, time, oldIconTween);
 
 		var destination = newIcon.transform.localPosition;
-		newIcon.transform.localPosition += Vector3.back * 2f;
+		newIcon.transform.position = newIcon.transform.position + tweenDirection;
 
 		TweenParms newIconTween = new TweenParms().Prop(
 			"localPosition", destination).Ease(
