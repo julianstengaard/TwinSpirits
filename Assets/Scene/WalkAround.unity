@@ -3464,7 +3464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeWidth: 10
   mazeHeight: 10
-  mazeLength: 2
+  mazeLength: 10
   maxPathIterationLenght: 5
   cellSpacing: 60
   cellSize: 40
@@ -3919,7 +3919,7 @@ Prefab:
       objectReference: {fileID: 100334, guid: 644c8f5f1974c4021aa87bc7d724c2f3, type: 2}
     - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: mazeLength
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
