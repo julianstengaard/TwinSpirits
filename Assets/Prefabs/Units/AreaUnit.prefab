@@ -1767,7 +1767,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100094}
-  m_LocalRotation: {x: .320551932, y: .630274892, z: -.320551932, w: .630274892}
+  m_LocalRotation: {x: .320551962, y: .630274951, z: -.320551962, w: .630274951}
   m_LocalPosition: {x: -.376263469, y: 0, z: 8.35472734e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1940,7 +1940,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100124}
-  m_LocalRotation: {x: 0, y: .304028749, z: -0, w: .952662826}
+  m_LocalRotation: {x: 0, y: .304028779, z: -0, w: .952662885}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2000,7 +2000,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100134}
-  m_LocalRotation: {x: .00174547243, y: .0152201764, z: .110583082, w: .993748784}
+  m_LocalRotation: {x: .00174547255, y: .0152201774, z: .110583089, w: .993748844}
   m_LocalPosition: {x: -.173234537, y: -.00776756927, z: .0325650461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2203,7 +2203,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .800000012
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2506,8 +2506,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: be4412e462f4e49e1b3cf586681d2328, type: 3}
   - Name: Warcry
     Sounds:
-    - {fileID: 8300000, guid: bf05644f7651e4f7cb67c0f0d485a30c, type: 3}
-    - {fileID: 8300000, guid: 7ed10769852c64e98babf08bbdea0530, type: 3}
+    - {fileID: 8300000, guid: 4fb27468a217046e083a224b38095701, type: 3}
+    - {fileID: 8300000, guid: 2dea23ba36eaa4ab5a7ee4749144ea96, type: 3}
     - {fileID: 8300000, guid: 42ebd84b4d5ec42ae820b0c875a1185e, type: 3}
     - {fileID: 8300000, guid: 6772f9bd20980405ab7d4425b904cd02, type: 3}
   - Name: Hit

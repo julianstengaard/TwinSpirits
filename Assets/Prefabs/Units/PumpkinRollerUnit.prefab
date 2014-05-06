@@ -2114,7 +2114,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .800000012
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2240,8 +2240,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: be4412e462f4e49e1b3cf586681d2328, type: 3}
   - Name: Warcry
     Sounds:
-    - {fileID: 8300000, guid: bf05644f7651e4f7cb67c0f0d485a30c, type: 3}
     - {fileID: 8300000, guid: 4fb27468a217046e083a224b38095701, type: 3}
+    - {fileID: 8300000, guid: 2dea23ba36eaa4ab5a7ee4749144ea96, type: 3}
+    - {fileID: 8300000, guid: 42ebd84b4d5ec42ae820b0c875a1185e, type: 3}
     - {fileID: 8300000, guid: 6772f9bd20980405ab7d4425b904cd02, type: 3}
   - Name: Hit
     Sounds:

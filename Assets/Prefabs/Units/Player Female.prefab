@@ -1430,6 +1430,8 @@ MonoBehaviour:
   CollectRadius: 1
   ExchangingSpiritPower: 0
   SpiritShieldActive: 0
+  HealRay: {fileID: 0}
+  HealBurst: {fileID: 0}
   CurrentMoveVector: {x: 0, y: 0, z: 0}
   DashEnabled: 0
 --- !u!114 &11400004
@@ -1463,7 +1465,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f82b9a6f1e70e3746888d5ddb2220179, type: 3}
   - Name: Heal
     Sounds:
-    - {fileID: 8300000, guid: e4e20102327d61e419ceadd7b2b0b372, type: 3}
+    - {fileID: 8300000, guid: 811f483b6d3feed4096b5f50d656b5c9, type: 3}
   - Name: Revive
     Sounds:
     - {fileID: 8300000, guid: a3df547bf8b369e4bb1d6f80a93407d5, type: 3}
