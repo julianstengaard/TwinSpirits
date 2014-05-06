@@ -27,6 +27,9 @@ public class ShrineSpiritPower : Activatable {
 	
 	// Update is called once per frame
 	void Update () {
+		if (_attachedSpiritPower == null)
+			return;
+
 		if (_active && !_transferring) {
 			//Rotate the pickUp
 		    if (Rotates) {
@@ -124,7 +127,12 @@ public class ShrineSpiritPower : Activatable {
 		float time = 3f;
 
 		CreateSphereCollider();
-		var randomPower = GetRandomSpiritPower();
+		GameObject randomPower = null;
+
+		while (randomPower == null) {
+			randomPower = GetRandomSpiritPower();
+			yield return new WaitForSeconds(1f);
+		}
 	    var rotation = RotateAt45Degrees ? Quaternion.Euler(45f, 0f, 45f) : Quaternion.identity;
         var spiritPowerGO = (GameObject)GameObject.Instantiate(randomPower, AttachedSpiritPowerPosition(), rotation);
 		_attachedSpiritPower = spiritPowerGO.GetComponent<CollectableSpiritPower>();
