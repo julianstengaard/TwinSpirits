@@ -578,9 +578,17 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2118604059}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Shrines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Spawners.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .784561217
+      value: -1.03539181
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
       propertyPath: m_LocalPosition.y
@@ -588,7 +596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.17111993
+      value: .179691553
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
       propertyPath: m_LocalRotation.x
@@ -618,6 +626,18 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 2.79569888
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Spawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 2087681533}
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Shrines.Array.data[0]
+      value: 
+      objectReference: {fileID: 378687172}
+    - target: {fileID: 11400000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
+      propertyPath: Shrines.Array.data[1]
+      value: 
+      objectReference: {fileID: 1945474094}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 337ef341d3b74e840b0283437ed09744, type: 2}
   m_RootGameObject: {fileID: 629652471}
@@ -786,7 +806,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2b39d7da456119e4aab510d4fa7f642e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.06864262
+      value: 5.98660564
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2b39d7da456119e4aab510d4fa7f642e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -794,7 +814,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2b39d7da456119e4aab510d4fa7f642e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 8.10344505
+      value: 6.45616341
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2b39d7da456119e4aab510d4fa7f642e, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1905,7 +1925,7 @@ Transform:
   m_PrefabInternal: {fileID: 1187966366}
   m_GameObject: {fileID: 286661629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.5543633, y: 8.20417786, z: 4.59509659}
+  m_LocalPosition: {x: -26.5496845, y: 8.20417786, z: 4.59509659}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 217913656}
@@ -2007,7 +2027,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnUnit
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 664873902, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2178,7 +2198,7 @@ Transform:
   m_PrefabInternal: {fileID: 257037313}
   m_GameObject: {fileID: 345245414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.06864262, y: 8.07432747, z: 8.10344505}
+  m_LocalPosition: {x: 5.98660564, y: 8.07432747, z: 6.45616341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 217913656}
@@ -3186,7 +3206,7 @@ Transform:
   m_PrefabInternal: {fileID: 192539028}
   m_GameObject: {fileID: 629652471}
   m_LocalRotation: {x: -1.06848344e-14, y: -.999982059, z: -4.16107239e-14, w: -.00599730993}
-  m_LocalPosition: {x: .784561217, y: 0, z: 1.17111993}
+  m_LocalPosition: {x: -1.03539181, y: 0, z: .179691553}
   m_LocalScale: {x: 2.79569817, y: 2.79569936, z: 2.79569888}
   m_Children:
   - {fileID: 165036340}
@@ -3206,9 +3226,11 @@ MonoBehaviour:
   SpawnDelayInSeconds: 3
   GateBlocker: {fileID: 100000, guid: e2338fdaad0d34beb86eef6b927ac7c4, type: 2}
   Spawners:
-  - {fileID: 0}
+  - {fileID: 2087681533}
   BridgeGates: []
-  Shrines: []
+  Shrines:
+  - {fileID: 378687172}
+  - {fileID: 1945474094}
   SelfActivated: 1
   GameOverIsland: 0
 --- !u!135 &629652474
@@ -5680,7 +5702,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2b39d7da456119e4aab510d4fa7f642e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -25.5543633
+      value: -26.5496845
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2b39d7da456119e4aab510d4fa7f642e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8804,6 +8826,11 @@ Prefab:
       propertyPath: DelayBetweenSpawns
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 40c146f3099d04a408049f77703b47e2, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 664873902, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40c146f3099d04a408049f77703b47e2, type: 2}
   m_RootGameObject: {fileID: 2087681531}
@@ -10084,16 +10111,16 @@ Transform:
   - {fileID: 1089905893}
   - {fileID: 581260841}
   - {fileID: 1755407540}
-  - {fileID: 1678125289}
   - {fileID: 1100580833}
   - {fileID: 231607180}
-  - {fileID: 1682239932}
-  - {fileID: 340280656}
-  - {fileID: 919931510}
+  - {fileID: 1678125289}
   - {fileID: 443306794}
   - {fileID: 2145561392}
-  - {fileID: 1728976099}
   - {fileID: 1591743929}
+  - {fileID: 1682239932}
+  - {fileID: 340280656}
+  - {fileID: 1728976099}
+  - {fileID: 919931510}
   - {fileID: 1997875414}
   - {fileID: 1433790369}
   - {fileID: 585452841}
@@ -10104,9 +10131,9 @@ Transform:
   - {fileID: 378687170}
   - {fileID: 1254022748}
   - {fileID: 877804809}
-  - {fileID: 1976143236}
   - {fileID: 1214711317}
   - {fileID: 826163329}
+  - {fileID: 1976143236}
   - {fileID: 426372521}
   m_Father: {fileID: 0}
 --- !u!1 &2145561389
