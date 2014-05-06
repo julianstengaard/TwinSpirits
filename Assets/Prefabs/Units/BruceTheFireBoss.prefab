@@ -1903,11 +1903,11 @@ AudioSource:
   m_GameObject: {fileID: 100138}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 10224ee2e5da8814b8242eaa8497ed80, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad5c188d2e934147b14934604d650aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitiateSound: {fileID: 8300000, guid: 10224ee2e5da8814b8242eaa8497ed80, type: 3}
+  InitiateSound: {fileID: 8300000, guid: dc6770426a8ae43699115ef1cf91ae76, type: 3}
   FireballStraightPrefab: {fileID: 100000, guid: e418a3d31f2bab540bb53be2f4c5d8ce,
     type: 2}
   FireballArchPrefab: {fileID: 100000, guid: e418a3d31f2bab540bb53be2f4c5d8ce, type: 2}

@@ -1431,6 +1431,7 @@ MonoBehaviour:
   ExchangingSpiritPower: 0
   SpiritShieldActive: 0
   CurrentMoveVector: {x: 0, y: 0, z: 0}
+  DashEnabled: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1454,10 +1455,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 771b06aeed2e10b45ab00a60b6575f6a, type: 3}
   - Name: TakeDamage
     Sounds:
-    - {fileID: 8300000, guid: 2ccc934dfbfe6014eb20e83cc3953dd0, type: 3}
+    - {fileID: 8300000, guid: c111620a3a5d9b94d88ce1836a9f5b05, type: 3}
   - Name: Death
     Sounds:
-    - {fileID: 8300000, guid: af0e982761901d748ab4207a0a2eaa21, type: 3}
+    - {fileID: 8300000, guid: d9203dd0ed0973c4e816fbabc031545a, type: 3}
+    - {fileID: 8300000, guid: d2cb21698477f3d48a5734e556810dbb, type: 3}
+    - {fileID: 8300000, guid: f82b9a6f1e70e3746888d5ddb2220179, type: 3}
   - Name: Heal
     Sounds:
     - {fileID: 8300000, guid: e4e20102327d61e419ceadd7b2b0b372, type: 3}

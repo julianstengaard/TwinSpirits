@@ -3481,6 +3481,7 @@ MonoBehaviour:
   - {fileID: 100056, guid: 1225e107a7b86364480a7734a0c03d3d, type: 2}
   - {fileID: 100356, guid: b2f9bcaa4efcd0b4aa90fc2856c6de5b, type: 2}
   - {fileID: 100290, guid: 077e9afb987dccf4990d37e85ba7ce19, type: 2}
+  - {fileID: 100334, guid: 644c8f5f1974c4021aa87bc7d724c2f3, type: 2}
   bridgeSpanPrefab: {fileID: 100010, guid: 4d8fc0a8566c048f4a0a1f3e6ecf510b, type: 2}
   bridgeEndPrefab: {fileID: 100004, guid: 94187ecaad1db4ea4a2e9eb0174d8363, type: 2}
 --- !u!1 &1343792018
@@ -3840,6 +3841,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.size
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.06632757
@@ -3867,6 +3872,14 @@ Prefab:
     - target: {fileID: 400000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: IslandsWithBridgeOpenings.Array.data[10]
+      value: 
+      objectReference: {fileID: 100334, guid: 644c8f5f1974c4021aa87bc7d724c2f3, type: 2}
+    - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
+      propertyPath: mazeLength
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
