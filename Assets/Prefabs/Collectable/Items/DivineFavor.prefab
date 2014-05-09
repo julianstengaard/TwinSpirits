@@ -155,7 +155,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.48692727, y: .00403603632, z: .384889036}
+  m_LocalPosition: {x: 362.613434, y: -6.39788055, z: -533.704773}
   m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children:
   - {fileID: 400004}
@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShieldPrefab: {fileID: 100004, guid: 49913024c4449cc4b958d035fffd44e4, type: 2}
+  TimedBlink: {fileID: 11400000, guid: 49913024c4449cc4b958d035fffd44e4, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

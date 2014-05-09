@@ -2,6 +2,7 @@
 
 public class TimedShieldBlink : MonoBehaviour {
     public Renderer MaterialToBlink;
+	public string ColorToChange = "_TintColor";
 
     private Color _baseColor;
     private float _baseOpacity;
@@ -22,14 +23,14 @@ public class TimedShieldBlink : MonoBehaviour {
                 _blinking = true;
             }
             if (_blinking && _timer < 3f)
-                MaterialToBlink.material.SetColor("_TintColor", GetColor(Mathf.Lerp(8f, 3f, _timer/3f)));
+				MaterialToBlink.material.SetColor(ColorToChange, GetColor(Mathf.Lerp(8f, 3f, _timer/3f)));
 	    }
 	}
 
     public void Activate(float duration) {
         _timer = duration;
         _isActive = true;
-        _baseColor = MaterialToBlink.material.GetColor("_TintColor");
+		_baseColor = MaterialToBlink.material.GetColor(ColorToChange);
         _baseOpacity = _baseColor.a;
     }
 
