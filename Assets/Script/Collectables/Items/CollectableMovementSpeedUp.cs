@@ -7,6 +7,6 @@ public class CollectableMovementSpeedUp : Collectable {
 		Debug.Log("Collected Movement Speed Up");
         collector.movementSpeedBuff += 1.3f;
         base.CreatePopUpText("Speed boost", collector);
-        GameObject.Destroy(gameObject);
+		//GameObject.Destroy(gameObject);
 	}
 }

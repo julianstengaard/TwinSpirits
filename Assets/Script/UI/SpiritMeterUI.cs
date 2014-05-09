@@ -20,6 +20,11 @@ public class SpiritMeterUI : MonoBehaviour {
     public Material SyncOnIcon;
     public Material SyncOffIcon;
 
+	public GameObject P1ItemsHolder;
+	public GameObject P2ItemsHolder;
+	private int p1ItemCount = 0;
+	private int p2ItemCount = 0;
+
 	private GameObject p1Icon;
 	private System.Type p1SpiritPrevious = null;
 	private GameObject p2Icon;
@@ -302,4 +307,21 @@ public class SpiritMeterUI : MonoBehaviour {
         else
             return Player2;
     }
+
+	public void AddItemToUI(GameObject item, int playerNumber) {
+		int itemsPerColumn = 5;
+		if (playerNumber == 1) {
+			Vector3 rowOffset = (p1ItemCount % itemsPerColumn) * Vector3.up * 1.5f;
+			Vector3 columnOffset = (p1ItemCount / itemsPerColumn) * Vector3.right * 1.0f;
+			item.transform.position = P1ItemsHolder.transform.position + rowOffset + columnOffset;
+			item.transform.parent = P1ItemsHolder.transform;
+			p1ItemCount++;
+		} else if (playerNumber == 2) {
+			Vector3 rowOffset = (p2ItemCount % itemsPerColumn) * Vector3.up * 1.5f;
+			Vector3 columnOffset = (p2ItemCount / itemsPerColumn) * Vector3.left * 1.0f;
+			item.transform.position = P2ItemsHolder.transform.position + rowOffset + columnOffset;
+			item.transform.parent = P2ItemsHolder.transform;
+			p2ItemCount++;
+		}
+	}
 }

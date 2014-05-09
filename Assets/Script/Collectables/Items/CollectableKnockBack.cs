@@ -8,7 +8,7 @@ public class CollectableKnockBack : Collectable {
 	public override void Collected (Hero collector)	{
         collector.AddEffectToWeapons(new Knockback(2));
         base.CreatePopUpText("Knockback", collector);
-        GameObject.Destroy(gameObject);
+		//GameObject.Destroy(gameObject);
 	}
 
 	#endregion

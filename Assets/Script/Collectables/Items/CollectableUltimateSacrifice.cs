@@ -13,7 +13,7 @@ public class CollectableUltimateSacrifice : Collectable {
 		}
         collector.AddEffectToWeapons(new Damage(15));
         base.CreatePopUpText("Ultimate sacrifice", collector);
-        GameObject.Destroy(gameObject);
+		//GameObject.Destroy(gameObject);
 	}
 	#endregion
 }

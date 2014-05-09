@@ -13,6 +13,8 @@ public class ShrineItem : Activatable {
 	[SerializeField]
 	private bool _active;
 	private float buryDepth = 1.6f;
+
+	private SpiritMeterUI _ui;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,7 +30,12 @@ public class ShrineItem : Activatable {
 
 			var collector = other.GetComponent<Hero>();
 			_attachedItem.Collected(collector);
-			GameObject.Destroy(_attachedItem.gameObject);
+			if (_ui != null) {
+				_ui.AddItemToUI(_attachedItem.gameObject, (collector.PlayerSlot == Hero.Player.One) ? 1 : 2);
+			} else {
+				Debug.LogWarning("Could not find UI for item");
+				GameObject.Destroy(_attachedItem.gameObject);
+			}
 			_active = false;
 		}
 	}
@@ -38,6 +45,7 @@ public class ShrineItem : Activatable {
 			gameObject.audio.clip = EmergeSound;
 			gameObject.audio.Play();
 		}
+		_ui = GameObject.FindGameObjectWithTag("UI").GetComponent<SpiritMeterUI>();
 		StartCoroutine(AnimateReveal());
 	}
 	private IEnumerator AnimateReveal() {

@@ -48,7 +48,7 @@ public class PopUpText : MonoBehaviour {
         _targetPosition = new Vector3(0f, 0.2f, 4f);
         foreach (var popup in popups) {
             if (!popup.gameObject.Equals(this.gameObject) && popup.InitTime < InitTime) {
-                print("wut");
+                //print("wut");
                 _targetPosition = new Vector3(0f, 1f, 4f);
             }
         }
