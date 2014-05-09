@@ -172,6 +172,11 @@ public class MiniMap : MonoBehaviour {
             "localPosition", targetPosition).Ease(
                 EaseType.EaseInExpo).Delay(0f);
         HOTween.To(_players.transform, 0.3f, playersMoveTween);
+
+		var activator = cell.GetComponentInChildren<SpawnActivator>();
+		if (activator != null && activator.GameOverIsland) {
+			Camera.main.GetComponent<CameraController>().SetMusicState(CameraController.MusicState.Boss);
+		}
     }
 
     public void UpdateMiniMapPosition(bool first = false) {

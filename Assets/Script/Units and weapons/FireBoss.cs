@@ -55,8 +55,10 @@ public class FireBoss : MonoBehaviour {
 	}
 
     public void Activate() {
-        gameObject.audio.clip = InitiateSound;
-        gameObject.audio.Play();
+		if (InitiateSound != null) {
+        	gameObject.audio.clip = InitiateSound;
+        	gameObject.audio.Play();
+		}
 
         _isActive = true;
         _volleyTimer = TimeBetweenVolleys / 2f;

@@ -105,7 +105,7 @@ public abstract class BaseUnit : MonoBehaviour
 		GameObject.Destroy(gameObject);
 	}
 
-	public void EvaluateAttacks(GameObject attacker, Vector3 origin, List<Effect> effects, string[] immuneTags) {
+	public virtual void EvaluateAttacks(GameObject attacker, Vector3 origin, List<Effect> effects, string[] immuneTags) {
 		if (CollisionTargetIsValid(immuneTags))
 		{
 			var damage = 0f;
@@ -118,7 +118,7 @@ public abstract class BaseUnit : MonoBehaviour
 		}
 	}
 
-	private bool CollisionTargetIsValid(string[] immuneTags) {
+	protected bool CollisionTargetIsValid(string[] immuneTags) {
 		foreach (string tag in immuneTags)
 		{
 			if (tag == this.tag)

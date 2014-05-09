@@ -262,9 +262,6 @@ public class SpiritMeterUI : MonoBehaviour {
 	private IEnumerator AnimateIconTransition(GameObject oldIcon, GameObject newIcon, int playerNumber) {
 		float time = 0.8f;
 
-		//Update the dividers
-		SetSpiritMeterDividers(playerNumber);
-
 		if (playerNumber == 1)
 			animatingSpiritPowerP1 = true;
 		else if (playerNumber == 2)
@@ -286,6 +283,10 @@ public class SpiritMeterUI : MonoBehaviour {
 		HOTween.To(newIcon.transform, time, newIconTween);
 
 		yield return new WaitForSeconds(time);
+
+		//Update the dividers
+		SetSpiritMeterDividers(playerNumber);
+
 		Destroy(oldIcon);
 
 		if (playerNumber == 1)

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class MeleeActivator : BaseUnit {
 	[SerializeField]
@@ -9,6 +10,24 @@ public class MeleeActivator : BaseUnit {
         base.Start();
         usesGravity = true;
     }
+
+	public override void EvaluateAttacks(GameObject attacker, Vector3 origin, List<Effect> effects, string[] immuneTags) {
+		print ("im the boss");
+		if (CollisionTargetIsValid(immuneTags))
+		{
+			var damage = 0f;
+			foreach(var e in effects) 
+			{
+				if (e.GetType() == typeof(Knockback)) {
+					print ("no knockback");
+					continue;
+				}
+				e.DoEffect(this, attacker, origin, ref damage);
+				StartCoroutine(e.DoEffectCoroutine(this, attacker, origin));
+			}
+			TakeDamage(damage, attacker);
+		}
+	}
 
 	public override void TakeDamage(float damage, GameObject src, bool forceKill = false) {
 		if (!immortal) {
