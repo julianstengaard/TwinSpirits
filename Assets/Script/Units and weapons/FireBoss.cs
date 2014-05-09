@@ -126,10 +126,10 @@ public class FireBoss : MonoBehaviour {
     }
 
     private void CreateStraightBall(float angle, float distance) {
-        GameObject ballGO = (GameObject)GameObject.Instantiate(FireballStraightPrefab, transform.position + Vector3.up, Quaternion.identity);
+        GameObject ballGO = (GameObject)GameObject.Instantiate(FireballStraightPrefab, transform.position + Vector3.up * 0f, Quaternion.identity);
         FireBossBall ball = ballGO.GetComponent<FireBossBall>();
         Vector3 throwDirection = Quaternion.AngleAxis(angle, Vector3.up) * gameObject.transform.forward * distance;
-        ball.ActivateBall(gameObject.transform.position + throwDirection + Vector3.up, _straightHitRadius, _straightHitRadius,
+        ball.ActivateBall(gameObject.transform.position + throwDirection + Vector3.up * 0f, _straightHitRadius, _straightHitRadius,
             StraightBallDamage, false, StraightBallTravelTime);
     }
 }
