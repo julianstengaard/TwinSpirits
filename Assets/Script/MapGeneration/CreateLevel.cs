@@ -341,10 +341,11 @@ public class CreateLevel : MonoBehaviour {
 		
 		//Calculate scale/rotation
 		float spanningScale = Vector3.Distance(position1, position2);
-		Quaternion rotation = Quaternion.LookRotation(position1 - position2, Vector3.up);
+		Quaternion rotation0 = Quaternion.LookRotation(position2 - position1, Vector3.up);
+		Quaternion rotation1 = Quaternion.LookRotation(position1 - position2, Vector3.up);
 
-		bridge[0] = (GameObject) Instantiate(bridgeEndPrefab, position1, rotation); 
-		bridge[1] = (GameObject) Instantiate(bridgeEndPrefab, position2, rotation); 
+		bridge[0] = (GameObject) Instantiate(bridgeEndPrefab, position1, rotation0); 
+		bridge[1] = (GameObject) Instantiate(bridgeEndPrefab, position2, rotation1); 
 
 		//Add the bridge gates to the activator
 		SpawnActivator island1Activator = island1.GetComponentInChildren<SpawnActivator>();
@@ -362,7 +363,7 @@ public class CreateLevel : MonoBehaviour {
 		var s = bridge[2].transform.localScale;
 		s.z = spanningScale;
 		bridge[2].transform.localScale = s;
-		bridge[2].transform.localRotation = rotation;
+		bridge[2].transform.localRotation = rotation0;
 
 		return bridge;
 	}
