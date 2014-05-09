@@ -17,7 +17,7 @@ public class SpiritBungie : SpiritPower
 	private bool		circleActive;
 	private float		circleMinWidth		= 0.01f;
 	private float		circleMaxWidth		= 0.4f;
-	private float		syncDuration		= 10f;
+	private float		syncDuration		= 5f;
 	private float		intervalDuration	= 1f;
 	private float 		damagePerInterval	= 50f;
 

@@ -23,7 +23,7 @@ public class SpawnActivator : MonoBehaviour {
     private MiniMap _miniMap;
 
     private MazeCell _attachedToIsland;
-    private int minEnemies = 1;
+    private int minEnemies = 3;
     private int maxEnemies = 10;
 
 	void Start() {
