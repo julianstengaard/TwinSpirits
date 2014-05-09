@@ -44,7 +44,10 @@ public class Weapon : MonoBehaviour {
 			if(unit != null) {
 				var initPosition = Body.transform.position;
 				unit.EvaluateAttacks(Body, initPosition, AttackEffects, ImmuneTags);
-				Body.GetComponent<BaseEnemy>().PlayAttackHit();
+				var enemy = Body.GetComponent<BaseEnemy>();
+				if (enemy != null) {
+					enemy.PlayAttackHit();
+				}
 			}
 		}
 	}
