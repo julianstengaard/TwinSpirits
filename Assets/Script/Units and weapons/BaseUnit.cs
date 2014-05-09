@@ -16,8 +16,8 @@ public abstract class BaseUnit : MonoBehaviour
 	protected Animator _anim;
 	protected CharacterController _cc;
 
-	protected Renderer unitRenderer;
-	protected Material unitMaterial;
+	//protected Renderer unitRenderer;
+	protected List<Material> unitMaterials;
 	protected Color initColor;
 	protected Color deadColor = new Color(1f, 0f, 0f);
 	protected Color damageLockColor = new Color(1f, 0f, 0f);
@@ -39,20 +39,21 @@ public abstract class BaseUnit : MonoBehaviour
 	protected void Start() {
 		_anim = GetComponent<Animator>();
 		_cc = GetComponent<CharacterController>();
+		unitMaterials = new List<Material>();
 
 		Renderer[] unitRenderers = GetComponentsInChildren<Renderer>();
 		foreach (var renderer in unitRenderers) {
 			if (renderer.gameObject.tag == "DamageBody") {
-				unitMaterial = renderer.material;
-				unitRenderer = renderer;
+				unitMaterials.Add(renderer.material);
+				//unitRenderer = renderer;
 			}
 		}
-		if (unitMaterial == null) {
-			unitMaterial = unitRenderers[0].material;
-			unitRenderer = unitRenderers[0];
+		if (unitMaterials.Count == 0) {
+			unitMaterials.Add(unitRenderers[0].material);
+			//unitRenderer = unitRenderers[0];
 		}
 		
-		initColor = unitMaterial.GetColor("_Color");
+		initColor = unitMaterials[0].GetColor("_Color");
 
 	    if (!(FullHealth > 0f))
             FullHealth = Health;
@@ -63,7 +64,9 @@ public abstract class BaseUnit : MonoBehaviour
 	protected void Update() {
 		if (damageLockTimer >= 0f) {
 			damageLockTimer -= Time.deltaTime;
-			unitMaterial.SetColor("_Color", Color.Lerp(initColor, damageLockColor, damageLockTimer));
+			foreach(Material unitMaterial in unitMaterials) {
+				unitMaterial.SetColor("_Color", Color.Lerp(initColor, damageLockColor, damageLockTimer));
+			}
 		}
 	}
 

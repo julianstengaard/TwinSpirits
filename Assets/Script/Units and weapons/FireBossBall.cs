@@ -7,6 +7,9 @@ public class FireBossBall : MonoBehaviour {
     public Color BallColor;
     public AudioClip ExplodeSound;
 
+	public GameObject BallParticles;
+	public GameObject ExplosionParticles;
+
     private bool _arches;
     private float _height;
     private Vector3 _originPosition;
@@ -36,6 +39,8 @@ public class FireBossBall : MonoBehaviour {
         _arches = arches;
         _timeToDestination = time;
         _startTime = Time.time;
+		BallParticles.SetActive(true);
+		ExplosionParticles.SetActive(false);
     }
 
     // Update is called once per frame
@@ -59,6 +64,10 @@ public class FireBossBall : MonoBehaviour {
         gameObject.audio.clip = ExplodeSound;
         gameObject.audio.Play();
 
+		
+		BallParticles.SetActive(false);
+		ExplosionParticles.SetActive(true);
+		/*
         //Tween Color
         BallColor = new Color(1f, 1f, 0f, 1f);
         Color finalColor = new Color(1f, 1f, 0f, 0f);
@@ -74,6 +83,7 @@ public class FireBossBall : MonoBehaviour {
             "localScale", finalSize).Ease(
             EaseType.EaseInCirc).Delay(0f);
         HOTween.To(gameObject.transform, 0.3f, tweenParms);
+		*/
 
         yield return new WaitForSeconds(0.2f);
         Collider[] hits = Physics.OverlapSphere(gameObject.transform.position, _hitRadius, 1 << 10);

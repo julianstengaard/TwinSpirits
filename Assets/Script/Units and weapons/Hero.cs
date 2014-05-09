@@ -112,13 +112,17 @@ public class Hero : BaseUnit {
 		base.Update();
 
 		if (dead) {
-			unitMaterial.SetColor("_Color", deadColor);
+			foreach(Material unitMaterial in unitMaterials) {
+				unitMaterial.SetColor("_Color", deadColor);
+			}
 			return;
 		}
 		
 		if (damageLocked) {
 			damageLockTimer = (damageLockTimer + Time.deltaTime * 5f) % 1f;
-			unitMaterial.SetColor("_Color", Color.Lerp(initColor, damageLockColor, damageLockTimer));
+			foreach(Material unitMaterial in unitMaterials) {
+				unitMaterial.SetColor("_Color", Color.Lerp(initColor, damageLockColor, damageLockTimer));
+			}
 		}
 
 
@@ -305,7 +309,10 @@ public class Hero : BaseUnit {
 		damageLocked = true;
 		yield return new WaitForSeconds(t);
 		damageLocked = false;
-		unitMaterial.SetColor("_Color", initColor);
+
+		foreach(Material unitMaterial in unitMaterials) {
+			unitMaterial.SetColor("_Color", initColor);
+		}
 	}
 	
 	protected override void Died () {
@@ -316,7 +323,9 @@ public class Hero : BaseUnit {
 		if (spiritActive) {
 			DeactivateSpiritPower(false);
 		}
-		unitMaterial.SetColor("_Color", deadColor);
+		foreach(Material unitMaterial in unitMaterials) {
+			unitMaterial.SetColor("_Color", deadColor);
+		}
 		aspect.IsActive = false;
 		_anim.SetBool("Dead", true);
 		_anim.SetBool("Attacking", false);
@@ -382,10 +391,12 @@ public class Hero : BaseUnit {
 	public void Revived (float health) {
 		dead = false;
 		Health = Mathf.Min(health, FullHealth);
-		unitMaterial.SetColor("_Color", initColor);
+		foreach(Material unitMaterial in unitMaterials) {
+			unitMaterial.SetColor("_Color", initColor);
+		}
 		aspect.IsActive = true;
 		_anim.SetBool("Dead", false);
-		HealBurst.Play();
+		HealBurst.Play(true);
 	}
 
 
