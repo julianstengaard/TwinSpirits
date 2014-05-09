@@ -56,6 +56,10 @@ public class SpiritBungie : SpiritPower
 	}
 	public override IEnumerator OnUpdate (Hero sourceHero, Hero otherHero)
 	{
+		if (link == null) {
+			return null;
+		}
+
 		if ((otherHero.transform.position - sourceHero.transform.position).magnitude > closestDistance)
 		{
 			UpdateBungieLink(otherHero, sourceHero);
@@ -68,6 +72,7 @@ public class SpiritBungie : SpiritPower
 			link.renderer.enabled = false;
 			currentBungieTime = 0;
 			initialPosition = otherHero.transform.position;
+			OnDeactivate(sourceHero, otherHero);
 		}
 
 		return null;
