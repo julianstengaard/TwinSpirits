@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class BallForSpiritPingPong : MonoBehaviour {
     public GameObject ParticleEffectPrefab;
+	public AudioSource AudioSrc;
+
     private Hero _receiver;
     private Hero _origin;
     private Vector3 _currentOriginPosition;
@@ -53,6 +55,8 @@ public class BallForSpiritPingPong : MonoBehaviour {
         _currentOriginPosition = _origin.transform.position + Vector3.up;
         _currentTargetPosition = _receiver.transform.position + Vector3.up;
         _speedCurrent = _speedInit;
+
+		AudioSrc.PlayOneShot(AudioSrc.clip);
     }
 
     private void Update() {
@@ -84,6 +88,8 @@ public class BallForSpiritPingPong : MonoBehaviour {
         //Find the new positions
         _currentOriginPosition = gameObject.transform.position;
         _currentTargetPosition = _receiver.transform.position + Vector3.up;
+
+		AudioSrc.PlayOneShot(AudioSrc.clip);
     }
 
     private void UpdateBall(int maxBounces, bool sync) {

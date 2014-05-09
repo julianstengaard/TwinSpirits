@@ -2041,7 +2041,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 175.106934, y: .590570927, z: -555.946167}
+  m_LocalPosition: {x: 15.7882175, y: 98.6538696, z: 900.969666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400150}
@@ -2177,6 +2177,15 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 442e8865c4c825748a979c4ecc5e4fcc, type: 3}
     - {fileID: 8300000, guid: 8443e90d6b9379142869b7d6b4a452b1, type: 3}
     - {fileID: 8300000, guid: b453701c2abc55743b84fe5c1f1a5d82, type: 3}
+  - Name: Attack
+    Sounds:
+    - {fileID: 8300000, guid: a2f321c108f653a4f9f8849734ae893f, type: 3}
+  - Name: AttackHit
+    Sounds:
+    - {fileID: 8300000, guid: d4ddbdfdb8b225b4a86b607042155eb5, type: 3}
+  - Name: AttackMiss
+    Sounds:
+    - {fileID: 8300000, guid: 17f2aec42ff60e9428c2630f73c695d6, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -110,4 +110,15 @@ public class BaseEnemy : BaseUnit {
 		movementSpeedBuff += speedBuff;
 		ai.AI.Motor.DefaultSpeed = Mathf.Clamp(MovementSpeed + movementSpeedBuff, minMovementSpeed, maxMovementSpeed);
 	}
+
+	public void PlayAttack() {
+		_randomSounds.PlayRandomSound("Attack");
+	}
+	public void PlayAttackMiss() {
+		_randomSounds.PlayRandomSound("AttackMiss");
+	}
+	public void PlayAttackHit() {
+		_randomSounds.PlayRandomSound("AttackHit");
+	}
+
 }
