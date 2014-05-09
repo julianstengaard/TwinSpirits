@@ -12,7 +12,7 @@ public class CollectableDivineFavor : Collectable {
 		sc.shieldPrefab = ShieldPrefab;
         collector.AddEffectToWeapons(sc);
         base.CreatePopUpText("Divine favor", collector);
-        GameObject.Destroy(gameObject);
+		//GameObject.Destroy(gameObject);
 	}
 	#endregion
 }

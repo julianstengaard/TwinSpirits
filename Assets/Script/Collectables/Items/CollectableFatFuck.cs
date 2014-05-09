@@ -8,6 +8,6 @@ public class CollectableFatFuck : Collectable {
 		collector.FullHealth += 4f;
         collector.Heal(4f);
         base.CreatePopUpText("A worthy tradeoff", collector);
-        GameObject.Destroy(gameObject);
+		//GameObject.Destroy(gameObject);
 	}
 }

@@ -7,8 +7,15 @@ public class CameraController : MonoBehaviour {
 
 	public GameObject Blacker;
     public Camera UICamera;
-    public AudioClip MainMusic;
+
+	public AudioSource MainAudio;
+	public AudioSource LoopAudio;
+
+    public AudioClip MainMusicInit;
+	public AudioClip MainMusicLoop;
+	public AudioClip BossMusic;
     public AudioClip GameOverMusic;
+	private MusicState _currentMusicState;
 
     private MiniMap _miniMap;
 
@@ -31,9 +38,6 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	    gameObject.audio.clip = MainMusic;
-        gameObject.audio.Play();
-
 		var ps = GameObject.FindObjectsOfType<Hero>();
 		if(ps.Length > 0) {
 			foreach(var player in ps) {
@@ -43,6 +47,7 @@ public class CameraController : MonoBehaviour {
 					_player2 = player;
 			}
 		}
+		SetMusicState(MusicState.Init);
 	}
 
 	void LateUpdate () {
@@ -116,9 +121,7 @@ public class CameraController : MonoBehaviour {
     public void SetGameOver(bool victory) {
         _gameOver = true;
 
-        gameObject.audio.Stop();
-        gameObject.audio.clip = GameOverMusic;
-        gameObject.audio.Play();
+		SetMusicState(MusicState.GameOver);
 
         //GAME OVER
         _target = (_player1.transform.position + _player2.transform.position) * 0.5f;
@@ -188,4 +191,50 @@ public class CameraController : MonoBehaviour {
     public void SetMiniMap(MiniMap map) {
         _miniMap = map;
     }
+
+	public void SetMusicState(MusicState state) {
+		if (state == MusicState.Init && _currentMusicState != state) {
+			_currentMusicState = state;
+			MainAudio.Stop();
+			MainAudio.loop = false;
+			MainAudio.clip = MainMusicInit;
+			MainAudio.Play();
+			StartCoroutine(DelayedSwitchToMainLoopMusic(MainMusicInit.length));
+		} else if (state == MusicState.MainLoop && _currentMusicState != state) {
+			_currentMusicState = state;
+			LoopAudio.clip = MainMusicLoop;
+			LoopAudio.Play();
+			LoopAudio.loop = true;
+		} else if (state == MusicState.Boss && _currentMusicState != state) {
+			_currentMusicState = state;
+			MainAudio.Stop();
+			MainAudio.loop = true;
+			MainAudio.clip = BossMusic;
+			MainAudio.Play();
+			LoopAudio.Stop();
+		} else if (state == MusicState.GameOver && _currentMusicState != state) {
+			_currentMusicState = state;
+			MainAudio.Stop();
+			MainAudio.loop = true;
+			MainAudio.clip = GameOverMusic;
+			MainAudio.Play();
+			LoopAudio.Stop();
+		}
+	}
+
+	private IEnumerator DelayedSwitchToMainLoopMusic(float time) {
+		LoopAudio.clip = MainMusicLoop;
+		yield return new WaitForSeconds(time - 1f);
+		if (_currentMusicState == MusicState.Init) {
+			SetMusicState(MusicState.MainLoop);
+		}
+	}
+
+	public enum MusicState {
+		Null,
+		Init,
+		MainLoop,
+		Boss,
+		GameOver
+	};
 }
