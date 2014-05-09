@@ -168,7 +168,7 @@ public class ShrineSpiritPower : Activatable {
 
     private GameObject GetRandomSpiritPower() {
         var heroes = GameObject.FindObjectsOfType<Hero>();
-        if (heroes[0].currentSpiritPower.GetType() == heroes[1].currentSpiritPower.GetType()) {
+        if (heroes.Length == 2 && heroes[0].currentSpiritPower.GetType() == heroes[1].currentSpiritPower.GetType()) {
             while (true) {
                 GameObject power = SpiritPowers[Random.Range(0, SpiritPowers.Length)];
                 if (!power.GetComponent<CollectableSpiritPower>().SpiritPowerEquals(heroes[0].currentSpiritPower)) {
