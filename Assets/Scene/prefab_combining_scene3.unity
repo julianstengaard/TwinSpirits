@@ -1,0 +1,5913 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+SceneSettings:
+  m_ObjectHideFlags: 0
+  m_PVSData: 
+  m_PVSObjectsArray: []
+  m_PVSPortalsArray: []
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: .25
+    backfaceThreshold: 100
+--- !u!104 &2
+RenderSettings:
+  m_Fog: 0
+  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: .00999999978
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
+  m_HaloStrength: .5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 0}
+  m_ObjectHideFlags: 0
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
+--- !u!157 &4
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  m_LightProbes: {fileID: 0}
+  m_Lightmaps: []
+  m_LightmapsMode: 1
+  m_BakedColorSpace: 0
+  m_UseDualLightmapsInForward: 0
+  m_LightmapEditorSettings:
+    m_Resolution: 50
+    m_LastUsedResolution: 0
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
+    m_BounceBoost: 1
+    m_BounceIntensity: 1
+    m_SkyLightColor: {r: .860000014, g: .930000007, b: 1, a: 1}
+    m_SkyLightIntensity: 0
+    m_Quality: 0
+    m_Bounces: 1
+    m_FinalGatherRays: 1000
+    m_FinalGatherContrastThreshold: .0500000007
+    m_FinalGatherGradientThreshold: 0
+    m_FinalGatherInterpolationPoints: 15
+    m_AOAmount: 0
+    m_AOMaxDistance: .100000001
+    m_AOContrast: 1
+    m_LODSurfaceMappingDistance: 1
+    m_Padding: 0
+    m_TextureCompression: 0
+    m_LockAtlas: 0
+--- !u!196 &5
+NavMeshSettings:
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    agentRadius: .5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: .400000006
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    accuratePlacement: 0
+    minRegionArea: 2
+    widthInaccuracy: 16.666666
+    heightInaccuracy: 10
+  m_NavMesh: {fileID: 0}
+--- !u!1 &49977949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 49977950}
+  - 33: {fileID: 49977952}
+  - 23: {fileID: 49977951}
+  m_Layer: 0
+  m_Name: doodad_brick_component_rect1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &49977950
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 49977949}
+  m_LocalRotation: {x: -.0890276358, y: -.384639204, z: .00647730473, w: .918740928}
+  m_LocalPosition: {x: -.148014069, y: -.0856011063, z: -.271251678}
+  m_LocalScale: {x: .469513834, y: .469513834, z: .469513774}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &49977951
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 49977949}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &49977952
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 49977949}
+  m_Mesh: {fileID: 4300030, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &72746815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 72746816}
+  - 33: {fileID: 72746818}
+  - 23: {fileID: 72746817}
+  m_Layer: 0
+  m_Name: doodad_leaf3_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &72746816
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 72746815}
+  m_LocalRotation: {x: -.0505673811, y: .0556652583, z: .106789514, w: .991433501}
+  m_LocalPosition: {x: 2.48795152, y: .973583043, z: .700784683}
+  m_LocalScale: {x: .360391229, y: .3603912, z: .3603912}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &72746817
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 72746815}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &72746818
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 72746815}
+  m_Mesh: {fileID: 4300012, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &82450044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 82450045}
+  - 33: {fileID: 82450047}
+  - 23: {fileID: 82450046}
+  m_Layer: 0
+  m_Name: doodad_bush4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &82450045
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 82450044}
+  m_LocalRotation: {x: 1.36884046e-06, y: .654262364, z: -1.18421167e-06, w: .756267667}
+  m_LocalPosition: {x: 1.65156937, y: -.389329135, z: -2.15703773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &82450046
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 82450044}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &82450047
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300002, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 82450044}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &85659298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 85659299}
+  - 33: {fileID: 85659302}
+  - 23: {fileID: 85659301}
+  - 65: {fileID: 85659300}
+  m_Layer: 0
+  m_Name: doodad_rock2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &85659299
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 85659298}
+  m_LocalRotation: {x: .301192999, y: .145648122, z: .122683987, w: -.934354365}
+  m_LocalPosition: {x: 1.90883446, y: -.963612556, z: -.195274353}
+  m_LocalScale: {x: 4.49633121, y: 4.49633074, z: 4.49632883}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!65 &85659300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 85659298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.00002635, y: .636633694, z: 1.56584823}
+  m_Center: {x: -.0569534786, y: .309044689, z: -.0551726222}
+--- !u!23 &85659301
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 85659298}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &85659302
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 85659298}
+  m_Mesh: {fileID: 4300000, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &99325081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 99325082}
+  - 33: {fileID: 99325084}
+  - 23: {fileID: 99325083}
+  m_Layer: 0
+  m_Name: doodad_bush3_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &99325082
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 99325081}
+  m_LocalRotation: {x: .100855172, y: -.960151851, z: -.254621953, w: -.0557168573}
+  m_LocalPosition: {x: 1.94071388, y: -.544156194, z: .0596265793}
+  m_LocalScale: {x: .681415081, y: .681414902, z: .681415081}
+  m_Children: []
+  m_Father: {fileID: 278797469}
+--- !u!23 &99325083
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 99325081}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &99325084
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300002, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 99325081}
+  m_Mesh: {fileID: 4300002, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &113270897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 113270898}
+  - 33: {fileID: 113270900}
+  - 23: {fileID: 113270899}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_low1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &113270898
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 113270897}
+  m_LocalRotation: {x: 3.95424621e-07, y: .975844324, z: -1.76627339e-06, w: .218467236}
+  m_LocalPosition: {x: 1.93634987, y: .0184347183, z: .39131546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &113270899
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 113270897}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &113270900
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300002, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 113270897}
+  m_Mesh: {fileID: 4300010, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &155430500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 155430501}
+  - 33: {fileID: 155430503}
+  - 23: {fileID: 155430502}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_low2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &155430501
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 155430500}
+  m_LocalRotation: {x: 1.4310028e-07, y: .996869802, z: -1.80432937e-06, w: .0790611506}
+  m_LocalPosition: {x: .284309387, y: .0384745188, z: -4.95910645e-05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &155430502
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300004, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 155430500}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &155430503
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300004, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 155430500}
+  m_Mesh: {fileID: 4300004, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &191794478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 191794479}
+  - 33: {fileID: 191794482}
+  - 23: {fileID: 191794481}
+  - 65: {fileID: 191794480}
+  m_Layer: 0
+  m_Name: doodad_rock2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &191794479
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 191794478}
+  m_LocalRotation: {x: .225027174, y: -.820451319, z: -.367966413, w: .375264168}
+  m_LocalPosition: {x: 1.25736237, y: -.858667374, z: -.904843807}
+  m_LocalScale: {x: 2.73361945, y: 3.05630684, z: 2.36509132}
+  m_Children: []
+  m_Father: {fileID: 278797469}
+--- !u!65 &191794480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 191794478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.00002635, y: .636633694, z: 1.56584823}
+  m_Center: {x: -.0569534786, y: .309044689, z: -.0551726222}
+--- !u!23 &191794481
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300004, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 191794478}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &191794482
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300004, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 191794478}
+  m_Mesh: {fileID: 4300000, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &193038353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 193038354}
+  - 33: {fileID: 193038356}
+  - 23: {fileID: 193038355}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_small2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &193038354
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 193038353}
+  m_LocalRotation: {x: 3.95424621e-07, y: .975844324, z: -1.76627339e-06, w: .218467236}
+  m_LocalPosition: {x: .149819374, y: .164035127, z: .332735062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &193038355
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300006, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 193038353}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &193038356
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300006, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 193038353}
+  m_Mesh: {fileID: 4300016, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &198906170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 198906171}
+  - 33: {fileID: 198906174}
+  - 23: {fileID: 198906173}
+  - 65: {fileID: 198906172}
+  m_Layer: 0
+  m_Name: doodad_rock2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &198906171
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 198906170}
+  m_LocalRotation: {x: .909442902, y: .172907129, z: -.211026698, w: .313822597}
+  m_LocalPosition: {x: -.614980698, y: .619433403, z: .645748138}
+  m_LocalScale: {x: 4.49633121, y: 4.49633074, z: 4.49632883}
+  m_Children: []
+  m_Father: {fileID: 207659955}
+--- !u!65 &198906172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 198906170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.00002635, y: .636633694, z: 1.56584823}
+  m_Center: {x: -.0569534786, y: .309044689, z: -.0551726222}
+--- !u!23 &198906173
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 198906170}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &198906174
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 198906170}
+  m_Mesh: {fileID: 4300000, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &207659954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 207659955}
+  m_Layer: 0
+  m_Name: doodad_combi_bushrock3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &207659955
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 207659954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.4257021, y: 0, z: 13.9335108}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1336412054}
+  - {fileID: 2106458074}
+  - {fileID: 271106886}
+  - {fileID: 1311722306}
+  - {fileID: 1102226965}
+  - {fileID: 977634017}
+  - {fileID: 198906171}
+  - {fileID: 1780135299}
+  m_Father: {fileID: 0}
+--- !u!1 &207696112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 207696113}
+  - 33: {fileID: 207696115}
+  - 23: {fileID: 207696114}
+  m_Layer: 0
+  m_Name: doodad_brick_component_rect1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &207696113
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 207696112}
+  m_LocalRotation: {x: -.0890276358, y: -.384639204, z: .00647730473, w: .918740928}
+  m_LocalPosition: {x: -.148014069, y: -.0856011063, z: -.271251678}
+  m_LocalScale: {x: .469513834, y: .469513834, z: .469513774}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &207696114
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300006, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 207696112}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &207696115
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300006, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 207696112}
+  m_Mesh: {fileID: 4300030, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &218870702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 218870703}
+  - 33: {fileID: 218870705}
+  - 23: {fileID: 218870704}
+  m_Layer: 0
+  m_Name: doodad_bush4_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &218870703
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 218870702}
+  m_LocalRotation: {x: 1.42941076e-06, y: -.613452256, z: 1.11034603e-06, w: .78973186}
+  m_LocalPosition: {x: 4.50080681, y: -.384936959, z: -2.87585735}
+  m_LocalScale: {x: .426940143, y: .426940143, z: .426940143}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &218870704
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300004, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 218870702}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &218870705
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300004, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 218870702}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &244844147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 244844148}
+  - 33: {fileID: 244844150}
+  - 23: {fileID: 244844149}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_low2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &244844148
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 244844147}
+  m_LocalRotation: {x: -6.79737468e-07, y: .926803589, z: -1.67750932e-06, w: -.375546515}
+  m_LocalPosition: {x: -.480155945, y: -.0542798452, z: -.54167366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &244844149
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300008, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 244844147}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &244844150
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300008, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 244844147}
+  m_Mesh: {fileID: 4300004, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &253225247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 253225248}
+  - 33: {fileID: 253225250}
+  - 23: {fileID: 253225249}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_low2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &253225248
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 253225247}
+  m_LocalRotation: {x: .0746076554, y: .99532938, z: .0164860785, w: -.0590040758}
+  m_LocalPosition: {x: -1.37358189, y: -.0309347194, z: .0808811188}
+  m_LocalScale: {x: 1.2099998, y: 1.21000004, z: 1.21000028}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &253225249
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300008, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 253225247}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &253225250
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300008, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 253225247}
+  m_Mesh: {fileID: 4300004, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &271106885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 271106886}
+  - 33: {fileID: 271106888}
+  - 23: {fileID: 271106887}
+  m_Layer: 0
+  m_Name: doodad_bush4_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &271106886
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 271106885}
+  m_LocalRotation: {x: -.0556441061, y: -.523991466, z: -.189737663, w: .828454196}
+  m_LocalPosition: {x: .613134384, y: -.0493378043, z: -1.09503412}
+  m_LocalScale: {x: .731484711, y: .731484771, z: .73148483}
+  m_Children: []
+  m_Father: {fileID: 207659955}
+--- !u!23 &271106887
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 271106885}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &271106888
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300002, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 271106885}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &278797468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 278797469}
+  m_Layer: 0
+  m_Name: doodad_combi_bushrock1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278797469
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 278797468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.4973345, y: 0, z: -3.06883574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 675375607}
+  - {fileID: 99325082}
+  - {fileID: 1801270891}
+  - {fileID: 637595534}
+  - {fileID: 997840271}
+  - {fileID: 1755520059}
+  - {fileID: 1100652125}
+  - {fileID: 191794479}
+  - {fileID: 340729958}
+  m_Father: {fileID: 0}
+--- !u!1001 &302088871
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.5680285
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 22.6153336
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_RootGameObject: {fileID: 1807804072}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1 &321896152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 321896153}
+  - 33: {fileID: 321896156}
+  - 23: {fileID: 321896155}
+  - 65: {fileID: 321896154}
+  m_Layer: 0
+  m_Name: doodad_rock2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &321896153
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 321896152}
+  m_LocalRotation: {x: .941170573, y: .10766691, z: -.261208206, w: .185407966}
+  m_LocalPosition: {x: .693371654, y: .026936546, z: -1.22758722}
+  m_LocalScale: {x: 4.49633121, y: 4.49633074, z: 4.49632883}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!65 &321896154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 321896152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.00002635, y: .636633694, z: 1.56584823}
+  m_Center: {x: -.0569534786, y: .309044689, z: -.0551726222}
+--- !u!23 &321896155
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300006, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 321896152}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &321896156
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300006, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 321896152}
+  m_Mesh: {fileID: 4300000, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &340729957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 340729958}
+  - 33: {fileID: 340729961}
+  - 23: {fileID: 340729960}
+  - 65: {fileID: 340729959}
+  m_Layer: 0
+  m_Name: doodad_rock2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &340729958
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 340729957}
+  m_LocalRotation: {x: -.762788653, y: .113129914, z: -.497116238, w: -.397782236}
+  m_LocalPosition: {x: .490761757, y: .203837395, z: -.239697456}
+  m_LocalScale: {x: 2.73361921, y: 3.05630684, z: 2.36509132}
+  m_Children: []
+  m_Father: {fileID: 278797469}
+--- !u!65 &340729959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 340729957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.00002635, y: .636633694, z: 1.56584823}
+  m_Center: {x: -.0569534786, y: .309044689, z: -.0551726222}
+--- !u!23 &340729960
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300010, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 340729957}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &340729961
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300010, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 340729957}
+  m_Mesh: {fileID: 4300000, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &379168714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 379168715}
+  - 33: {fileID: 379168717}
+  - 23: {fileID: 379168716}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_small2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &379168715
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 379168714}
+  m_LocalRotation: {x: 1.21145035e-06, y: .957441092, z: -1.34479399e-06, w: -.288628936}
+  m_LocalPosition: {x: -.794431686, y: -.000114754672, z: -.141515732}
+  m_LocalScale: {x: 1.71825516, y: 1.71825516, z: 1.71825516}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &379168716
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300010, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 379168714}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &379168717
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300010, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 379168714}
+  m_Mesh: {fileID: 4300016, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &466353521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 466353522}
+  - 33: {fileID: 466353524}
+  - 23: {fileID: 466353523}
+  m_Layer: 0
+  m_Name: doodad_leaf2_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &466353522
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 466353521}
+  m_LocalRotation: {x: -.119333856, y: .0593379401, z: .0772058666, w: .988067687}
+  m_LocalPosition: {x: .654326558, y: .795340538, z: 2.85905027}
+  m_LocalScale: {x: .514412463, y: .514412522, z: .514412463}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &466353523
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300008, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 466353521}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &466353524
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300008, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 466353521}
+  m_Mesh: {fileID: 4300008, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1001 &490234281
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.4257021
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 13.9335108
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_RootGameObject: {fileID: 207659954}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1 &525945192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 525945193}
+  - 33: {fileID: 525945195}
+  - 23: {fileID: 525945194}
+  m_Layer: 0
+  m_Name: doodad_brick_component_rect_half1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &525945193
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 525945192}
+  m_LocalRotation: {x: .700724423, y: -.365967929, z: -.605063438, w: -.0946096852}
+  m_LocalPosition: {x: .0671510696, y: .490757942, z: .491481781}
+  m_LocalScale: {x: .829645455, y: .829645574, z: .829645514}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &525945194
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300012, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 525945192}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &525945195
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300012, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 525945192}
+  m_Mesh: {fileID: 4300022, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &600830695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 600830696}
+  - 33: {fileID: 600830698}
+  - 23: {fileID: 600830697}
+  m_Layer: 0
+  m_Name: doodad_brick_component_pebble3_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &600830696
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 600830695}
+  m_LocalRotation: {x: .555217624, y: -.221436977, z: .800955474, w: .0341969207}
+  m_LocalPosition: {x: .715789795, y: .039484024, z: -.781339645}
+  m_LocalScale: {x: .818377197, y: .818377197, z: .818377256}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &600830697
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300014, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 600830695}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &600830698
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300014, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 600830695}
+  m_Mesh: {fileID: 4300002, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &603836672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 603836673}
+  - 33: {fileID: 603836675}
+  - 23: {fileID: 603836674}
+  m_Layer: 0
+  m_Name: doodad_bush3_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &603836673
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 603836672}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.68171024, y: -.541967511, z: 1.60621786}
+  m_LocalScale: {x: .833497167, y: .833497167, z: .833497167}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &603836674
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300010, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 603836672}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &603836675
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300010, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 603836672}
+  m_Mesh: {fileID: 4300002, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &624532024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 624532025}
+  - 33: {fileID: 624532027}
+  - 23: {fileID: 624532026}
+  m_Layer: 0
+  m_Name: doodad_leaf2_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &624532025
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 624532024}
+  m_LocalRotation: {x: -.193637624, y: .970796645, z: -.136384234, w: .0381802358}
+  m_LocalPosition: {x: 1.70576811, y: .548084497, z: .148957014}
+  m_LocalScale: {x: .564960718, y: .564960659, z: .564960718}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &624532026
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300012, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 624532024}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &624532027
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300012, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 624532024}
+  m_Mesh: {fileID: 4300008, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &637595533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100018, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 637595534}
+  - 33: {fileID: 637595536}
+  - 23: {fileID: 637595535}
+  m_Layer: 0
+  m_Name: doodad_bush4_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &637595534
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400018, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 637595533}
+  m_LocalRotation: {x: 1.99999977e-06, y: .27472496, z: 0, w: .961522877}
+  m_LocalPosition: {x: -1.44816208, y: .313610017, z: .407896996}
+  m_LocalScale: {x: .452574074, y: .452574015, z: .452574074}
+  m_Children: []
+  m_Father: {fileID: 278797469}
+--- !u!23 &637595535
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300016, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 637595533}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &637595536
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300016, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 637595533}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &658367606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 658367607}
+  - 33: {fileID: 658367609}
+  - 23: {fileID: 658367608}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_high1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &658367607
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 658367606}
+  m_LocalRotation: {x: .0150641361, y: .996369839, z: -.0268124919, w: .0793809667}
+  m_LocalPosition: {x: 1.78515148, y: -.0865209699, z: .949319839}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &658367608
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300012, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 658367606}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &658367609
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300012, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 658367606}
+  m_Mesh: {fileID: 4300008, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &675375606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 675375607}
+  - 33: {fileID: 675375609}
+  - 23: {fileID: 675375608}
+  m_Layer: 0
+  m_Name: doodad_bush3_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &675375607
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400020, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 675375606}
+  m_LocalRotation: {x: -.0214705113, y: .105503052, z: .00231281202, w: .994184554}
+  m_LocalPosition: {x: -2.21384811, y: -.411545753, z: 1.01215267}
+  m_LocalScale: {x: .833496988, y: .833496988, z: .833497047}
+  m_Children: []
+  m_Father: {fileID: 278797469}
+--- !u!23 &675375608
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300018, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 675375606}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &675375609
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300018, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 675375606}
+  m_Mesh: {fileID: 4300002, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &761948261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100022, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 761948262}
+  - 33: {fileID: 761948264}
+  - 23: {fileID: 761948263}
+  m_Layer: 0
+  m_Name: doodad_brick_component_rect_half1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &761948262
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400022, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 761948261}
+  m_LocalRotation: {x: -.276226938, y: .181680083, z: .13330391, w: .934302509}
+  m_LocalPosition: {x: -.86721611, y: .0992118716, z: .64031601}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &761948263
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300020, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 761948261}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &761948264
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300020, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 761948261}
+  m_Mesh: {fileID: 4300022, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &801807850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 801807854}
+  - 33: {fileID: 801807853}
+  - 64: {fileID: 801807852}
+  - 23: {fileID: 801807851}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &801807851
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801807850}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!64 &801807852
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801807850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &801807853
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801807850}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &801807854
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801807850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!1 &811728265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 811728266}
+  - 33: {fileID: 811728268}
+  - 23: {fileID: 811728267}
+  m_Layer: 0
+  m_Name: doodad_leaf4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &811728266
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 811728265}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.93857455, y: .120241523, z: -3.29789305}
+  m_LocalScale: {x: .536902308, y: .536902308, z: .536902308}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &811728267
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300014, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 811728265}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &811728268
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300014, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 811728265}
+  m_Mesh: {fileID: 4300016, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &812600668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 812600669}
+  - 33: {fileID: 812600671}
+  - 23: {fileID: 812600670}
+  m_Layer: 0
+  m_Name: doodad_brick_component_rect_half1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &812600669
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 812600668}
+  m_LocalRotation: {x: .700724423, y: -.365967929, z: -.605063438, w: -.0946096852}
+  m_LocalPosition: {x: .0671510696, y: .490757942, z: .491481781}
+  m_LocalScale: {x: .829645455, y: .829645574, z: .829645514}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &812600670
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300014, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 812600668}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &812600671
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300014, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 812600668}
+  m_Mesh: {fileID: 4300022, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &836218958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100018, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 836218959}
+  - 33: {fileID: 836218961}
+  - 23: {fileID: 836218960}
+  m_Layer: 0
+  m_Name: doodad_brick_component_pebble1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &836218959
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400018, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 836218958}
+  m_LocalRotation: {x: .604703963, y: -.182311863, z: .7075091, w: -.31705907}
+  m_LocalPosition: {x: -.792902946, y: -.0578211136, z: -1.09686279}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &836218960
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300016, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 836218958}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &836218961
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300016, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 836218958}
+  m_Mesh: {fileID: 4300032, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &839986450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100018, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 839986451}
+  - 33: {fileID: 839986453}
+  - 23: {fileID: 839986452}
+  m_Layer: 0
+  m_Name: doodad_bush3_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &839986451
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400018, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 839986450}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.16729617, y: -.602068305, z: 3.48396635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &839986452
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300016, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 839986450}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &839986453
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300016, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 839986450}
+  m_Mesh: {fileID: 4300002, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &840364801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100024, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 840364802}
+  - 33: {fileID: 840364804}
+  - 23: {fileID: 840364803}
+  m_Layer: 0
+  m_Name: doodad_brick_component_pebble3_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &840364802
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400024, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 840364801}
+  m_LocalRotation: {x: .840647042, y: -.0363336839, z: .322868884, w: .433299184}
+  m_LocalPosition: {x: -1.07169819, y: -.000113781673, z: -.17039299}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &840364803
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300022, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 840364801}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &840364804
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300022, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 840364801}
+  m_Mesh: {fileID: 4300002, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &844051957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 844051958}
+  - 33: {fileID: 844051961}
+  - 23: {fileID: 844051960}
+  - 65: {fileID: 844051959}
+  m_Layer: 0
+  m_Name: doodad_rock2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &844051958
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400020, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 844051957}
+  m_LocalRotation: {x: .301192999, y: .145648122, z: .122683987, w: -.934354365}
+  m_LocalPosition: {x: -2.51812816, y: -1.51135159, z: 1.74837923}
+  m_LocalScale: {x: 4.49633121, y: 4.49633074, z: 4.49632883}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!65 &844051959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 844051957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.00002635, y: .636633694, z: 1.56584823}
+  m_Center: {x: -.0569534786, y: .309044689, z: -.0551726222}
+--- !u!23 &844051960
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300018, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 844051957}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &844051961
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300018, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 844051957}
+  m_Mesh: {fileID: 4300000, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &847124527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100022, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 847124528}
+  - 33: {fileID: 847124530}
+  - 23: {fileID: 847124529}
+  m_Layer: 0
+  m_Name: doodad_bush4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &847124528
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400022, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 847124527}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.09427643, y: -.00924603641, z: 2.23844719}
+  m_LocalScale: {x: .468470067, y: .468470067, z: .468470067}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &847124529
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300020, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 847124527}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &847124530
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300020, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 847124527}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &860746874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 860746875}
+  m_Layer: 0
+  m_Name: doodad_combi_bushrock2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &860746875
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 860746874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.0898848, y: 0, z: 5.34657288}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 603836673}
+  - {fileID: 839986451}
+  - {fileID: 1176875651}
+  - {fileID: 1168466489}
+  - {fileID: 847124528}
+  - {fileID: 82450045}
+  - {fileID: 1422558680}
+  - {fileID: 218870703}
+  - {fileID: 1117368487}
+  - {fileID: 1573631772}
+  - {fileID: 1907377658}
+  - {fileID: 624532025}
+  - {fileID: 1190260458}
+  - {fileID: 1656481689}
+  - {fileID: 466353522}
+  - {fileID: 1465564211}
+  - {fileID: 1546699711}
+  - {fileID: 2000865363}
+  - {fileID: 72746816}
+  - {fileID: 1081962935}
+  - {fileID: 811728266}
+  - {fileID: 1424905663}
+  - {fileID: 1426220891}
+  - {fileID: 1595329546}
+  - {fileID: 1130736763}
+  - {fileID: 1524910608}
+  - {fileID: 1535820444}
+  - {fileID: 844051958}
+  - {fileID: 321896153}
+  m_Father: {fileID: 0}
+--- !u!1 &882925663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 882925664}
+  - 33: {fileID: 882925666}
+  - 23: {fileID: 882925665}
+  m_Layer: 0
+  m_Name: doodad_brick_component_pebble3_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &882925664
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400020, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 882925663}
+  m_LocalRotation: {x: .840647042, y: -.0363336839, z: .322868884, w: .433299184}
+  m_LocalPosition: {x: -1.07169819, y: -.000113781673, z: -.17039299}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &882925665
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300018, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 882925663}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &882925666
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300018, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 882925663}
+  m_Mesh: {fileID: 4300002, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1001 &906253053
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.0898848
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 5.34657288
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_RootGameObject: {fileID: 860746874}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1 &977634016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 977634017}
+  - 33: {fileID: 977634019}
+  - 23: {fileID: 977634018}
+  m_Layer: 0
+  m_Name: doodad_plane_dirt_circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &977634017
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 977634016}
+  m_LocalRotation: {x: .607622683, y: -.361655265, z: -.361655056, w: -.607623041}
+  m_LocalPosition: {x: .219625473, y: .0299999993, z: .780444145}
+  m_LocalScale: {x: 1.97842753, y: 1.5982393, z: 3.68892312}
+  m_Children: []
+  m_Father: {fileID: 207659955}
+--- !u!23 &977634018
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300004, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 977634016}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 49b8dcdd761584e44b00245cdfd848c8, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &977634019
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300004, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 977634016}
+  m_Mesh: {fileID: 4300000, guid: 7398dde875aacc54e8781245efd40b2e, type: 3}
+--- !u!1 &997840270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100026, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 997840271}
+  - 33: {fileID: 997840273}
+  - 23: {fileID: 997840272}
+  m_Layer: 0
+  m_Name: doodad_bush4_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &997840271
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400026, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 997840270}
+  m_LocalRotation: {x: -.0971525013, y: .80802989, z: -.109642953, w: -.570637882}
+  m_LocalPosition: {x: -1.00869465, y: .20780167, z: -.0937814713}
+  m_LocalScale: {x: .407828033, y: .407827973, z: .407828003}
+  m_Children: []
+  m_Father: {fileID: 278797469}
+--- !u!23 &997840272
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300024, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 997840270}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &997840273
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300024, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 997840270}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1008518470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100022, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1008518471}
+  - 33: {fileID: 1008518473}
+  - 23: {fileID: 1008518472}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_large2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1008518471
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400022, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1008518470}
+  m_LocalRotation: {x: -.104316376, y: .985316992, z: -.105805919, w: .084104754}
+  m_LocalPosition: {x: 1.10329437, y: .211174592, z: .468862534}
+  m_LocalScale: {x: 1.25414217, y: 1.25414217, z: 1.2541424}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &1008518472
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300020, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1008518470}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1008518473
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300020, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1008518470}
+  m_Mesh: {fileID: 4300000, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1046956420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100024, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1046956421}
+  - 33: {fileID: 1046956423}
+  - 23: {fileID: 1046956422}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_small2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1046956421
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400024, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1046956420}
+  m_LocalRotation: {x: 1.21145035e-06, y: .957441092, z: -1.34479399e-06, w: -.288628936}
+  m_LocalPosition: {x: -1.99750042, y: -.000114754672, z: .197896957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &1046956422
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300022, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1046956420}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1046956423
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300022, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1046956420}
+  m_Mesh: {fileID: 4300016, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1058244199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100028, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1058244200}
+  - 33: {fileID: 1058244202}
+  - 23: {fileID: 1058244201}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_low2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1058244200
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400028, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1058244199}
+  m_LocalRotation: {x: 1.4310028e-07, y: .996869802, z: -1.80432937e-06, w: .0790611506}
+  m_LocalPosition: {x: .284309387, y: .0384745188, z: -4.95910645e-05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &1058244201
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300026, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1058244199}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1058244202
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300026, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1058244199}
+  m_Mesh: {fileID: 4300004, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1077813756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100026, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1077813757}
+  - 33: {fileID: 1077813760}
+  - 23: {fileID: 1077813759}
+  - 65: {fileID: 1077813758}
+  m_Layer: 0
+  m_Name: doodad_rock2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1077813757
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400026, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1077813756}
+  m_LocalRotation: {x: -.729045153, y: .0976288244, z: -.650019228, w: -.19088459}
+  m_LocalPosition: {x: .32774353, y: .966511726, z: .918848038}
+  m_LocalScale: {x: 4.49633217, y: 4.49633074, z: 4.49632883}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!65 &1077813758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1077813756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.00002635, y: .636633694, z: 1.56584823}
+  m_Center: {x: -.0569534786, y: .309044689, z: -.0551726222}
+--- !u!23 &1077813759
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300024, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1077813756}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1077813760
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300024, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1077813756}
+  m_Mesh: {fileID: 4300000, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &1081962934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100024, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1081962935}
+  - 33: {fileID: 1081962937}
+  - 23: {fileID: 1081962936}
+  m_Layer: 0
+  m_Name: doodad_leaf3_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1081962935
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400024, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1081962934}
+  m_LocalRotation: {x: -.0198342931, y: .848666787, z: -.197400704, w: .490310371}
+  m_LocalPosition: {x: -2.56865215, y: 1.91763628, z: 1.75148821}
+  m_LocalScale: {x: .360391229, y: .3603912, z: .3603912}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1081962936
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300022, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1081962934}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1081962937
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300022, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1081962934}
+  m_Mesh: {fileID: 4300012, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1100652124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100030, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1100652125}
+  m_Layer: 0
+  m_Name: doodad_combi_rocks2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1100652125
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400030, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1100652124}
+  m_LocalRotation: {x: -.0861139223, y: .962000072, z: -.0218455307, w: -.258191913}
+  m_LocalPosition: {x: .773646355, y: -.0832115412, z: 1.533759}
+  m_LocalScale: {x: .611275911, y: .61127609, z: .611276031}
+  m_Children:
+  - {fileID: 2108724920}
+  - {fileID: 840364802}
+  - {fileID: 600830696}
+  - {fileID: 49977950}
+  - {fileID: 525945193}
+  - {fileID: 761948262}
+  - {fileID: 1127249562}
+  - {fileID: 1855925302}
+  - {fileID: 1200260959}
+  - {fileID: 1058244200}
+  - {fileID: 253225248}
+  - {fileID: 1685183759}
+  - {fileID: 1395045763}
+  - {fileID: 2007445954}
+  - {fileID: 1577400553}
+  - {fileID: 193038354}
+  - {fileID: 1486694255}
+  m_Father: {fileID: 278797469}
+--- !u!1 &1102226964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1102226965}
+  - 33: {fileID: 1102226967}
+  - 23: {fileID: 1102226966}
+  m_Layer: 0
+  m_Name: doodad_bush4_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1102226965
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1102226964}
+  m_LocalRotation: {x: -.0378452651, y: -.555094361, z: -.0103003634, w: .830862164}
+  m_LocalPosition: {x: .565847397, y: -.572144628, z: -1.67296076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 207659955}
+--- !u!23 &1102226966
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300006, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1102226964}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1102226967
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300006, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1102226964}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1112728819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100028, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1112728820}
+  - 33: {fileID: 1112728822}
+  - 23: {fileID: 1112728821}
+  m_Layer: 0
+  m_Name: doodad_plane_dirt_circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1112728820
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400028, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1112728819}
+  m_LocalRotation: {x: .657033205, y: -.261356503, z: -.261356324, w: -.657033563}
+  m_LocalPosition: {x: -.75067997, y: .0299999993, z: .693073273}
+  m_LocalScale: {x: 1.62731111, y: 1.3145957, z: 3.03424048}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!23 &1112728821
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300026, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1112728819}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 49b8dcdd761584e44b00245cdfd848c8, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1112728822
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300026, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1112728819}
+  m_Mesh: {fileID: 4300000, guid: 7398dde875aacc54e8781245efd40b2e, type: 3}
+--- !u!1 &1117368486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100026, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1117368487}
+  - 33: {fileID: 1117368489}
+  - 23: {fileID: 1117368488}
+  m_Layer: 0
+  m_Name: doodad_bush4_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1117368487
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400026, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1117368486}
+  m_LocalRotation: {x: 1.76727337e-06, y: .215985253, z: -3.90932342e-07, w: .97639668}
+  m_LocalPosition: {x: -.850006342, y: -.50908035, z: -2.64297795}
+  m_LocalScale: {x: 1.29626644, y: 1.01070797, z: 1.29626596}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1117368488
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300024, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1117368486}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1117368489
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300024, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1117368486}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1127039130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: a27b4150a52932642b544e2788757970, type: 2}
+  m_PrefabInternal: {fileID: 1987154841}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1127039132}
+  - 108: {fileID: 1127039131}
+  m_Layer: 0
+  m_Name: Point light (test light)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1127039131
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10800000, guid: a27b4150a52932642b544e2788757970,
+    type: 2}
+  m_PrefabInternal: {fileID: 1987154841}
+  m_GameObject: {fileID: 1127039130}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: .430000007
+  m_Range: 26.7999992
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_Strength: .474999994
+    m_Bias: .0599999987
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &1127039132
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: a27b4150a52932642b544e2788757970, type: 2}
+  m_PrefabInternal: {fileID: 1987154841}
+  m_GameObject: {fileID: 1127039130}
+  m_LocalRotation: {x: .353545517, y: .11692331, z: .0445925593, w: .927009165}
+  m_LocalPosition: {x: 5.27287006, y: 15.7550411, z: -30.7472382}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!1 &1127249561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100032, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1127249562}
+  - 33: {fileID: 1127249564}
+  - 23: {fileID: 1127249563}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_high1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1127249562
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400032, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1127249561}
+  m_LocalRotation: {x: .0150641361, y: .996369839, z: -.0268124919, w: .0793809667}
+  m_LocalPosition: {x: 1.78515148, y: -.0865209699, z: .949319839}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &1127249563
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300028, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1127249561}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1127249564
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300028, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1127249561}
+  m_Mesh: {fileID: 4300008, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1130736762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100028, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1130736763}
+  - 33: {fileID: 1130736766}
+  - 23: {fileID: 1130736765}
+  - 65: {fileID: 1130736764}
+  m_Layer: 0
+  m_Name: doodad_rock1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1130736763
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400028, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1130736762}
+  m_LocalRotation: {x: .69295752, y: -.191939816, z: .62334305, w: .307266265}
+  m_LocalPosition: {x: 4.75121021, y: .0269367937, z: -2.60001326}
+  m_LocalScale: {x: 1.91185939, y: 1.91185999, z: 1.91185892}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!65 &1130736764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500004, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1130736762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.75488007, y: .757759213, z: 1.94841981}
+  m_Center: {x: .0484227836, y: .351736575, z: .0292344652}
+--- !u!23 &1130736765
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300026, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1130736762}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1130736766
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300026, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1130736762}
+  m_Mesh: {fileID: 4300002, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &1133454623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100030, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1133454624}
+  - 33: {fileID: 1133454626}
+  - 23: {fileID: 1133454625}
+  m_Layer: 0
+  m_Name: doodad_bush4_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1133454624
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400030, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1133454623}
+  m_LocalRotation: {x: -.0620485693, y: -.552209795, z: -.0888808891, w: .826628447}
+  m_LocalPosition: {x: 3.3463459, y: .868748665, z: -.743317604}
+  m_LocalScale: {x: .959765851, y: .959765732, z: .959765851}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!23 &1133454625
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300028, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1133454623}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1133454626
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300028, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1133454623}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1001 &1154675738
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.4973345
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.06883574
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_RootGameObject: {fileID: 278797468}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1 &1165272023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100032, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1165272024}
+  - 33: {fileID: 1165272026}
+  - 23: {fileID: 1165272025}
+  m_Layer: 0
+  m_Name: doodad_bush4_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1165272024
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400032, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1165272023}
+  m_LocalRotation: {x: 1.00000011e-06, y: .573365033, z: -1.00000011e-06, w: .819300056}
+  m_LocalPosition: {x: -.508215904, y: -.633151829, z: -.566235542}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!23 &1165272025
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300030, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1165272023}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1165272026
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300030, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1165272023}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1168466488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100030, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1168466489}
+  - 33: {fileID: 1168466491}
+  - 23: {fileID: 1168466490}
+  m_Layer: 0
+  m_Name: doodad_bush3_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1168466489
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400030, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1168466488}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.50337458, y: -.0595941544, z: -.777225256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1168466490
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300028, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1168466488}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1168466491
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300028, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1168466488}
+  m_Mesh: {fileID: 4300002, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1176875650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100032, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1176875651}
+  - 33: {fileID: 1176875653}
+  - 23: {fileID: 1176875652}
+  m_Layer: 0
+  m_Name: doodad_bush3_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1176875651
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400032, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1176875650}
+  m_LocalRotation: {x: 1.77745335e-06, y: -.188771322, z: 3.41675133e-07, w: .982021153}
+  m_LocalPosition: {x: -3.23547435, y: -.39073211, z: 3.07759333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1176875652
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300030, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1176875650}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1176875653
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300030, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1176875650}
+  m_Mesh: {fileID: 4300002, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1190260457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100034, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1190260458}
+  - 33: {fileID: 1190260460}
+  - 23: {fileID: 1190260459}
+  m_Layer: 0
+  m_Name: doodad_leaf2_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1190260458
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400034, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1190260457}
+  m_LocalRotation: {x: -.199157074, y: .953218937, z: -.213315174, w: .078783296}
+  m_LocalPosition: {x: .595399022, y: .685568213, z: 2.71520901}
+  m_LocalScale: {x: .410081178, y: .410081059, z: .410081238}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1190260459
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300032, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1190260457}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1190260460
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300032, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1190260457}
+  m_Mesh: {fileID: 4300008, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1200260958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100034, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1200260959}
+  - 33: {fileID: 1200260961}
+  - 23: {fileID: 1200260960}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_low1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1200260959
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400034, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1200260958}
+  m_LocalRotation: {x: 3.95424621e-07, y: .975844324, z: -1.76627339e-06, w: .218467236}
+  m_LocalPosition: {x: 1.93634987, y: .0184347183, z: .39131546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &1200260960
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300030, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1200260958}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1200260961
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300030, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1200260958}
+  m_Mesh: {fileID: 4300010, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1246548873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100034, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1246548874}
+  - 33: {fileID: 1246548876}
+  - 23: {fileID: 1246548875}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_low2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1246548874
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400034, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1246548873}
+  m_LocalRotation: {x: .0746076554, y: .99532938, z: .0164860785, w: -.0590040758}
+  m_LocalPosition: {x: -1.37358189, y: -.0309347194, z: .0808811188}
+  m_LocalScale: {x: 1.2099998, y: 1.21000004, z: 1.21000028}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &1246548875
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300032, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1246548873}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1246548876
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300032, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1246548873}
+  m_Mesh: {fileID: 4300004, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1301020890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100036, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1301020891}
+  - 33: {fileID: 1301020893}
+  - 23: {fileID: 1301020892}
+  m_Layer: 0
+  m_Name: doodad_bush4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1301020891
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400036, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1301020890}
+  m_LocalRotation: {x: .00724146795, y: .337718338, z: -.139642298, w: .930802882}
+  m_LocalPosition: {x: .141222954, y: .627232313, z: 1.46685028}
+  m_LocalScale: {x: .830000043, y: .829999924, z: .830000103}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!23 &1301020892
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300034, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1301020890}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1301020893
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300034, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1301020890}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1309244918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100038, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1309244919}
+  - 33: {fileID: 1309244921}
+  - 23: {fileID: 1309244920}
+  m_Layer: 0
+  m_Name: doodad_brick_component_pebble3_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1309244919
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400038, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1309244918}
+  m_LocalRotation: {x: .555217624, y: -.221436977, z: .800955474, w: .0341969207}
+  m_LocalPosition: {x: .715789795, y: .039484024, z: -.781339645}
+  m_LocalScale: {x: .818377197, y: .818377197, z: .818377256}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &1309244920
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300036, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1309244918}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1309244921
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300036, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1309244918}
+  m_Mesh: {fileID: 4300002, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &1311722305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1311722306}
+  - 33: {fileID: 1311722308}
+  - 23: {fileID: 1311722307}
+  m_Layer: 0
+  m_Name: doodad_bush4_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1311722306
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1311722305}
+  m_LocalRotation: {x: -.115309939, y: -.596981168, z: -.270950913, w: .746259212}
+  m_LocalPosition: {x: -1.10645103, y: -.43496567, z: 3.0112195}
+  m_LocalScale: {x: .731484711, y: .73148489, z: .731485009}
+  m_Children: []
+  m_Father: {fileID: 207659955}
+--- !u!23 &1311722307
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300008, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1311722305}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1311722308
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300008, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1311722305}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1336412053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1336412054}
+  - 33: {fileID: 1336412056}
+  - 23: {fileID: 1336412055}
+  m_Layer: 0
+  m_Name: doodad_bush4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1336412054
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1336412053}
+  m_LocalRotation: {x: -.169194937, y: .664303839, z: .175762162, w: .706527531}
+  m_LocalPosition: {x: -1.73820782, y: -.620443106, z: 1.67077398}
+  m_LocalScale: {x: .830000103, y: .829999864, z: .829999983}
+  m_Children: []
+  m_Father: {fileID: 207659955}
+--- !u!23 &1336412055
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300010, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1336412053}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1336412056
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300010, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1336412053}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1337712699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100040, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1337712700}
+  - 33: {fileID: 1337712702}
+  - 23: {fileID: 1337712701}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_high2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1337712700
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400040, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1337712699}
+  m_LocalRotation: {x: -.0990916491, y: .994428098, z: .00124623266, w: .0359450839}
+  m_LocalPosition: {x: .939981461, y: -.172238171, z: .748422623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &1337712701
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300038, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1337712699}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1337712702
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300038, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1337712699}
+  m_Mesh: {fileID: 4300006, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1395045762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100036, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1395045763}
+  - 33: {fileID: 1395045765}
+  - 23: {fileID: 1395045764}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_large2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1395045763
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400036, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1395045762}
+  m_LocalRotation: {x: -.104316376, y: .985316992, z: -.105805919, w: .084104754}
+  m_LocalPosition: {x: 1.10329437, y: .211174592, z: .468862534}
+  m_LocalScale: {x: 1.25414217, y: 1.25414217, z: 1.2541424}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &1395045764
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300032, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1395045762}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1395045765
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300032, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1395045762}
+  m_Mesh: {fileID: 4300000, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1422558679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100036, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1422558680}
+  - 33: {fileID: 1422558682}
+  - 23: {fileID: 1422558681}
+  m_Layer: 0
+  m_Name: doodad_bush4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1422558680
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400036, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1422558679}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.894712508, y: -.389329135, z: -.27662921}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1422558681
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300034, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1422558679}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1422558682
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300034, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1422558679}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1424905662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100038, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1424905663}
+  - 33: {fileID: 1424905665}
+  - 23: {fileID: 1424905664}
+  m_Layer: 0
+  m_Name: doodad_leaf4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1424905663
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400038, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1424905662}
+  m_LocalRotation: {x: 1.50066865e-06, y: .55909878, z: -1.01196622e-06, w: .829101145}
+  m_LocalPosition: {x: -4.82514191, y: .120241523, z: 2.80373669}
+  m_LocalScale: {x: .536902428, y: .536902308, z: .536902308}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1424905664
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300036, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1424905662}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1424905665
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300036, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1424905662}
+  m_Mesh: {fileID: 4300016, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1426220890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100040, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1426220891}
+  - 33: {fileID: 1426220893}
+  - 23: {fileID: 1426220892}
+  m_Layer: 0
+  m_Name: doodad_leaf4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1426220891
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400040, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1426220890}
+  m_LocalRotation: {x: 1.25080487e-06, y: .722802877, z: -1.3082697e-06, w: .691054344}
+  m_LocalPosition: {x: 3.98537469, y: .120241523, z: -.0130741596}
+  m_LocalScale: {x: .536902308, y: .536902308, z: .536902308}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1426220892
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300038, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1426220890}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1426220893
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300038, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1426220890}
+  m_Mesh: {fileID: 4300016, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1465564210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100042, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1465564211}
+  - 33: {fileID: 1465564213}
+  - 23: {fileID: 1465564212}
+  m_Layer: 0
+  m_Name: doodad_leaf2_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1465564211
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400042, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1465564210}
+  m_LocalRotation: {x: .162536263, y: .0343909003, z: -.0629855394, w: .984089494}
+  m_LocalPosition: {x: 3.51070523, y: .900719523, z: -2.00799799}
+  m_LocalScale: {x: .514412403, y: .514412522, z: .514412403}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1465564212
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300040, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1465564210}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1465564213
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300040, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1465564210}
+  m_Mesh: {fileID: 4300008, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1486694254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100038, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1486694255}
+  - 33: {fileID: 1486694257}
+  - 23: {fileID: 1486694256}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_small2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1486694255
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400038, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1486694254}
+  m_LocalRotation: {x: 1.21145035e-06, y: .957441092, z: -1.34479399e-06, w: -.288628936}
+  m_LocalPosition: {x: -1.99750042, y: -.000114754672, z: .197896957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &1486694256
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300034, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1486694254}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1486694257
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300034, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1486694254}
+  m_Mesh: {fileID: 4300016, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1513633343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100042, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1513633344}
+  - 33: {fileID: 1513633346}
+  - 23: {fileID: 1513633345}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_small2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1513633344
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400042, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1513633343}
+  m_LocalRotation: {x: 3.95424621e-07, y: .975844324, z: -1.76627339e-06, w: .218467236}
+  m_LocalPosition: {x: .149819374, y: .164035127, z: .332735062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &1513633345
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300040, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1513633343}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1513633346
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300040, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1513633343}
+  m_Mesh: {fileID: 4300016, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1524910607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100044, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1524910608}
+  - 33: {fileID: 1524910611}
+  - 23: {fileID: 1524910610}
+  - 65: {fileID: 1524910609}
+  m_Layer: 0
+  m_Name: doodad_rock1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1524910608
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400044, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1524910607}
+  m_LocalRotation: {x: .925826907, y: .103585757, z: -.107661851, w: .347164929}
+  m_LocalPosition: {x: .165201426, y: .0269367937, z: 1.97096872}
+  m_LocalScale: {x: 1.91185963, y: 1.91186023, z: 1.91185892}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!65 &1524910609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500006, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1524910607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.75488007, y: .757759213, z: 1.94841981}
+  m_Center: {x: .0484227836, y: .351736575, z: .0292344652}
+--- !u!23 &1524910610
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300042, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1524910607}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1524910611
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300042, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1524910607}
+  m_Mesh: {fileID: 4300002, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &1535820443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100046, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1535820444}
+  - 33: {fileID: 1535820447}
+  - 23: {fileID: 1535820446}
+  - 65: {fileID: 1535820445}
+  m_Layer: 0
+  m_Name: doodad_rock1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1535820444
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400046, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1535820443}
+  m_LocalRotation: {x: .448052466, y: .338484168, z: .812392712, w: .157148361}
+  m_LocalPosition: {x: -.717700779, y: .897200346, z: -2.71120644}
+  m_LocalScale: {x: 1.91186011, y: 1.91186082, z: 1.91186011}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!65 &1535820445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500008, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1535820443}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.75488007, y: .757759213, z: 1.94841981}
+  m_Center: {x: .0484227836, y: .351736575, z: .0292344652}
+--- !u!23 &1535820446
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300044, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1535820443}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1535820447
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300044, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1535820443}
+  m_Mesh: {fileID: 4300002, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &1546699710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100048, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1546699711}
+  - 33: {fileID: 1546699713}
+  - 23: {fileID: 1546699712}
+  m_Layer: 0
+  m_Name: doodad_leaf2_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1546699711
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400048, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1546699710}
+  m_LocalRotation: {x: -.25175944, y: -.0610692315, z: .204224929, w: .944023311}
+  m_LocalPosition: {x: -3.75019956, y: 1.73156226, z: 1.55648279}
+  m_LocalScale: {x: .426962346, y: .426962435, z: .426962256}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1546699712
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300046, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1546699710}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1546699713
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300046, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1546699710}
+  m_Mesh: {fileID: 4300008, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1573631771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100050, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1573631772}
+  - 33: {fileID: 1573631774}
+  - 23: {fileID: 1573631773}
+  m_Layer: 0
+  m_Name: doodad_bush4_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1573631772
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400050, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1573631771}
+  m_LocalRotation: {x: 1.48292918e-06, y: .573365271, z: -1.03778859e-06, w: .819299936}
+  m_LocalPosition: {x: .131055593, y: -.633123636, z: 1.63203526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1573631773
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300048, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1573631771}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1573631774
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300048, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1573631771}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1577400552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100040, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1577400553}
+  - 33: {fileID: 1577400555}
+  - 23: {fileID: 1577400554}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_small2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1577400553
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400040, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1577400552}
+  m_LocalRotation: {x: 1.21145035e-06, y: .957441092, z: -1.34479399e-06, w: -.288628936}
+  m_LocalPosition: {x: -.794431686, y: -.000114754672, z: -.141515732}
+  m_LocalScale: {x: 1.71825516, y: 1.71825516, z: 1.71825516}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &1577400554
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300036, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1577400552}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1577400555
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300036, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1577400552}
+  m_Mesh: {fileID: 4300016, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1595329545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100052, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1595329546}
+  - 33: {fileID: 1595329548}
+  - 23: {fileID: 1595329547}
+  m_Layer: 0
+  m_Name: doodad_leaf4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1595329546
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400052, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1595329545}
+  m_LocalRotation: {x: 1.80864856e-06, y: -.0385714695, z: 6.98141278e-08, w: .999255896}
+  m_LocalPosition: {x: 2.18157196, y: .120241523, z: 2.37190819}
+  m_LocalScale: {x: .536902308, y: .536902308, z: .536902308}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1595329547
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300050, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1595329545}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1595329548
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300050, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1595329545}
+  m_Mesh: {fileID: 4300016, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1617044913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100044, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1617044914}
+  - 33: {fileID: 1617044916}
+  - 23: {fileID: 1617044915}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_small1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1617044914
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400044, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1617044913}
+  m_LocalRotation: {x: -.0574168861, y: .97887373, z: -.118067034, w: .156747475}
+  m_LocalPosition: {x: 2.00640297, y: .0199525878, z: -.224067688}
+  m_LocalScale: {x: 1.62285399, y: 1.62285388, z: 1.62285399}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &1617044915
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300042, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1617044913}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1617044916
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300042, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1617044913}
+  m_Mesh: {fileID: 4300018, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1656481688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100054, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1656481689}
+  - 33: {fileID: 1656481691}
+  - 23: {fileID: 1656481690}
+  m_Layer: 0
+  m_Name: doodad_leaf2_red_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1656481689
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400054, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1656481688}
+  m_LocalRotation: {x: .0547089167, y: -.0458570011, z: -.0856475085, w: .993764877}
+  m_LocalPosition: {x: -.289535224, y: 1.56303155, z: -1.79769289}
+  m_LocalScale: {x: .564960718, y: .564960599, z: .564960718}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1656481690
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300052, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1656481688}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 43c5a05be3bcbc446b2100d02b29de31, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1656481691
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300052, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1656481688}
+  m_Mesh: {fileID: 4300008, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1685183758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100042, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1685183759}
+  - 33: {fileID: 1685183761}
+  - 23: {fileID: 1685183760}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_low2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1685183759
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400042, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1685183758}
+  m_LocalRotation: {x: -6.79737468e-07, y: .926803589, z: -1.67750932e-06, w: -.375546515}
+  m_LocalPosition: {x: -.480155945, y: -.0542798452, z: -.54167366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &1685183760
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300038, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1685183758}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1685183761
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300038, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1685183758}
+  m_Mesh: {fileID: 4300004, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1704112390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100046, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1704112391}
+  m_Layer: 0
+  m_Name: doodad_combi_rocks2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1704112391
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400046, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1704112390}
+  m_LocalRotation: {x: .0183267798, y: .297085583, z: -.086930804, w: .950708866}
+  m_LocalPosition: {x: -3.65115356, y: -.0832115412, z: .160944939}
+  m_LocalScale: {x: .611276031, y: .611276031, z: .611276031}
+  m_Children:
+  - {fileID: 836218959}
+  - {fileID: 882925664}
+  - {fileID: 1309244919}
+  - {fileID: 207696113}
+  - {fileID: 812600669}
+  - {fileID: 1833011595}
+  - {fileID: 658367607}
+  - {fileID: 1337712700}
+  - {fileID: 113270898}
+  - {fileID: 155430501}
+  - {fileID: 1246548874}
+  - {fileID: 244844148}
+  - {fileID: 1008518471}
+  - {fileID: 1617044914}
+  - {fileID: 379168715}
+  - {fileID: 1513633344}
+  - {fileID: 1046956421}
+  m_Father: {fileID: 1807804073}
+--- !u!1 &1742079901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100048, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1742079902}
+  - 33: {fileID: 1742079904}
+  - 23: {fileID: 1742079903}
+  m_Layer: 0
+  m_Name: doodad_plane_dirt_circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1742079902
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400048, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1742079901}
+  m_LocalRotation: {x: .657033205, y: -.261356503, z: -.261356324, w: -.657033563}
+  m_LocalPosition: {x: 1.60123634, y: .0320000015, z: -.016828537}
+  m_LocalScale: {x: 1.97842777, y: 1.5982393, z: 3.68892312}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!23 &1742079903
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300044, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1742079901}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 49b8dcdd761584e44b00245cdfd848c8, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1742079904
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300044, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1742079901}
+  m_Mesh: {fileID: 4300000, guid: 7398dde875aacc54e8781245efd40b2e, type: 3}
+--- !u!1 &1755520058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100044, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1755520059}
+  - 33: {fileID: 1755520061}
+  - 23: {fileID: 1755520060}
+  m_Layer: 0
+  m_Name: doodad_bush4_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1755520059
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400044, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1755520058}
+  m_LocalRotation: {x: -1.00000011e-06, y: .874944091, z: -2.00000022e-06, w: -.484224051}
+  m_LocalPosition: {x: .0197114944, y: .472754598, z: -.210705757}
+  m_LocalScale: {x: .407828003, y: .407828003, z: .407828003}
+  m_Children: []
+  m_Father: {fileID: 278797469}
+--- !u!23 &1755520060
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300040, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1755520058}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1755520061
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300040, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1755520058}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1780135298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1780135299}
+  - 33: {fileID: 1780135302}
+  - 23: {fileID: 1780135301}
+  - 65: {fileID: 1780135300}
+  m_Layer: 0
+  m_Name: doodad_rock2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1780135299
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1780135298}
+  m_LocalRotation: {x: -.350323498, y: .460943967, z: -.16850923, w: -.797752321}
+  m_LocalPosition: {x: .876527786, y: -1.34788036, z: -.526723385}
+  m_LocalScale: {x: 2.93937612, y: 3.28635192, z: 4.03608179}
+  m_Children: []
+  m_Father: {fileID: 207659955}
+--- !u!65 &1780135300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1780135298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.00002635, y: .636633694, z: 1.56584823}
+  m_Center: {x: -.0569534786, y: .309044689, z: -.0551726222}
+--- !u!23 &1780135301
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300012, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1780135298}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 819820dffb68c844c95e214612db6424, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1780135302
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300012, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 1780135298}
+  m_Mesh: {fileID: 4300000, guid: 1f0e32d564b71414bb33293e7c67b69b, type: 3}
+--- !u!1 &1801270890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100046, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1801270891}
+  - 33: {fileID: 1801270893}
+  - 23: {fileID: 1801270892}
+  m_Layer: 0
+  m_Name: doodad_bush3_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1801270891
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400046, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1801270890}
+  m_LocalRotation: {x: .0964624658, y: -.541951835, z: .182836995, w: .814588189}
+  m_LocalPosition: {x: .802358627, y: -.0339151025, z: -1.30587149}
+  m_LocalScale: {x: .681415379, y: .681415319, z: .681415379}
+  m_Children: []
+  m_Father: {fileID: 278797469}
+--- !u!23 &1801270892
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300042, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1801270890}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1801270893
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300042, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1801270890}
+  m_Mesh: {fileID: 4300002, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1807804072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1807804073}
+  m_Layer: 0
+  m_Name: doodad_combi_bushrock4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1807804073
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1807804072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.5680285, y: 0, z: 22.6153336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1301020891}
+  - {fileID: 2136731744}
+  - {fileID: 1133454624}
+  - {fileID: 1165272024}
+  - {fileID: 1704112391}
+  - {fileID: 1979227964}
+  - {fileID: 1112728820}
+  - {fileID: 1742079902}
+  - {fileID: 85659299}
+  - {fileID: 1077813757}
+  m_Father: {fileID: 0}
+--- !u!1 &1833011594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100050, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1833011595}
+  - 33: {fileID: 1833011597}
+  - 23: {fileID: 1833011596}
+  m_Layer: 0
+  m_Name: doodad_brick_component_rect_half1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1833011595
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400050, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1833011594}
+  m_LocalRotation: {x: -.276226938, y: .181680083, z: .13330391, w: .934302509}
+  m_LocalPosition: {x: -.86721611, y: .0992118716, z: .64031601}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704112391}
+--- !u!23 &1833011596
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300046, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1833011594}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1833011597
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300046, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1833011594}
+  m_Mesh: {fileID: 4300022, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &1855925301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100048, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1855925302}
+  - 33: {fileID: 1855925304}
+  - 23: {fileID: 1855925303}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_high2_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1855925302
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400048, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1855925301}
+  m_LocalRotation: {x: -.0990916491, y: .994428098, z: .00124623266, w: .0359450839}
+  m_LocalPosition: {x: .939981461, y: -.172238171, z: .748422623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &1855925303
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300044, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1855925301}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1855925304
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300044, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 1855925301}
+  m_Mesh: {fileID: 4300006, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &1907377657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100056, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1907377658}
+  - 33: {fileID: 1907377660}
+  - 23: {fileID: 1907377659}
+  m_Layer: 0
+  m_Name: doodad_bush4_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1907377658
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400056, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1907377657}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.88307095, y: -.688509822, z: -.586965084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &1907377659
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300054, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1907377657}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1907377660
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300054, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 1907377657}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &1979227963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100052, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1979227964}
+  - 33: {fileID: 1979227966}
+  - 23: {fileID: 1979227965}
+  m_Layer: 0
+  m_Name: doodad_leaf4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1979227964
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400052, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1979227963}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.02543211, y: .120241523, z: 2.36947441}
+  m_LocalScale: {x: .536902308, y: .536902308, z: .536902308}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!23 &1979227965
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300048, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1979227963}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1979227966
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300048, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 1979227963}
+  m_Mesh: {fileID: 4300016, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1001 &1987154841
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: a27b4150a52932642b544e2788757970, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.27287006
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a27b4150a52932642b544e2788757970, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15.7550411
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a27b4150a52932642b544e2788757970, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -30.7472382
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a27b4150a52932642b544e2788757970, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .353545517
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a27b4150a52932642b544e2788757970, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .11692331
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a27b4150a52932642b544e2788757970, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .0445925593
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a27b4150a52932642b544e2788757970, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .927009165
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a27b4150a52932642b544e2788757970, type: 2}
+  m_RootGameObject: {fileID: 1127039130}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1 &2000865362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100058, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2000865363}
+  - 33: {fileID: 2000865365}
+  - 23: {fileID: 2000865364}
+  m_Layer: 0
+  m_Name: doodad_leaf2_yellow_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2000865363
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400058, guid: 7aa2e7a5b11156a478875a59260f40a7, type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 2000865362}
+  m_LocalRotation: {x: .023788454, y: .723943532, z: .24282515, w: .645272017}
+  m_LocalPosition: {x: -3.15843654, y: 2.04269385, z: 2.40714931}
+  m_LocalScale: {x: .426962346, y: .426962405, z: .426962286}
+  m_Children: []
+  m_Father: {fileID: 860746875}
+--- !u!23 &2000865364
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300056, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 2000865362}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7653f72a6ca87e545924a2a9c999b0d2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &2000865365
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300056, guid: 7aa2e7a5b11156a478875a59260f40a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 906253053}
+  m_GameObject: {fileID: 2000865362}
+  m_Mesh: {fileID: 4300008, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &2007445953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100050, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2007445954}
+  - 33: {fileID: 2007445956}
+  - 23: {fileID: 2007445955}
+  m_Layer: 0
+  m_Name: doodad_Plane_grass_shrub_small1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2007445954
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400050, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 2007445953}
+  m_LocalRotation: {x: -.0574168861, y: .97887373, z: -.118067034, w: .156747475}
+  m_LocalPosition: {x: 1.96726954, y: .269398957, z: -.245990843}
+  m_LocalScale: {x: 1.62285399, y: 1.62285388, z: 1.62285399}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &2007445955
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300046, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 2007445953}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 71ae9cae541a1f14f93d73f103460073, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &2007445956
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300046, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 2007445953}
+  m_Mesh: {fileID: 4300018, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &2106458073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2106458074}
+  - 33: {fileID: 2106458076}
+  - 23: {fileID: 2106458075}
+  m_Layer: 0
+  m_Name: doodad_bush4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2106458074
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: 7295d107403a6034182e300654139a5a, type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 2106458073}
+  m_LocalRotation: {x: 1.80999507e-06, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .423870087, y: -.389329135, z: .325182438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 207659955}
+--- !u!23 &2106458075
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300014, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 2106458073}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &2106458076
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300014, guid: 7295d107403a6034182e300654139a5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 490234281}
+  m_GameObject: {fileID: 2106458073}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
+--- !u!1 &2108724919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100052, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2108724920}
+  - 33: {fileID: 2108724922}
+  - 23: {fileID: 2108724921}
+  m_Layer: 0
+  m_Name: doodad_brick_component_pebble1_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2108724920
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400052, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558, type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 2108724919}
+  m_LocalRotation: {x: .604703963, y: -.182311863, z: .7075091, w: -.31705907}
+  m_LocalPosition: {x: -.792902946, y: -.0578211136, z: -1.09686279}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100652125}
+--- !u!23 &2108724921
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300048, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 2108724919}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 97b3d345453895b4a9ef61ed59274eb2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &2108724922
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300048, guid: 8d2a0e9f11e00ac4fb95dcfb742ef558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154675738}
+  m_GameObject: {fileID: 2108724919}
+  m_Mesh: {fileID: 4300032, guid: 9a0449bc8fb7b3f42a51663d5e15b018, type: 3}
+--- !u!1 &2136731743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100054, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2136731744}
+  - 33: {fileID: 2136731746}
+  - 23: {fileID: 2136731745}
+  m_Layer: 0
+  m_Name: doodad_bush4_norm_prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2136731744
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400054, guid: 3081d6c92f0668b4495a435b7626a6b6, type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 2136731743}
+  m_LocalRotation: {x: -.169194937, y: .664303839, z: .175762162, w: .706527531}
+  m_LocalPosition: {x: -3.08262825, y: -.620443106, z: 1.97547722}
+  m_LocalScale: {x: .830000162, y: .829999804, z: .829999983}
+  m_Children: []
+  m_Father: {fileID: 1807804073}
+--- !u!23 &2136731745
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300050, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 2136731743}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4d6129778507bc64c882831711475ada, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &2136731746
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300050, guid: 3081d6c92f0668b4495a435b7626a6b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 302088871}
+  m_GameObject: {fileID: 2136731743}
+  m_Mesh: {fileID: 4300000, guid: c72e7b6f9f87d1841ac3ab7cdc6710f0, type: 3}
