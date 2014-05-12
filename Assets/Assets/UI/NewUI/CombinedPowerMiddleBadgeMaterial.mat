@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CombinedPowerMiddleMaterial
-  m_Shader: {fileID: 4800000, guid: 9ab17c095453e664c82f9d48d7f71136, type: 3}
+  m_Name: CombinedPowerMiddleBadgeMaterial
+  m_Shader: {fileID: 4800000, guid: 85d923f8bea855f4499d6daf3b1f5b47, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: dbacfd7d67710524e9c767977bd713e6, type: 3}
+          m_Texture: {fileID: 2800000, guid: 985630cdb367fbb44a661c93d6af7dfc, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:

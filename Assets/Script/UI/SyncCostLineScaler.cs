@@ -5,11 +5,17 @@ public class SyncCostLineScaler : MonoBehaviour {
     public GameObject Left;
     public GameObject Middle;
     public GameObject Right;
+	public GameObject Badge;
 
     public Vector3 LeftEnd;
     public Vector3 RightEnd;
 
+	private float _badgeYPos;
     private bool isVisible = true;
+
+	void Start() {
+		_badgeYPos = Badge.transform.localPosition.y;
+	}
 
      void Update() {
         Scale();
@@ -18,7 +24,10 @@ public class SyncCostLineScaler : MonoBehaviour {
     void Scale() {
         Left.transform.localPosition = LeftEnd + Vector3.right * 0f;
         Right.transform.localPosition = RightEnd + Vector3.left * 0f;
-        Middle.transform.localPosition = (LeftEnd + RightEnd) * 0.5f;
+		var center = (LeftEnd + RightEnd) * 0.5f;
+        Middle.transform.localPosition = center;
+		center.y = _badgeYPos;
+		Badge.transform.localPosition = center;
 
         //Calculate scale/rotation
         float spanningScale = Vector3.Distance(Left.transform.localPosition, Right.transform.localPosition) - 1f;

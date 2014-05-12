@@ -95,7 +95,7 @@ public class Hero : BaseUnit {
 		_reviveHeartPrefab = (GameObject) Resources.Load("ReviveHeart");
 
 		//currentSpiritPower = gameObject.AddComponent<SpiritBungie>();
-		currentSpiritPower = gameObject.AddComponent<SpiritBungie>();
+		currentSpiritPower = gameObject.AddComponent<SpiritImmortal>();
 
 		aspect = GetComponentInChildren<EntityRig>().Entity.GetAspect("twinhero");
 
