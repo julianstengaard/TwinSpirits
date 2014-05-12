@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour {
 	public TextMesh LevelLengthMesh;
 	public TextMesh DifficultyMesh;
 	public TextMesh PlayButtonMesh;
+	public TextMesh QuitButtonMesh;
 
     public GameObject GameStartingMesh;
     public TextMesh Player1JoinMesh;
@@ -50,10 +51,11 @@ public class MainMenu : MonoBehaviour {
 	    FindLevelCreationInfo();
 
 		//Add selectables
-		_selectables.Add(DifficultyMesh);
 		_selectables.Add(RegenMesh);
 		_selectables.Add(LevelLengthMesh);
 		_selectables.Add(PlayButtonMesh);
+		_selectables.Add(DifficultyMesh);
+		_selectables.Add(QuitButtonMesh);
 
 		//Set selection at Play
 		_selectedField = 3;
@@ -68,12 +70,12 @@ public class MainMenu : MonoBehaviour {
     private void Update() {
         if (_currentMenu == 0) {
             //Start game button (switch to next menu)
-            if (_selectedField == 3 && InputManager.ActiveDevice.Action1) {
+            if (_selectedField == 2 && InputManager.ActiveDevice.Action1) {
                 NewGameMenu.SetActive(false);
                 PlayerJoinMenu.SetActive(true);
                 gameObject.audio.PlayOneShot(AcceptSound);
                 _currentMenu = 1;
-            }
+            } 
 
             //Check if stick has been reset
             if (InputManager.ActiveDevice.LeftStickX == 0 && InputManager.ActiveDevice.LeftStickY == 0) {
@@ -95,7 +97,7 @@ public class MainMenu : MonoBehaviour {
                 }
 
 				//If over Difficulty
-				if (_selectedField == 0) {
+				if (_selectedField == 3) {
 					//Move left/right
 					if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
 						_inputReady = false;
@@ -107,7 +109,7 @@ public class MainMenu : MonoBehaviour {
 				}
 
                 //If over Regen
-                if (_selectedField == 1) {
+                if (_selectedField == 0) {
                     //Move left/right
                     if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
                         _inputReady = false;
@@ -119,7 +121,7 @@ public class MainMenu : MonoBehaviour {
                 }
 
                 //If over Level Length
-                if (_selectedField == 2) {
+                if (_selectedField == 1) {
                     //Move left/right
                     if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
                         _inputReady = false;
@@ -129,6 +131,12 @@ public class MainMenu : MonoBehaviour {
                         ChangeLevelLength(1);
                     }
                 }
+
+				if (_selectedField == 4) {
+					if (InputManager.ActiveDevice.Action1.WasPressed) {
+						Application.Quit();
+					}
+				}
             }
         }
 

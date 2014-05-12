@@ -86,11 +86,11 @@ public class CameraController : MonoBehaviour {
 			}
 			if (_restartReady) {
 				//Waiting for restart
-				if (_player1.GetInputDevice().Action2.WasPressed) {
+				if (_player1.GetInputDevice().Action2.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
 					//Restart
 					_restartReady = false;
 					StartCoroutine(GameToMenu(0f));
-				} else if (_player1.GetInputDevice().Action1.WasPressed) {
+				} else if (_player1.GetInputDevice().Action1.WasPressed || _player1.GetInputDevice().Action2.WasPressed) {
 					//Back to menu
 					_restartReady = false;
 					StartCoroutine(Restart(0f));
