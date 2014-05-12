@@ -7,7 +7,7 @@ public class CollectableHealthUp : Collectable {
 
 		collector.FullHealth += 2f;
         collector.Heal(2f);
-		base.CreatePopUpText("Health up", collector);
+		base.CreatePopUpText("HP +", collector);
 		//GameObject.Destroy(gameObject);
 	}
 }
