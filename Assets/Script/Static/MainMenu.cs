@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour {
 	public TextMesh DifficultyMesh;
 	public TextMesh PlayButtonMesh;
 
-    public TextMesh GameStartingMesh;
+    public GameObject GameStartingMesh;
     public TextMesh Player1JoinMesh;
     public GameObject Player1Joined;
     public GameObject Player1JoinButton;
@@ -150,7 +150,7 @@ public class MainMenu : MonoBehaviour {
 
     private IEnumerator StartGameInSeconds(float time) {
         _levelCreationInfoGO.spiritRegen += (_difficulty == 0) ? _easyRegen : 0;
-        GameStartingMesh.gameObject.SetActive(true);
+        GameStartingMesh.SetActive(true);
         yield return new WaitForSeconds(time);
         GameObject.DontDestroyOnLoad(_levelCreationInfoGO.gameObject);
         GameObject.DontDestroyOnLoad(_inputHandler.gameObject);

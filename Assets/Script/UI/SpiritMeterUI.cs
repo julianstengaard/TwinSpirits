@@ -15,6 +15,11 @@ public class SpiritMeterUI : MonoBehaviour {
 	public Material SpiritFireIcon;
 	public Material SpiritPingPongIcon;
 
+	public GameObject BungieParticle;
+	public GameObject ImmortalParticle;
+	public GameObject LightningParticle;
+	public GameObject PingPongParticle;
+
     public GameObject SpiritMeterDivider;
 
     public Material SyncOnIcon;
@@ -186,9 +191,9 @@ public class SpiritMeterUI : MonoBehaviour {
 		if (amount < spiritPower.GetCostActivate())
 			spiritMeter.renderer.material.SetColor("_Color", Color.red);
 		else if (amount >= spiritPower.GetCostActivateSync())
-			spiritMeter.renderer.material.SetColor("_Color", Color.green);
+			spiritMeter.renderer.material.SetColor("_Color",  Color.yellow);
 		else
-			spiritMeter.renderer.material.SetColor("_Color", Color.yellow);
+			spiritMeter.renderer.material.SetColor("_Color", new Color(1f, 0.41f, 0f));
 	}
 
     public void UpdateSyncIcon()
@@ -205,12 +210,12 @@ public class SpiritMeterUI : MonoBehaviour {
 
     public bool UpdateSpiritPowerIcons() {
         bool b;
-		b = UpdateSpiritPowerIcon(Player1, p1Icon);
-		b = UpdateSpiritPowerIcon(Player2, p2Icon) && b;
+		b = UpdateSpiritPowerIcon(Player1);
+		b = UpdateSpiritPowerIcon(Player2) && b;
         return b;
     }
 
-	private bool UpdateSpiritPowerIcon(Hero player, GameObject icon)
+	private bool UpdateSpiritPowerIcon(Hero player)
 	{
 		int playerNumber = player.PlayerSlot == Hero.Player.One ? 1 : 2;
 
@@ -238,29 +243,33 @@ public class SpiritMeterUI : MonoBehaviour {
 			p2SpiritPrevious = player.currentSpiritPower.GetType();
 		}
 
+		var icon = playerNumber == 1 ? p1Icon : p2Icon;
+
 		//Clone the old icon, so we can throw it away
 		var oldIcon = (GameObject) Instantiate(icon, icon.transform.position, icon.transform.rotation);
 		oldIcon.transform.parent = icon.transform.parent;
 
-		//Update with the new icon
-	    if (player.currentSpiritPower.GetType() == typeof(SpiritSpeedBoost)) {
-			icon.renderer.material = SpiritSpeedBoostIcon;
-		} else if (player.currentSpiritPower.GetType() == typeof(SpiritBungie)) {
-			icon.renderer.material = SpiritBungieIcon;
+		if (player.currentSpiritPower.GetType() == typeof(SpiritBungie)) {
+			icon = (GameObject) GameObject.Instantiate(BungieParticle, icon.transform.position, icon.transform.rotation);
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritImmortal)) {
-			icon.renderer.material = SpiritImmortalIcon;
-		} else if (player.currentSpiritPower.GetType() == typeof(SpiritRegenHP)) {
-			icon.renderer.material = SpiritHPRegenIcon;
+			icon = (GameObject) GameObject.Instantiate(ImmortalParticle, icon.transform.position, icon.transform.rotation);
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritLightning)) {
-			icon.renderer.material = SpiritLightningIcon;
-		} else if (player.currentSpiritPower.GetType() == typeof(SpiritFire)) {
-			icon.renderer.material = SpiritFireIcon;
+			icon = (GameObject) GameObject.Instantiate(LightningParticle, icon.transform.position, icon.transform.rotation);
 		} else if (player.currentSpiritPower.GetType() == typeof(SpiritPingPong)) {
-			icon.renderer.material = SpiritPingPongIcon;
+			icon = (GameObject) GameObject.Instantiate(PingPongParticle, icon.transform.position, icon.transform.rotation);
 		}
 
-		//Animate it
-		StartCoroutine(AnimateIconTransition(oldIcon, icon, playerNumber));
+		if (playerNumber == 1) {
+			GameObject.Destroy(p1Icon);
+			p1Icon = icon;
+			p1Icon.transform.parent = oldIcon.transform.parent;
+			StartCoroutine(AnimateIconTransition(oldIcon, p1Icon, playerNumber));
+		} else if (playerNumber == 2) {
+			GameObject.Destroy(p2Icon);
+			p2Icon = icon;
+			p2Icon.transform.parent = oldIcon.transform.parent;
+			StartCoroutine(AnimateIconTransition(oldIcon, p2Icon, playerNumber));
+		}
 	    return true;
 	}
 

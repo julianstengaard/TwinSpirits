@@ -7,7 +7,7 @@ public class CollectableFatFuck : Collectable {
 		collector.movementSpeedBuff -= 1f;
 		collector.FullHealth += 4f;
         collector.Heal(4f);
-        base.CreatePopUpText("A worthy tradeoff", collector);
+        base.CreatePopUpText("HP ++ Speed -", collector);
 		//GameObject.Destroy(gameObject);
 	}
 }
