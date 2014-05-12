@@ -16997,6 +16997,76 @@ MeshFilter:
   m_PrefabInternal: {fileID: 968534956}
   m_GameObject: {fileID: 516204197}
   m_Mesh: {fileID: 4300014, guid: 984a452dbbad58e4281faa27082f4104, type: 3}
+--- !u!1 &520517537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 520517538}
+  - 23: {fileID: 520517540}
+  - 102: {fileID: 520517539}
+  m_Layer: 0
+  m_Name: Quit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &520517538
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520517537}
+  m_LocalRotation: {x: .313252777, y: .182134539, z: -.00675051939, w: .932016194}
+  m_LocalPosition: {x: 1.5300982, y: -.378870398, z: -1.59567547}
+  m_LocalScale: {x: .0234789979, y: .0234789997, z: 1.17397285}
+  m_Children: []
+  m_Father: {fileID: 2061288220}
+--- !u!102 &520517539
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520517537}
+  m_Text: Quit
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 64
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 7a404c825f93128468f64c3d2f6018c4, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280834700
+--- !u!23 &520517540
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520517537}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7a404c825f93128468f64c3d2f6018c4, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!1 &521303944
 GameObject:
   m_ObjectHideFlags: 0
@@ -21110,6 +21180,7 @@ MonoBehaviour:
   LevelLengthMesh: {fileID: 155677518}
   DifficultyMesh: {fileID: 295815253}
   PlayButtonMesh: {fileID: 311253}
+  QuitButtonMesh: {fileID: 520517539}
   GameStartingMesh: {fileID: 69339137}
   Player1JoinMesh: {fileID: 1677472376}
   Player1Joined: {fileID: 1677472374}
@@ -65836,6 +65907,7 @@ Transform:
   m_LocalPosition: {x: -1.10393834, y: -.26260981, z: 1.05377531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 520517538}
   - {fileID: 1625455146}
   - {fileID: 618999949}
   - {fileID: 311252}
