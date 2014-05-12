@@ -191,9 +191,9 @@ public class SpiritMeterUI : MonoBehaviour {
 		if (amount < spiritPower.GetCostActivate())
 			spiritMeter.renderer.material.SetColor("_Color", Color.red);
 		else if (amount >= spiritPower.GetCostActivateSync())
-			spiritMeter.renderer.material.SetColor("_Color", new Color(0f, 1f, 0f));
+			spiritMeter.renderer.material.SetColor("_Color",  Color.yellow);
 		else
-			spiritMeter.renderer.material.SetColor("_Color", Color.yellow);
+			spiritMeter.renderer.material.SetColor("_Color", new Color(1f, 0.41f, 0f));
 	}
 
     public void UpdateSyncIcon()
