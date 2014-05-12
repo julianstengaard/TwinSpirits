@@ -5,6 +5,9 @@ using Holoville.HOTween;
 
 public class TriggerForSpiritImmortal : MonoBehaviour
 {
+	public GameObject BeforeLandingParticle;
+	public GameObject AfterLandingParticle;
+
 	private AudioClip _syncSound;
 	private float _damageRadius = 3f;
 	private float _pullRadius = 6f;
@@ -75,6 +78,8 @@ public class TriggerForSpiritImmortal : MonoBehaviour
 			else if (!_hasPulled){
                 //gameObject.collider.enabled = true;
 				_hasPulled = true;
+				BeforeLandingParticle.SetActive(false);
+				AfterLandingParticle.SetActive(true);
 				StartCoroutine(PullEnemies());
             }
         }
