@@ -262,10 +262,12 @@ public class SpiritMeterUI : MonoBehaviour {
 		if (playerNumber == 1) {
 			GameObject.Destroy(p1Icon);
 			p1Icon = icon;
+			p1Icon.transform.parent = oldIcon.transform.parent;
 			StartCoroutine(AnimateIconTransition(oldIcon, p1Icon, playerNumber));
 		} else if (playerNumber == 2) {
 			GameObject.Destroy(p2Icon);
 			p2Icon = icon;
+			p2Icon.transform.parent = oldIcon.transform.parent;
 			StartCoroutine(AnimateIconTransition(oldIcon, p2Icon, playerNumber));
 		}
 	    return true;
