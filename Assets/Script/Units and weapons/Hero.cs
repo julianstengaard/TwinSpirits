@@ -564,4 +564,8 @@ public class Hero : BaseUnit {
 	public void SetDamageRecievedModifier(float modifier) {
 		_damageRecievedModifier = modifier;
 	}
+
+	public InputDevice GetInputDevice() {
+		return _input;
+	}
 }

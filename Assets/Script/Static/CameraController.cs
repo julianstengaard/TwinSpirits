@@ -35,6 +35,7 @@ public class CameraController : MonoBehaviour {
     private Vector3 _currentLook;
     private bool _intro = true;
     private bool _gameOver = false;
+	private bool _restartReady = false;
 
 	// Use this for initialization
 	void Start () {
@@ -80,8 +81,21 @@ public class CameraController : MonoBehaviour {
             _target = _player2.transform.position;
             _cameraLookTarget = _target;
 		} else {
-            if (!_gameOver)
+            if (!_gameOver) {
                 SetGameOver(false);
+			}
+			if (_restartReady) {
+				//Waiting for restart
+				if (_player1.GetInputDevice().Action2.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
+					//Restart
+					_restartReady = false;
+					StartCoroutine(GameToMenu(0f));
+				} else if (_player1.GetInputDevice().Action1.WasPressed || _player1.GetInputDevice().Action2.WasPressed) {
+					//Back to menu
+					_restartReady = false;
+					StartCoroutine(Restart(0f));
+				}
+			}
             
 		}
 
@@ -110,16 +124,26 @@ public class CameraController : MonoBehaviour {
 			Blacker.renderer.material.SetColor("_Color", new Color(0,0,0, i / 100.0f));
 			yield return new WaitForSeconds(0.01f);
 		}
-		yield return new WaitForSeconds(10);
-		GameToMenu();
+		//yield return new WaitForSeconds(10);
+		//GameToMenu();
 	}
 
-	private void GameToMenu() {
+	private IEnumerator GameToMenu(float delay) {
+		FindObjectOfType<InputHandler>().RestartSameSettings = false;
+		yield return new WaitForSeconds(delay);
 		Application.LoadLevel(0);
+	}
+
+	private IEnumerator Restart(float delay) {
+		var handler = FindObjectOfType<InputHandler>();
+		handler.RestartSameSettings = true;
+		yield return new WaitForSeconds(delay);
+		Application.LoadLevel(1);
 	}
 
     public void SetGameOver(bool victory) {
         _gameOver = true;
+		_restartReady = true;
 
 		SetMusicState(MusicState.GameOver);
 
@@ -144,7 +168,23 @@ public class CameraController : MonoBehaviour {
 
     private void SwitchUIToGameOver(string head, string body) {
         var transforms = UICamera.GetComponentsInChildren<Transform>(true);
+		foreach(Transform t in UICamera.transform) {
+			if (t.gameObject == UICamera.gameObject) {} 
+			else if (t.gameObject.name == "GameOverTextHead") {
+				t.gameObject.SetActive(true);
+				t.GetComponent<TextMesh>().text = head;
+			} 
+			else if (t.gameObject.name == "GameOverTextBody") {
+				t.gameObject.SetActive(true);
+				t.GetComponent<TextMesh>().text = body;
+			}
+			else {
+				t.gameObject.SetActive(false);
+			}
+		}
+			
 
+		/*
         foreach (var t in transforms) {
             if (t.gameObject == UICamera.gameObject) {} 
             else if (t.gameObject.name == "GameOverTextHead") {
@@ -154,11 +194,13 @@ public class CameraController : MonoBehaviour {
             else if (t.gameObject.name == "GameOverTextBody") {
                 t.gameObject.SetActive(true);
                 t.GetComponent<TextMesh>().text = body;
-            } else {
+            }
+			else {
                 t.gameObject.SetActive(false);
             }
 
         }
+        */
     }
 
     //Calculate new magic values
