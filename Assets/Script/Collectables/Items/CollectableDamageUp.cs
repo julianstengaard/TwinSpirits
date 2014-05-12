@@ -5,7 +5,7 @@ public class CollectableDamageUp : Collectable {
 		var weapons = collector.GetComponentsInChildren<Weapon>();
 		foreach(var w in weapons)
 			w.AddEffect(new Damage(5));
-        base.CreatePopUpText("Damage up", collector);
+        base.CreatePopUpText("Damage +", collector);
 		//GameObject.Destroy(gameObject);
 	}
 }
