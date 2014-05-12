@@ -9,6 +9,7 @@ public class InputHandler : MonoBehaviour {
     private bool _isActive = false;
 
     public bool SkipMenuDebug = false;
+	public bool RestartSameSettings = false;
 
     void Start() {
         if (SkipMenuDebug) {
@@ -24,9 +25,16 @@ public class InputHandler : MonoBehaviour {
     }
 
     void OnLevelWasLoaded(int level) {
-        if (level == 0)
+        if (level == 0) {
             Reset();
-        if (level == 1 && !SkipMenuDebug) {
+		}
+		else if (level == 1 && RestartSameSettings) {
+			print ("from restart");
+			_playersControlled = false;
+			_isActive = true;
+			DetroyOtherInputHandler();
+		}
+        else if (level == 1 && !SkipMenuDebug) {
             DetroyOtherInputHandler();
         }
     }
@@ -76,7 +84,12 @@ public class InputHandler : MonoBehaviour {
                 heroes[1].AttachInputDevice(activeDevices[0]);
                 heroes[0].AttachInputDevice(activeDevices[1]);
             }
-            _playersControlled = true;
+
+			if (heroes[0].IsControlled && heroes[1].IsControlled) {
+            	_playersControlled = true;
+				RestartSameSettings = false;
+				print ("controlling");
+			}
         }
     }
 
@@ -99,8 +112,12 @@ public class InputHandler : MonoBehaviour {
     private void DetroyOtherInputHandler() {
         InputHandler[] inputHandlers = FindObjectsOfType<InputHandler>();
         for (int i = 0; i < inputHandlers.Length; i++) {
-            if (inputHandlers[i].gameObject != gameObject)
+            if (inputHandlers[i].gameObject != gameObject) {
+				if (inputHandlers[i].RestartSameSettings == true) {
+					return;
+				}
                 Destroy(inputHandlers[i].gameObject);
+			}
         }
     }
 }
