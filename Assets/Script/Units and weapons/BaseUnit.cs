@@ -64,11 +64,18 @@ public abstract class BaseUnit : MonoBehaviour
 	protected void Update() {
 		if (damageLockTimer >= 0f) {
 			damageLockTimer -= Time.deltaTime;
-			foreach(Material unitMaterial in unitMaterials) {
+			SetDamageBodyColor(damageLockColor, damageLockTimer);
+			/*foreach(Material unitMaterial in unitMaterials) {
 				unitMaterial.SetColor("_Color", Color.Lerp(initColor, damageLockColor, damageLockTimer));
-			}
+			}*/
 		}
 	}
+
+	public void SetDamageBodyColor(Color targetColor, float pct) {
+		foreach(Material unitMaterial in unitMaterials) {
+			unitMaterial.SetColor("_Color", Color.Lerp(initColor, targetColor, pct));
+		}
+	} 
 
 	protected void LateUpdate() {
 		if (stunned && stunTimeout < Time.time) {
