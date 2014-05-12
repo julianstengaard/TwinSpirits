@@ -110,7 +110,7 @@ public class CameraController : MonoBehaviour {
 			Blacker.renderer.material.SetColor("_Color", new Color(0,0,0, i / 100.0f));
 			yield return new WaitForSeconds(0.01f);
 		}
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(10);
 		GameToMenu();
 	}
 
