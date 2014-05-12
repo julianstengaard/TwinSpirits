@@ -27,7 +27,7 @@ public abstract class BaseUnit : MonoBehaviour
 	public float MovementSpeed;
 	protected float minMovementSpeed = 0.6f;
 	protected float maxMovementSpeed = 10f;
-	[HideInInspector] public float movementSpeedBuff = 0f;
+	public float movementSpeedBuff = 0f;
 
 	public bool dead = false;
 	public bool immortal = false;

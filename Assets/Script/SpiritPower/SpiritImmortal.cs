@@ -131,16 +131,16 @@ public class SpiritImmortal : SpiritPower {
 	public override IEnumerator OnActivateSync (Hero sourceHero, Hero otherHero, bool secondSync = false)
 	{
 		//Debug.Log("Activating" + this.GetType() + " SYNC POWER!");
-	    if (triggerP1 != null) {
+	    /*if (triggerP1 != null) {
 	        Destroy(triggerP1.gameObject);
 	    }
         if (triggerP2 != null) {
             Destroy(triggerP2.gameObject);
-        }
+        }*/
 
 	    //This cant be used twice
-		if (secondSync && otherHero.currentSpiritPower.GetType() == typeof(SpiritImmortal)) 
-            return null;
+		/*if (secondSync && otherHero.currentSpiritPower.GetType() == typeof(SpiritImmortal)) 
+            return null;*/
 
 		if (!secondSync) {
 			//Stop other Heros effect
@@ -168,7 +168,7 @@ public class SpiritImmortal : SpiritPower {
 			_othHero.SpiritShieldActive = false;
 			_shieldActive = false;
 		}
-
+		/*
         if (readyToPull && Player1Triggered && Player2Triggered)
         {
             readyToPull = false;
@@ -188,18 +188,18 @@ public class SpiritImmortal : SpiritPower {
 
             center = (triggerP1.transform.position + triggerP2.transform.position) * 0.5f;
             StartCoroutine(PullEnemies());
-        }
+        }*/
     }
 
     private void ThrowGravityTriggers(Hero sourceHero, Hero otherHero)
     {
-        GameObject triggerOtherGO = (GameObject) GameObject.Instantiate(_triggerPrefab, sourceHero.transform.position, Quaternion.identity);
+        //GameObject triggerOtherGO = (GameObject) GameObject.Instantiate(_triggerPrefab, sourceHero.transform.position, Quaternion.identity);
         GameObject triggerSourceGO = (GameObject) GameObject.Instantiate(_triggerPrefab, otherHero.transform.position, Quaternion.identity);
-        triggerP1 = triggerOtherGO.GetComponent<TriggerForSpiritImmortal>();
+        //triggerP1 = triggerOtherGO.GetComponent<TriggerForSpiritImmortal>();
         triggerP2 = triggerSourceGO.GetComponent<TriggerForSpiritImmortal>();
         Vector3 throwDirectionOther = otherHero.transform.TransformDirection(Vector3.forward) * _throwRange;
-        Vector3 throwDirectionSource = sourceHero.transform.TransformDirection(Vector3.forward) * _throwRange;
-        triggerP1.ActivateTrigger(sourceHero.transform.position + throwDirectionSource, otherHero, this);
+        //Vector3 throwDirectionSource = sourceHero.transform.TransformDirection(Vector3.forward) * _throwRange;
+        //triggerP1.ActivateTrigger(sourceHero.transform.position + throwDirectionSource, otherHero, this);
         triggerP2.ActivateTrigger(otherHero.transform.position + throwDirectionOther, sourceHero, this);
     }
 

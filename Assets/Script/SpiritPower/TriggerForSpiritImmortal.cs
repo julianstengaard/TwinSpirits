@@ -146,8 +146,7 @@ public class TriggerForSpiritImmortal : MonoBehaviour
 		
 		enemies = new CharacterController[enemiesObjects.Length];
 		int i = 0;
-		foreach (GameObject enemy in enemiesObjects)
-		{
+		foreach (GameObject enemy in enemiesObjects) {
 			enemies[i] = enemy.GetComponent<CharacterController>();
 			i++;
 		}
@@ -180,6 +179,13 @@ public class TriggerForSpiritImmortal : MonoBehaviour
 			foreach (CharacterController enemy in enemies) {
 				if (enemy == null)
 					continue;
+
+				var offset = transform.position - enemy.transform.position;
+				var sqrMagnitude = offset.sqrMagnitude;
+
+				if (sqrMagnitude > pullRadiusSqr) {
+					continue;
+				}
 				
 				if (j == 0) {
 					var enemyUnit = enemy.gameObject.GetComponent<BaseUnit>();
@@ -187,12 +193,7 @@ public class TriggerForSpiritImmortal : MonoBehaviour
 						slowedUnits.Add(enemyUnit);
 					}
 				}
-				var offset = transform.position - enemy.transform.position;
-				var sqrMagnitude = offset.sqrMagnitude;
-				if (sqrMagnitude > pullRadiusSqr)
-				{
-					continue;
-				}
+
 				if(sqrMagnitude > 1f) {
 					offset = offset/12f;
 					enemy.Move(offset);
@@ -209,7 +210,7 @@ public class TriggerForSpiritImmortal : MonoBehaviour
 		}
 		
 		//Give speed back
-		yield return new WaitForSeconds(_expiresTimer - 2f);
+		yield return new WaitForSeconds(4f);
 		foreach (var enemy in slowedUnits) {
 			if (enemy != null)
 				enemy.SetMovementSpeedBuff(_syncSlowAmount);
