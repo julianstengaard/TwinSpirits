@@ -62,8 +62,20 @@ public class CameraController : MonoBehaviour {
 	    _cameraZLookOffset = 0f;
         _cameraHeight = 8f;
         _cameraZOffset = 8f;
-
-		if (SinglePlayer && !SwitchPlayer) {
+		
+		if (_restartReady) {
+			//Waiting for restart
+			if (_player1.GetInputDevice().Action2.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
+				//Restart
+				_restartReady = false;
+				StartCoroutine(GameToMenu(0f));
+			} else if (_player1.GetInputDevice().Action1.WasPressed || _player1.GetInputDevice().Action2.WasPressed) {
+				//Back to menu
+				_restartReady = false;
+				StartCoroutine(Restart(0f));
+			}
+		}
+		else if (SinglePlayer && !SwitchPlayer) {
 			_target = _player1.transform.position;
 		    _cameraLookTarget = _target;
 		} else if (SinglePlayer && SwitchPlayer) {
@@ -84,19 +96,6 @@ public class CameraController : MonoBehaviour {
             if (!_gameOver) {
                 SetGameOver(false);
 			}
-			if (_restartReady) {
-				//Waiting for restart
-				if (_player1.GetInputDevice().Action2.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
-					//Restart
-					_restartReady = false;
-					StartCoroutine(GameToMenu(0f));
-				} else if (_player1.GetInputDevice().Action1.WasPressed || _player1.GetInputDevice().Action2.WasPressed) {
-					//Back to menu
-					_restartReady = false;
-					StartCoroutine(Restart(0f));
-				}
-			}
-            
 		}
 
 		//Vector3 wantedPosition = target + Vector3.back * distance + Vector3.up * height;
