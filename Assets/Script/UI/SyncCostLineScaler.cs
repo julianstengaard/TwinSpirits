@@ -46,11 +46,13 @@ public class SyncCostLineScaler : MonoBehaviour {
             Left.renderer.enabled = true;
             Middle.renderer.enabled = true;
             Right.renderer.enabled = true;
+			Badge.renderer.enabled = true;
         } else if (!b && isVisible) {
             isVisible = false;
             Left.renderer.enabled = false;
             Middle.renderer.enabled = false;
             Right.renderer.enabled = false;
+			Badge.renderer.enabled = false;
         }
     }
 }

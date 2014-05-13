@@ -69,7 +69,7 @@ public class CameraController : MonoBehaviour {
 				//Restart
 				_restartReady = false;
 				StartCoroutine(GameToMenu(0f));
-			} else if (_player1.GetInputDevice().Action1.WasPressed || _player1.GetInputDevice().Action2.WasPressed) {
+			} else if (_player1.GetInputDevice().Action1.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
 				//Back to menu
 				_restartReady = false;
 				StartCoroutine(Restart(0f));
@@ -85,6 +85,7 @@ public class CameraController : MonoBehaviour {
             //MAIN CAMERA MODE TAKES PLACE HERE! Get fancy camera values based on player distances
             UpdateSmartCameraValues();
             _target = (_player1.transform.position + _player2.transform.position) * 0.5f;
+			_target.y = _player1.transform.position.y > _player2.transform.position.y  ? _player1.transform.position.y : _player2.transform.position.y;
             _cameraLookTarget = _target + new Vector3(0f, 0f, _cameraZLookOffset);
 		} else if (!_player1.dead && _player2.dead) {
             _target = _player1.transform.position;
