@@ -37,6 +37,9 @@ public class CameraController : MonoBehaviour {
     private bool _gameOver = false;
 	private bool _restartReady = false;
 
+	private float _timerTillSinglePlayer = 0;
+	private bool _singlePlayerTiming = false;
+
 	// Use this for initialization
 	void Start () {
 		var ps = GameObject.FindObjectsOfType<Hero>();
@@ -62,15 +65,29 @@ public class CameraController : MonoBehaviour {
 	    _cameraZLookOffset = 0f;
         _cameraHeight = 8f;
         _cameraZOffset = 8f;
+
+		if (!_player1.dead ^ !_player2.dead) {
+			if (_singlePlayerTiming) {
+				_timerTillSinglePlayer += Time.deltaTime;
+			} else {
+				_timerTillSinglePlayer = 0f;
+				_singlePlayerTiming = true;
+			}
+		} else {
+			_singlePlayerTiming = false;
+			_timerTillSinglePlayer = 0f;
+		}
 		
 		if (_restartReady) {
 			//Waiting for restart
 			if (_player1.GetInputDevice().Action2.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
 				//Restart
+				print("to menu");
 				_restartReady = false;
 				StartCoroutine(GameToMenu(0f));
-			} else if (_player1.GetInputDevice().Action1.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
+			} else if (_player1.GetInputDevice().Action1.WasPressed || _player2.GetInputDevice().Action1.WasPressed) {
 				//Back to menu
+				print("restarting");
 				_restartReady = false;
 				StartCoroutine(Restart(0f));
 			}
@@ -81,18 +98,18 @@ public class CameraController : MonoBehaviour {
 		} else if (SinglePlayer && SwitchPlayer) {
             _target = _player2.transform.position;
             _cameraLookTarget = _target;
-		} else if (!_player1.dead && !_player2.dead) {
+		} else if (!_player1.dead && _player2.dead && _timerTillSinglePlayer > 10f) {
+			_target = _player1.transform.position;
+			_cameraLookTarget = _target;
+		} else if (!_player2.dead  && _player1.dead && _timerTillSinglePlayer > 10f) {
+			_target = _player2.transform.position;
+			_cameraLookTarget = _target;
+		} else if (!_player1.dead || !_player2.dead) {
             //MAIN CAMERA MODE TAKES PLACE HERE! Get fancy camera values based on player distances
             UpdateSmartCameraValues();
             _target = (_player1.transform.position + _player2.transform.position) * 0.5f;
 			_target.y = _player1.transform.position.y > _player2.transform.position.y  ? _player1.transform.position.y : _player2.transform.position.y;
             _cameraLookTarget = _target + new Vector3(0f, 0f, _cameraZLookOffset);
-		} else if (!_player1.dead && _player2.dead) {
-            _target = _player1.transform.position;
-            _cameraLookTarget = _target;
-		} else if (_player1.dead && !_player2.dead) {
-            _target = _player2.transform.position;
-            _cameraLookTarget = _target;
 		} else {
             if (!_gameOver) {
                 SetGameOver(false);
@@ -101,20 +118,24 @@ public class CameraController : MonoBehaviour {
 
 		//Vector3 wantedPosition = target + Vector3.back * distance + Vector3.up * height;
 		Vector3 wantedPosition = _target + Vector3.back * _cameraZOffset + Vector3.up * _cameraHeight;
+
 		if ((wantedPosition - transform.position).magnitude > 0.1f)	{
 			transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * 2f);
 		}
-		else if (_intro) {
-			_intro = false;
-		}
-        if ((_currentLook - _cameraLookTarget).magnitude > 0.01f) {
-            _currentLook = Vector3.Lerp(_currentLook, _cameraLookTarget, Time.deltaTime * 4f);
-		}
+
+		//if ((_currentLook - _cameraLookTarget).magnitude > 0.01f) {
+		_currentLook = Vector3.Lerp(_currentLook, _cameraLookTarget, Time.deltaTime * 3f);
+		//}
 
 		if (_intro) {
             transform.LookAt(_cameraLookTarget);
 		} else {
 			transform.LookAt (_currentLook);
+		}
+
+		if (_intro && (wantedPosition - transform.position).magnitude < 22220.2f) {
+			print ("intro over");
+			_intro = false;
 		}
 	}
 
@@ -158,7 +179,7 @@ public class CameraController : MonoBehaviour {
         if (!victory) {
             SwitchUIToGameOver("You lost...", "But survived " + done + " island" + s + " of " + (_miniMap.GetIslandsTotal() - 1) + " total");
         } else {
-            SwitchUIToGameOver("A WINNER IS YOU!", "You beat " + done + " island" + s + " of " + (_miniMap.GetIslandsTotal() - 1) + " total");
+            SwitchUIToGameOver("You won this time...", "You beat " + done + " island" + s + " of " + (_miniMap.GetIslandsTotal() - 1) + " total");
         }
 
         if (!fading) {
