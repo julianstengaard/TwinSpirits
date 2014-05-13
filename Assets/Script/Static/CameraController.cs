@@ -67,10 +67,12 @@ public class CameraController : MonoBehaviour {
 			//Waiting for restart
 			if (_player1.GetInputDevice().Action2.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
 				//Restart
+				print("to menu");
 				_restartReady = false;
 				StartCoroutine(GameToMenu(0f));
-			} else if (_player1.GetInputDevice().Action1.WasPressed || _player2.GetInputDevice().Action2.WasPressed) {
+			} else if (_player1.GetInputDevice().Action1.WasPressed || _player2.GetInputDevice().Action1.WasPressed) {
 				//Back to menu
+				print("restarting");
 				_restartReady = false;
 				StartCoroutine(Restart(0f));
 			}
@@ -158,7 +160,7 @@ public class CameraController : MonoBehaviour {
         if (!victory) {
             SwitchUIToGameOver("You lost...", "But survived " + done + " island" + s + " of " + (_miniMap.GetIslandsTotal() - 1) + " total");
         } else {
-            SwitchUIToGameOver("A WINNER IS YOU!", "You beat " + done + " island" + s + " of " + (_miniMap.GetIslandsTotal() - 1) + " total");
+            SwitchUIToGameOver("You won this time...", "You beat " + done + " island" + s + " of " + (_miniMap.GetIslandsTotal() - 1) + " total");
         }
 
         if (!fading) {
