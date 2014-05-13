@@ -37,6 +37,9 @@ public class CameraController : MonoBehaviour {
     private bool _gameOver = false;
 	private bool _restartReady = false;
 
+	private float _timerTillSinglePlayer = 0;
+	private bool _singlePlayerTiming = false;
+
 	// Use this for initialization
 	void Start () {
 		var ps = GameObject.FindObjectsOfType<Hero>();
@@ -62,6 +65,18 @@ public class CameraController : MonoBehaviour {
 	    _cameraZLookOffset = 0f;
         _cameraHeight = 8f;
         _cameraZOffset = 8f;
+
+		if (!_player1.dead ^ !_player2.dead) {
+			if (_singlePlayerTiming) {
+				_timerTillSinglePlayer += Time.deltaTime;
+			} else {
+				_timerTillSinglePlayer = 0f;
+				_singlePlayerTiming = true;
+			}
+		} else {
+			_singlePlayerTiming = false;
+			_timerTillSinglePlayer = 0f;
+		}
 		
 		if (_restartReady) {
 			//Waiting for restart
@@ -81,19 +96,19 @@ public class CameraController : MonoBehaviour {
 		} else if (SinglePlayer && SwitchPlayer) {
             _target = _player2.transform.position;
             _cameraLookTarget = _target;
+		} else if (!_player1.dead && _player2.dead && _timerTillSinglePlayer > 10f) {
+			_target = _player1.transform.position;
+			_cameraLookTarget = _target;
+		} else if (!_player2.dead  && _player1.dead && _timerTillSinglePlayer > 10f) {
+			_target = _player2.transform.position;
+			_cameraLookTarget = _target;
 		} else if (!_player1.dead || !_player2.dead) {
             //MAIN CAMERA MODE TAKES PLACE HERE! Get fancy camera values based on player distances
             UpdateSmartCameraValues();
             _target = (_player1.transform.position + _player2.transform.position) * 0.5f;
 			_target.y = _player1.transform.position.y > _player2.transform.position.y  ? _player1.transform.position.y : _player2.transform.position.y;
             _cameraLookTarget = _target + new Vector3(0f, 0f, _cameraZLookOffset);
-		} /*else if (!_player1.dead && _player2.dead) {
-            _target = _player1.transform.position;
-            _cameraLookTarget = _target;
-		} else if (_player1.dead && !_player2.dead) {
-            _target = _player2.transform.position;
-            _cameraLookTarget = _target;
-		} */ else {
+		} else {
             if (!_gameOver) {
                 SetGameOver(false);
 			}
