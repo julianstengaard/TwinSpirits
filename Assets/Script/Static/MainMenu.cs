@@ -58,7 +58,7 @@ public class MainMenu : MonoBehaviour {
 		_selectables.Add(QuitButtonMesh);
 
 		//Set selection at Play
-		_selectedField = 3;
+		_selectedField = 2;
 
 		UpdateHighlight();
 		ChangeLevelLength();
