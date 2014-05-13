@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 358.454224, y: .469783306, z: -542.154541}
+  m_LocalPosition: {x: 0, y: -1.02123928, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400012}
@@ -771,7 +771,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 1
+    maxNumParticles: 2
   ShapeModule:
     serializedVersion: 2
     enabled: 0
@@ -789,7 +789,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -825,11 +825,11 @@ ParticleSystem:
     cnt1: 30
     cnt2: 30
     cnt3: 30
-    time0: .00999999978
+    time0: 0
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 1
     curve:
@@ -914,16 +914,16 @@ ParticleSystem:
           rgba: 1107296255
         key1:
           serializedVersion: 2
-          rgba: 2986344447
+          rgba: 3539992575
         key2:
           serializedVersion: 2
-          rgba: 1090519040
+          rgba: 1459617792
         key3:
           serializedVersion: 2
-          rgba: 0
+          rgba: 3422552064
         key4:
           serializedVersion: 2
-          rgba: 0
+          rgba: 1090519040
         key5:
           serializedVersion: 2
           rgba: 0
@@ -942,15 +942,15 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 25250
-        atime2: 65535
-        atime3: 0
-        atime4: 0
+        atime1: 11372
+        atime2: 28142
+        atime3: 45682
+        atime4: 65535
         atime5: 0
         atime6: 0
         atime7: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 5
       minGradient:
         key0:
           serializedVersion: 2
@@ -1771,7 +1771,7 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     type: 4
     radius: .200000003
     angle: 10
@@ -1786,7 +1786,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 20
+      scalar: 35
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2788,7 +2788,7 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     type: 4
     radius: .200000003
     angle: 10
@@ -2803,7 +2803,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 15
+      scalar: 25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4857,7 +4857,7 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     type: 4
     radius: .200000003
     angle: 10
@@ -4872,7 +4872,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 15
+      scalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5687,7 +5687,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5814,7 +5814,7 @@ ParticleSystem:
         rgba: 4284732671
       minMaxState: 0
     startSize:
-      scalar: .0399999991
+      scalar: .0799999982
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5829,7 +5829,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .75
+          value: .8125
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -5876,8 +5876,8 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 4
-    radius: .100000001
-    angle: 45
+    radius: .150000006
+    angle: 30
     length: 2
     boxX: 1
     boxY: 1
@@ -5889,7 +5889,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 25
       maxCurve:
         serializedVersion: 2
         m_Curve:
