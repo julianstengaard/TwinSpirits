@@ -41,7 +41,7 @@ PlayerSettings:
   Override IPod Music: 0
   Prepare IOS For Recording: 0
   enableHWStatistics: 1
-  usePlayerLog: 1
+  usePlayerLog: 0
   stripPhysics: 0
   forceSingleInstance: 0
   resizableWindow: 0
@@ -74,6 +74,8 @@ PlayerSettings:
     16:9: 1
     Others: 0
   iPhoneBundleIdentifier: com.Company.ProductName
+  metroEnableIndependentInputSource: 0
+  metroEnableLowLatencyPresentationAPI: 0
   productGUID: 75cc8e06ad8b04f4aae5229505553812
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
@@ -106,16 +108,16 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
-  resolutionDialogBanner: {fileID: 2800000, guid: 21d3369107855394abbb7ddfe3384067,
+  resolutionDialogBanner: {fileID: 2800000, guid: 51b6f50cff9177443aaf8328cdf617bd,
     type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: db5e8eca37011b340b4ff69c912d60c3, type: 3}
       m_Size: 128
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
-    m_StaticBatching: 1
+    m_StaticBatching: 0
     m_DynamicBatching: 1
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
@@ -189,6 +191,7 @@ PlayerSettings:
     SharedUserCertificates: 0
     VideosLibrary: 0
     WebCam: 0
+  metroUnprocessedPlugins: []
   metroCompilationOverrides: 1
   blackberryDeviceAddress: 
   blackberryDevicePassword: 
