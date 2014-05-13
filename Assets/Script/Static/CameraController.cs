@@ -81,19 +81,19 @@ public class CameraController : MonoBehaviour {
 		} else if (SinglePlayer && SwitchPlayer) {
             _target = _player2.transform.position;
             _cameraLookTarget = _target;
-		} else if (!_player1.dead && !_player2.dead) {
+		} else if (!_player1.dead || !_player2.dead) {
             //MAIN CAMERA MODE TAKES PLACE HERE! Get fancy camera values based on player distances
             UpdateSmartCameraValues();
             _target = (_player1.transform.position + _player2.transform.position) * 0.5f;
 			_target.y = _player1.transform.position.y > _player2.transform.position.y  ? _player1.transform.position.y : _player2.transform.position.y;
             _cameraLookTarget = _target + new Vector3(0f, 0f, _cameraZLookOffset);
-		} else if (!_player1.dead && _player2.dead) {
+		} /*else if (!_player1.dead && _player2.dead) {
             _target = _player1.transform.position;
             _cameraLookTarget = _target;
 		} else if (_player1.dead && !_player2.dead) {
             _target = _player2.transform.position;
             _cameraLookTarget = _target;
-		} else {
+		} */ else {
             if (!_gameOver) {
                 SetGameOver(false);
 			}
@@ -101,20 +101,24 @@ public class CameraController : MonoBehaviour {
 
 		//Vector3 wantedPosition = target + Vector3.back * distance + Vector3.up * height;
 		Vector3 wantedPosition = _target + Vector3.back * _cameraZOffset + Vector3.up * _cameraHeight;
+
 		if ((wantedPosition - transform.position).magnitude > 0.1f)	{
 			transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * 2f);
 		}
-		else if (_intro) {
-			_intro = false;
-		}
-        if ((_currentLook - _cameraLookTarget).magnitude > 0.01f) {
-            _currentLook = Vector3.Lerp(_currentLook, _cameraLookTarget, Time.deltaTime * 4f);
-		}
+
+		//if ((_currentLook - _cameraLookTarget).magnitude > 0.01f) {
+		_currentLook = Vector3.Lerp(_currentLook, _cameraLookTarget, Time.deltaTime * 3f);
+		//}
 
 		if (_intro) {
             transform.LookAt(_cameraLookTarget);
 		} else {
 			transform.LookAt (_currentLook);
+		}
+
+		if (_intro && (wantedPosition - transform.position).magnitude < 22220.2f) {
+			print ("intro over");
+			_intro = false;
 		}
 	}
 
