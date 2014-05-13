@@ -153,11 +153,12 @@ public class CameraController : MonoBehaviour {
         _cameraZOffset = 3f;
         _cameraHeight = 50f;
 
-        string s = _miniMap.GetIslandsDone() == 1 ? "" : "s";
+		int done = _miniMap.GetIslandsDone() - 1;
+        string s = done == 1 ? "" : "s";
         if (!victory) {
-            SwitchUIToGameOver("You lost...", "But survived " + _miniMap.GetIslandsDone() + " island" + s + " of " + _miniMap.GetIslandsTotal() + " total");
+            SwitchUIToGameOver("You lost...", "But survived " + done + " island" + s + " of " + (_miniMap.GetIslandsTotal() - 1) + " total");
         } else {
-            SwitchUIToGameOver("A WINNER IS YOU!", "You beat " + _miniMap.GetIslandsDone() + " island" + s + " of " + _miniMap.GetIslandsTotal() + " total");
+            SwitchUIToGameOver("A WINNER IS YOU!", "You beat " + done + " island" + s + " of " + (_miniMap.GetIslandsTotal() - 1) + " total");
         }
 
         if (!fading) {
