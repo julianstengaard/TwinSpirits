@@ -26,6 +26,7 @@ public class CollectableSpiritPoint : Collectable {
 		if (_collected == true) return;
 		
 		_collected = true;
+		gameObject.collider.enabled = false;
 		gameObject.audio.clip = SpiritPickupSound;
 		gameObject.audio.Play();
 		collector.ChangeSpiritAmount(2);
