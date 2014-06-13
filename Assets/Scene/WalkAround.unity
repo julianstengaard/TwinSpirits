@@ -18477,7 +18477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeWidth: 10
   mazeHeight: 10
-  mazeLength: 2
+  mazeLength: 7
   maxPathIterationLenght: 5
   cellSpacing: 60
   cellSize: 40
@@ -19026,7 +19026,7 @@ Prefab:
       objectReference: {fileID: 100356, guid: b2f9bcaa4efcd0b4aa90fc2856c6de5b, type: 2}
     - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: mazeLength
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67db4dcca191e9748ada0c85ccecaafb, type: 2}
       propertyPath: IslandsWithBridgeOpenings.Array.data[1]

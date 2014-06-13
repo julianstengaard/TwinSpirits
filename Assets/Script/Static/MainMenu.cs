@@ -51,14 +51,15 @@ public class MainMenu : MonoBehaviour {
 	    FindLevelCreationInfo();
 
 		//Add selectables
-		_selectables.Add(RegenMesh);
-		_selectables.Add(LevelLengthMesh);
+		//_selectables.Add(RegenMesh);
+		//_selectables.Add(LevelLengthMesh);
 		_selectables.Add(PlayButtonMesh);
 		_selectables.Add(DifficultyMesh);
 		_selectables.Add(QuitButtonMesh);
 
 		//Set selection at Play
-		_selectedField = 2;
+		//_selectedField = 2;
+		_selectedField = 0;
 
 		UpdateHighlight();
 		ChangeLevelLength();
@@ -70,7 +71,8 @@ public class MainMenu : MonoBehaviour {
     private void Update() {
         if (_currentMenu == 0) {
             //Start game button (switch to next menu)
-            if (_selectedField == 2 && InputManager.ActiveDevice.Action1) {
+            //if (_selectedField == 2 && InputManager.ActiveDevice.Action1) {
+			if (_selectedField == 0 && InputManager.ActiveDevice.Action1) {
                 NewGameMenu.SetActive(false);
                 PlayerJoinMenu.SetActive(true);
                 gameObject.audio.PlayOneShot(AcceptSound);
@@ -97,7 +99,8 @@ public class MainMenu : MonoBehaviour {
                 }
 
 				//If over Difficulty
-				if (_selectedField == 3) {
+				//if (_selectedField == 3) {
+				if (_selectedField == 1) {
 					//Move left/right
 					if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
 						_inputReady = false;
@@ -109,7 +112,8 @@ public class MainMenu : MonoBehaviour {
 				}
 
                 //If over Regen
-                if (_selectedField == 0) {
+                //if (_selectedField == 0) {
+				if (_selectedField == 999) {
                     //Move left/right
                     if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
                         _inputReady = false;
@@ -121,7 +125,8 @@ public class MainMenu : MonoBehaviour {
                 }
 
                 //If over Level Length
-                if (_selectedField == 1) {
+				//if (_selectedField == 1) {
+				if (_selectedField == 9999) {
                     //Move left/right
                     if (InputManager.ActiveDevice.LeftStickX < -0.3f) {
                         _inputReady = false;
@@ -132,7 +137,7 @@ public class MainMenu : MonoBehaviour {
                     }
                 }
 
-				if (_selectedField == 4) {
+				if (_selectedField == 2) {
 					if (InputManager.ActiveDevice.Action1.WasPressed) {
 						Application.Quit();
 					}
